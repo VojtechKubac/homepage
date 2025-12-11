@@ -14,6 +14,16 @@
   let isDark = false;
   let translate = t('en');
   let currentLang = 'en';
+  let activeTab = 'about'; // Start with about tab
+
+  const tabs = [
+    { id: 'about', label: 'About' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'education', label: 'Education' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'contact', label: 'Contact' }
+  ];
 
   onMount(() => {
     // Check for saved theme preference or use system preference
@@ -30,6 +40,10 @@
     currentLang = savedLang;
     language.set(savedLang);
     translate = t(savedLang);
+
+    // Restore active tab
+    const savedTab = localStorage.getItem('activeTab') || 'about';
+    activeTab = savedTab;
   });
 
   language.subscribe(lang => {
@@ -54,6 +68,11 @@
   function setLanguage(lang) {
     language.set(lang);
     localStorage.setItem('language', lang);
+  }
+
+  function switchTab(tabId) {
+    activeTab = tabId;
+    localStorage.setItem('activeTab', tabId);
   }
 </script>
 
@@ -120,16 +139,53 @@
     </div>
   </nav>
 
-  <!-- Main Content -->
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="space-y-20">
+  <!-- Hero Section -->
+  <div class="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-slate-900 dark:to-slate-800 border-b border-slate-200 dark:border-slate-800">
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <HeroSection {translate} />
-      <AboutSection {translate} />
-      <ExperienceSection {translate} />
-      <EducationSection {translate} />
-      <SkillsSection {translate} />
-      <ProjectsSection {translate} />
-      <ContactSection {translate} />
+    </main>
+  </div>
+
+  <!-- Tab Navigation -->
+  <div class="sticky top-16 z-40 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex gap-2 overflow-x-auto">
+        {#each tabs as tab (tab.id)}
+          <button
+            on:click={() => switchTab(tab.id)}
+            class="px-4 py-3 font-medium text-sm whitespace-nowrap transition-all border-b-2"
+            class:border-blue-600={activeTab === tab.id}
+            class:border-transparent={activeTab !== tab.id}
+            class:text-blue-600={activeTab === tab.id}
+            class:dark:text-blue-400={activeTab === tab.id}
+            class:text-slate-600={activeTab !== tab.id}
+            class:dark:text-slate-400={activeTab !== tab.id}
+            class:hover:text-slate-900={activeTab !== tab.id}
+            class:dark:hover:text-slate-300={activeTab !== tab.id}
+          >
+            {tab.label}
+          </button>
+        {/each}
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab Content -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="animate-fade-in">
+      {#if activeTab === 'about'}
+        <AboutSection {translate} />
+      {:else if activeTab === 'experience'}
+        <ExperienceSection {translate} />
+      {:else if activeTab === 'education'}
+        <EducationSection {translate} />
+      {:else if activeTab === 'skills'}
+        <SkillsSection {translate} />
+      {:else if activeTab === 'projects'}
+        <ProjectsSection {translate} />
+      {:else if activeTab === 'contact'}
+        <ContactSection {translate} />
+      {/if}
     </div>
   </main>
 
