@@ -1,0 +1,16 @@
+node_modules
+/.svelte-kit
+/build
+/dist
+.DS_Store
+.git
+.gitignore
+.env
+.env.local
+.env.*.local
+*.md
+.vscode
+.idea
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
