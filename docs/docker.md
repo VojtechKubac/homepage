@@ -8,6 +8,4 @@
 
 ## Compose ([`docker-compose.yml`](../docker-compose.yml))
 
-Compose sets `healthcheck` to **`curl -f http://localhost:3000`**.
-
-**Gotcha:** The runtime image is **Alpine** and often has **no `curl`**. If health checks fail, install `curl` in the image, align the compose test with the Dockerfile’s Node-based check, or use an image that includes `curl`.
+The service `healthcheck` uses the **same Node `http.get` probe** as the image `HEALTHCHECK`, so it works on **Alpine** without `curl`.
