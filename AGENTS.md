@@ -6,7 +6,7 @@ Single-page **Svelte 4** + **Vite 5** + **Tailwind CSS 3** portfolio. Details ar
 
 | Topic | Doc |
 |--------|-----|
-| Entry, build, tabs, Vite vs SvelteKit leftovers | [`docs/architecture.md`](docs/architecture.md) |
+| Entry, build, tabs, stack | [`docs/architecture.md`](docs/architecture.md) |
 | Locales and strings | [`docs/internationalization.md`](docs/internationalization.md) |
 | Contact form / Formspree | [`docs/contact-form.md`](docs/contact-form.md) |
 | Docker and compose | [`docs/docker.md`](docs/docker.md) |
@@ -17,7 +17,7 @@ Single-page **Svelte 4** + **Vite 5** + **Tailwind CSS 3** portfolio. Details ar
 
 ## Conventions (short)
 
-Components: [`src/lib/components/`](src/lib/components/). Content data: [`src/lib/data/`](src/lib/data/). Global styles: [`src/styles.css`](src/styles.css). Live app: [`src/app.svelte`](src/app.svelte) (not [`src/routes/+page.svelte`](src/routes/+page.svelte)).
+Components: [`src/lib/components/`](src/lib/components/). Content data: [`src/lib/data/`](src/lib/data/). Global styles: [`src/styles.css`](src/styles.css). UI shell: [`index.html`](index.html) → [`src/main.js`](src/main.js) → [`src/app.svelte`](src/app.svelte).
 
 ## Avoid without explicit direction
 
