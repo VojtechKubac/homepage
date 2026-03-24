@@ -18,7 +18,7 @@ A modern, responsive personal portfolio website built with Svelte, Tailwind CSS,
 
 Plain **Vite + Svelte** (not SvelteKit). HTML shell is root [`index.html`](index.html).
 
-```
+```text
 ├── index.html                  # HTML shell (Vite entry)
 ├── src/
 │   ├── app.svelte              # Root Svelte UI (tabs, hero, sections)
