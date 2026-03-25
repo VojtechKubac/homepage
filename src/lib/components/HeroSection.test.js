@@ -19,7 +19,13 @@ describe('HeroSection', () => {
       screen.getByRole('heading', { level: 1, name: 'Mock hero title' }),
     ).toBeInTheDocument();
     expect(screen.getByText('Mock subtitle line')).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Mock contact' })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Mock projects' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Mock contact' })).toHaveAttribute(
+      'href',
+      '#contact',
+    );
+    expect(screen.getByRole('link', { name: 'Mock projects' })).toHaveAttribute(
+      'href',
+      '#projects',
+    );
   });
 });
