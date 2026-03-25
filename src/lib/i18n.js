@@ -38,14 +38,14 @@ const translations = {
       title: 'Projects',
       demo: 'Live Demo',
       sources: {
-        cfdSupport: 'CFD SuPPORT — TCAE (commercial CAE)',
+        cfdSupport: 'CFD SUPPORT — TCAE (commercial CAE)',
         github: 'GitHub & personal',
         academic: 'Research',
         ententee: 'ententee (client work)'
       },
       links: {
         repository: 'View repository',
-        cfdSupportSite: 'CFD SuPPORT',
+        cfdSupportSite: 'CFD SUPPORT',
         researchGroup: 'Research group',
         clientProduct: 'Product context (DrChrono)'
       }
@@ -104,14 +104,14 @@ const translations = {
       title: 'Projekte',
       demo: 'Live Demo',
       sources: {
-        cfdSupport: 'CFD SuPPORT — TCAE (kommerzielle CAE-Software)',
+        cfdSupport: 'CFD SUPPORT — TCAE (kommerzielle CAE-Software)',
         github: 'GitHub & persönlich',
         academic: 'Forschung',
         ententee: 'ententee (Kundenarbeit)'
       },
       links: {
         repository: 'Repository ansehen',
-        cfdSupportSite: 'CFD SuPPORT',
+        cfdSupportSite: 'CFD SUPPORT',
         researchGroup: 'Forschungsgruppe',
         clientProduct: 'Produktkontext (DrChrono)'
       }
@@ -170,14 +170,14 @@ const translations = {
       title: 'Projekty',
       demo: 'Živá ukázka',
       sources: {
-        cfdSupport: 'CFD SuPPORT — TCAE (komerční CAE)',
+        cfdSupport: 'CFD SUPPORT — TCAE (komerční CAE)',
         github: 'GitHub a osobní',
         academic: 'Výzkum',
         ententee: 'ententee (klientské práce)'
       },
       links: {
         repository: 'Zobrazit repozitář',
-        cfdSupportSite: 'CFD SuPPORT',
+        cfdSupportSite: 'CFD SUPPORT',
         researchGroup: 'Výzkumná skupina',
         clientProduct: 'Kontext produktu (DrChrono)'
       }

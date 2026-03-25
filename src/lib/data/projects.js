@@ -24,7 +24,7 @@ export const PROJECT_SOURCE_ORDER = /** @type {const} */ ([
 
 /** @type {Project[]} */
 export const projects = [
-  // --- CFD SuPPORT / TCAE (commercial CAE desktop platform; public product link only)
+  // --- CFD SUPPORT / TCAE (commercial CAE desktop platform; public product link only)
   {
     id: 'tfea',
     source: 'cfdSupport',

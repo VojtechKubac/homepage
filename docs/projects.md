@@ -36,7 +36,7 @@ Example:
 
 | Value | Meaning |
 |--------|---------|
-| `cfdSupport` | Work on TCAE with CFD SuPPORT; public pointer is the company/product site, not proprietary code. |
+| `cfdSupport` | Work on TCAE with CFD SUPPORT; public pointer is the company/product site, not proprietary code. |
 | `github` | Public (or listed) GitHub repositories and this site itself. |
 | `academic` | University / research (e.g. doctoral work, group homepages). |
 | `ententee` | Client delivery; repositories are often private — add a `link` only when a public URL is accurate (e.g. healthcare product context), otherwise omit `link`. |
@@ -47,7 +47,7 @@ Order of groups is fixed in `PROJECT_SOURCE_ORDER` in `projects.js`.
 
 1. **NDA / confidentiality:** Do not name unreleased client specifics, internal URLs, or proprietary filenames in **on-site card copy**. Prefer role-level descriptions and public links only.
 2. **GitHub:** Only add repos you are willing to show; use the real `https://github.com/VojtechKubac/...` URL when the repo is public.
-3. **CFD SuPPORT:** Public cards stay high-level. Longer drafts for wording live under [`CFDSUPPORT-projects/`](../CFDSUPPORT-projects/) (author reference); treat that folder as **non-marketing** technical notes — scrub or avoid publishing internal codenames on the live cards.
+3. **CFD SUPPORT:** Public cards stay high-level. Longer drafts for wording live under [`CFDSUPPORT-projects/`](../CFDSUPPORT-projects/) (author reference); treat that folder as **non-marketing** technical notes — scrub or avoid publishing internal codenames on the live cards.
 4. **ententee:** Use a public client/product link only when it matches the work (e.g. healthcare software context). Do not imply endorsement.
 5. **Images:** Optional `image` URL per project; if omitted, the UI uses a deterministic gradient + monogram (no external placeholder services).
 
