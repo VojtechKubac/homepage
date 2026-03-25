@@ -13,7 +13,7 @@ Single-page **Svelte 4** + **Vite 5** + **Tailwind CSS 3** portfolio. Details ar
 
 ## Commands
 
-`npm install` · `npm run dev` (5173) · `npm run build` → `dist/` · `npm run preview` · `npm run check`
+`npm install` · `npm run dev` (5173) · `npm run build` → `dist/` · `npm run preview` · `npm run check` · `npm test` (Vitest) · `npm run test:watch`
 
 ## Conventions (short)
 
