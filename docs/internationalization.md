@@ -13,3 +13,5 @@ Copy lives in the `translations` object in [`src/lib/i18n.js`](../src/lib/i18n.j
 3. Keep `localStorage` / store defaults consistent.
 
 If you rename keys or locales, update every component that uses those strings.
+
+Project cards use `projects.sources.{cfdSupport|github|academic|ententee}` for group titles and `projects.links.*` for primary buttons (see [`docs/projects.md`](projects.md)).
