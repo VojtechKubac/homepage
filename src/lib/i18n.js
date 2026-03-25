@@ -36,7 +36,6 @@ const translations = {
     },
     projects: {
       title: 'Projects',
-      viewRepo: 'View Repository',
       demo: 'Live Demo',
       sources: {
         cfdSupport: 'CFD SuPPORT — TCAE (commercial CAE)',
@@ -103,7 +102,6 @@ const translations = {
     },
     projects: {
       title: 'Projekte',
-      viewRepo: 'Repository ansehen',
       demo: 'Live Demo',
       sources: {
         cfdSupport: 'CFD SuPPORT — TCAE (kommerzielle CAE-Software)',
@@ -170,7 +168,6 @@ const translations = {
     },
     projects: {
       title: 'Projekty',
-      viewRepo: 'Zobrazit úložiště',
       demo: 'Živá ukázka',
       sources: {
         cfdSupport: 'CFD SuPPORT — TCAE (komerční CAE)',

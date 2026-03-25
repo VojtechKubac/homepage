@@ -22,9 +22,15 @@ describe('t', () => {
   it('returns a function that resolves keys for the given locale', () => {
     const en = t('en');
     expect(en('skills.title')).toBe('Skills');
-    expect(en('projects.viewRepo')).toBe('View Repository');
     expect(en('projects.links.repository')).toBe('View repository');
     expect(en('projects.sources.github')).toBe('GitHub & personal');
+  });
+
+  it('keeps projects i18n keys aligned across en, de, and cs', () => {
+    expect(t('de')('projects.links.repository')).toBe('Repository ansehen');
+    expect(t('de')('projects.sources.github')).toBe('GitHub & persönlich');
+    expect(t('cs')('projects.links.repository')).toBe('Zobrazit repozitář');
+    expect(t('cs')('projects.sources.github')).toBe('GitHub a osobní');
   });
 
   it('returns German copy for de', () => {

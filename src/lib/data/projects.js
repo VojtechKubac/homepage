@@ -180,12 +180,8 @@ export const projects = [
     source: 'ententee',
     title: 'THK drones / UAV',
     description:
-      'UAV-related software (THK drones) with ententee; repository is private.',
-    technologies: [],
-    link: {
-      href: 'https://www.drchrono.com/',
-      labelKey: 'projects.links.clientProduct'
-    }
+      'UAV-related software (THK drones) with ententee; repository is private. No public product page — card has no external link.',
+    technologies: []
   },
   {
     id: 'ententee-hub',
@@ -209,7 +205,10 @@ export function getProjectsGroupedBySource() {
   const map = new Map(PROJECT_SOURCE_ORDER.map((s) => [s, []]));
   for (const p of projects) {
     const bucket = map.get(p.source);
-    if (bucket) bucket.push(p);
+    if (bucket === undefined) {
+      throw new Error(`Unknown project source "${p.source}" (project id: ${p.id})`);
+    }
+    bucket.push(p);
   }
   return PROJECT_SOURCE_ORDER.filter((s) => (map.get(s)?.length ?? 0) > 0).map((source) => ({
     source,
