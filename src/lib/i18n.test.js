@@ -23,6 +23,8 @@ describe('t', () => {
     const en = t('en');
     expect(en('skills.title')).toBe('Skills');
     expect(en('projects.viewRepo')).toBe('View Repository');
+    expect(en('projects.links.repository')).toBe('View repository');
+    expect(en('projects.sources.github')).toBe('GitHub & personal');
   });
 
   it('returns German copy for de', () => {

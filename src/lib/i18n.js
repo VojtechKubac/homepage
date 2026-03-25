@@ -37,7 +37,19 @@ const translations = {
     projects: {
       title: 'Projects',
       viewRepo: 'View Repository',
-      demo: 'Live Demo'
+      demo: 'Live Demo',
+      sources: {
+        cfdSupport: 'CFD SuPPORT — TCAE (commercial CAE)',
+        github: 'GitHub & personal',
+        academic: 'Research',
+        ententee: 'ententee (client work)'
+      },
+      links: {
+        repository: 'View repository',
+        cfdSupportSite: 'CFD SuPPORT',
+        researchGroup: 'Research group',
+        clientProduct: 'Product context (DrChrono)'
+      }
     },
     contact: {
       title: 'Get In Touch',
@@ -92,7 +104,19 @@ const translations = {
     projects: {
       title: 'Projekte',
       viewRepo: 'Repository ansehen',
-      demo: 'Live Demo'
+      demo: 'Live Demo',
+      sources: {
+        cfdSupport: 'CFD SuPPORT — TCAE (kommerzielle CAE-Software)',
+        github: 'GitHub & persönlich',
+        academic: 'Forschung',
+        ententee: 'ententee (Kundenarbeit)'
+      },
+      links: {
+        repository: 'Repository ansehen',
+        cfdSupportSite: 'CFD SuPPORT',
+        researchGroup: 'Forschungsgruppe',
+        clientProduct: 'Produktkontext (DrChrono)'
+      }
     },
     contact: {
       title: 'Kontakt aufnehmen',
@@ -147,7 +171,19 @@ const translations = {
     projects: {
       title: 'Projekty',
       viewRepo: 'Zobrazit úložiště',
-      demo: 'Živá ukázka'
+      demo: 'Živá ukázka',
+      sources: {
+        cfdSupport: 'CFD SuPPORT — TCAE (komerční CAE)',
+        github: 'GitHub a osobní',
+        academic: 'Výzkum',
+        ententee: 'ententee (klientské práce)'
+      },
+      links: {
+        repository: 'Zobrazit repozitář',
+        cfdSupportSite: 'CFD SuPPORT',
+        researchGroup: 'Výzkumná skupina',
+        clientProduct: 'Kontext produktu (DrChrono)'
+      }
     },
     contact: {
       title: 'Kontaktujte mě',
