@@ -12,7 +12,6 @@
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.0.0",
-    "@sveltejs/adapter-static": "^3.0.0",
     "svelte": "^4.0.0",
     "svelte-check": "^3.0.0",
     "tailwindcss": "^3.4.0",
@@ -20,8 +19,5 @@
     "autoprefixer": "^10.4.0",
     "typescript": "^5.0.0",
     "vite": "^5.0.0"
-  },
-  "dependencies": {
-    "svelte": "^4.0.0"
   }
 }

@@ -14,11 +14,9 @@
 
 **Persistence:** `localStorage` keys `activeTab`, `language`, `theme`.
 
-## SvelteKit-shaped files
+## Not SvelteKit
 
-[`src/routes/+page.svelte`](../src/routes/+page.svelte) renders all sections in one scroll (no tabs). It is **not** connected to the Vite entry. [`src/app.html`](../src/app.html) is likewise unused by the current Vite flow. Treat as legacy unless you migrate to SvelteKit.
-
-This repo is a **Vite Svelte SPA** (no `@sveltejs/kit` in [`package.json`](../package.json)); routing is in-app state, not filesystem routes.
+This repo is a **Vite Svelte SPA** only: there is **no** `src/routes/`, no `@sveltejs/kit`, and no SvelteKit app template. Routing is in-app state (`activeTab` in [`src/app.svelte`](../src/app.svelte)), not filesystem routes. Adopting SvelteKit would be a deliberate migration.
 
 ## Config reference
 

@@ -16,29 +16,30 @@ A modern, responsive personal portfolio website built with Svelte, Tailwind CSS,
 
 ## Project Structure
 
-```
+Plain **Vite + Svelte** (not SvelteKit). HTML shell is root [`index.html`](index.html).
+
+```text
+├── index.html                  # HTML shell (Vite entry)
 ├── src/
-│   ├── app.svelte              # Main app component with navigation
-│   ├── main.js                 # Vite entry point
+│   ├── app.svelte              # Root Svelte UI (tabs, hero, sections)
+│   ├── main.js                 # Mounts app.svelte (Vite JS entry)
 │   ├── styles.css              # Global styles and animations
-│   ├── app.html                # HTML template
 │   ├── lib/
-│   │   ├── components/         # Reusable section components
+│   │   ├── components/         # Section components
 │   │   ├── data/               # Content data files
 │   │   ├── i18n.js             # Translations
 │   │   └── store.js            # Svelte stores
-│   └── routes/                 # Page routes
-├── public/                     # Static assets (place resume.pdf here)
-├── Dockerfile                  # Docker configuration
-├── docker-compose.yml          # Docker Compose configuration
-└── tailwind.config.js          # Tailwind CSS configuration
+├── public/                     # Static assets (e.g. resume.pdf)
+├── Dockerfile
+├── docker-compose.yml
+└── tailwind.config.js
 ```
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ and npm
+- Node.js 20+ and npm (matches [`Dockerfile`](Dockerfile))
 - Docker and Docker Compose (for containerized development)
 
 ### Local Development
@@ -142,8 +143,7 @@ The contact form uses Formspree for email submissions:
    - One-click deployment
 
 3. **GitHub Pages**:
-   - Use `@sveltejs/adapter-static`
-   - Configure GitHub Actions for auto-deployment
+   - Build with `npm run build` and deploy the `dist/` output (e.g. [`peaceiris/actions-gh-pages`](https://github.com/peaceiris/actions-gh-pages) or `actions/upload-pages-artifact`)
 
 4. **Any Docker-compatible platform**:
    - Use the provided Dockerfile
