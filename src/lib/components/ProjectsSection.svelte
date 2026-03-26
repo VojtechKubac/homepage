@@ -216,16 +216,11 @@
                   <p class="mb-4 text-sm leading-relaxed text-stone-700 dark:text-stone-300">
                     {#if active.team}
                       {translate('projects.details.teamPrefix')}{active.team.size}
-                      {#if active.team.note}
-                        {' '}
-                        {active.team.note}
-                      {/if}
+                      {active.team.note ? ` ${active.team.note}` : ''}
                       {translate('projects.details.teamSuffix')}
                     {/if}
                     {#if active.periodNote}
-                      {#if active.team}
-                        {' '}
-                      {/if}
+                      {active.team ? ' ' : ''}
                       {active.periodNote}
                     {/if}
                   </p>
