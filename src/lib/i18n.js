@@ -2,6 +2,7 @@ const translations = {
   en: {
     nav: {
       about: 'About',
+      background: 'Background',
       experience: 'Experience',
       education: 'Education',
       skills: 'Skills',
@@ -70,6 +71,7 @@ const translations = {
   de: {
     nav: {
       about: 'Über mich',
+      background: 'Werdegang',
       experience: 'Erfahrung',
       education: 'Ausbildung',
       skills: 'Fähigkeiten',
@@ -138,6 +140,7 @@ const translations = {
   cs: {
     nav: {
       about: 'O mně',
+      background: 'Kariéra',
       experience: 'Zkušenosti',
       education: 'Vzdělání',
       skills: 'Dovednosti',

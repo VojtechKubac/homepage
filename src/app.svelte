@@ -5,28 +5,23 @@
   import { t } from './lib/i18n';
   import HeroSection from './lib/components/HeroSection.svelte';
   import AboutSection from './lib/components/AboutSection.svelte';
-  import ExperienceSection from './lib/components/ExperienceSection.svelte';
-  import EducationSection from './lib/components/EducationSection.svelte';
-  import SkillsSection from './lib/components/SkillsSection.svelte';
+  import BackgroundSection from './lib/components/BackgroundSection.svelte';
   import ProjectsSection from './lib/components/ProjectsSection.svelte';
   import ContactSection from './lib/components/ContactSection.svelte';
 
   let isDark = false;
   let translate = t('en');
   let currentLang = 'en';
-  let activeTab = 'about'; // Start with about tab
+  let activeTab = 'about';
 
   const tabs = [
-    { id: 'about', label: 'About' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'education', label: 'Education' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'contact', label: 'Contact' }
+    { id: 'about', labelKey: 'nav.about' },
+    { id: 'background', labelKey: 'nav.background' },
+    { id: 'projects', labelKey: 'nav.projects' },
+    { id: 'contact', labelKey: 'nav.contact' }
   ];
 
   onMount(() => {
-    // Check for saved theme preference or use system preference
     const saved = localStorage.getItem('theme');
     if (saved) {
       isDark = saved === 'dark';
@@ -35,15 +30,44 @@
     }
     updateTheme();
 
-    // Restore language preference
     const savedLang = localStorage.getItem('language') || 'en';
     currentLang = savedLang;
     language.set(savedLang);
     translate = t(savedLang);
 
-    // Restore active tab
-    const savedTab = localStorage.getItem('activeTab') || 'about';
-    activeTab = savedTab;
+    const savedTab = localStorage.getItem('activeTab');
+    if (savedTab && tabs.some(tab => tab.id === savedTab)) {
+      activeTab = savedTab;
+    }
+
+    // Intersection Observer for scroll-triggered reveals
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    // Observe all .reveal elements (initial + future tab switches)
+    function observeReveals() {
+      document.querySelectorAll('.reveal:not(.visible)').forEach((el) => {
+        observer.observe(el);
+      });
+    }
+    observeReveals();
+
+    // Re-observe on tab switch
+    const tabContent = document.getElementById('tab-content');
+    if (tabContent) {
+      const mutationObserver = new MutationObserver(() => {
+        setTimeout(observeReveals, 50);
+      });
+      mutationObserver.observe(tabContent, { childList: true, subtree: true });
+    }
   });
 
   language.subscribe(lang => {
@@ -80,56 +104,48 @@
   <title>Personal Portfolio</title>
 </svelte:head>
 
-<div class="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 transition-colors">
+<div class="min-h-screen bg-stone-50 dark:bg-stone-950 text-stone-900 dark:text-stone-100 transition-colors font-sans">
   <!-- Navigation -->
-  <nav class="sticky top-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+  <nav class="sticky top-0 z-50 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-md border-b border-stone-200 dark:border-stone-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
       <div class="flex justify-between items-center">
-        <div class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <div class="text-xl font-mono font-bold text-emerald-800 dark:text-emerald-400 tracking-tight">
           Portfolio
         </div>
 
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-3">
           <!-- Language Selector -->
-          <div class="flex gap-2">
-            <button
-              on:click={() => setLanguage('en')}
-              class="px-3 py-1 rounded-md text-sm font-medium transition-colors"
-              class:bg-blue-100={currentLang === 'en'}
-              class:dark:bg-blue-900={currentLang === 'en'}
-            >
-              EN
-            </button>
-            <button
-              on:click={() => setLanguage('de')}
-              class="px-3 py-1 rounded-md text-sm font-medium transition-colors"
-              class:bg-blue-100={currentLang === 'de'}
-              class:dark:bg-blue-900={currentLang === 'de'}
-            >
-              DE
-            </button>
-            <button
-              on:click={() => setLanguage('cs')}
-              class="px-3 py-1 rounded-md text-sm font-medium transition-colors"
-              class:bg-blue-100={currentLang === 'cs'}
-              class:dark:bg-blue-900={currentLang === 'cs'}
-            >
-              CS
-            </button>
+          <div class="flex gap-1">
+            {#each ['en', 'de', 'cs'] as lang}
+              <button
+                on:click={() => setLanguage(lang)}
+                class="px-2.5 py-1 rounded text-xs font-mono font-medium uppercase transition-colors"
+                class:bg-emerald-100={currentLang === lang}
+                class:dark:bg-emerald-900={currentLang === lang}
+                class:text-emerald-800={currentLang === lang}
+                class:dark:text-emerald-300={currentLang === lang}
+                class:text-stone-500={currentLang !== lang}
+                class:dark:text-stone-500={currentLang !== lang}
+                class:hover:text-stone-700={currentLang !== lang}
+                class:dark:hover:text-stone-300={currentLang !== lang}
+              >
+                {lang}
+              </button>
+            {/each}
           </div>
 
           <!-- Dark Mode Toggle -->
           <button
             on:click={toggleDarkMode}
-            class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+            class="p-2 rounded-lg bg-stone-200 dark:bg-stone-800 hover:bg-stone-300 dark:hover:bg-stone-700 transition-colors text-stone-600 dark:text-stone-400"
             aria-label="Toggle dark mode"
           >
             {#if isDark}
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
               </svg>
             {:else}
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.536l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.828-2.828a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414l.707.707zm.707 5.657a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 1.414l.707.707zM9 17a1 1 0 011-1h1a1 1 0 110 2h-1a1 1 0 01-1-1z" clip-rule="evenodd" />
               </svg>
             {/if}
@@ -140,30 +156,32 @@
   </nav>
 
   <!-- Hero Section -->
-  <div class="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-slate-900 dark:to-slate-800 border-b border-slate-200 dark:border-slate-800">
-    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+  <div class="border-b border-stone-200 dark:border-stone-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
       <HeroSection {translate} />
-    </main>
+    </div>
   </div>
 
   <!-- Tab Navigation -->
-  <div class="sticky top-16 z-40 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex gap-2 overflow-x-auto">
+  <div class="sticky top-[65px] z-40 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-md border-b border-stone-200 dark:border-stone-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex gap-1">
         {#each tabs as tab (tab.id)}
           <button
+            data-tab={tab.id}
             on:click={() => switchTab(tab.id)}
-            class="px-4 py-3 font-medium text-sm whitespace-nowrap transition-all border-b-2"
-            class:border-blue-600={activeTab === tab.id}
+            class="px-5 py-3 font-medium text-sm tracking-wide transition-all border-b-2"
+            class:border-emerald-600={activeTab === tab.id}
+            class:dark:border-emerald-400={activeTab === tab.id}
             class:border-transparent={activeTab !== tab.id}
-            class:text-blue-600={activeTab === tab.id}
-            class:dark:text-blue-400={activeTab === tab.id}
-            class:text-slate-600={activeTab !== tab.id}
-            class:dark:text-slate-400={activeTab !== tab.id}
-            class:hover:text-slate-900={activeTab !== tab.id}
-            class:dark:hover:text-slate-300={activeTab !== tab.id}
+            class:text-emerald-800={activeTab === tab.id}
+            class:dark:text-emerald-400={activeTab === tab.id}
+            class:text-stone-500={activeTab !== tab.id}
+            class:dark:text-stone-500={activeTab !== tab.id}
+            class:hover:text-stone-700={activeTab !== tab.id}
+            class:dark:hover:text-stone-300={activeTab !== tab.id}
           >
-            {tab.label}
+            {translate(tab.labelKey)}
           </button>
         {/each}
       </div>
@@ -171,29 +189,23 @@
   </div>
 
   <!-- Tab Content -->
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="animate-fade-in">
-      {#if activeTab === 'about'}
-        <AboutSection {translate} />
-      {:else if activeTab === 'experience'}
-        <ExperienceSection {translate} />
-      {:else if activeTab === 'education'}
-        <EducationSection {translate} />
-      {:else if activeTab === 'skills'}
-        <SkillsSection {translate} />
-      {:else if activeTab === 'projects'}
-        <ProjectsSection {translate} />
-      {:else if activeTab === 'contact'}
-        <ContactSection {translate} />
-      {/if}
-    </div>
+  <main id="tab-content" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    {#if activeTab === 'about'}
+      <AboutSection {translate} />
+    {:else if activeTab === 'background'}
+      <BackgroundSection {translate} />
+    {:else if activeTab === 'projects'}
+      <ProjectsSection {translate} />
+    {:else if activeTab === 'contact'}
+      <ContactSection {translate} />
+    {/if}
   </main>
 
   <!-- Footer -->
-  <footer class="bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-20">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <p class="text-center text-slate-600 dark:text-slate-400 text-sm">
-        © {new Date().getFullYear()} Personal Portfolio. All rights reserved.
+  <footer class="bg-stone-100 dark:bg-stone-900 border-t border-stone-200 dark:border-stone-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <p class="text-center text-stone-500 dark:text-stone-500 text-sm font-mono">
+        &copy; {new Date().getFullYear()}
       </p>
     </div>
   </footer>
