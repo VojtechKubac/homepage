@@ -241,7 +241,7 @@ export const projects = [
     source: 'github',
     title: "Master's thesis (code)",
     description:
-      'Thesis-related code and artifacts published on GitHub; on-site summary can be expanded when copy is finalized.',
+      'Public repository containing code and artifacts created during my master’s thesis work.',
     longDescription:
       'A public repository containing code and artifacts created during my master’s thesis work. The on-site card stays intentionally high-level; the repository contains the authoritative context and implementation details.',
     technologies: [],

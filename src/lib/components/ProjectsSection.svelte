@@ -97,6 +97,7 @@
               if (!isFromLink(e)) toggleExpanded(project.id);
             }}
             on:keydown={(e) => {
+              if (e.target !== e.currentTarget) return;
               if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
                 toggleExpanded(project.id);
@@ -207,7 +208,8 @@
                     {#if active.team}
                       {translate('projects.details.teamPrefix')}{active.team.size}
                       {#if active.team.note}
-                        ({active.team.note})
+                        {' '}
+                        {active.team.note}
                       {/if}
                       {translate('projects.details.teamSuffix')}
                     {/if}

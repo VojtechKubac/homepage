@@ -198,7 +198,7 @@ const translations = {
         open: 'Detaily',
         close: 'Zavřít',
         period: 'Období',
-        achievements: 'Highlights',
+        achievements: 'Úspěchy',
         teamPrefix: 'Na projektu pracoval tým o velikosti cca ',
         teamSuffix: '.'
       },
