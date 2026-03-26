@@ -26,7 +26,9 @@ const translations = {
       title: 'Education',
       degree: 'Degree',
       school: 'School',
-      year: 'Year'
+      year: 'Year',
+      thesis: 'Thesis',
+      supervisor: 'Supervisor'
     },
     skills: {
       title: 'Skills',
@@ -92,7 +94,9 @@ const translations = {
       title: 'Ausbildung',
       degree: 'Abschluss',
       school: 'Schule',
-      year: 'Jahr'
+      year: 'Jahr',
+      thesis: 'Abschlussarbeit',
+      supervisor: 'Betreuer'
     },
     skills: {
       title: 'Fähigkeiten',
@@ -158,7 +162,9 @@ const translations = {
       title: 'Vzdělání',
       degree: 'Stupeň',
       school: 'Škola',
-      year: 'Rok'
+      year: 'Rok',
+      thesis: 'Diplomová práce',
+      supervisor: 'Vedoucí práce'
     },
     skills: {
       title: 'Dovednosti',
