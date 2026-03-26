@@ -30,6 +30,7 @@ I set up the **GitLab CI pipeline** that automates the build-test cycle:
 ### Linux Installer
 
 Self-extracting shell script archive:
+
 - Packs tracked Git files plus compiled binaries
 - Compresses with multi-threaded xz (ships embedded xz binary for portability)
 - Produces a single `.sh` file that extracts and installs the complete platform
@@ -39,6 +40,7 @@ Self-extracting shell script archive:
 ### Windows Installer
 
 NSIS-based installer packaging:
+
 - Bundles ParaView, Gnuplot, MSMPI, Cygwin, CalculiX, NetGen, Gmsh, and other dependencies
 - Handles case-sensitive filesystem requirements (Windows-specific)
 - Supports full and minimal installation types

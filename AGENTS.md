@@ -4,14 +4,14 @@
 
 Single-page **Svelte 4** + **Vite 5** + **Tailwind CSS 3** portfolio. Details are split by topic:
 
-| Topic | Doc |
-|--------|-----|
-| Entry, build, tabs, stack | [`docs/architecture.md`](docs/architecture.md) |
-| Locales and strings | [`docs/internationalization.md`](docs/internationalization.md) |
-| Contact form / Formspree | [`docs/contact-form.md`](docs/contact-form.md) |
-| Docker and compose | [`docs/docker.md`](docs/docker.md) |
-| Linear: team, Homepage project for issues | [`docs/linear.md`](docs/linear.md) |
-| Projects tab: data, sources, inclusion rules | [`docs/projects.md`](docs/projects.md) |
+| Topic                                        | Doc                                                            |
+| -------------------------------------------- | -------------------------------------------------------------- |
+| Entry, build, tabs, stack                    | [`docs/architecture.md`](docs/architecture.md)                 |
+| Locales and strings                          | [`docs/internationalization.md`](docs/internationalization.md) |
+| Contact form / Formspree                     | [`docs/contact-form.md`](docs/contact-form.md)                 |
+| Docker and compose                           | [`docs/docker.md`](docs/docker.md)                             |
+| Linear: team, Homepage project for issues    | [`docs/linear.md`](docs/linear.md)                             |
+| Projects tab: data, sources, inclusion rules | [`docs/projects.md`](docs/projects.md)                         |
 
 ## Commands
 

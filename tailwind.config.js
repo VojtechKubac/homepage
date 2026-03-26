@@ -5,7 +5,7 @@ const config = {
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'ui-monospace', 'monospace']
+        mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
       },
       colors: {
         stone: {
@@ -19,7 +19,7 @@ const config = {
           700: '#5C5042',
           800: '#3D352C',
           900: '#1F1B17',
-          950: '#110F0C'
+          950: '#110F0C',
         },
         emerald: {
           50: '#ECFDF5',
@@ -32,13 +32,13 @@ const config = {
           700: '#047857',
           800: '#065F46',
           900: '#064E3B',
-          950: '#022C22'
-        }
-      }
-    }
+          950: '#022C22',
+        },
+      },
+    },
   },
   darkMode: 'class',
-  plugins: []
+  plugins: [],
 };
 
 export default config;

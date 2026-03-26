@@ -18,7 +18,7 @@
     { id: 'about', labelKey: 'nav.about' },
     { id: 'background', labelKey: 'nav.background' },
     { id: 'projects', labelKey: 'nav.projects' },
-    { id: 'contact', labelKey: 'nav.contact' }
+    { id: 'contact', labelKey: 'nav.contact' },
   ];
 
   onMount(() => {
@@ -36,7 +36,7 @@
     translate = t(savedLang);
 
     const savedTab = localStorage.getItem('activeTab');
-    if (savedTab && tabs.some(tab => tab.id === savedTab)) {
+    if (savedTab && tabs.some((tab) => tab.id === savedTab)) {
       activeTab = savedTab;
     }
 
@@ -54,7 +54,7 @@
             }
           });
         },
-        { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+        { threshold: 0.1, rootMargin: '0px 0px -40px 0px' },
       );
     }
 
@@ -84,7 +84,7 @@
     };
   });
 
-  language.subscribe(lang => {
+  language.subscribe((lang) => {
     currentLang = lang;
     translate = t(lang);
   });
@@ -118,12 +118,18 @@
   <title>Personal Portfolio</title>
 </svelte:head>
 
-<div class="min-h-screen bg-stone-50 dark:bg-stone-950 text-stone-900 dark:text-stone-100 transition-colors font-sans">
+<div
+  class="min-h-screen bg-stone-50 font-sans text-stone-900 transition-colors dark:bg-stone-950 dark:text-stone-100"
+>
   <!-- Navigation -->
-  <nav class="sticky top-0 z-50 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-md border-b border-stone-200 dark:border-stone-800">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-      <div class="flex justify-between items-center">
-        <div class="text-xl font-mono font-bold text-emerald-800 dark:text-emerald-400 tracking-tight">
+  <nav
+    class="sticky top-0 z-50 border-b border-stone-200 bg-stone-50/80 backdrop-blur-md dark:border-stone-800 dark:bg-stone-950/80"
+  >
+    <div class="mx-auto max-w-5xl px-4 py-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between">
+        <div
+          class="font-mono text-xl font-bold tracking-tight text-emerald-800 dark:text-emerald-400"
+        >
           Portfolio
         </div>
 
@@ -133,7 +139,7 @@
             {#each ['en', 'de', 'cs'] as lang}
               <button
                 on:click={() => setLanguage(lang)}
-                class="px-2.5 py-1 rounded text-xs font-mono font-medium uppercase transition-colors"
+                class="rounded px-2.5 py-1 font-mono text-xs font-medium uppercase transition-colors"
                 class:bg-emerald-100={currentLang === lang}
                 class:dark:bg-emerald-900={currentLang === lang}
                 class:text-emerald-800={currentLang === lang}
@@ -151,16 +157,20 @@
           <!-- Dark Mode Toggle -->
           <button
             on:click={toggleDarkMode}
-            class="p-2 rounded-lg bg-stone-200 dark:bg-stone-800 hover:bg-stone-300 dark:hover:bg-stone-700 transition-colors text-stone-600 dark:text-stone-400"
+            class="rounded-lg bg-stone-200 p-2 text-stone-600 transition-colors hover:bg-stone-300 dark:bg-stone-800 dark:text-stone-400 dark:hover:bg-stone-700"
             aria-label="Toggle dark mode"
           >
             {#if isDark}
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
               </svg>
             {:else}
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.536l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.828-2.828a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414l.707.707zm.707 5.657a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 1.414l.707.707zM9 17a1 1 0 011-1h1a1 1 0 110 2h-1a1 1 0 01-1-1z" clip-rule="evenodd" />
+              <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.536l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.828-2.828a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414l.707.707zm.707 5.657a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 1.414l.707.707zM9 17a1 1 0 011-1h1a1 1 0 110 2h-1a1 1 0 01-1-1z"
+                  clip-rule="evenodd"
+                />
               </svg>
             {/if}
           </button>
@@ -171,15 +181,17 @@
 
   <!-- Hero Section -->
   <div class="border-b border-stone-200 dark:border-stone-800">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+    <div class="mx-auto max-w-5xl px-4 py-24 sm:px-6 lg:px-8">
       <HeroSection {translate} />
     </div>
   </div>
 
   <!-- Tab Navigation -->
-  <div class="sticky top-[65px] z-40 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-md border-b border-stone-200 dark:border-stone-800">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto">
-      <div class="flex gap-1 min-w-max" role="tablist">
+  <div
+    class="sticky top-[65px] z-40 border-b border-stone-200 bg-stone-50/80 backdrop-blur-md dark:border-stone-800 dark:bg-stone-950/80"
+  >
+    <div class="mx-auto max-w-5xl overflow-x-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex min-w-max gap-1" role="tablist">
         {#each tabs as tab (tab.id)}
           <button
             id="tab-{tab.id}"
@@ -188,7 +200,7 @@
             aria-selected={activeTab === tab.id}
             aria-controls="tab-panel-{tab.id}"
             on:click={() => switchTab(tab.id)}
-            class="shrink-0 whitespace-nowrap px-5 py-3 font-medium text-sm tracking-wide transition-all border-b-2"
+            class="shrink-0 whitespace-nowrap border-b-2 px-5 py-3 text-sm font-medium tracking-wide transition-all"
             class:border-emerald-600={activeTab === tab.id}
             class:dark:border-emerald-400={activeTab === tab.id}
             class:border-transparent={activeTab !== tab.id}
@@ -207,7 +219,7 @@
   </div>
 
   <!-- Tab Content -->
-  <main id="tab-content" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+  <main id="tab-content" class="mx-auto max-w-5xl px-4 py-20 sm:px-6 lg:px-8">
     {#if activeTab === 'about'}
       <div id="tab-panel-about" role="tabpanel" aria-labelledby="tab-about">
         <AboutSection {translate} />
@@ -228,9 +240,9 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-stone-100 dark:bg-stone-900 border-t border-stone-200 dark:border-stone-800">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <p class="text-center text-stone-500 dark:text-stone-500 text-sm font-mono">
+  <footer class="border-t border-stone-200 bg-stone-100 dark:border-stone-800 dark:bg-stone-900">
+    <div class="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
+      <p class="text-center font-mono text-sm text-stone-500 dark:text-stone-500">
         &copy; {new Date().getFullYear()}
       </p>
     </div>

@@ -7,21 +7,22 @@ const translations = {
       education: 'Education',
       skills: 'Skills',
       projects: 'Projects',
-      contact: 'Contact'
+      contact: 'Contact',
     },
     hero: {
-      title: 'Hi, I\'m a Developer',
-      subtitle: 'Full-stack developer passionate about building modern web applications'
+      title: "Hi, I'm a Developer",
+      subtitle: 'Full-stack developer passionate about building modern web applications',
     },
     about: {
       title: 'About Me',
-      description: 'I\'m a professional developer with a passion for creating elegant, efficient solutions to complex problems. I love learning new technologies and pushing the boundaries of what\'s possible.'
+      description:
+        "I'm a professional developer with a passion for creating elegant, efficient solutions to complex problems. I love learning new technologies and pushing the boundaries of what's possible.",
     },
     experience: {
       title: 'Experience',
       role: 'Role',
       company: 'Company',
-      period: 'Period'
+      period: 'Period',
     },
     education: {
       title: 'Education',
@@ -29,13 +30,13 @@ const translations = {
       school: 'School',
       year: 'Year',
       thesis: 'Thesis',
-      supervisor: 'Supervisor'
+      supervisor: 'Supervisor',
     },
     skills: {
       title: 'Skills',
       frontend: 'Frontend',
       backend: 'Backend',
-      tools: 'Tools & Others'
+      tools: 'Tools & Others',
     },
     projects: {
       title: 'Projects',
@@ -46,20 +47,20 @@ const translations = {
         period: 'Timeline',
         achievements: 'Highlights',
         teamPrefix: 'Worked with a team of ~',
-        teamSuffix: '.'
+        teamSuffix: '.',
       },
       sources: {
         cfdSupport: 'CFD SUPPORT — TCAE (commercial CAE)',
         github: 'GitHub & personal',
         academic: 'Research',
-        ententee: 'ententee (client work)'
+        ententee: 'ententee (client work)',
       },
       links: {
         repository: 'View repository',
         cfdSupportSite: 'CFD SUPPORT',
         researchGroup: 'Research group',
-        clientProduct: 'Product context (DrChrono)'
-      }
+        clientProduct: 'Product context (DrChrono)',
+      },
     },
     contact: {
       title: 'Get In Touch',
@@ -70,11 +71,11 @@ const translations = {
       send: 'Send Message',
       sending: 'Sending...',
       success: 'Message sent successfully!',
-      error: 'Failed to send message. Please try again.'
+      error: 'Failed to send message. Please try again.',
     },
     resume: {
-      download: 'Download Resume'
-    }
+      download: 'Download Resume',
+    },
   },
   de: {
     nav: {
@@ -84,21 +85,22 @@ const translations = {
       education: 'Ausbildung',
       skills: 'Fähigkeiten',
       projects: 'Projekte',
-      contact: 'Kontakt'
+      contact: 'Kontakt',
     },
     hero: {
       title: 'Hallo, ich bin Entwickler',
-      subtitle: 'Full-Stack-Entwickler mit Leidenschaft für moderne Webanwendungen'
+      subtitle: 'Full-Stack-Entwickler mit Leidenschaft für moderne Webanwendungen',
     },
     about: {
       title: 'Über mich',
-      description: 'Ich bin ein erfahrener Entwickler mit Leidenschaft für elegante und effiziente Lösungen komplexer Probleme. Ich liebe es, neue Technologien zu lernen und die Grenzen des Möglichen zu verschieben.'
+      description:
+        'Ich bin ein erfahrener Entwickler mit Leidenschaft für elegante und effiziente Lösungen komplexer Probleme. Ich liebe es, neue Technologien zu lernen und die Grenzen des Möglichen zu verschieben.',
     },
     experience: {
       title: 'Erfahrung',
       role: 'Position',
       company: 'Unternehmen',
-      period: 'Zeitraum'
+      period: 'Zeitraum',
     },
     education: {
       title: 'Ausbildung',
@@ -106,13 +108,13 @@ const translations = {
       school: 'Schule',
       year: 'Jahr',
       thesis: 'Abschlussarbeit',
-      supervisor: 'Betreuer'
+      supervisor: 'Betreuer',
     },
     skills: {
       title: 'Fähigkeiten',
       frontend: 'Frontend',
       backend: 'Backend',
-      tools: 'Tools & Sonstiges'
+      tools: 'Tools & Sonstiges',
     },
     projects: {
       title: 'Projekte',
@@ -123,35 +125,36 @@ const translations = {
         period: 'Zeitraum',
         achievements: 'Highlights',
         teamPrefix: 'Mit einem Team von ca. ',
-        teamSuffix: '.'
+        teamSuffix: '.',
       },
       sources: {
         cfdSupport: 'CFD SUPPORT — TCAE (kommerzielle CAE-Software)',
         github: 'GitHub & persönlich',
         academic: 'Forschung',
-        ententee: 'ententee (Kundenarbeit)'
+        ententee: 'ententee (Kundenarbeit)',
       },
       links: {
         repository: 'Repository ansehen',
         cfdSupportSite: 'CFD SUPPORT',
         researchGroup: 'Forschungsgruppe',
-        clientProduct: 'Produktkontext (DrChrono)'
-      }
+        clientProduct: 'Produktkontext (DrChrono)',
+      },
     },
     contact: {
       title: 'Kontakt aufnehmen',
-      description: 'Haben Sie eine Frage oder möchten Sie zusammenarbeiten? Zögern Sie nicht, sich zu melden!',
+      description:
+        'Haben Sie eine Frage oder möchten Sie zusammenarbeiten? Zögern Sie nicht, sich zu melden!',
       name: 'Name',
       email: 'E-Mail',
       message: 'Nachricht',
       send: 'Nachricht senden',
       sending: 'Wird gesendet...',
       success: 'Nachricht erfolgreich versendet!',
-      error: 'Fehler beim Versenden. Bitte versuchen Sie es später erneut.'
+      error: 'Fehler beim Versenden. Bitte versuchen Sie es später erneut.',
     },
     resume: {
-      download: 'Lebenslauf herunterladen'
-    }
+      download: 'Lebenslauf herunterladen',
+    },
   },
   cs: {
     nav: {
@@ -161,21 +164,22 @@ const translations = {
       education: 'Vzdělání',
       skills: 'Dovednosti',
       projects: 'Projekty',
-      contact: 'Kontakt'
+      contact: 'Kontakt',
     },
     hero: {
       title: 'Ahoj, jsem vývojář',
-      subtitle: 'Full-stack vývojář se vášní pro moderní webové aplikace'
+      subtitle: 'Full-stack vývojář se vášní pro moderní webové aplikace',
     },
     about: {
       title: 'O mně',
-      description: 'Jsem zkušený vývojář s vášní pro elegantní a efektivní řešení složitých problémů. Rád se učím nové technologie a posouvám hranice toho, co je možné.'
+      description:
+        'Jsem zkušený vývojář s vášní pro elegantní a efektivní řešení složitých problémů. Rád se učím nové technologie a posouvám hranice toho, co je možné.',
     },
     experience: {
       title: 'Zkušenosti',
       role: 'Pozice',
       company: 'Společnost',
-      period: 'Období'
+      period: 'Období',
     },
     education: {
       title: 'Vzdělání',
@@ -183,13 +187,13 @@ const translations = {
       school: 'Škola',
       year: 'Rok',
       thesis: 'Diplomová práce',
-      supervisor: 'Vedoucí práce'
+      supervisor: 'Vedoucí práce',
     },
     skills: {
       title: 'Dovednosti',
       frontend: 'Frontend',
       backend: 'Backend',
-      tools: 'Nástroje a ostatní'
+      tools: 'Nástroje a ostatní',
     },
     projects: {
       title: 'Projekty',
@@ -200,20 +204,20 @@ const translations = {
         period: 'Období',
         achievements: 'Úspěchy',
         teamPrefix: 'Na projektu pracoval tým o velikosti cca ',
-        teamSuffix: '.'
+        teamSuffix: '.',
       },
       sources: {
         cfdSupport: 'CFD SUPPORT — TCAE (komerční CAE)',
         github: 'GitHub a osobní',
         academic: 'Výzkum',
-        ententee: 'ententee (klientské práce)'
+        ententee: 'ententee (klientské práce)',
       },
       links: {
         repository: 'Zobrazit repozitář',
         cfdSupportSite: 'CFD SUPPORT',
         researchGroup: 'Výzkumná skupina',
-        clientProduct: 'Kontext produktu (DrChrono)'
-      }
+        clientProduct: 'Kontext produktu (DrChrono)',
+      },
     },
     contact: {
       title: 'Kontaktujte mě',
@@ -224,12 +228,12 @@ const translations = {
       send: 'Poslat zprávu',
       sending: 'Odesílání...',
       success: 'Zpráva byla úspěšně odeslána!',
-      error: 'Chyba při odesílání zprávy. Zkuste to prosím později.'
+      error: 'Chyba při odesílání zprávy. Zkuste to prosím později.',
     },
     resume: {
-      download: 'Stáhnout CV'
-    }
-  }
+      download: 'Stáhnout CV',
+    },
+  },
 };
 
 export function getTranslation(lang, key) {

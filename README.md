@@ -45,17 +45,21 @@ Plain **Vite + Svelte** (not SvelteKit). HTML shell is root [`index.html`](index
 ### Local Development
 
 1. **Install dependencies**:
+
    ```bash
    npm install
    ```
 
 2. **Start development server**:
+
    ```bash
    npm run dev
    ```
+
    The app will be available at `http://localhost:5173`
 
 3. **Build for production**:
+
    ```bash
    npm run build
    ```
@@ -68,12 +72,15 @@ Plain **Vite + Svelte** (not SvelteKit). HTML shell is root [`index.html`](index
 ### Docker Setup
 
 1. **Build and run with Docker Compose**:
+
    ```bash
    docker-compose up --build
    ```
+
    The app will be available at `http://localhost:3000`
 
 2. **Build Docker image**:
+
    ```bash
    docker build -t personal-homepage .
    ```
@@ -88,6 +95,7 @@ Plain **Vite + Svelte** (not SvelteKit). HTML shell is root [`index.html`](index
 ### Content Management
 
 All content is managed through data files in `src/lib/data/`:
+
 - `experience.js` - Work experience entries
 - `education.js` - Education history
 - `skills.js` - Skills and proficiency levels
@@ -100,11 +108,19 @@ Translations are in `src/lib/i18n.js`. Add new languages by extending the transl
 
 ```javascript
 const translations = {
-  en: { /* English translations */ },
-  de: { /* German translations */ },
-  cs: { /* Czech translations */ },
-  fr: { /* Add French here */ }
-}
+  en: {
+    /* English translations */
+  },
+  de: {
+    /* German translations */
+  },
+  cs: {
+    /* Czech translations */
+  },
+  fr: {
+    /* Add French here */
+  },
+};
 ```
 
 ### Resume Download
@@ -162,6 +178,7 @@ npm run check:watch  # Watch mode type checking
 ## Color Scheme
 
 The site uses a modern color palette:
+
 - Primary: Blue (`#2563eb`)
 - Secondary: Purple (`#9333ea`)
 - Accent: Amber (`#f59e0b`)
@@ -185,6 +202,7 @@ Customize these in `tailwind.config.js` and `src/styles.css`.
 ## Future Enhancements
 
 Consider these additions:
+
 - Blog section with markdown support
 - Portfolio image gallery with lightbox
 - Analytics integration
@@ -199,6 +217,7 @@ MIT - Feel free to use this template for your portfolio
 ## Support
 
 For issues or questions:
+
 1. Check the existing code comments
 2. Review the official documentation:
    - [Svelte](https://svelte.dev/)

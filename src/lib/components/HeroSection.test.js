@@ -15,9 +15,7 @@ describe('HeroSection', () => {
 
     render(HeroSection, { props: { translate } });
 
-    expect(
-      screen.getByRole('heading', { level: 1, name: 'Mock hero title' }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1, name: 'Mock hero title' })).toBeInTheDocument();
     expect(screen.getByText('Mock subtitle line')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Mock contact' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Mock projects' })).toBeInTheDocument();

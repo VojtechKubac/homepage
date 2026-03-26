@@ -8,6 +8,10 @@
 
 `npm run build` produces a **static** site in **`dist/`**.
 
+## Formatting
+
+- **Prettier**: `npm run format` (write) and `npm run format:check` (CI check).
+
 ## Tab model
 
 [`src/app.svelte`](../src/app.svelte) shows **one main tab** at a time (`about`, `experience`, `education`, `skills`, `projects`, `contact`) via `activeTab` and `{#if}` branches. The **hero** stays above the tab bar.
@@ -20,8 +24,8 @@ This repo is a **Vite Svelte SPA** only: there is **no** `src/routes/`, no `@sve
 
 ## Config reference
 
-| Area | Files |
-|------|--------|
-| Vite, `$lib` | [`vite.config.js`](../vite.config.js) |
-| Svelte compiler | [`svelte.config.js`](../svelte.config.js) |
+| Area               | Files                                                                                      |
+| ------------------ | ------------------------------------------------------------------------------------------ |
+| Vite, `$lib`       | [`vite.config.js`](../vite.config.js)                                                      |
+| Svelte compiler    | [`svelte.config.js`](../svelte.config.js)                                                  |
 | Tailwind / PostCSS | [`tailwind.config.js`](../tailwind.config.js), [`postcss.config.js`](../postcss.config.js) |

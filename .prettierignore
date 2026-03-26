@@ -1,0 +1,7 @@
+dist
+coverage
+node_modules
+.svelte-kit
+.vercel
+.netlify
+package-lock.json

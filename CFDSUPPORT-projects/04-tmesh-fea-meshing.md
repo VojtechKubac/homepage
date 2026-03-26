@@ -19,6 +19,7 @@ The TMESH module handles all meshing in the TCAE platform. While CFD meshing (us
 I integrated two meshing backends, giving users flexibility based on their geometry and requirements:
 
 **NetGen:**
+
 - Automatic tetrahedral meshing from STL or STEP geometry
 - Coarseness presets (very coarse to very fine) plus manual element size control (hMax, hMin)
 - Advanced surface recognition parameters for STL input (chart distance, edge angles, curvature)
@@ -26,6 +27,7 @@ I integrated two meshing backends, giving users flexibility based on their geome
 - Surface normal preprocessing via `surfaceOrient` tool
 
 **Gmsh:**
+
 - Alternative meshing engine with different algorithm options
 - Multiple 2D algorithms (Delaunay, frontal, BAMG) and 3D algorithms (Delaunay, frontal, HXT)
 - Curvature-based size adaptation
@@ -36,13 +38,13 @@ I integrated two meshing backends, giving users flexibility based on their geome
 
 The FEA and CFD meshing paths are fundamentally different:
 
-| Aspect | FEA Mesh | CFD Mesh |
-|--------|----------|----------|
-| Representation | `SolidMesh` (nodes + elements) | `RegionMesh` (OpenFOAM polyMesh) |
-| Element types | Tetrahedra, hexahedra, prisms | Hex-dominant with layers |
-| Boundary layers | Not needed | Critical (y+ refinement) |
-| Tools | NetGen, Gmsh | snappyHexMesh |
-| Input | STL, STEP, pre-generated meshes | STL surfaces |
+| Aspect          | FEA Mesh                        | CFD Mesh                         |
+| --------------- | ------------------------------- | -------------------------------- |
+| Representation  | `SolidMesh` (nodes + elements)  | `RegionMesh` (OpenFOAM polyMesh) |
+| Element types   | Tetrahedra, hexahedra, prisms   | Hex-dominant with layers         |
+| Boundary layers | Not needed                      | Critical (y+ refinement)         |
+| Tools           | NetGen, Gmsh                    | snappyHexMesh                    |
+| Input           | STL, STEP, pre-generated meshes | STL surfaces                     |
 
 ### Mesh Format Ecosystem
 

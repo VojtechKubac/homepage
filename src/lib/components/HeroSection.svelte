@@ -3,22 +3,24 @@
 </script>
 
 <section class="animate-fade-in-up">
-  <h1 class="text-4xl sm:text-5xl font-bold mb-6 text-stone-900 dark:text-stone-50 leading-tight">
+  <h1 class="mb-6 text-4xl font-bold leading-tight text-stone-900 dark:text-stone-50 sm:text-5xl">
     {translate('hero.title')}
   </h1>
-  <p class="text-lg sm:text-xl text-stone-600 dark:text-stone-400 max-w-2xl leading-relaxed mb-10 font-light">
+  <p
+    class="mb-10 max-w-2xl text-lg font-light leading-relaxed text-stone-600 dark:text-stone-400 sm:text-xl"
+  >
     {translate('hero.subtitle')}
   </p>
-  <div class="flex gap-4 flex-wrap">
+  <div class="flex flex-wrap gap-4">
     <button
       on:click={() => document.querySelector('[data-tab="contact"]')?.click()}
-      class="px-6 py-2.5 bg-emerald-700 hover:bg-emerald-800 dark:bg-emerald-600 dark:hover:bg-emerald-700 text-white rounded font-medium text-sm transition-colors"
+      class="rounded bg-emerald-700 px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-emerald-800 dark:bg-emerald-600 dark:hover:bg-emerald-700"
     >
       {translate('contact.title')}
     </button>
     <button
       on:click={() => document.querySelector('[data-tab="projects"]')?.click()}
-      class="px-6 py-2.5 border border-emerald-700 dark:border-emerald-500 text-emerald-700 dark:text-emerald-400 rounded font-medium text-sm hover:bg-emerald-50 dark:hover:bg-emerald-950 transition-colors"
+      class="rounded border border-emerald-700 px-6 py-2.5 text-sm font-medium text-emerald-700 transition-colors hover:bg-emerald-50 dark:border-emerald-500 dark:text-emerald-400 dark:hover:bg-emerald-950"
     >
       {translate('projects.title')}
     </button>
