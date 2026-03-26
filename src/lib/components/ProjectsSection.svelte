@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from 'svelte';
+  import { onMount, tick } from 'svelte';
   import { slide } from 'svelte/transition';
   import { getProjectsGroupedBySource } from '$lib/data/projects.js';
 
@@ -11,6 +11,16 @@
   let expandedId = null;
 
   let columns = 1;
+
+  /** @param {string} id */
+  function detailsButtonId(id) {
+    return `project-details-button-${id}`;
+  }
+
+  /** @param {string} id */
+  function detailsPanelId(id) {
+    return `project-details-panel-${id}`;
+  }
 
   /** @param {number} width */
   function columnsForWidth(width) {
@@ -42,15 +52,16 @@
     return rowEnd;
   }
 
-  /** @param {Event} event */
-  function isFromLink(event) {
-    const t = /** @type {HTMLElement | null} */ (event.target);
-    return Boolean(t?.closest?.('a'));
-  }
-
   /** @param {string} id */
   function toggleExpanded(id) {
     expandedId = expandedId === id ? null : id;
+  }
+
+  /** @param {string} id */
+  async function closeExpanded(id) {
+    expandedId = null;
+    await tick();
+    document.getElementById(detailsButtonId(id))?.focus();
   }
 
   /** @param {string} title */
@@ -90,19 +101,6 @@
           <div
             class="reveal group rounded-lg overflow-hidden bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 hover:border-emerald-300 dark:hover:border-emerald-800 transition-all duration-300 flex flex-col cursor-pointer focus-within:ring-2 focus-within:ring-emerald-400/40"
             style="--stagger-index: {i}"
-            role="button"
-            tabindex="0"
-            aria-expanded={expandedId === project.id}
-            on:click={(e) => {
-              if (!isFromLink(e)) toggleExpanded(project.id);
-            }}
-            on:keydown={(e) => {
-              if (e.target !== e.currentTarget) return;
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                toggleExpanded(project.id);
-              }
-            }}
           >
             <div class="relative overflow-hidden h-40 shrink-0">
               {#if project.image}
@@ -158,10 +156,12 @@
                   </a>
                 {/if}
                 <button
+                  id={detailsButtonId(project.id)}
                   type="button"
                   class="flex-1 min-w-[7rem] px-3 py-1.5 border border-stone-300 dark:border-stone-700 text-stone-700 dark:text-stone-300 rounded text-xs font-medium hover:bg-stone-50 dark:hover:bg-stone-800 transition-colors"
                   aria-expanded={expandedId === project.id}
-                  on:click|stopPropagation={() => toggleExpanded(project.id)}
+                  aria-controls={detailsPanelId(project.id)}
+                  on:click={() => toggleExpanded(project.id)}
                 >
                   {expandedId === project.id
                     ? translate('projects.details.close')
@@ -175,6 +175,9 @@
             {@const active = items.find((p) => p.id === expandedId)}
             {#if active}
               <div
+                id={detailsPanelId(active.id)}
+                role="region"
+                aria-labelledby={detailsButtonId(active.id)}
                 class="col-span-full reveal rounded-lg border border-emerald-200 dark:border-emerald-900 bg-emerald-50/60 dark:bg-emerald-950/30 p-5 md:p-6"
                 style="--stagger-index: {i + 0.5}"
                 transition:slide={{ duration: 180 }}
@@ -195,9 +198,7 @@
                   <button
                     type="button"
                     class="shrink-0 px-3 py-1.5 rounded border border-stone-300 dark:border-stone-700 text-xs font-medium text-stone-700 dark:text-stone-200 hover:bg-white/60 dark:hover:bg-stone-900/60 transition-colors"
-                    on:click={() => {
-                      expandedId = null;
-                    }}
+                    on:click={() => closeExpanded(active.id)}
                   >
                     {translate('projects.details.close')}
                   </button>
