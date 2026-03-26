@@ -136,7 +136,7 @@
         <div class="flex items-center gap-3">
           <!-- Language Selector -->
           <div class="flex gap-1">
-            {#each ['en', 'de', 'cs'] as lang}
+            {#each ['en', 'de', 'cs'] as lang (lang)}
               <button
                 on:click={() => setLanguage(lang)}
                 class="rounded px-2.5 py-1 font-mono text-xs font-medium uppercase transition-colors"

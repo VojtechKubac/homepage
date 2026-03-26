@@ -16,7 +16,7 @@
         {translate('skills.frontend')}
       </h3>
       <div class="grid grid-cols-3 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {#each skills.frontend as skill}
+        {#each skills.frontend as skill (skill.name)}
           <div
             class="group flex flex-col items-center justify-center rounded-lg bg-slate-50 p-4 transition-all hover:scale-110 hover:bg-blue-50 dark:bg-slate-900 dark:hover:bg-blue-900/30"
           >
@@ -39,7 +39,7 @@
         {translate('skills.backend')}
       </h3>
       <div class="grid grid-cols-3 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {#each skills.backend as skill}
+        {#each skills.backend as skill (skill.name)}
           <div
             class="group flex flex-col items-center justify-center rounded-lg bg-slate-50 p-4 transition-all hover:scale-110 hover:bg-purple-50 dark:bg-slate-900 dark:hover:bg-purple-900/30"
           >
@@ -62,7 +62,7 @@
         {translate('skills.tools')}
       </h3>
       <div class="grid grid-cols-3 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {#each skills.tools as skill}
+        {#each skills.tools as skill (skill.name)}
           <div
             class="group flex flex-col items-center justify-center rounded-lg bg-slate-50 p-4 transition-all hover:scale-110 hover:bg-amber-50 dark:bg-slate-900 dark:hover:bg-amber-900/30"
           >

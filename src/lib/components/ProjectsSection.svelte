@@ -104,7 +104,7 @@
         {#each items as project, i (project.id)}
           <div
             class="reveal group flex cursor-pointer flex-col overflow-hidden rounded-lg border border-stone-200 bg-white transition-all duration-300 focus-within:ring-2 focus-within:ring-emerald-400/40 hover:border-emerald-300 dark:border-stone-800 dark:bg-stone-900 dark:hover:border-emerald-800"
-            style="--stagger-index: {i}"
+            style={`--stagger-index: ${i}`}
           >
             <div class="relative h-40 shrink-0 overflow-hidden">
               {#if project.image}
@@ -131,7 +131,7 @@
               </p>
               {#if project.technologies?.length}
                 <div class="mb-4 flex flex-wrap gap-1.5">
-                  {#each project.technologies as tech}
+                  {#each project.technologies as tech (tech)}
                     <span
                       class="rounded bg-stone-100 px-2 py-0.5 font-mono text-xs text-stone-600 dark:bg-stone-800 dark:text-stone-400"
                     >
@@ -185,7 +185,7 @@
                 role="region"
                 aria-labelledby={detailsButtonId(active.id)}
                 class="reveal col-span-full rounded-lg border border-emerald-200 bg-emerald-50/60 p-5 dark:border-emerald-900 dark:bg-emerald-950/30 md:p-6"
-                style="--stagger-index: {i + 0.5}"
+                style={`--stagger-index: ${i + 0.5}`}
                 transition:slide={{ duration: 180 }}
               >
                 <div class="mb-3 flex items-start justify-between gap-4">
@@ -216,16 +216,11 @@
                   <p class="mb-4 text-sm leading-relaxed text-stone-700 dark:text-stone-300">
                     {#if active.team}
                       {translate('projects.details.teamPrefix')}{active.team.size}
-                      {#if active.team.note}
-                        {' '}
-                        {active.team.note}
-                      {/if}
+                      {active.team.note ? ` ${active.team.note}` : ''}
                       {translate('projects.details.teamSuffix')}
                     {/if}
                     {#if active.periodNote}
-                      {#if active.team}
-                        {' '}
-                      {/if}
+                      {active.team ? ' ' : ''}
                       {active.periodNote}
                     {/if}
                   </p>
@@ -245,7 +240,7 @@
                       {translate('projects.details.achievements')}
                     </h5>
                     <ul class="list-disc space-y-1 pl-5 text-sm text-stone-700 dark:text-stone-300">
-                      {#each active.achievements as a}
+                      {#each active.achievements as a (a)}
                         <li>{a}</li>
                       {/each}
                     </ul>
