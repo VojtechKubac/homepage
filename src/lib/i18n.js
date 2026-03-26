@@ -40,6 +40,14 @@ const translations = {
     projects: {
       title: 'Projects',
       demo: 'Live Demo',
+      details: {
+        open: 'Details',
+        close: 'Close',
+        period: 'Timeline',
+        achievements: 'Highlights',
+        teamPrefix: 'Worked with a team of ~',
+        teamSuffix: '.'
+      },
       sources: {
         cfdSupport: 'CFD SUPPORT — TCAE (commercial CAE)',
         github: 'GitHub & personal',
@@ -109,6 +117,14 @@ const translations = {
     projects: {
       title: 'Projekte',
       demo: 'Live Demo',
+      details: {
+        open: 'Details',
+        close: 'Schließen',
+        period: 'Zeitraum',
+        achievements: 'Highlights',
+        teamPrefix: 'Mit einem Team von ca. ',
+        teamSuffix: '.'
+      },
       sources: {
         cfdSupport: 'CFD SUPPORT — TCAE (kommerzielle CAE-Software)',
         github: 'GitHub & persönlich',
@@ -178,6 +194,14 @@ const translations = {
     projects: {
       title: 'Projekty',
       demo: 'Živá ukázka',
+      details: {
+        open: 'Detaily',
+        close: 'Zavřít',
+        period: 'Období',
+        achievements: 'Úspěchy',
+        teamPrefix: 'Na projektu pracoval tým o velikosti cca ',
+        teamSuffix: '.'
+      },
       sources: {
         cfdSupport: 'CFD SUPPORT — TCAE (komerční CAE)',
         github: 'GitHub a osobní',
