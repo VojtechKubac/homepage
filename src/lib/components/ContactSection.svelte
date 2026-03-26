@@ -54,7 +54,7 @@
     <!-- Social Links -->
     <div class="reveal">
       <div class="space-y-3">
-        {#each socialLinks as social}
+        {#each socialLinks as social (social.name)}
           <a
             href={social.url}
             target="_blank"

@@ -29,15 +29,15 @@
       {translate('skills.title')}
     </h3>
     <div class="reveal-stagger grid grid-cols-1 gap-10 md:grid-cols-3">
-      {#each allCategories as category, ci}
-        <div class="reveal" style="--stagger-index: {ci}">
+      {#each allCategories as category, ci (category.key)}
+        <div class="reveal" style={`--stagger-index: ${ci}`}>
           <h4
             class="mb-4 font-mono text-sm font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-500"
           >
             {translate(`skills.${category.key}`)}
           </h4>
           <div class="flex flex-wrap gap-2">
-            {#each category.items as skill}
+            {#each category.items as skill (skill.name)}
               <span
                 class="inline-flex items-center gap-2 rounded bg-stone-100 px-3 py-1.5 text-sm font-medium text-stone-700 transition-colors hover:bg-emerald-50 dark:bg-stone-800 dark:text-stone-300 dark:hover:bg-emerald-950"
               >

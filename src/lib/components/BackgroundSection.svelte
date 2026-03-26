@@ -12,7 +12,7 @@
     </h2>
     <div class="reveal-stagger space-y-10">
       {#each experiences as exp, i (i)}
-        <div class="reveal" style="--stagger-index: {i}">
+        <div class="reveal" style={`--stagger-index: ${i}`}>
           <div class="border-l-2 border-emerald-600 pl-6 dark:border-emerald-700">
             <h3 class="text-lg font-bold text-stone-900 dark:text-stone-50">{exp.role}</h3>
             <p class="font-mono text-sm font-medium text-emerald-700 dark:text-emerald-500">
@@ -25,7 +25,7 @@
               {exp.description}
             </p>
             <div class="flex flex-wrap gap-1.5">
-              {#each exp.technologies as tech}
+              {#each exp.technologies as tech (tech)}
                 <span
                   class="rounded bg-stone-100 px-2 py-0.5 font-mono text-xs text-stone-600 dark:bg-stone-800 dark:text-stone-400"
                 >
@@ -46,7 +46,7 @@
     </h2>
     <div class="reveal-stagger space-y-10">
       {#each education as edu, i (i)}
-        <div class="reveal" style="--stagger-index: {i}">
+        <div class="reveal" style={`--stagger-index: ${i}`}>
           <div class="border-l-2 border-stone-300 pl-6 dark:border-stone-700">
             <h3 class="text-lg font-bold text-stone-900 dark:text-stone-50">{edu.degree}</h3>
             <p class="font-mono text-sm font-medium text-emerald-700 dark:text-emerald-500">

@@ -12,6 +12,12 @@
 
 - **Prettier**: `npm run format` (write) and `npm run format:check` (CI check).
 
+## Code quality
+
+- **ESLint**: `npm run lint` (or `npm run lint:fix`) for JS/TS/Svelte linting.
+- **Svelte / TS diagnostics**: `npm run check` via `svelte-check`.
+- **Tests**: `npm test` via Vitest.
+
 ## Tab model
 
 [`src/app.svelte`](../src/app.svelte) shows **one main tab** at a time (`about`, `experience`, `education`, `skills`, `projects`, `contact`) via `activeTab` and `{#if}` branches. The **hero** stays above the tab bar.
