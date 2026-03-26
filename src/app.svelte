@@ -41,21 +41,30 @@
     }
 
     // Intersection Observer for scroll-triggered reveals
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
-    );
+    let observer;
+    let mutationObserver;
 
-    // Observe all .reveal elements (initial + future tab switches)
+    if (typeof IntersectionObserver !== 'undefined') {
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+      );
+    }
+
     function observeReveals() {
       document.querySelectorAll('.reveal:not(.visible)').forEach((el) => {
-        observer.observe(el);
+        if (observer) {
+          observer.observe(el);
+        } else {
+          el.classList.add('visible');
+        }
       });
     }
     observeReveals();
@@ -63,11 +72,16 @@
     // Re-observe on tab switch
     const tabContent = document.getElementById('tab-content');
     if (tabContent) {
-      const mutationObserver = new MutationObserver(() => {
+      mutationObserver = new MutationObserver(() => {
         setTimeout(observeReveals, 50);
       });
       mutationObserver.observe(tabContent, { childList: true, subtree: true });
     }
+
+    return () => {
+      observer?.disconnect();
+      mutationObserver?.disconnect();
+    };
   });
 
   language.subscribe(lang => {
