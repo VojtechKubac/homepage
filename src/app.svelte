@@ -178,13 +178,17 @@
 
   <!-- Tab Navigation -->
   <div class="sticky top-[65px] z-40 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-md border-b border-stone-200 dark:border-stone-800">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex gap-1">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto">
+      <div class="flex gap-1 min-w-max" role="tablist">
         {#each tabs as tab (tab.id)}
           <button
+            id="tab-{tab.id}"
             data-tab={tab.id}
+            role="tab"
+            aria-selected={activeTab === tab.id}
+            aria-controls="tab-panel-{tab.id}"
             on:click={() => switchTab(tab.id)}
-            class="px-5 py-3 font-medium text-sm tracking-wide transition-all border-b-2"
+            class="shrink-0 whitespace-nowrap px-5 py-3 font-medium text-sm tracking-wide transition-all border-b-2"
             class:border-emerald-600={activeTab === tab.id}
             class:dark:border-emerald-400={activeTab === tab.id}
             class:border-transparent={activeTab !== tab.id}
@@ -205,13 +209,21 @@
   <!-- Tab Content -->
   <main id="tab-content" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
     {#if activeTab === 'about'}
-      <AboutSection {translate} />
+      <div id="tab-panel-about" role="tabpanel" aria-labelledby="tab-about">
+        <AboutSection {translate} />
+      </div>
     {:else if activeTab === 'background'}
-      <BackgroundSection {translate} />
+      <div id="tab-panel-background" role="tabpanel" aria-labelledby="tab-background">
+        <BackgroundSection {translate} />
+      </div>
     {:else if activeTab === 'projects'}
-      <ProjectsSection {translate} />
+      <div id="tab-panel-projects" role="tabpanel" aria-labelledby="tab-projects">
+        <ProjectsSection {translate} />
+      </div>
     {:else if activeTab === 'contact'}
-      <ContactSection {translate} />
+      <div id="tab-panel-contact" role="tabpanel" aria-labelledby="tab-contact">
+        <ContactSection {translate} />
+      </div>
     {/if}
   </main>
 
