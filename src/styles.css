@@ -7,14 +7,16 @@ html {
 }
 
 body {
-  @apply antialiased font-sans;
+  @apply font-sans antialiased;
 }
 
 /* Scroll-triggered reveal animation */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
 }
 
 .reveal.visible {
@@ -44,8 +46,12 @@ body {
 }
 
 @keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .animate-fade-in {

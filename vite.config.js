@@ -10,16 +10,16 @@ export default defineConfig({
   plugins: [svelte()],
   resolve: {
     alias: {
-      $lib: `${__dirname}/src/lib`
-    }
+      $lib: `${__dirname}/src/lib`,
+    },
   },
   server: {
     port: 5173,
     fs: {
-      allow: ['.']
-    }
+      allow: ['.'],
+    },
   },
   build: {
-    target: 'esnext'
-  }
+    target: 'esnext',
+  },
 });

@@ -26,7 +26,7 @@ export const PROJECT_SOURCE_ORDER = /** @type {const} */ ([
   'cfdSupport',
   'github',
   'academic',
-  'ententee'
+  'ententee',
 ]);
 
 /** @type {Project[]} */
@@ -47,13 +47,16 @@ export const projects = [
     achievements: [
       'Integrated CalculiX runs into a ParaView-centric desktop workflow (setup → solve → post-process).',
       'Implemented CFD-to-FEA load mapping to support FSI-style pipelines without bespoke user scripting.',
-      'Added modal analysis and tooling around model preparation and inspection.'
+      'Added modal analysis and tooling around model preparation and inspection.',
     ],
-    team: { size: 10, note: 'Cross-functional CAE team; tight coupling with platform/visualization work.' },
+    team: {
+      size: 10,
+      note: 'Cross-functional CAE team; tight coupling with platform/visualization work.',
+    },
     link: {
       href: 'https://www.cfdsupport.com/',
-      labelKey: 'projects.links.cfdSupportSite'
-    }
+      labelKey: 'projects.links.cfdSupportSite',
+    },
   },
   {
     id: 'tcaa',
@@ -70,13 +73,13 @@ export const projects = [
     achievements: [
       'Implemented FW–H / Farassat 1A pipelines for far-field acoustics from CFD surfaces.',
       'Added signal processing outputs (SPL, octave bands) and directivity visualizations.',
-      'Enabled optional WAV export for quick qualitative assessment and stakeholder communication.'
+      'Enabled optional WAV export for quick qualitative assessment and stakeholder communication.',
     ],
     team: { size: 10, note: 'Close collaboration with CFD and visualization contributors.' },
     link: {
       href: 'https://www.cfdsupport.com/',
-      labelKey: 'projects.links.cfdSupportSite'
-    }
+      labelKey: 'projects.links.cfdSupportSite',
+    },
   },
   {
     id: 'tbase',
@@ -93,13 +96,13 @@ export const projects = [
     achievements: [
       'Designed a SQLite-backed store for simulations, parameter sets, and geometry/result artifacts.',
       'Built IPC integration to drive ParaView sessions directly from stored simulations.',
-      'Laid groundwork for statistics and surrogate modeling over parametric design spaces.'
+      'Laid groundwork for statistics and surrogate modeling over parametric design spaces.',
     ],
     team: { size: 10 },
     link: {
       href: 'https://www.cfdsupport.com/',
-      labelKey: 'projects.links.cfdSupportSite'
-    }
+      labelKey: 'projects.links.cfdSupportSite',
+    },
   },
   {
     id: 'tmesh-fea',
@@ -111,17 +114,18 @@ export const projects = [
       'TMESH focuses on producing robust FEA-ready volume meshes from practical CAD inputs. The work is a mix of geometry handling, meshing backends, and UX: users need safe defaults, predictable outcomes, and clear diagnostics when geometry is messy. It’s under active development as new geometry types and assemblies appear.',
     technologies: ['C++', 'NetGen', 'Gmsh', 'ParaView'],
     period: { start: '2023', end: 'present' },
-    periodNote: 'Runs in parallel with solver integration (FEA) and platform-level geometry workflows.',
+    periodNote:
+      'Runs in parallel with solver integration (FEA) and platform-level geometry workflows.',
     achievements: [
       'Integrated NetGen and Gmsh meshing backends for STL/STEP sources.',
       'Added mesh quality controls and diagnostics for common failure modes.',
-      'Supported multi-component assemblies with practical UX for selection and inspection.'
+      'Supported multi-component assemblies with practical UX for selection and inspection.',
     ],
     team: { size: 10 },
     link: {
       href: 'https://www.cfdsupport.com/',
-      labelKey: 'projects.links.cfdSupportSite'
-    }
+      labelKey: 'projects.links.cfdSupportSite',
+    },
   },
   {
     id: 'tmesh-tcfd-topt',
@@ -133,17 +137,18 @@ export const projects = [
       'Beyond the named modules above, I contribute across the platform where needed — primarily meshing, CFD orchestration around OpenFOAM, and optimization workflows. This is intentionally described as “ongoing” because the work overlaps across releases and teams; priorities shift based on customer needs and platform readiness.',
     technologies: ['C++', 'OpenFOAM', 'Python', 'ParaView'],
     period: { start: '2023', end: 'present' },
-    periodNote: 'Represents continuous cross-module contributions rather than a single fixed feature set.',
+    periodNote:
+      'Represents continuous cross-module contributions rather than a single fixed feature set.',
     achievements: [
       'Improved CFD setup/solve ergonomics around OpenFOAM within a desktop workflow.',
       'Extended optimization workflows (DoE/DIRECT/EGO-style) integrated with platform data management.',
-      'Shipped incremental usability and stability improvements across meshing and post-processing.'
+      'Shipped incremental usability and stability improvements across meshing and post-processing.',
     ],
     team: { size: 10, note: 'Multiple subteams; work often spans boundaries between modules.' },
     link: {
       href: 'https://www.cfdsupport.com/',
-      labelKey: 'projects.links.cfdSupportSite'
-    }
+      labelKey: 'projects.links.cfdSupportSite',
+    },
   },
   {
     id: 'devops-tcae',
@@ -160,13 +165,13 @@ export const projects = [
     achievements: [
       'Built CI pipelines for backend components and ParaView plugins with a focus on fast feedback.',
       'Maintained Linux/Windows packaging workflows suitable for desktop distribution.',
-      'Added automated tests (CTest + headless Qt where appropriate) to prevent regressions.'
+      'Added automated tests (CTest + headless Qt where appropriate) to prevent regressions.',
     ],
     team: { size: 10 },
     link: {
       href: 'https://www.cfdsupport.com/',
-      labelKey: 'projects.links.cfdSupportSite'
-    }
+      labelKey: 'projects.links.cfdSupportSite',
+    },
   },
   {
     id: 'tbrain',
@@ -182,13 +187,13 @@ export const projects = [
     achievements: [
       'Defined initial architecture for retrieval-augmented assistance over internal documentation.',
       'Explored tool-calling boundaries appropriate for a simulation desktop application.',
-      'Shaped product direction: assistant UX that complements (not replaces) established workflows.'
+      'Shaped product direction: assistant UX that complements (not replaces) established workflows.',
     ],
     team: { size: 6, note: 'Small exploratory effort within the larger platform team.' },
     link: {
       href: 'https://www.cfdsupport.com/',
-      labelKey: 'projects.links.cfdSupportSite'
-    }
+      labelKey: 'projects.links.cfdSupportSite',
+    },
   },
 
   // --- GitHub & meta
@@ -206,13 +211,13 @@ export const projects = [
     achievements: [
       'Built a modular automation setup around Interactive Brokers workflows.',
       'Focused on operational safety: repeatable runs, logging, and failure visibility.',
-      'Kept the scope practical and maintainable rather than “one giant bot”.'
+      'Kept the scope practical and maintainable rather than “one giant bot”.',
     ],
     team: { size: 1 },
     link: {
       href: 'https://github.com/VojtechKubac/ibkr-trading-bot',
-      labelKey: 'projects.links.repository'
-    }
+      labelKey: 'projects.links.repository',
+    },
   },
   {
     id: 'homepage-site',
@@ -224,17 +229,18 @@ export const projects = [
       'This site is a small but intentional front-end project: a fast single-page portfolio with a clean content model, internationalization, and a lightweight contact flow. It’s actively refined as I iterate on copy and presentation — the goal is to keep it simple, maintainable, and pleasant to browse.',
     technologies: ['Svelte 4', 'Vite', 'Tailwind CSS'],
     period: { start: '2026', end: 'present' },
-    periodNote: 'Iterated in small PRs as content and UI evolve; designed to stay easy to maintain long-term.',
+    periodNote:
+      'Iterated in small PRs as content and UI evolve; designed to stay easy to maintain long-term.',
     achievements: [
       'Shipped a Svelte + Vite + Tailwind single-page structure with a clear component/data split.',
       'Added i18n across EN/DE/CS without bringing in heavy frameworks.',
-      'Integrated a contact form flow appropriate for a static deployment model.'
+      'Integrated a contact form flow appropriate for a static deployment model.',
     ],
     team: { size: 1 },
     link: {
       href: 'https://github.com/VojtechKubac/homepage',
-      labelKey: 'projects.links.repository'
-    }
+      labelKey: 'projects.links.repository',
+    },
   },
   {
     id: 'master-thesis',
@@ -246,17 +252,18 @@ export const projects = [
       'A public repository containing code and artifacts created during my master’s thesis work. The on-site card stays intentionally high-level; the repository contains the authoritative context and implementation details.',
     technologies: [],
     period: { start: '2021', end: '2022' },
-    periodNote: 'Completed as part of master’s thesis work; the repository is kept for reference and reproducibility.',
+    periodNote:
+      'Completed as part of master’s thesis work; the repository is kept for reference and reproducibility.',
     achievements: [
       'Published thesis code/artifacts in a reproducible form.',
       'Documented usage sufficiently for reviewers and future reference.',
-      'Kept the on-site summary focused on public material.'
+      'Kept the on-site summary focused on public material.',
     ],
     team: { size: 1 },
     link: {
       href: 'https://github.com/VojtechKubac/MasterThesis',
-      labelKey: 'projects.links.repository'
-    }
+      labelKey: 'projects.links.repository',
+    },
   },
 
   // --- Academic
@@ -275,13 +282,13 @@ export const projects = [
     achievements: [
       'Contributed to group research efforts in computational membrane modeling.',
       'Built and iterated simulation/model setups with an emphasis on reproducibility.',
-      'Collaborated closely with the lab through ongoing discussions and review cycles.'
+      'Collaborated closely with the lab through ongoing discussions and review cycles.',
     ],
     team: { size: 6, note: 'Research group context; collaboration varied per sub-topic.' },
     link: {
       href: 'https://www.karlin.mff.cuni.cz/~allolio/',
-      labelKey: 'projects.links.researchGroup'
-    }
+      labelKey: 'projects.links.researchGroup',
+    },
   },
 
   // --- ententee (client: EverHealth / DrChrono ecosystem; repos private)
@@ -300,13 +307,13 @@ export const projects = [
     achievements: [
       'Delivered a production web application aligned with stakeholder-driven workflow requirements.',
       'Worked within domain constraints (privacy, operational reliability, careful rollout).',
-      'Kept a professional public footprint by linking to product context rather than private code.'
+      'Kept a professional public footprint by linking to product context rather than private code.',
     ],
     team: { size: 5, note: 'Small product team; responsibilities shifted across delivery phases.' },
     link: {
       href: 'https://www.drchrono.com/',
-      labelKey: 'projects.links.clientProduct'
-    }
+      labelKey: 'projects.links.clientProduct',
+    },
   },
   {
     id: 'uav-thk',
@@ -322,16 +329,15 @@ export const projects = [
     achievements: [
       'Contributed to UAV-adjacent software development within client constraints.',
       'Balanced delivery needs with careful handling of non-public details.',
-      'Kept the on-site description intentionally high-level and professional.'
+      'Kept the on-site description intentionally high-level and professional.',
     ],
-    team: { size: 4 }
+    team: { size: 4 },
   },
   {
     id: 'ententee-hub',
     source: 'ententee',
     title: 'Ententee Hub',
-    description:
-      'Internal hub application for ententee workflows; repository is private.',
+    description: 'Internal hub application for ententee workflows; repository is private.',
     technologies: [],
     period: { start: '2021', end: '2022' },
     periodNote: 'Evolved over time as internal processes changed and new workflow needs emerged.',
@@ -340,14 +346,14 @@ export const projects = [
     achievements: [
       'Built internal tooling to streamline operational workflows.',
       'Iterated rapidly based on feedback from day-to-day users.',
-      'Kept external linking professional: product context only, no private code exposure.'
+      'Kept external linking professional: product context only, no private code exposure.',
     ],
     team: { size: 5, note: 'Internal product with close feedback loops from users.' },
     link: {
       href: 'https://www.drchrono.com/',
-      labelKey: 'projects.links.clientProduct'
-    }
-  }
+      labelKey: 'projects.links.clientProduct',
+    },
+  },
 ];
 
 /**
@@ -365,6 +371,6 @@ export function getProjectsGroupedBySource() {
   }
   return PROJECT_SOURCE_ORDER.filter((s) => (map.get(s)?.length ?? 0) > 0).map((source) => ({
     source,
-    items: /** @type {Project[]} */ (map.get(source))
+    items: /** @type {Project[]} */ (map.get(source)),
   }));
 }

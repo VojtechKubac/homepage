@@ -30,6 +30,7 @@ TBRAIN is a chat-based AI assistant embedded in the ParaView GUI that can:
 ### Tool Calling
 
 The agent can invoke structured tools:
+
 - `search_knowledge` -- RAG query against the knowledge base
 - `get_keyword_values` / `set_keyword_values` -- read/write TCAE project configuration
 - `get_available_processors` -- system info queries

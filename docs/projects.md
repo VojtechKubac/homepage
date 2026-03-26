@@ -8,16 +8,16 @@
 
 ## Project object shape (`projects.js`)
 
-| Field | Required | Type | Notes |
-|--------|----------|------|--------|
-| `id` | yes | `string` | Stable key for `{#each ... (id)}` and gradients. |
-| `source` | yes | `ProjectSource` | One of `cfdSupport`, `github`, `academic`, `ententee` (must appear in `PROJECT_SOURCE_ORDER`). |
-| `title` | yes | `string` | Card heading. |
-| `description` | yes | `string` | Card body (keep NDA-safe). |
-| `technologies` | yes | `string[]` | May be empty; tags hidden when empty. |
-| `link` | no | `{ href: string, labelKey: string }` | `labelKey` is a dotted i18n path under `projects.links.*`. Omit when there is no appropriate public URL. |
-| `demo` | no | `string` (URL) | Optional second button; label is always `projects.demo`. |
-| `image` | no | `string` (URL) | Optional hero image; otherwise gradient + monogram. |
+| Field          | Required | Type                                 | Notes                                                                                                    |
+| -------------- | -------- | ------------------------------------ | -------------------------------------------------------------------------------------------------------- |
+| `id`           | yes      | `string`                             | Stable key for `{#each ... (id)}` and gradients.                                                         |
+| `source`       | yes      | `ProjectSource`                      | One of `cfdSupport`, `github`, `academic`, `ententee` (must appear in `PROJECT_SOURCE_ORDER`).           |
+| `title`        | yes      | `string`                             | Card heading.                                                                                            |
+| `description`  | yes      | `string`                             | Card body (keep NDA-safe).                                                                               |
+| `technologies` | yes      | `string[]`                           | May be empty; tags hidden when empty.                                                                    |
+| `link`         | no       | `{ href: string, labelKey: string }` | `labelKey` is a dotted i18n path under `projects.links.*`. Omit when there is no appropriate public URL. |
+| `demo`         | no       | `string` (URL)                       | Optional second button; label is always `projects.demo`.                                                 |
+| `image`        | no       | `string` (URL)                       | Optional hero image; otherwise gradient + monogram.                                                      |
 
 Example:
 
@@ -34,12 +34,12 @@ Example:
 
 ## Sources (`source` field)
 
-| Value | Meaning |
-|--------|---------|
-| `cfdSupport` | Work on TCAE with CFD SUPPORT; public pointer is the company/product site, not proprietary code. |
-| `github` | Public (or listed) GitHub repositories and this site itself. |
-| `academic` | University / research (e.g. doctoral work, group homepages). |
-| `ententee` | Client delivery; repositories are often private — add a `link` only when a public URL is accurate (e.g. healthcare product context), otherwise omit `link`. |
+| Value        | Meaning                                                                                                                                                     |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `cfdSupport` | Work on TCAE with CFD SUPPORT; public pointer is the company/product site, not proprietary code.                                                            |
+| `github`     | Public (or listed) GitHub repositories and this site itself.                                                                                                |
+| `academic`   | University / research (e.g. doctoral work, group homepages).                                                                                                |
+| `ententee`   | Client delivery; repositories are often private — add a `link` only when a public URL is accurate (e.g. healthcare product context), otherwise omit `link`. |
 
 Order of groups is fixed in `PROJECT_SOURCE_ORDER` in `projects.js`.
 
