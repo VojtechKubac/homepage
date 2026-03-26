@@ -20,10 +20,10 @@
             <p class="text-sm text-slate-500 dark:text-slate-400 mb-3">{edu.period}</p>
             {#if edu.thesis}
               <p class="text-sm text-slate-600 dark:text-slate-400 italic">
-                Thesis: {edu.thesis.title}
+                {translate('education.thesis')}: {edu.thesis.title}
               </p>
               <p class="text-sm text-slate-500 dark:text-slate-500">
-                Supervisor: {edu.thesis.supervisor}
+                {translate('education.supervisor')}: {edu.thesis.supervisor}
               </p>
             {/if}
           </div>
