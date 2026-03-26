@@ -109,13 +109,13 @@
       </div>
 
       {#if submitStatus === 'success'}
-        <div class="p-3 bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400 rounded-lg text-sm animate-fade-in">
+        <div role="status" aria-live="polite" class="p-3 bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400 rounded-lg text-sm animate-fade-in">
           {translate('contact.success')}
         </div>
       {/if}
 
       {#if submitStatus === 'error'}
-        <div class="p-3 bg-red-50 dark:bg-red-950 text-red-700 dark:text-red-400 rounded-lg text-sm animate-fade-in">
+        <div role="alert" class="p-3 bg-red-50 dark:bg-red-950 text-red-700 dark:text-red-400 rounded-lg text-sm animate-fade-in">
           {translate('contact.error')}
         </div>
       {/if}

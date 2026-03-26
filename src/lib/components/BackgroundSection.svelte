@@ -41,9 +41,17 @@
         <div class="reveal" style="--stagger-index: {i}">
           <div class="border-l-2 border-stone-300 dark:border-stone-700 pl-6">
             <h3 class="text-lg font-bold text-stone-900 dark:text-stone-50">{edu.degree}</h3>
-            <p class="text-sm font-mono text-emerald-700 dark:text-emerald-500 font-medium">{edu.school}</p>
-            <p class="text-xs text-stone-500 dark:text-stone-500 mt-1 mb-3 font-mono">{edu.year}</p>
-            <p class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">{edu.description}</p>
+            <p class="text-sm font-mono text-emerald-700 dark:text-emerald-500 font-medium">{edu.field}</p>
+            <p class="text-sm text-stone-600 dark:text-stone-400">{edu.school} · {edu.location}</p>
+            <p class="text-xs text-stone-500 dark:text-stone-500 mt-1 mb-3 font-mono">{edu.period}</p>
+            {#if edu.thesis}
+              <p class="text-sm text-stone-600 dark:text-stone-400 italic">
+                {translate('education.thesis')}: {edu.thesis.title}
+              </p>
+              <p class="text-sm text-stone-500 dark:text-stone-500">
+                {translate('education.supervisor')}: {edu.thesis.supervisor}
+              </p>
+            {/if}
           </div>
         </div>
       {/each}
