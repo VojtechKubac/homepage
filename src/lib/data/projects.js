@@ -53,6 +53,7 @@ export const projects = [
       size: 10,
       note: 'Cross-functional CAE team; tight coupling with platform/visualization work.',
     },
+    image: '/images/projects/tfea-workflow.png',
     link: {
       href: 'https://www.cfdsupport.com/',
       labelKey: 'projects.links.cfdSupportSite',
@@ -66,7 +67,8 @@ export const projects = [
       'Far-field noise from CFD surfaces via FW–H / Farassat 1A, signal processing (SPL, octaves), directivity, and optional WAV export.',
     longDescription:
       'This module turns CFD surface data into actionable aeroacoustic outputs: far-field pressure, SPL spectra, octave bands, and directivity. It’s built to be used by engineers who already live in the CFD workflow — the goal is consistent results with minimal “academic ceremony”. Actively iterated as real-world cases reveal edge conditions.',
-    technologies: ['C++', 'OpenFOAM', 'ParaView', 'DSP'],
+    technologies: ['C++23', 'OpenFOAM', 'ParaView', 'DSP'],
+    image: '/images/projects/tcaa-drone-acoustics.png',
     period: { start: '2024', end: 'present' },
     periodNote:
       'Developed alongside CFD and post-processing tooling; validation happens case-by-case as customer examples come in.',
@@ -89,7 +91,7 @@ export const projects = [
       'SQLite-backed parametric design database: simulation CRUD, geometry archive, IPC to ParaView, statistics over design spaces, surrogate modeling groundwork.',
     longDescription:
       'TBASE is the “memory” of the platform: it tracks simulations, parameters, geometry artifacts, and result metadata so users can iterate reliably. The core design goal is reproducibility across runs while keeping the UI responsive. It’s an active area because the database model grows with new solvers and workflows.',
-    technologies: ['C++', 'SQLite', 'IPC', 'ParaView'],
+    technologies: ['C++23', 'SQLite', 'IPC', 'ParaView', 'Qt'],
     period: { start: '2023', end: 'present' },
     periodNote:
       'Evolves as new modules (FEA/acoustics/optimization) require richer metadata and artifact handling.',
@@ -112,7 +114,8 @@ export const projects = [
       'Volume meshing for structural/thermal analysis from STL/STEP via NetGen and Gmsh, with quality controls and multi-component assemblies.',
     longDescription:
       'TMESH focuses on producing robust FEA-ready volume meshes from practical CAD inputs. The work is a mix of geometry handling, meshing backends, and UX: users need safe defaults, predictable outcomes, and clear diagnostics when geometry is messy. It’s under active development as new geometry types and assemblies appear.',
-    technologies: ['C++', 'NetGen', 'Gmsh', 'ParaView'],
+    technologies: ['C++23', 'NetGen', 'Gmsh', 'ParaView'],
+    image: '/images/projects/tmesh-fea-cfd-comparison.png',
     period: { start: '2023', end: 'present' },
     periodNote:
       'Runs in parallel with solver integration (FEA) and platform-level geometry workflows.',
@@ -135,7 +138,8 @@ export const projects = [
       'Continuous development on meshing, OpenFOAM-based CFD setup/solve, and optimization (DoE, DIRECT, EGO) integrated with the wider platform.',
     longDescription:
       'Beyond the named modules above, I contribute across the platform where needed — primarily meshing, CFD orchestration around OpenFOAM, and optimization workflows. This is intentionally described as “ongoing” because the work overlaps across releases and teams; priorities shift based on customer needs and platform readiness.',
-    technologies: ['C++', 'OpenFOAM', 'Python', 'ParaView'],
+    technologies: ['C++23', 'OpenFOAM', 'Python', 'ParaView'],
+    image: '/images/projects/tcfd-pump-pressure.png',
     period: { start: '2023', end: 'present' },
     periodNote:
       'Represents continuous cross-module contributions rather than a single fixed feature set.',
@@ -159,6 +163,7 @@ export const projects = [
     longDescription:
       'I maintain parts of the build/release pipeline so the desktop platform stays shippable. The focus is practical developer velocity: CI that catches regressions early, packaging that works on user machines, and tests that can run headless (including UI-facing components where feasible).',
     technologies: ['GitLab CI', 'CMake', 'CTest', 'Qt'],
+    image: '/images/projects/tcae-module-dependencies.png',
     period: { start: '2023', end: 'present' },
     periodNote:
       'Continuous maintenance alongside feature development; CI/packaging evolve with ParaView/Qt and toolchain changes.',
@@ -181,7 +186,7 @@ export const projects = [
       'TAIGENT / TBRAIN: in-app assistant for TCAE (RAG over docs, tool calling, LLM integration). Mainly architecture and product direction on my side so far.',
     longDescription:
       'TBRAIN/TAIGENT explores an in-product assistant that helps engineers navigate documentation and workflows. My contribution so far is primarily architecture and product direction: defining safe tool boundaries, retrieval strategies over internal docs, and how to integrate assistant UX into an existing desktop app without disrupting core workflows.',
-    technologies: ['C++', 'ParaView', 'LLM', 'RAG'],
+    technologies: ['C++23', 'ParaView', 'LLM', 'RAG'],
     period: { start: '2025', end: 'present' },
     periodNote: 'Early-stage exploration; developed in parallel with the core platform roadmap.',
     achievements: [
