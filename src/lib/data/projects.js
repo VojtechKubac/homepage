@@ -39,9 +39,13 @@ export const projects = [
     description:
       'Structural and thermal FEA inside TCAE: CalculiX integration, CFD-to-FEA loads (FSI mapping), modal analysis, and ParaView-based workflow UI.',
     longDescription:
-      'I’m building and maintaining the FEA module inside TCAE, focused on a pragmatic workflow: import/prep, meshing, solver setup, post-processing, and reporting. The work is actively evolving alongside other platform modules (CFD, meshing, optimization), so the design emphasizes interoperability and robust failure modes over “perfect” one-off scripts.',
+      'I’m building and maintaining the FEA module inside TCAE, focused on a pragmatic ' +
+      'workflow: import/prep, meshing, solver setup, post-processing, and reporting. The ' +
+      'work is actively evolving alongside other platform modules (CFD, meshing, ' +
+      'optimization), so the design emphasizes interoperability and robust failure modes ' +
+      'over “perfect” one-off scripts.',
     technologies: ['C++23', 'CalculiX', 'ParaView', 'VTK', 'Qt'],
-    period: { start: '2023', end: 'present' },
+    period: { start: '2020', end: 'present' },
     periodNote:
       'Developed in parallel with other TCAE modules (meshing/CFD/optimization); features ship incrementally.',
     achievements: [
@@ -50,11 +54,12 @@ export const projects = [
       'Added modal analysis and tooling around model preparation and inspection.',
     ],
     team: {
-      size: 10,
+      size: 4,
       note: 'Cross-functional CAE team; tight coupling with platform/visualization work.',
     },
+    image: '/images/projects/tfea.png',
     link: {
-      href: 'https://www.cfdsupport.com/',
+      href: 'https://www.cfdsupport.com/tfea/',
       labelKey: 'projects.links.cfdSupportSite',
     },
   },
