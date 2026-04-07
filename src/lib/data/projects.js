@@ -70,8 +70,12 @@ export const projects = [
     description:
       'Far-field noise from CFD surfaces via FW–H / Farassat 1A, signal processing (SPL, octaves), directivity, and optional WAV export.',
     longDescription:
-      'This module turns CFD surface data into actionable aeroacoustic outputs: far-field pressure, SPL spectra, octave bands, and directivity. It’s built to be used by engineers who already live in the CFD workflow — the goal is consistent results with minimal “academic ceremony”. Actively iterated as real-world cases reveal edge conditions.',
-    technologies: ['C++', 'OpenFOAM', 'ParaView', 'DSP'],
+      'This module turns CFD surface data into actionable aeroacoustic outputs: far-field ' +
+      'pressure, SPL spectra and octave bands. It’s built to be used by ' +
+      'engineers who already live in the CFD workflow — the goal is consistent results with ' +
+      'minimal “academic ceremony”. Actively iterated as real-world cases reveal edge ' +
+      'conditions.',
+    technologies: ['C++23', 'OpenFOAM', 'ParaView', 'VTK', 'Qt'],
     period: { start: '2024', end: 'present' },
     periodNote:
       'Developed alongside CFD and post-processing tooling; validation happens case-by-case as customer examples come in.',
@@ -80,7 +84,11 @@ export const projects = [
       'Added signal processing outputs (SPL, octave bands) and directivity visualizations.',
       'Enabled optional WAV export for quick qualitative assessment and stakeholder communication.',
     ],
-    team: { size: 10, note: 'Close collaboration with CFD and visualization contributors.' },
+    team: {
+      size: 4,
+      note: 'Cross-functional CAE team; tight coupling with TCFD module.',
+    },
+    image: '/images/projects/tcaa.png',
     link: {
       href: 'https://www.cfdsupport.com/',
       labelKey: 'projects.links.cfdSupportSite',
