@@ -138,7 +138,8 @@ export const projects = [
       'active development as new geometry types and assemblies appear.',
     technologies: ['C++23', 'NetGen', 'Gmsh', 'ParaView', 'VTK', 'Qt'],
     period: { start: '2020', end: 'present' },
-    periodNote: 'Developed in parallel with other TCAE modules (meshing/CFD/optimization); features ship incrementally.',
+    periodNote:
+      'Developed in parallel with other TCAE modules (meshing/CFD/optimization); features ship incrementally.',
     achievements: [
       'Integrated NetGen and Gmsh meshing backends for STL/STEP sources.',
       'Added mesh quality controls and diagnostics for common failure modes.',
