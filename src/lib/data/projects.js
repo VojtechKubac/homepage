@@ -132,19 +132,22 @@ export const projects = [
     description:
       'Volume meshing for structural/thermal analysis from STL/STEP via NetGen and Gmsh, with quality controls and multi-component assemblies.',
     longDescription:
-      'TMESH focuses on producing robust FEA-ready volume meshes from practical CAD inputs. The work is a mix of geometry handling, meshing backends, and UX: users need safe defaults, predictable outcomes, and clear diagnostics when geometry is messy. It’s under active development as new geometry types and assemblies appear.',
-    technologies: ['C++', 'NetGen', 'Gmsh', 'ParaView'],
-    period: { start: '2023', end: 'present' },
-    periodNote:
-      'Runs in parallel with solver integration (FEA) and platform-level geometry workflows.',
+      'TMESH focuses on producing robust simulation-ready volume meshes from practical CAD ' +
+      'inputs. The work is a mix of geometry handling, meshing backends, and UX: users need safe ' +
+      'defaults, predictable outcomes, and clear diagnostics when geometry is messy. It’s under ' +
+      'active development as new geometry types and assemblies appear.',
+    technologies: ['C++23', 'NetGen', 'Gmsh', 'ParaView', 'VTK', 'Qt'],
+    period: { start: '2020', end: 'present' },
+    periodNote: 'Developed in parallel with other TCAE modules (meshing/CFD/optimization); features ship incrementally.',
     achievements: [
       'Integrated NetGen and Gmsh meshing backends for STL/STEP sources.',
       'Added mesh quality controls and diagnostics for common failure modes.',
       'Supported multi-component assemblies with practical UX for selection and inspection.',
     ],
-    team: { size: 10 },
+    team: { size: 1, note: 'Solo effort.' },
+    image: '/images/projects/tmesh.png',
     link: {
-      href: 'https://www.cfdsupport.com/',
+      href: 'https://www.cfdsupport.com/tmesh/',
       labelKey: 'projects.links.cfdSupportSite',
     },
   },
