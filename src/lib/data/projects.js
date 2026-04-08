@@ -99,19 +99,27 @@ export const projects = [
     source: 'cfdSupport',
     title: 'TBASE — Simulation database (TCAE)',
     description:
-      'SQLite-backed parametric design database: simulation CRUD, geometry archive, IPC to ParaView, statistics over design spaces, surrogate modeling groundwork.',
+      'SQLite-backed parametric design database: archive of simulations together with their results, geometries and reports, statistics over design spaces, surrogate modeling groundwork.',
     longDescription:
-      'TBASE is the “memory” of the platform: it tracks simulations, parameters, geometry artifacts, and result metadata so users can iterate reliably. The core design goal is reproducibility across runs while keeping the UI responsive. It’s an active area because the database model grows with new solvers and workflows.',
-    technologies: ['C++', 'SQLite', 'IPC', 'ParaView'],
+      'TBASE is the “memory” of the platform: it archives simulations, parameters, geometries ' +
+      'and results with reports. It allows users to browse the simulations and analyze the statistics ' +
+      'over design spaces. The results are 100% reproducible meaning that the same simulation ' +
+      'project can be restored from the database and run again. The database schema is designed to be flexible ' +
+      'to support new solvers and workflows as they are added to the platform. ' +
+      'Ongoing work on surrogate modeling aims to predict outcomes for unsimulated parameter combinations. ' +
+      'Surrogate models provide a measure of confidence in the predictions and can be used to guide the optimization process. ' +
+      'They also possess self-improving capabilities as they can pick optimal new points in the design space to evaluate.',
+    technologies: ['C++23', 'SQLite', 'ParaView', 'VTK', 'Qt'],
     period: { start: '2023', end: 'present' },
     periodNote:
       'Evolves as new modules (FEA/acoustics/optimization) require richer metadata and artifact handling.',
     achievements: [
-      'Designed a SQLite-backed store for simulations, parameter sets, and geometry/result artifacts.',
+      'Built a SQLite-backed store for simulations, parameter sets, and geometry/result artifacts.',
       'Built IPC integration to drive ParaView sessions directly from stored simulations.',
       'Laid groundwork for statistics and surrogate modeling over parametric design spaces.',
     ],
-    team: { size: 10 },
+    team: { size: 1, note: 'Solo effort.' },
+    image: '/images/projects/tbase.png',
     link: {
       href: 'https://www.cfdsupport.com/',
       labelKey: 'projects.links.cfdSupportSite',
