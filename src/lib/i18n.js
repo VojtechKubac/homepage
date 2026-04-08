@@ -47,7 +47,7 @@ const translations = {
         period: 'Timeline',
         achievements: 'Highlights',
         teamPrefix: 'Worked with a team of ~',
-        teamSuffix: '.',
+        teamSuffix: ' developers',
       },
       sources: {
         cfdSupport: 'CFD SUPPORT — TCAE (commercial CAE)',
@@ -125,7 +125,7 @@ const translations = {
         period: 'Zeitraum',
         achievements: 'Highlights',
         teamPrefix: 'Mit einem Team von ca. ',
-        teamSuffix: '.',
+        teamSuffix: ' Entwicklern',
       },
       sources: {
         cfdSupport: 'CFD SUPPORT — TCAE (kommerzielle CAE-Software)',
@@ -204,7 +204,7 @@ const translations = {
         period: 'Období',
         achievements: 'Úspěchy',
         teamPrefix: 'Na projektu pracoval tým o velikosti cca ',
-        teamSuffix: '.',
+        teamSuffix: ' vývojářů',
       },
       sources: {
         cfdSupport: 'CFD SUPPORT — TCAE (komerční CAE)',
