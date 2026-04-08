@@ -94,13 +94,13 @@ export const projects = [
       'SQLite-backed parametric design database: archive of simulations together with their results, geometries and reports, statistics over design spaces, surrogate modeling groundwork.',
     longDescription:
       'TBASE is the “memory” of the platform: it archives simulations, parameters, geometries ' +
-      'and result with reports. It allows users to browse the simulations and analyze the statistics ' +
-      'over design spaces. The results are 100% reprocudcible meaning that the same simulation ' +
+      'and results with reports. It allows users to browse the simulations and analyze the statistics ' +
+      'over design spaces. The results are 100% reproducible meaning that the same simulation ' +
       'project can be restored from the database and run again. The database schema is designed to be flexible ' +
       'to support new solvers and workflows as they are added to the platform. ' +
-      'Ongoing work on surrogate modeling aim to predict outcomes for unsimulated parameter combinations. ' +
+      'Ongoing work on surrogate modeling aims to predict outcomes for unsimulated parameter combinations. ' +
       'Surrogate models provide a measure of confidence in the predictions and can be used to guide the optimization process. ' +
-      'They also posses self-improving capabilities as they can pick optimal new points in the design space to evaluate.',
+      'They also possess self-improving capabilities as they can pick optimal new points in the design space to evaluate.',
     technologies: ['C++23', 'SQLite', 'ParaView', 'VTK', 'Qt'],
     period: { start: '2023', end: 'present' },
     periodNote:
