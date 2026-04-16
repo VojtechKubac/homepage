@@ -59,7 +59,9 @@ const translations = {
         repository: 'View repository',
         cfdSupportSite: 'CFD SUPPORT',
         researchGroup: 'Research group',
-        clientProduct: 'Product context (DrChrono)',
+        drChronoSite: 'DrChrono',
+        ententeeSite: 'ententee',
+        thkSite: 'THK',
       },
     },
     contact: {
