@@ -1,0 +1,98 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+\moderncvstyle{casual}
+\moderncvcolor{green}
+
+\usepackage[utf8]{inputenc}
+\usepackage[scale=0.78]{geometry}
+\usepackage{xcolor}
+\usepackage{eso-pic}
+
+% moderncv casual renders a multi-line contact footer on every page; the
+% default footskip is too small and triggers a fancyhdr warning. Give it the
+% height it wants so contact info doesn't collide with the bottom margin.
+\setlength{\footskip}{52pt}
+
+% Source Code Pro as the monospace family — closest pdflatex-native stand-in
+% for the homepage's JetBrains Mono. Used below for the name, section
+% headings, and the contact block so the CV echoes the site's command-line
+% accent.
+\usepackage[scale=0.95]{sourcecodepro}
+
+\renewcommand*{\namefont}{\ttfamily\Huge\mdseries\upshape}
+\renewcommand*{\titlefont}{\ttfamily\normalsize\mdseries\upshape}
+\renewcommand*{\sectionfont}{\ttfamily\Large\mdseries\upshape}
+\renewcommand*{\subsectionfont}{\ttfamily\large\mdseries\upshape}
+\renewcommand*{\addressfont}{\ttfamily\small\mdseries\upshape}
+\renewcommand*{\hintfont}{\ttfamily\small}
+
+% Solid emerald bullets, slightly smaller than the moderncv default (which
+% uses the hollow \faCircle[regular] at \tiny).
+\renewcommand*{\labelitemi}{\strut\textcolor{color1}{\raisebox{0.45ex}{\fontsize{5pt}{0}\selectfont\faCircle}}}
+
+% Emerald + warm stone palette, aligned with the homepage dark theme.
+% moderncv uses color0/color1/color2 internally; override the accent (color1)
+% and keep body text on a warm stone tone.
+\definecolor{color1}{HTML}{047857} % emerald-700
+\definecolor{color2}{HTML}{57534E} % stone-600
+
+% Thin emerald sidebar on the left edge of every page — echoes the homepage
+% accent without touching the main text block.
+\AddToShipoutPictureBG{%
+  \AtPageLowerLeft{\color{color1}\rule{8pt}{\paperheight}}%
+}
+
+\name{Vojtěch}{Kubáč}
+\title{C++ engineer · CFD, FEA, applied ML}
+\address{Bratranců Veverkových 646}{53002, Pardubice}{Czech Republic}
+\phone[mobile]{(+420)~737~059~153}
+\email{vojta.kubac@gmail.com}
+% Keep hidden until the real URL is available to avoid publishing a dead link.
+% \homepage{vojtakubac.example.com}
+\social[linkedin][www.linkedin.com/in/vojtech-kubac/]{Vojtěch Kubáč}
+\social[github][github.com/VojtechKubac/]{VojtechKubac}
+\photo[76pt][1pt]{photo}
+
+\begin{document}
+\makecvtitle
+
+\section{Experience}
+\cventry{2024--today}{Software engineer}{Ententee}{}{}{%
+  \begin{itemize}%
+    \item Applied-computing work alongside my role at CFD Support. % TODO: replace with real bullet — domain, stack, one shipped thing
+    % \item TODO: second bullet — impact or scale
+  \end{itemize}}
+\cventry{2019--today}{C++ software engineer}{CFD Support s.r.o.}{Prague}{}{%
+  Own multiple modules of TCAE, a cross-platform CAE desktop application built around ParaView/VTK and OpenFOAM. Core stack: C++23, CMake, Qt, GitLab CI.
+  \begin{itemize}%
+    \item \textbf{TFEA} — structural/thermal FEA module: CalculiX integration, CFD-to-FEA load mapping for FSI-style pipelines, modal analysis, ParaView-centric workflow UI.
+    \item \textbf{TCAA} — computational aeroacoustics: FW--H / Farassat 1A far-field pipelines from CFD surfaces, SPL and octave-band processing, directivity plots, WAV export.
+    \item \textbf{TBASE} — SQLite-backed simulation database: reproducible archive of simulations, parameters and artifacts; groundwork for surrogate modelling over parametric design spaces.
+    \item \textbf{TMESH} — FEA volume meshing from STL/STEP via NetGen and Gmsh with quality controls and multi-component assemblies.
+    \item Cross-module contributions to TCFD / TOPT (OpenFOAM orchestration, DoE / DIRECT / EGO-style optimisation), DevOps (GitLab CI, Linux/Windows packaging, CTest + headless Qt), and early architecture for TBRAIN, an in-app RAG assistant for TCAE.
+  \end{itemize}}
+
+\section{Selected projects}
+\cvitem{IBKR trading bot}{Personal Python automation around Interactive Brokers: modular workflows, operational safety, logging and failure visibility. \href{https://github.com/VojtechKubac/ibkr-trading-bot}{github.com/VojtechKubac/ibkr-trading-bot}}
+\cvitem{This portfolio}{Single-page Svelte~4 / Vite / Tailwind site with EN/DE/CS i18n. \href{https://github.com/VojtechKubac/homepage}{github.com/VojtechKubac/homepage}}
+\cvitem{Master's thesis}{% TODO: short 1-line blurb of choice — currently points to the public repo.
+  Public code and artifacts from the master's thesis on fluid-structure interaction. \href{https://github.com/VojtechKubac/MasterThesis}{github.com/VojtechKubac/MasterThesis}}
+
+\section{Education}
+\cventry{2017--2020}{Master}{Charles University}{Prague}{Mathematical Modeling in Physics and Technology}{%
+  Thesis: \emph{Comparison of possible formulations of fluid-structure interactions with application in biomechanics}, supervised by RNDr.~Jaroslav~Hron, Ph.D.}
+\cventry{2018--2019}{Erasmus}{Technical University Munich}{Germany}{Faculty of Mathematics}{Machine learning, deep learning, high-performance computing.}
+\cventry{2014--2017}{Bachelor}{Charles University}{Prague}{General Mathematics}{}
+
+\section{Computer skills}
+\cvitem{Languages}{C++ (C++23), Python, Bash}
+\cvitem{CAE \& scientific}{OpenFOAM, CalculiX, NetGen, Gmsh, ParaView, VTK, FEniCS}
+\cvitem{Platform}{Qt, CMake, SQLite, GitLab CI, Linux, Git}
+\cvitem{AI / ML}{PyTorch, TensorFlow, scikit-learn; RAG / LLM integration}
+
+\section{Languages}
+\cvitemwithcomment{Czech}{Native speaker}{}
+\cvitemwithcomment{English}{C1}{}
+\cvitemwithcomment{German}{B1}{}
+
+\end{document}
