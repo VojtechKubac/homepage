@@ -155,71 +155,89 @@ export const projects = [
   {
     id: 'tmesh-tcfd-topt',
     source: 'cfdSupport',
-    title: 'TMESH, TCFD, TOPT — Ongoing work (TCAE)',
+    title: 'TMESH, TCFD, TOPT',
     description:
-      'Continuous development on meshing, OpenFOAM-based CFD setup/solve, and optimization (DoE, DIRECT, EGO) integrated with the wider platform.',
+      'Continuous development on meshing, OpenFOAM-based CFD setup/solve, and optimization integrated with the wider platform.',
     longDescription:
-      'Beyond the named modules above, I contribute across the platform where needed — primarily meshing, CFD orchestration around OpenFOAM, and optimization workflows. This is intentionally described as “ongoing” because the work overlaps across releases and teams; priorities shift based on customer needs and platform readiness.',
-    technologies: ['C++', 'OpenFOAM', 'Python', 'ParaView'],
-    period: { start: '2023', end: 'present' },
+      'I contribute everywhere across the TCAE platform. ' +
+      'The main areas are meshing, CFD orchestration around OpenFOAM, writing new code for OpenFOAM solvers' +
+      'and optimization workflows. ' +
+      'The work is continuously evolving as new features are added and existing ones are improved. ' +
+      'We are collaborating with our customers to understand their needs and improve the platform accordingly.',
+    technologies: ['C++23', 'OpenFOAM', 'Python', 'ParaView', 'VTK', 'Qt'],
+    period: { start: '2019', end: 'present' },
     periodNote:
       'Represents continuous cross-module contributions rather than a single fixed feature set.',
     achievements: [
       'Improved CFD setup/solve ergonomics around OpenFOAM within a desktop workflow.',
       'Extended optimization workflows (DoE/DIRECT/EGO-style) integrated with platform data management.',
+      'Wrote new code for OpenFOAM solvers and extended the OpenFOAM codebase to support new features.',
       'Shipped incremental usability and stability improvements across meshing and post-processing.',
     ],
-    team: { size: 10, note: 'Multiple subteams; work often spans boundaries between modules.' },
+    team: {
+      size: 8,
+      note: 'Close collaboration within the whole CAE team; work often spans boundaries between modules.',
+    },
+    image: '/images/projects/tcfd.png',
     link: {
-      href: 'https://www.cfdsupport.com/',
+      href: 'https://www.cfdsupport.com/tcfd/',
       labelKey: 'projects.links.cfdSupportSite',
     },
   },
   {
     id: 'devops-tcae',
     source: 'cfdSupport',
-    title: 'DevOps — CI, packaging, testing (TCAE)',
+    title: 'TCAE DevOps',
     description:
-      'GitLab CI for backend and ParaView plugins, Linux/Windows installers, sparse checkouts, and automated tests (CTest, headless Qt).',
+      'Control develop and release processes: Linux/Windows installers creation, ' +
+      'GitLab CI for backend and ParaView plugins, and automated tests (CTest, headless Qt).',
     longDescription:
-      'I maintain parts of the build/release pipeline so the desktop platform stays shippable. The focus is practical developer velocity: CI that catches regressions early, packaging that works on user machines, and tests that can run headless (including UI-facing components where feasible).',
-    technologies: ['GitLab CI', 'CMake', 'CTest', 'Qt'],
+      'I maintain parts of the build/release pipeline so the desktop platform stays ' +
+      'shippable. That includes setting CI pipeline, designing and orchestrating automated tests, ' +
+      'as well as controlling the automated Linux/Windows installers creation. ',
+    technologies: ['GitLab CI', 'CMake', 'CTest', 'Qt', 'NSIS', 'VirtualBox'],
     period: { start: '2023', end: 'present' },
     periodNote:
       'Continuous maintenance alongside feature development; CI/packaging evolve with ParaView/Qt and toolchain changes.',
     achievements: [
-      'Built CI pipelines for backend components and ParaView plugins with a focus on fast feedback.',
-      'Maintained Linux/Windows packaging workflows suitable for desktop distribution.',
-      'Added automated tests (CTest + headless Qt where appropriate) to prevent regressions.',
+      'Set up CI pipelines for backend components and ParaView plugins with a focus on fast feedback.',
+      'Designed and orchestrated automated tests (CTest + headless Qt where appropriate) to prevent regressions.',
+      'Set up Linux/Windows packaging workflows suitable for desktop distribution. ' +
+        'The Linux/Windows installers packaging is automated and tested to ensure it works on user machines.',
     ],
-    team: { size: 10 },
+    team: { size: 1, note: 'Solo effort building on previous work.' },
+    image: '/images/projects/tcae.png',
     link: {
       href: 'https://www.cfdsupport.com/',
       labelKey: 'projects.links.cfdSupportSite',
     },
   },
-  {
-    id: 'tbrain',
-    source: 'cfdSupport',
-    title: 'TBRAIN — AI-assisted simulation (TCAE)',
-    description:
-      'TAIGENT / TBRAIN: in-app assistant for TCAE (RAG over docs, tool calling, LLM integration). Mainly architecture and product direction on my side so far.',
-    longDescription:
-      'TBRAIN/TAIGENT explores an in-product assistant that helps engineers navigate documentation and workflows. My contribution so far is primarily architecture and product direction: defining safe tool boundaries, retrieval strategies over internal docs, and how to integrate assistant UX into an existing desktop app without disrupting core workflows.',
-    technologies: ['C++', 'ParaView', 'LLM', 'RAG'],
-    period: { start: '2025', end: 'present' },
-    periodNote: 'Early-stage exploration; developed in parallel with the core platform roadmap.',
-    achievements: [
-      'Defined initial architecture for retrieval-augmented assistance over internal documentation.',
-      'Explored tool-calling boundaries appropriate for a simulation desktop application.',
-      'Shaped product direction: assistant UX that complements (not replaces) established workflows.',
-    ],
-    team: { size: 6, note: 'Small exploratory effort within the larger platform team.' },
-    link: {
-      href: 'https://www.cfdsupport.com/',
-      labelKey: 'projects.links.cfdSupportSite',
-    },
-  },
+  // {
+  //   id: 'tbrain',
+  //   source: 'cfdSupport',
+  //   title: 'TBRAIN — AI-assisted simulation (TCAE)',
+  //   description:
+  //     'TAIGENT / TBRAIN: in-app assistant for TCAE (RAG over docs, tool calling, LLM integration). Mainly architecture and product direction on my side so far.',
+  //   longDescription:
+  //     'TBRAIN/TAIGENT explores an in-product assistant that helps engineers navigate ' +
+  //     'documentation and workflows. My contribution so far is primarily architecture and ' +
+  //     'product direction: defining safe tool boundaries, retrieval strategies over internal ' +
+  //     'docs, and how to integrate assistant UX into an existing desktop app without ' +
+  //     'disrupting core workflows.',
+  //   technologies: ['C++', 'ParaView', 'LLM', 'RAG'],
+  //   period: { start: '2025', end: 'present' },
+  //   periodNote: 'Early-stage exploration; developed in parallel with the core platform roadmap.',
+  //   achievements: [
+  //     'Defined initial architecture for retrieval-augmented assistance over internal documentation.',
+  //     'Explored tool-calling boundaries appropriate for a simulation desktop application.',
+  //     'Shaped product direction: assistant UX that complements (not replaces) established workflows.',
+  //   ],
+  //   team: { size: 6, note: 'Small exploratory effort within the larger platform team.' },
+  //   link: {
+  //     href: 'https://www.cfdsupport.com/',
+  //     labelKey: 'projects.links.cfdSupportSite',
+  //   },
+  // },
 
   // --- GitHub & meta
   {
@@ -229,7 +247,10 @@ export const projects = [
     description:
       'Automation and tooling around Interactive Brokers (algorithmic / operational workflows; details in the repository).',
     longDescription:
-      'A personal automation project around Interactive Brokers to reduce manual operational work: data pulls, strategy execution scaffolding, and guardrails. It’s actively iterated when I need new capabilities, and the repository serves as the source of truth for the current scope and behavior.',
+      'A personal automation project around Interactive Brokers to reduce manual operational ' +
+      'work: data pulls, strategy execution scaffolding, and guardrails. It’s actively ' +
+      'iterated when I need new capabilities, and the repository serves as the source of ' +
+      'truth for the current scope and behavior.',
     technologies: ['Python'],
     period: { start: '2022', end: 'present' },
     periodNote: 'Maintained opportunistically; expanded when new automation needs appear.',
@@ -238,6 +259,7 @@ export const projects = [
       'Focused on operational safety: repeatable runs, logging, and failure visibility.',
       'Kept the scope practical and maintainable rather than “one giant bot”.',
     ],
+    image: '/images/projects/snp.png',
     team: { size: 1 },
     link: {
       href: 'https://github.com/VojtechKubac/ibkr-trading-bot',
@@ -251,7 +273,10 @@ export const projects = [
     description:
       'Single-page portfolio: Svelte 4, Vite 5, Tailwind, i18n (EN / DE / CS), contact form integration.',
     longDescription:
-      'This site is a small but intentional front-end project: a fast single-page portfolio with a clean content model, internationalization, and a lightweight contact flow. It’s actively refined as I iterate on copy and presentation — the goal is to keep it simple, maintainable, and pleasant to browse.',
+      'This site is a small but intentional front-end project: a fast single-page portfolio ' +
+      'with a clean content model, internationalization, and a lightweight contact flow. ' +
+      'It’s actively refined as I iterate on copy and presentation — the goal is to keep ' +
+      'it simple, maintainable, and pleasant to browse.',
     technologies: ['Svelte 4', 'Vite', 'Tailwind CSS'],
     period: { start: '2026', end: 'present' },
     periodNote:
@@ -262,6 +287,7 @@ export const projects = [
       'Integrated a contact form flow appropriate for a static deployment model.',
     ],
     team: { size: 1 },
+    image: '/images/projects/portfolio.png',
     link: {
       href: 'https://github.com/VojtechKubac/homepage',
       labelKey: 'projects.links.repository',
@@ -274,8 +300,10 @@ export const projects = [
     description:
       'Public repository containing code and artifacts created during my master’s thesis work.',
     longDescription:
-      'A public repository containing code and artifacts created during my master’s thesis work. The on-site card stays intentionally high-level; the repository contains the authoritative context and implementation details.',
-    technologies: [],
+      'A public repository containing code and artifacts created during my master’s thesis ' +
+      'work. The on-site card stays intentionally high-level; the repository contains the ' +
+      'authoritative context and implementation details.',
+    technologies: ['Python', 'FEniCS'],
     period: { start: '2021', end: '2022' },
     periodNote:
       'Completed as part of master’s thesis work; the repository is kept for reference and reproducibility.',
@@ -285,6 +313,7 @@ export const projects = [
       'Kept the on-site summary focused on public material.',
     ],
     team: { size: 1 },
+    image: '/images/projects/vain.jpg',
     link: {
       href: 'https://github.com/VojtechKubac/MasterThesis',
       labelKey: 'projects.links.repository',
@@ -297,19 +326,27 @@ export const projects = [
     source: 'academic',
     title: 'Biomembrane remodeling (doctoral studies)',
     description:
-      'Roughly one year in the computational biophysics / membrane modeling space at MFF UK (Charles University); group work under the Allolio lab.',
+      'Roughly one year in the computational biophysics / membrane modeling space at MFF UK ' +
+      '(Charles University); group lead by Christoph Allolio.',
     longDescription:
-      'During doctoral studies I worked within a research group focused on computational biophysics and membrane modeling. The work was collaborative and exploratory by nature, spanning literature review, model setup, and iterative experimentation — with progress communicated through group discussions and internal reporting rather than “product milestones”.',
-    technologies: ['Research', 'Molecular modeling'],
-    period: { start: '2022', end: '2023' },
+      'During my doctoral studies I worked within a research group focused on computational biophysics ' +
+      'and membrane modeling. The goal was to model lipid membranes using continuum mechanics equations. ' +
+      'I did literature research, conducted numerical molecular dynamics simulations and implemented ' +
+      'continuous mechanics solver in C++.',
+    technologies: ['Research', 'Molecular modeling', 'GROMACS', 'C++'],
+    period: { start: '2019', end: '2020' },
     periodNote:
-      'Research work overlapped with other commitments and evolved with the group’s direction and available compute resources.',
+      'Research work overlapped with other commitments and evolved with the group’s direction.',
     achievements: [
-      'Contributed to group research efforts in computational membrane modeling.',
-      'Built and iterated simulation/model setups with an emphasis on reproducibility.',
-      'Collaborated closely with the lab through ongoing discussions and review cycles.',
+      'Conducted molecular dynamics simulations (GROMACS).',
+      'Implemented a continuum mechanics solver in C++ to model lipid membranes.',
+      'Helped improve the group understanding of the membrane remodelling processes.',
     ],
-    team: { size: 6, note: 'Research group context; collaboration varied per sub-topic.' },
+    team: {
+      size: 6,
+      note: 'Collaborating/discussing with numerous people inside and outside the group.',
+    },
+    image: '/images/projects/lipids.webp',
     link: {
       href: 'https://www.karlin.mff.cuni.cz/~allolio/',
       labelKey: 'projects.links.researchGroup',
@@ -321,62 +358,107 @@ export const projects = [
     id: 'alf',
     source: 'ententee',
     title: 'ALF — Medical faculty application',
-    description:
-      'Application for a medical faculty (ententee / healthcare software context). Repository is private; no public demo link.',
-    technologies: [],
-    period: { start: '2020', end: '2021' },
+    description: 'Application for a medical faculty to manage attestations and trunk exams.',
+    period: { start: '2026', end: '2026' },
     periodNote:
       'Developed alongside other client initiatives; scope and priorities shifted with stakeholder feedback.',
     longDescription:
-      'Client delivery in a healthcare software context: a web application supporting a medical faculty workflow. The work involved typical full-stack product engineering under real constraints (privacy, stakeholder feedback, and timelines). The repository is private, so the card links only to public product/company context.',
+      'Client delivery in a healthcare software context: a web application supporting a ' +
+      'medical faculty workflow. The work involved typical full-stack product engineering ' +
+      'under real constraints (privacy, stakeholder feedback, and timelines).',
+    technologies: ['Java', 'Spring Boot', 'React', 'TypeScript', 'PostgreSQL'],
     achievements: [
       'Delivered a production web application aligned with stakeholder-driven workflow requirements.',
       'Worked within domain constraints (privacy, operational reliability, careful rollout).',
       'Kept a professional public footprint by linking to product context rather than private code.',
     ],
-    team: { size: 5, note: 'Small product team; responsibilities shifted across delivery phases.' },
-    link: {
-      href: 'https://www.drchrono.com/',
-      labelKey: 'projects.links.clientProduct',
-    },
+    team: { size: 3, note: 'Small product team; responsible for the whole application.' },
+    image: '/images/projects/uk.png',
+    // link: {
+    //   href: 'https://www.drchrono.com/',
+    //   labelKey: 'projects.links.clientProduct',
+    // },
   },
   {
     id: 'uav-thk',
     source: 'ententee',
     title: 'THK drones / UAV',
     description:
-      'UAV-related software (THK drones) with ententee; repository is private. No public product page — card has no external link.',
-    technologies: [],
-    period: { start: '2021', end: '2022' },
-    periodNote: 'Work overlapped with other client efforts; limited public references available.',
+      'Greenfield UAV stack for THK drones: perception, mission-driven autonomy, and GPS-denied navigation.',
+    technologies: ['Python', 'ROS', 'Gazebo', 'C++'],
+    period: { start: '2026', end: 'present' },
+    periodNote:
+      'Started greenfield; we are implementing the full software solution for the drone platform.',
     longDescription:
-      'Work related to UAV software where public disclosure is limited. The project is listed to reflect the breadth of domains I’ve worked in, but the details and repository remain private. Status and scope are best conveyed through the narrative here rather than a simplistic badge.',
+      'This effort began as a greenfield project: the goal is a complete onboard and supporting ' +
+      'software solution for THK drones, from sensing and mission logic to execution in the field. ' +
+      'The work spans demanding autonomy problems—' +
+      'object detection and tracking, automated decision-making driven by mission goals, GPS-less ' +
+      'navigation, and other tasks that tie perception, planning, and control together.',
     achievements: [
-      'Contributed to UAV-adjacent software development within client constraints.',
-      'Balanced delivery needs with careful handling of non-public details.',
-      'Kept the on-site description intentionally high-level and professional.',
+      'Help build a greenfield software stack for UAV operations end to end (perception, autonomy, mission execution).',
+      'Contribute to object detection and tracking pipelines integrated with the wider autonomy system.',
+      'Work on mission-driven behavior and navigation, including GPS-denied scenarios and related complex tasks.',
     ],
-    team: { size: 4 },
+    team: {
+      size: 6,
+      note: 'Cross-functional team delivering the full software solution from the ground up.',
+    },
+    image: '/images/projects/thk.png',
+    link: {
+      href: 'https://www.thk.com/',
+      labelKey: 'projects.links.thkSite',
+    },
   },
   {
     id: 'ententee-hub',
     source: 'ententee',
     title: 'Ententee Hub',
     description: 'Internal hub application for ententee workflows; repository is private.',
-    technologies: [],
-    period: { start: '2021', end: '2022' },
-    periodNote: 'Evolved over time as internal processes changed and new workflow needs emerged.',
+    technologies: ['Python', 'FastAPI', 'React', 'TypeScript', 'PostgreSQL'],
+    period: { start: '2026', end: '2026' },
+    periodNote: 'Developed alongside other client initiatives.',
     longDescription:
-      'An internal hub application supporting ententee workflows. This kind of system lives in the “glue layer” between people and tools: lots of integrations, pragmatic UX, and incremental improvements. The repository is private; the public link points to product context only.',
+      'An internal hub application supporting ententee workflows. ' +
+      'The goal is to track the status and progress of the projects, build tools to help with hiring new employees and other operational tasks.',
     achievements: [
       'Built internal tooling to streamline operational workflows.',
       'Iterated rapidly based on feedback from day-to-day users.',
       'Kept external linking professional: product context only, no private code exposure.',
     ],
     team: { size: 5, note: 'Internal product with close feedback loops from users.' },
+    image: '/images/projects/ententee.png',
+    link: {
+      href: 'https://ententee.com/',
+      labelKey: 'projects.links.ententeeSite',
+    },
+  },
+  {
+    id: 'drchrono-app',
+    source: 'ententee',
+    title: 'DrChrono app',
+    description: 'DrChrono app for the mobile devices.',
+    technologies: ['Django', 'React', 'TypeScript', 'PostgreSQL', 'GraphQL'],
+    period: { start: '2024', end: '2025' },
+    periodNote: 'Serious uplift of web app.',
+    longDescription:
+      'Medical web app for American customers. We worked on large uplift of the app. ' +
+      'Both, the technical and visual design was improved. ' +
+      'On backend part we modernized and extended Django codebase and GraphQL API.' +
+      'The frontend was completely rewritten to React with TypeScript and modern UI/UX patterns.',
+    achievements: [
+      'Improved the technical architecture and code quality.',
+      'Modernized and extended the Django codebase and GraphQL API.',
+      'Completely rewritten the frontend to React with TypeScript and modern UI/UX patterns.',
+    ],
+    team: {
+      size: 15,
+      note: 'Large product team; The Czech team tightly collaborated with the American customer.',
+    },
+    image: '/images/projects/drchrono.png',
     link: {
       href: 'https://www.drchrono.com/',
-      labelKey: 'projects.links.clientProduct',
+      labelKey: 'projects.links.drChronoSite',
     },
   },
 ];
