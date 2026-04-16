@@ -330,15 +330,15 @@ export const projects = [
       '(Charles University); group lead by Christoph Allolio.',
     longDescription:
       'During my doctoral studies I worked within a research group focused on computational biophysics ' +
-      'and membrane modeling. The goal was to model lipid membranes using continuum mechanics equations' +
+      'and membrane modeling. The goal was to model lipid membranes using continuum mechanics equations. ' +
       'I did literature research, conducted numerical molecular dynamics simulations and implemented ' +
-      'continuus mechanics solver in C++.',
+      'continuous mechanics solver in C++.',
     technologies: ['Research', 'Molecular modeling', 'GROMACS', 'C++'],
     period: { start: '2019', end: '2020' },
     periodNote:
       'Research work overlapped with other commitments and evolved with the group’s direction.',
     achievements: [
-      'Conducred molecular dynamics simulations (GROMACS).',
+      'Conducted molecular dynamics simulations (GROMACS).',
       'Implemented a continuum mechanics solver in C++ to model lipid membranes.',
       'Helped improve the group understanding of the membrane remodelling processes.',
     ],
@@ -447,7 +447,7 @@ export const projects = [
       'On backend part we modernized and extended Django codebase and GraphQL API.' +
       'The frontend was completely rewritten to React with TypeScript and modern UI/UX patterns.',
     achievements: [
-      'Improved the technical.',
+      'Improved the technical architecture and code quality.',
       'Modernized and extended the Django codebase and GraphQL API.',
       'Completely rewritten the frontend to React with TypeScript and modern UI/UX patterns.',
     ],

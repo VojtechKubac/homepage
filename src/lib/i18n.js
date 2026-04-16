@@ -139,7 +139,9 @@ const translations = {
         repository: 'Repository ansehen',
         cfdSupportSite: 'CFD SUPPORT',
         researchGroup: 'Forschungsgruppe',
-        clientProduct: 'Produktkontext (DrChrono)',
+        drChronoSite: 'DrChrono',
+        ententeeSite: 'ententee',
+        thkSite: 'THK',
       },
     },
     contact: {
@@ -218,7 +220,9 @@ const translations = {
         repository: 'Zobrazit repozitář',
         cfdSupportSite: 'CFD SUPPORT',
         researchGroup: 'Výzkumná skupina',
-        clientProduct: 'Kontext produktu (DrChrono)',
+        drChronoSite: 'DrChrono',
+        ententeeSite: 'ententee',
+        thkSite: 'THK',
       },
     },
     contact: {
