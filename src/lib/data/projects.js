@@ -174,7 +174,10 @@ export const projects = [
       'Wrote new code for OpenFOAM solvers and extended the OpenFOAM codebase to support new features.',
       'Shipped incremental usability and stability improvements across meshing and post-processing.',
     ],
-    team: { size: 8, note: 'Close collaboration within the whole CAE team; work often spans boundaries between modules.' },
+    team: {
+      size: 8,
+      note: 'Close collaboration within the whole CAE team; work often spans boundaries between modules.',
+    },
     image: '/images/projects/tcfd.png',
     link: {
       href: 'https://www.cfdsupport.com/tcfd/',
@@ -200,7 +203,7 @@ export const projects = [
       'Set up CI pipelines for backend components and ParaView plugins with a focus on fast feedback.',
       'Designed and orchestrated automated tests (CTest + headless Qt where appropriate) to prevent regressions.',
       'Set up Linux/Windows packaging workflows suitable for desktop distribution. ' +
-      'The Linux/Windows installers packaging is automated and tested to ensure it works on user machines.',
+        'The Linux/Windows installers packaging is automated and tested to ensure it works on user machines.',
     ],
     team: { size: 1, note: 'Solo effort building on previous work.' },
     image: '/images/projects/tcae.png',
@@ -339,7 +342,10 @@ export const projects = [
       'Implemented a continuum mechanics solver in C++ to model lipid membranes.',
       'Helped improve the group understanding of the membrane remodelling processes.',
     ],
-    team: { size: 6, note: 'Collaborating/discussing with numerous people inside and outside the group.' },
+    team: {
+      size: 6,
+      note: 'Collaborating/discussing with numerous people inside and outside the group.',
+    },
     image: '/images/projects/lipids.webp',
     link: {
       href: 'https://www.karlin.mff.cuni.cz/~allolio/',
@@ -352,8 +358,7 @@ export const projects = [
     id: 'alf',
     source: 'ententee',
     title: 'ALF — Medical faculty application',
-    description:
-      'Application for a medical faculty to manage attestations and trunk exams.',
+    description: 'Application for a medical faculty to manage attestations and trunk exams.',
     technologies: [],
     period: { start: '2026', end: '2026' },
     periodNote:
@@ -438,7 +443,7 @@ export const projects = [
     period: { start: '2024', end: '2025' },
     periodNote: 'Serious uplift of web app.',
     longDescription:
-      'Medical web app for American customers. We worked on large uplift of the app. ' + 
+      'Medical web app for American customers. We worked on large uplift of the app. ' +
       'Both, the technical and visual design was improved. ' +
       'On backend part we modernized and extended Django codebase and GraphQL API.' +
       'The frontend was completely rewritten to React with TypeScript and modern UI/UX patterns.',
@@ -447,7 +452,10 @@ export const projects = [
       'Modernized and extended the Django codebase and GraphQL API.',
       'Completely rewritten the frontend to React with TypeScript and modern UI/UX patterns.',
     ],
-    team: { size: 15, note: 'Large product team; The Czech team tightly collaborated with the American customer.' },
+    team: {
+      size: 15,
+      note: 'Large product team; The Czech team tightly collaborated with the American customer.',
+    },
     image: '/images/projects/drchrono.png',
     link: {
       href: 'https://www.drchrono.com/',
