@@ -359,7 +359,6 @@ export const projects = [
     source: 'ententee',
     title: 'ALF — Medical faculty application',
     description: 'Application for a medical faculty to manage attestations and trunk exams.',
-    technologies: [],
     period: { start: '2026', end: '2026' },
     periodNote:
       'Developed alongside other client initiatives; scope and priorities shifted with stakeholder feedback.',
