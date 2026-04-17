@@ -58,25 +58,29 @@
 
 \section{Experience}
 \cventry{2024--today}{Software engineer}{Ententee}{}{}{%
+  Full-stack product delivery across healthcare and robotics engagements, developed alongside my role at CFD Support. Stack spans Python, Java / Spring Boot, Django, React / TypeScript, PostgreSQL, with ROS / Gazebo and C++ on the UAV side.
   \begin{itemize}%
-    \item Applied-computing work alongside my role at CFD Support. % TODO: replace with real bullet — domain, stack, one shipped thing
-    % \item TODO: second bullet — impact or scale
+    \item \textbf{THK drones / UAV} — greenfield UAV software stack: perception (object detection and tracking), mission-driven autonomy, and GPS-denied navigation.
+    \item \textbf{DrChrono} — major uplift of a US medical web app (2024--2025): modernised Django / GraphQL backend and full React + TypeScript frontend rewrite.
+    \item \textbf{ALF} — web application for a medical faculty managing attestations and trunk exams (Spring Boot + React/TS + PostgreSQL).
+    \item \textbf{Ententee Hub} — internal tooling for project tracking, hiring workflows and operational tasks (FastAPI + React/TS + PostgreSQL).
   \end{itemize}}
 \cventry{2019--today}{C++ software engineer}{CFD Support s.r.o.}{Prague}{}{%
   Own multiple modules of TCAE, a cross-platform CAE desktop application built around ParaView/VTK and OpenFOAM. Core stack: C++23, CMake, Qt, GitLab CI.
   \begin{itemize}%
-    \item \textbf{TFEA} — structural/thermal FEA module: CalculiX integration, CFD-to-FEA load mapping for FSI-style pipelines, modal analysis, ParaView-centric workflow UI.
+    \item \textbf{TFEA} — structural/thermal FEA module: CalculiX integration, CFD-to-FEA load mapping for FSI-style pipelines, modal analysis, and a ParaView-centric workflow UI.
     \item \textbf{TCAA} — computational aeroacoustics: FW--H / Farassat 1A far-field pipelines from CFD surfaces, SPL and octave-band processing, directivity plots, WAV export.
-    \item \textbf{TBASE} — SQLite-backed simulation database: reproducible archive of simulations, parameters and artifacts; groundwork for surrogate modelling over parametric design spaces.
-    \item \textbf{TMESH} — FEA volume meshing from STL/STEP via NetGen and Gmsh with quality controls and multi-component assemblies.
-    \item Cross-module contributions to TCFD / TOPT (OpenFOAM orchestration, DoE / DIRECT / EGO-style optimisation), DevOps (GitLab CI, Linux/Windows packaging, CTest + headless Qt), and early architecture for TBRAIN, an in-app RAG assistant for TCAE.
+    \item \textbf{TBASE} — SQLite-backed simulation database: reproducible archive of simulations, parameters and artifacts; IPC integration driving ParaView sessions from stored runs; groundwork for surrogate modelling over parametric design spaces.
+    \item \textbf{TMESH} — FEA volume meshing from STL/STEP via NetGen and Gmsh, with quality controls and multi-component assemblies.
+    \item \textbf{TCFD / TOPT} — OpenFOAM orchestration and new solver code; DoE / DIRECT / EGO-style optimisation workflows integrated with platform data management.
+    \item \textbf{TCAE DevOps} — GitLab CI for backend components and ParaView plugins, CTest + headless Qt automation, automated Linux/Windows installer pipelines.
   \end{itemize}}
-
-\section{Selected projects}
-\cvitem{IBKR trading bot}{Personal Python automation around Interactive Brokers: modular workflows, operational safety, logging and failure visibility. \href{https://github.com/VojtechKubac/ibkr-trading-bot}{github.com/VojtechKubac/ibkr-trading-bot}}
-\cvitem{This portfolio}{Single-page Svelte~4 / Vite / Tailwind site with EN/DE/CS i18n. \href{https://github.com/VojtechKubac/homepage}{github.com/VojtechKubac/homepage}}
-\cvitem{Master's thesis}{% TODO: short 1-line blurb of choice — currently points to the public repo.
-  Public code and artifacts from the master's thesis on fluid-structure interaction. \href{https://github.com/VojtechKubac/MasterThesis}{github.com/VojtechKubac/MasterThesis}}
+\cventry{2019--2020}{Research (doctoral studies)}{Charles University (MFF UK)}{Prague}{Computational biophysics / membrane modelling}{%
+  Research in the group of Christoph Allolio on continuum modelling of lipid membranes.
+  \begin{itemize}%
+    \item Ran molecular dynamics simulations (GROMACS) of lipid membranes.
+    \item Implemented a continuum mechanics solver in C++ for membrane remodelling.
+  \end{itemize}}
 
 \section{Education}
 \cventry{2017--2020}{Master}{Charles University}{Prague}{Mathematical Modeling in Physics and Technology}{%
@@ -85,10 +89,13 @@
 \cventry{2014--2017}{Bachelor}{Charles University}{Prague}{General Mathematics}{}
 
 \section{Computer skills}
-\cvitem{Languages}{C++ (C++23), Python, Bash}
-\cvitem{CAE \& scientific}{OpenFOAM, CalculiX, NetGen, Gmsh, ParaView, VTK, FEniCS}
-\cvitem{Platform}{Qt, CMake, SQLite, GitLab CI, Linux, Git}
-\cvitem{AI / ML}{PyTorch, TensorFlow, scikit-learn; RAG / LLM integration}
+\cvitem{Languages}{C++ (C++23), Python, TypeScript, Java, Bash}
+\cvitem{Scientific}{OpenFOAM, CalculiX, NetGen, Gmsh, ParaView, VTK, FEniCS, GROMACS}
+\cvitem{Platform}{Qt, CMake, CTest, SQLite, GitLab CI, NSIS, Linux, Git}
+\cvitem{Web BE}{Django, Spring Boot, FastAPI, GraphQL, PostgreSQL}
+\cvitem{Web FE}{React, Svelte, Tailwind CSS, Vite}
+\cvitem{Robotics}{ROS, Gazebo}
+\cvitem{AI / ML}{RAG / LLM integration; surrogate modelling over parametric design spaces}
 
 \section{Languages}
 \cvitemwithcomment{Czech}{Native speaker}{}

@@ -16,7 +16,8 @@
       "Bash(npm run:*)",
       "Bash(git push:*)",
       "Bash(gh pr:*)",
-      "Bash(gh api:*)"
+      "Bash(gh api:*)",
+      "Bash(pdflatex -interaction=nonstopmode -halt-on-error main.tex)"
     ],
     "deny": [],
     "ask": []
