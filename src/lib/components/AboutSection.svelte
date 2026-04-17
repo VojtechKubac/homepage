@@ -1,12 +1,6 @@
 <script>
-  import { skills } from '$lib/data/skills.js';
+  import { skillCategories } from '$lib/data/skills.js';
   export let translate;
-
-  const allCategories = [
-    { key: 'frontend', items: skills.frontend },
-    { key: 'backend', items: skills.backend },
-    { key: 'tools', items: skills.tools },
-  ];
 </script>
 
 <section id="about">
@@ -28,8 +22,8 @@
     >
       {translate('skills.title')}
     </h3>
-    <div class="reveal-stagger grid grid-cols-1 gap-10 md:grid-cols-3">
-      {#each allCategories as category, ci (category.key)}
+    <div class="reveal-stagger grid grid-cols-1 gap-10 md:grid-cols-2">
+      {#each skillCategories as category, ci (category.key)}
         <div class="reveal" style={`--stagger-index: ${ci}`}>
           <h4
             class="mb-4 font-mono text-sm font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-500"
@@ -41,7 +35,9 @@
               <span
                 class="inline-flex items-center gap-2 rounded bg-stone-100 px-3 py-1.5 text-sm font-medium text-stone-700 transition-colors hover:bg-emerald-50 dark:bg-stone-800 dark:text-stone-300 dark:hover:bg-emerald-950"
               >
-                <img src={skill.icon} alt="" class="h-4 w-4 object-contain" />
+                {#if skill.icon}
+                  <img src={skill.icon} alt="" class="h-4 w-4 object-contain" />
+                {/if}
                 {skill.name}
               </span>
             {/each}

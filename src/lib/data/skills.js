@@ -1,68 +1,86 @@
-export const skills = {
-  frontend: [
-    {
-      name: 'Svelte',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/svelte/svelte-original.svg',
-    },
-    {
-      name: 'React',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
-    },
-    {
-      name: 'TypeScript',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg',
-    },
-    {
-      name: 'Tailwind CSS',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',
-    },
-    {
-      name: 'Vue.js',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg',
-    },
-  ],
-  backend: [
-    {
-      name: 'Node.js',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',
-    },
-    {
-      name: 'PostgreSQL',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg',
-    },
-    {
-      name: 'MongoDB',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg',
-    },
-    {
-      name: 'GraphQL',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg',
-    },
-    {
-      name: 'Python',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg',
-    },
-  ],
-  tools: [
-    {
-      name: 'Git',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg',
-    },
-    {
-      name: 'Docker',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg',
-    },
-    {
-      name: 'Webpack',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/webpack/webpack-original.svg',
-    },
-    {
-      name: 'Vite',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg',
-    },
-    {
-      name: 'AWS',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original.svg',
-    },
-  ],
-};
+/**
+ * Grouped skills shown on the About tab.
+ *
+ * Icons are optional: items without a logo in devicon / simpleicons render as
+ * text-only chips (same style, no image). To add a custom icon, drop an SVG
+ * into `public/images/skills/` and set `icon: '/images/skills/<file>.svg'`.
+ *
+ * @typedef {{ name: string, icon?: string }} SkillItem
+ * @typedef {{ key: string, items: SkillItem[] }} SkillCategory
+ */
+
+const devicon = (slug, variant = 'original') =>
+  `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${slug}/${slug}-${variant}.svg`;
+
+// simpleicons serves monochrome SVGs; the hex suffix tints them so they read
+// well on both stone-100 and stone-800 chip backgrounds. 047857 = emerald-700.
+const simpleIcon = (slug) => `https://cdn.simpleicons.org/${slug}/047857`;
+
+/** Display order matches the array. */
+/** @type {SkillCategory[]} */
+export const skillCategories = [
+  {
+    key: 'languages',
+    items: [
+      { name: 'C++', icon: devicon('cplusplus') },
+      { name: 'Python', icon: devicon('python') },
+      { name: 'TypeScript', icon: devicon('typescript') },
+      { name: 'Java', icon: devicon('java') },
+    ],
+  },
+  {
+    key: 'simulation',
+    items: [
+      { name: 'OpenFOAM' },
+      { name: 'CalculiX' },
+      { name: 'ParaView' },
+      { name: 'VTK' },
+      { name: 'Gmsh' },
+      { name: 'NetGen' },
+      { name: 'FEniCS' },
+      { name: 'GROMACS' },
+    ],
+  },
+  {
+    key: 'serverSide',
+    items: [
+      { name: 'Django', icon: devicon('django', 'plain') },
+      { name: 'FastAPI', icon: devicon('fastapi') },
+      { name: 'Spring Boot', icon: devicon('spring') },
+      { name: 'GraphQL', icon: devicon('graphql', 'plain') },
+      { name: 'PostgreSQL', icon: devicon('postgresql') },
+      { name: 'SQLite', icon: devicon('sqlite') },
+    ],
+  },
+  {
+    key: 'frontendUi',
+    items: [
+      { name: 'Svelte', icon: devicon('svelte') },
+      { name: 'React', icon: devicon('react') },
+      { name: 'Tailwind CSS', icon: devicon('tailwindcss') },
+      { name: 'Qt', icon: devicon('qt') },
+    ],
+  },
+  {
+    key: 'robotics',
+    items: [{ name: 'ROS', icon: simpleIcon('ros') }, { name: 'Gazebo' }],
+  },
+  {
+    key: 'build',
+    items: [
+      { name: 'CMake', icon: devicon('cmake') },
+      { name: 'CTest' },
+      { name: 'GitLab CI', icon: devicon('gitlab') },
+      { name: 'Docker', icon: devicon('docker') },
+      { name: 'NSIS' },
+    ],
+  },
+  {
+    key: 'aiAssisted',
+    items: [
+      { name: 'Claude Code', icon: simpleIcon('anthropic') },
+      { name: 'Cursor', icon: simpleIcon('cursor') },
+      { name: 'RAG / LLM integration' },
+    ],
+  },
+];
