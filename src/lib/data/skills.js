@@ -42,15 +42,8 @@ export const skillCategories = [
     ],
   },
   {
-    key: 'desktop',
-    items: [{ name: 'Qt', icon: devicon('qt') }],
-  },
-  {
-    key: 'web',
+    key: 'serverSide',
     items: [
-      { name: 'Svelte', icon: devicon('svelte') },
-      { name: 'React', icon: devicon('react') },
-      { name: 'Tailwind CSS', icon: devicon('tailwindcss') },
       { name: 'Django', icon: devicon('django', 'plain') },
       { name: 'FastAPI', icon: devicon('fastapi') },
       { name: 'Spring Boot', icon: devicon('spring') },
@@ -60,11 +53,17 @@ export const skillCategories = [
     ],
   },
   {
-    key: 'robotics',
+    key: 'frontendUi',
     items: [
-      { name: 'ROS', icon: simpleIcon('ros') },
-      { name: 'Gazebo' },
+      { name: 'Svelte', icon: devicon('svelte') },
+      { name: 'React', icon: devicon('react') },
+      { name: 'Tailwind CSS', icon: devicon('tailwindcss') },
+      { name: 'Qt', icon: devicon('qt') },
     ],
+  },
+  {
+    key: 'robotics',
+    items: [{ name: 'ROS', icon: simpleIcon('ros') }, { name: 'Gazebo' }],
   },
   {
     key: 'build',
