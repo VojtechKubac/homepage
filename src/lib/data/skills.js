@@ -39,6 +39,8 @@ export const skillCategories = [
       { name: 'NetGen' },
       { name: 'FEniCS' },
       { name: 'GROMACS' },
+      { name: 'ROS', icon: simpleIcon('ros') },
+      { name: 'Gazebo' },
     ],
   },
   {
@@ -60,10 +62,6 @@ export const skillCategories = [
       { name: 'Tailwind CSS', icon: devicon('tailwindcss') },
       { name: 'Qt', icon: devicon('qt') },
     ],
-  },
-  {
-    key: 'robotics',
-    items: [{ name: 'ROS', icon: simpleIcon('ros') }, { name: 'Gazebo' }],
   },
   {
     key: 'build',

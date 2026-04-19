@@ -4,7 +4,9 @@ import { getTranslation, t } from './i18n.js';
 
 describe('getTranslation', () => {
   it('returns nested English strings for dotted keys', () => {
-    expect(getTranslation('en', 'hero.title')).toBe("Hi, I'm a Developer");
+    expect(getTranslation('en', 'hero.title')).toBe(
+      'Software engineer — CFD simulation, scientific computing, full-stack web.',
+    );
     expect(getTranslation('en', 'nav.about')).toBe('About');
     expect(getTranslation('en', 'contact.send')).toBe('Send Message');
   });

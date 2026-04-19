@@ -16,7 +16,7 @@
           <div class="border-l-2 border-emerald-600 pl-6 dark:border-emerald-700">
             <h3 class="text-lg font-bold text-stone-900 dark:text-stone-50">{exp.role}</h3>
             <p class="font-mono text-sm font-medium text-emerald-700 dark:text-emerald-500">
-              {exp.company}
+              {exp.company}{#if exp.location} · {exp.location}{/if}
             </p>
             <p class="mb-3 mt-1 font-mono text-xs text-stone-500 dark:text-stone-500">
               {exp.period}
@@ -24,6 +24,15 @@
             <p class="mb-3 text-sm leading-relaxed text-stone-600 dark:text-stone-400">
               {exp.description}
             </p>
+            {#if exp.highlights?.length}
+              <ul
+                class="mb-4 list-disc space-y-1 pl-5 text-sm leading-relaxed text-stone-600 marker:text-emerald-600 dark:text-stone-400 dark:marker:text-emerald-500"
+              >
+                {#each exp.highlights as highlight (highlight)}
+                  <li>{highlight}</li>
+                {/each}
+              </ul>
+            {/if}
             <div class="flex flex-wrap gap-1.5">
               {#each exp.technologies as tech (tech)}
                 <span
@@ -56,6 +65,9 @@
             <p class="mb-3 mt-1 font-mono text-xs text-stone-500 dark:text-stone-500">
               {edu.period}
             </p>
+            {#if edu.focus}
+              <p class="text-sm text-stone-600 dark:text-stone-400">{edu.focus}</p>
+            {/if}
             {#if edu.thesis}
               <p class="text-sm italic text-stone-600 dark:text-stone-400">
                 {translate('education.thesis')}: {edu.thesis.title}

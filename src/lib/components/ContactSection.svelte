@@ -55,13 +55,21 @@
     <div class="reveal">
       <div class="space-y-3">
         {#each socialLinks as social (social.name)}
+          {@const isExternal = social.url.startsWith('http')}
           <a
             href={social.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex items-center gap-3 rounded-lg border border-stone-200 bg-white p-3 text-sm transition-all hover:border-emerald-300 dark:border-stone-800 dark:bg-stone-900 dark:hover:border-emerald-800"
+            target={isExternal ? '_blank' : undefined}
+            rel={isExternal ? 'noopener noreferrer' : undefined}
+            class="flex flex-col gap-0.5 rounded-lg border border-stone-200 bg-white p-3 text-sm transition-all hover:border-emerald-300 dark:border-stone-800 dark:bg-stone-900 dark:hover:border-emerald-800"
           >
-            <span class="font-medium text-stone-700 dark:text-stone-300">{social.name}</span>
+            <span
+              class="font-mono text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-500"
+            >
+              {social.name}
+            </span>
+            <span class="break-all font-medium text-stone-700 dark:text-stone-300">
+              {social.value}
+            </span>
           </a>
         {/each}
       </div>

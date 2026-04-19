@@ -1,22 +1,31 @@
+/**
+ * @typedef {{ name: string, value: string, url: string, icon: string }} SocialLink
+ */
+
+/** @type {SocialLink[]} */
 export const socialLinks = [
   {
-    name: 'GitHub',
-    url: 'https://github.com/yourusername',
-    icon: 'github',
+    name: 'Email',
+    value: 'vojta.kubac@gmail.com',
+    url: 'mailto:vojta.kubac@gmail.com',
+    icon: 'email',
+  },
+  {
+    name: 'Phone',
+    value: '+420 737 059 153',
+    url: 'tel:+420737059153',
+    icon: 'phone',
   },
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com/in/yourusername',
+    value: 'linkedin.com/in/vojtech-kubac',
+    url: 'https://www.linkedin.com/in/vojtech-kubac/',
     icon: 'linkedin',
   },
   {
-    name: 'Twitter',
-    url: 'https://twitter.com/yourusername',
-    icon: 'twitter',
-  },
-  {
-    name: 'Email',
-    url: 'mailto:your.email@example.com',
-    icon: 'email',
+    name: 'GitHub',
+    value: 'github.com/VojtechKubac',
+    url: 'https://github.com/VojtechKubac',
+    icon: 'github',
   },
 ];
