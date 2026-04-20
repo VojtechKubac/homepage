@@ -1,9 +1,7 @@
 import projectsEn from '../../locales/en/projects.json';
 import projectsDe from '../../locales/de/projects.json';
 import projectsCs from '../../locales/cs/projects.json';
-
-const ENGLISH_LOCALE = 'en';
-const FALLBACK_TO_ENGLISH_LOCALES = new Set(['de', 'cs']);
+import { ENGLISH_LOCALE, FALLBACK_TO_ENGLISH_LOCALES } from '../i18n.js';
 
 /** @type {Record<string, Record<string, unknown>>} */
 const projectLocales = {
@@ -11,6 +9,9 @@ const projectLocales = {
   de: projectsDe,
   cs: projectsCs,
 };
+
+/** Locales that have project JSON files and match UI locale support (see `i18n.js`). */
+const SUPPORTED_PROJECT_LOCALES = new Set([ENGLISH_LOCALE, ...FALLBACK_TO_ENGLISH_LOCALES]);
 
 /**
  * Coerce unknown or empty locale codes (e.g. stale `localStorage`) so project copy
@@ -23,15 +24,7 @@ export function normalizeProjectLocale(lang) {
   if (typeof lang !== 'string' || lang.length === 0) {
     return ENGLISH_LOCALE;
   }
-  return Object.prototype.hasOwnProperty.call(projectLocales, lang) ? lang : ENGLISH_LOCALE;
-}
-
-/**
- * @param {string} lang
- * @returns {boolean}
- */
-function shouldFallbackToEnglish(lang) {
-  return lang === ENGLISH_LOCALE || FALLBACK_TO_ENGLISH_LOCALES.has(lang);
+  return SUPPORTED_PROJECT_LOCALES.has(lang) ? lang : ENGLISH_LOCALE;
 }
 
 /**
@@ -88,7 +81,7 @@ export function getProjectCopy(id, lang) {
     return mergeProjectCopy(localized, english);
   }
 
-  if (!shouldFallbackToEnglish(safeLang) || english === undefined) {
+  if (english === undefined) {
     return {};
   }
 

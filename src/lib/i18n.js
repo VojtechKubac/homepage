@@ -287,8 +287,8 @@ Svůj čas aktuálně dělím mezi komerční CAE společnost a nezávislé klie
   },
 };
 
-const ENGLISH_LOCALE = 'en';
-const FALLBACK_TO_ENGLISH_LOCALES = new Set(['de', 'cs']);
+export const ENGLISH_LOCALE = 'en';
+export const FALLBACK_TO_ENGLISH_LOCALES = new Set(['de', 'cs']);
 const translatorCacheByTable = new WeakMap();
 
 function resolveKeyPath(locale, key, translationTable) {
