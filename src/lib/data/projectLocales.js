@@ -13,6 +13,20 @@ const projectLocales = {
 };
 
 /**
+ * Coerce unknown or empty locale codes (e.g. stale `localStorage`) so project copy
+ * still resolves from imported locale JSON.
+ *
+ * @param {unknown} lang
+ * @returns {string}
+ */
+export function normalizeProjectLocale(lang) {
+  if (typeof lang !== 'string' || lang.length === 0) {
+    return ENGLISH_LOCALE;
+  }
+  return Object.prototype.hasOwnProperty.call(projectLocales, lang) ? lang : ENGLISH_LOCALE;
+}
+
+/**
  * @param {string} lang
  * @returns {boolean}
  */
@@ -66,14 +80,15 @@ function mergeProjectCopy(localized, english) {
  * }}
  */
 export function getProjectCopy(id, lang) {
-  const localized = projectLocales[lang]?.[id];
+  const safeLang = normalizeProjectLocale(lang);
+  const localized = projectLocales[safeLang]?.[id];
   const english = projectLocales[ENGLISH_LOCALE]?.[id];
 
   if (localized !== undefined) {
     return mergeProjectCopy(localized, english);
   }
 
-  if (!shouldFallbackToEnglish(lang) || english === undefined) {
+  if (!shouldFallbackToEnglish(safeLang) || english === undefined) {
     return {};
   }
 

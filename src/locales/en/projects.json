@@ -58,7 +58,7 @@
   "tmesh-tcfd-topt": {
     "title": "TMESH, TCFD, TOPT",
     "description": "Continuous development on meshing, OpenFOAM-based CFD setup/solve, and optimization integrated with the wider platform.",
-    "longDescription": "I contribute everywhere across the TCAE platform. The main areas are meshing, CFD orchestration around OpenFOAM, writing new code for OpenFOAM solversand optimization workflows. The work is continuously evolving as new features are added and existing ones are improved. We are collaborating with our customers to understand their needs and improve the platform accordingly.",
+    "longDescription": "I contribute everywhere across the TCAE platform. The main areas are meshing, CFD orchestration around OpenFOAM, writing new code for OpenFOAM solvers, and optimization workflows. The work is continuously evolving as new features are added and existing ones are improved. We are collaborating with our customers to understand their needs and improve the platform accordingly.",
     "periodNote": "Represents continuous cross-module contributions rather than a single fixed feature set.",
     "achievements": [
       "Improved CFD setup/solve ergonomics around OpenFOAM within a desktop workflow.",
@@ -175,16 +175,16 @@
   },
   "drchrono-app": {
     "title": "DrChrono app",
-    "description": "DrChrono app for the mobile devices.",
-    "longDescription": "Medical web app for American customers. We worked on large uplift of the app. Both, the technical and visual design was improved. On backend part we modernized and extended Django codebase and GraphQL API.The frontend was completely rewritten to React with TypeScript and modern UI/UX patterns.",
+    "description": "DrChrono medical web app for US customers.",
+    "longDescription": "Medical web app for American customers. We worked on a large uplift of the app — both the technical and visual design were improved. On the backend we modernized and extended the Django codebase and GraphQL API. The frontend was completely rewritten in React with TypeScript and modern UI/UX patterns.",
     "periodNote": "Serious uplift of web app.",
     "achievements": [
       "Improved the technical architecture and code quality.",
       "Modernized and extended the Django codebase and GraphQL API.",
-      "Completely rewritten the frontend to React with TypeScript and modern UI/UX patterns."
+      "Rewrote the frontend in React with TypeScript and modern UI/UX patterns."
     ],
     "team": {
-      "note": "Large product team; The Czech team tightly collaborated with the American customer."
+      "note": "Large product team; the Czech team collaborated closely with the American customer."
     }
   }
 }

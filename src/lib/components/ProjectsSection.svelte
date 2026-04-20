@@ -2,12 +2,13 @@
   import { onMount, tick } from 'svelte';
   import { slide } from 'svelte/transition';
   import { getProjectsGroupedBySource } from '$lib/data/projects.js';
+  import { normalizeProjectLocale } from '$lib/data/projectLocales.js';
 
   export let translate;
   export let lang = 'en';
 
   let grouped;
-  $: grouped = getProjectsGroupedBySource(lang);
+  $: grouped = getProjectsGroupedBySource(normalizeProjectLocale(lang));
 
   /** @type {string | null} */
   let expandedId = null;
