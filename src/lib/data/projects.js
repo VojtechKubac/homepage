@@ -1,25 +1,36 @@
 /**
  * Portfolio projects shown on the site. Each entry includes a `source` for grouping.
+ *
+ * Localized copy (title/description/details) lives in locale JSON files under `src/locales/<lang>/projects.json`.
+ * This file stores only structural and metadata fields.
+ *
  * @typedef {'cfdSupport' | 'github' | 'academic' | 'ententee'} ProjectSource
  * @typedef {{ href: string, labelKey: string }} ProjectLink
  * @typedef {{ start: string, end: string }} ProjectPeriod
- * @typedef {{ size: number, note?: string }} ProjectTeam
+ * @typedef {{ size: number }} ProjectTeam
+ * @typedef {{ note?: string }} LocalizedProjectTeam
+ * @typedef {{
+ *   title?: string,
+ *   description?: string,
+ *   longDescription?: string,
+ *   periodNote?: string,
+ *   achievements?: string[],
+ *   team?: LocalizedProjectTeam
+ * }} LocalizedProjectCopy
  * @typedef {{
  *   id: string,
  *   source: ProjectSource,
- *   title: string,
- *   description: string,
- *   longDescription?: string,
  *   technologies: string[],
  *   period?: ProjectPeriod,
- *   periodNote?: string,
- *   achievements?: string[],
  *   team?: ProjectTeam,
  *   link?: ProjectLink,
  *   demo?: string,
  *   image?: string
- * }} Project
+ * }} ProjectBase
+ * @typedef {ProjectBase & LocalizedProjectCopy} Project
  */
+
+import { getProjectCopy } from './projectLocales.js';
 
 /** Display order for source group headings in the Projects section */
 export const PROJECT_SOURCE_ORDER = /** @type {const} */ ([
@@ -29,33 +40,18 @@ export const PROJECT_SOURCE_ORDER = /** @type {const} */ ([
   'ententee',
 ]);
 
-/** @type {Project[]} */
+/** @type {ProjectBase[]} */
 export const projects = [
-  // --- CFD SUPPORT / TCAE (commercial CAE desktop platform; public product link only)
   {
     id: 'tfea',
     source: 'cfdSupport',
-    title: 'TFEA — Finite element analysis (TCAE)',
-    description:
-      'Structural and thermal FEA inside TCAE: CalculiX integration, CFD-to-FEA loads (FSI mapping), modal analysis, and ParaView-based workflow UI.',
-    longDescription:
-      'I’m building and maintaining the FEA module inside TCAE, focused on a pragmatic ' +
-      'workflow: import/prep, meshing, solver setup, post-processing, and reporting. The ' +
-      'work is actively evolving alongside other platform modules (CFD, meshing, ' +
-      'optimization), so the design emphasizes interoperability and robust failure modes ' +
-      'over “perfect” one-off scripts.',
     technologies: ['C++23', 'CalculiX', 'ParaView', 'VTK', 'Qt'],
-    period: { start: '2020', end: 'present' },
-    periodNote:
-      'Developed in parallel with other TCAE modules (meshing/CFD/optimization); features ship incrementally.',
-    achievements: [
-      'Integrated CalculiX runs into a ParaView-centric desktop workflow (setup → solve → post-process).',
-      'Implemented CFD-to-FEA load mapping to support FSI-style pipelines without bespoke user scripting.',
-      'Added modal analysis and tooling around model preparation and inspection.',
-    ],
+    period: {
+      start: '2020',
+      end: 'present',
+    },
     team: {
       size: 4,
-      note: 'Cross-functional CAE team; tight coupling with platform/visualization work.',
     },
     image: '/images/projects/tfea.png',
     link: {
@@ -66,27 +62,13 @@ export const projects = [
   {
     id: 'tcaa',
     source: 'cfdSupport',
-    title: 'TCAA — Computational aeroacoustics (TCAE)',
-    description:
-      'Far-field noise from CFD surfaces via FW–H / Farassat 1A, signal processing (SPL, octaves), directivity, and optional WAV export.',
-    longDescription:
-      'This module turns CFD surface data into actionable aeroacoustic outputs: far-field ' +
-      'pressure, SPL spectra and octave bands. It’s built to be used by ' +
-      'engineers who already live in the CFD workflow — the goal is consistent results with ' +
-      'minimal “academic ceremony”. Actively iterated as real-world cases reveal edge ' +
-      'conditions.',
     technologies: ['C++23', 'OpenFOAM', 'ParaView', 'VTK', 'Qt'],
-    period: { start: '2024', end: 'present' },
-    periodNote:
-      'Developed alongside CFD and post-processing tooling; validation happens case-by-case as customer examples come in.',
-    achievements: [
-      'Implemented FW–H / Farassat 1A pipelines for far-field acoustics from CFD surfaces.',
-      'Added signal processing outputs (SPL, octave bands) and directivity visualizations.',
-      'Enabled optional WAV export for quick qualitative assessment and stakeholder communication.',
-    ],
+    period: {
+      start: '2024',
+      end: 'present',
+    },
     team: {
       size: 4,
-      note: 'Cross-functional CAE team; tight coupling with TCFD module.',
     },
     image: '/images/projects/tcaa.png',
     link: {
@@ -97,28 +79,14 @@ export const projects = [
   {
     id: 'tbase',
     source: 'cfdSupport',
-    title: 'TBASE — Simulation database (TCAE)',
-    description:
-      'SQLite-backed parametric design database: archive of simulations together with their results, geometries and reports, statistics over design spaces, surrogate modeling groundwork.',
-    longDescription:
-      'TBASE is the “memory” of the platform: it archives simulations, parameters, geometries ' +
-      'and results with reports. It allows users to browse the simulations and analyze the statistics ' +
-      'over design spaces. The results are 100% reproducible meaning that the same simulation ' +
-      'project can be restored from the database and run again. The database schema is designed to be flexible ' +
-      'to support new solvers and workflows as they are added to the platform. ' +
-      'Ongoing work on surrogate modeling aims to predict outcomes for unsimulated parameter combinations. ' +
-      'Surrogate models provide a measure of confidence in the predictions and can be used to guide the optimization process. ' +
-      'They also possess self-improving capabilities as they can pick optimal new points in the design space to evaluate.',
     technologies: ['C++23', 'SQLite', 'ParaView', 'VTK', 'Qt'],
-    period: { start: '2023', end: 'present' },
-    periodNote:
-      'Evolves as new modules (FEA/acoustics/optimization) require richer metadata and artifact handling.',
-    achievements: [
-      'Built a SQLite-backed store for simulations, parameter sets, and geometry/result artifacts.',
-      'Built IPC integration to drive ParaView sessions directly from stored simulations.',
-      'Laid groundwork for statistics and surrogate modeling over parametric design spaces.',
-    ],
-    team: { size: 1, note: 'Solo effort.' },
+    period: {
+      start: '2023',
+      end: 'present',
+    },
+    team: {
+      size: 1,
+    },
     image: '/images/projects/tbase.png',
     link: {
       href: 'https://www.cfdsupport.com/',
@@ -128,24 +96,14 @@ export const projects = [
   {
     id: 'tmesh-fea',
     source: 'cfdSupport',
-    title: 'TMESH — FEA meshing (TCAE)',
-    description:
-      'Volume meshing for structural/thermal analysis from STL/STEP via NetGen and Gmsh, with quality controls and multi-component assemblies.',
-    longDescription:
-      'TMESH focuses on producing robust simulation-ready volume meshes from practical CAD ' +
-      'inputs. The work is a mix of geometry handling, meshing backends, and UX: users need safe ' +
-      'defaults, predictable outcomes, and clear diagnostics when geometry is messy. It’s under ' +
-      'active development as new geometry types and assemblies appear.',
     technologies: ['C++23', 'NetGen', 'Gmsh', 'ParaView', 'VTK', 'Qt'],
-    period: { start: '2020', end: 'present' },
-    periodNote:
-      'Developed in parallel with other TCAE modules (meshing/CFD/optimization); features ship incrementally.',
-    achievements: [
-      'Integrated NetGen and Gmsh meshing backends for STL/STEP sources.',
-      'Added mesh quality controls and diagnostics for common failure modes.',
-      'Supported multi-component assemblies with practical UX for selection and inspection.',
-    ],
-    team: { size: 1, note: 'Solo effort.' },
+    period: {
+      start: '2020',
+      end: 'present',
+    },
+    team: {
+      size: 1,
+    },
     image: '/images/projects/tmesh.png',
     link: {
       href: 'https://www.cfdsupport.com/tmesh/',
@@ -155,28 +113,13 @@ export const projects = [
   {
     id: 'tmesh-tcfd-topt',
     source: 'cfdSupport',
-    title: 'TMESH, TCFD, TOPT',
-    description:
-      'Continuous development on meshing, OpenFOAM-based CFD setup/solve, and optimization integrated with the wider platform.',
-    longDescription:
-      'I contribute everywhere across the TCAE platform. ' +
-      'The main areas are meshing, CFD orchestration around OpenFOAM, writing new code for OpenFOAM solvers' +
-      'and optimization workflows. ' +
-      'The work is continuously evolving as new features are added and existing ones are improved. ' +
-      'We are collaborating with our customers to understand their needs and improve the platform accordingly.',
     technologies: ['C++23', 'OpenFOAM', 'Python', 'ParaView', 'VTK', 'Qt'],
-    period: { start: '2019', end: 'present' },
-    periodNote:
-      'Represents continuous cross-module contributions rather than a single fixed feature set.',
-    achievements: [
-      'Improved CFD setup/solve ergonomics around OpenFOAM within a desktop workflow.',
-      'Extended optimization workflows (DoE/DIRECT/EGO-style) integrated with platform data management.',
-      'Wrote new code for OpenFOAM solvers and extended the OpenFOAM codebase to support new features.',
-      'Shipped incremental usability and stability improvements across meshing and post-processing.',
-    ],
+    period: {
+      start: '2019',
+      end: 'present',
+    },
     team: {
       size: 8,
-      note: 'Close collaboration within the whole CAE team; work often spans boundaries between modules.',
     },
     image: '/images/projects/tcfd.png',
     link: {
@@ -187,80 +130,32 @@ export const projects = [
   {
     id: 'devops-tcae',
     source: 'cfdSupport',
-    title: 'TCAE DevOps',
-    description:
-      'Control develop and release processes: Linux/Windows installers creation, ' +
-      'GitLab CI for backend and ParaView plugins, and automated tests (CTest, headless Qt).',
-    longDescription:
-      'I maintain parts of the build/release pipeline so the desktop platform stays ' +
-      'shippable. That includes setting CI pipeline, designing and orchestrating automated tests, ' +
-      'as well as controlling the automated Linux/Windows installers creation. ',
     technologies: ['GitLab CI', 'CMake', 'CTest', 'Qt', 'NSIS', 'VirtualBox'],
-    period: { start: '2023', end: 'present' },
-    periodNote:
-      'Continuous maintenance alongside feature development; CI/packaging evolve with ParaView/Qt and toolchain changes.',
-    achievements: [
-      'Set up CI pipelines for backend components and ParaView plugins with a focus on fast feedback.',
-      'Designed and orchestrated automated tests (CTest + headless Qt where appropriate) to prevent regressions.',
-      'Set up Linux/Windows packaging workflows suitable for desktop distribution. ' +
-        'The Linux/Windows installers packaging is automated and tested to ensure it works on user machines.',
-    ],
-    team: { size: 1, note: 'Solo effort building on previous work.' },
+    period: {
+      start: '2023',
+      end: 'present',
+    },
+    team: {
+      size: 1,
+    },
     image: '/images/projects/tcae.png',
     link: {
       href: 'https://www.cfdsupport.com/',
       labelKey: 'projects.links.cfdSupportSite',
     },
   },
-  // {
-  //   id: 'tbrain',
-  //   source: 'cfdSupport',
-  //   title: 'TBRAIN — AI-assisted simulation (TCAE)',
-  //   description:
-  //     'TAIGENT / TBRAIN: in-app assistant for TCAE (RAG over docs, tool calling, LLM integration). Mainly architecture and product direction on my side so far.',
-  //   longDescription:
-  //     'TBRAIN/TAIGENT explores an in-product assistant that helps engineers navigate ' +
-  //     'documentation and workflows. My contribution so far is primarily architecture and ' +
-  //     'product direction: defining safe tool boundaries, retrieval strategies over internal ' +
-  //     'docs, and how to integrate assistant UX into an existing desktop app without ' +
-  //     'disrupting core workflows.',
-  //   technologies: ['C++', 'ParaView', 'LLM', 'RAG'],
-  //   period: { start: '2025', end: 'present' },
-  //   periodNote: 'Early-stage exploration; developed in parallel with the core platform roadmap.',
-  //   achievements: [
-  //     'Defined initial architecture for retrieval-augmented assistance over internal documentation.',
-  //     'Explored tool-calling boundaries appropriate for a simulation desktop application.',
-  //     'Shaped product direction: assistant UX that complements (not replaces) established workflows.',
-  //   ],
-  //   team: { size: 6, note: 'Small exploratory effort within the larger platform team.' },
-  //   link: {
-  //     href: 'https://www.cfdsupport.com/',
-  //     labelKey: 'projects.links.cfdSupportSite',
-  //   },
-  // },
-
-  // --- GitHub & meta
   {
     id: 'ibkr-trading-bot',
     source: 'github',
-    title: 'IBKR trading bot',
-    description:
-      'Automation and tooling around Interactive Brokers (algorithmic / operational workflows; details in the repository).',
-    longDescription:
-      'A personal automation project around Interactive Brokers to reduce manual operational ' +
-      'work: data pulls, strategy execution scaffolding, and guardrails. It’s actively ' +
-      'iterated when I need new capabilities, and the repository serves as the source of ' +
-      'truth for the current scope and behavior.',
     technologies: ['Python'],
-    period: { start: '2022', end: 'present' },
-    periodNote: 'Maintained opportunistically; expanded when new automation needs appear.',
-    achievements: [
-      'Built a modular automation setup around Interactive Brokers workflows.',
-      'Focused on operational safety: repeatable runs, logging, and failure visibility.',
-      'Kept the scope practical and maintainable rather than “one giant bot”.',
-    ],
+    period: {
+      start: '2022',
+      end: 'present',
+    },
     image: '/images/projects/snp.png',
-    team: { size: 1 },
+    team: {
+      size: 1,
+    },
     link: {
       href: 'https://github.com/VojtechKubac/ibkr-trading-bot',
       labelKey: 'projects.links.repository',
@@ -269,24 +164,14 @@ export const projects = [
   {
     id: 'homepage-site',
     source: 'github',
-    title: 'This portfolio site',
-    description:
-      'Single-page portfolio: Svelte 4, Vite 5, Tailwind, i18n (EN / DE / CS), contact form integration.',
-    longDescription:
-      'This site is a small but intentional front-end project: a fast single-page portfolio ' +
-      'with a clean content model, internationalization, and a lightweight contact flow. ' +
-      'It’s actively refined as I iterate on copy and presentation — the goal is to keep ' +
-      'it simple, maintainable, and pleasant to browse.',
     technologies: ['Svelte 4', 'Vite', 'Tailwind CSS'],
-    period: { start: '2026', end: 'present' },
-    periodNote:
-      'Iterated in small PRs as content and UI evolve; designed to stay easy to maintain long-term.',
-    achievements: [
-      'Shipped a Svelte + Vite + Tailwind single-page structure with a clear component/data split.',
-      'Added i18n across EN/DE/CS without bringing in heavy frameworks.',
-      'Integrated a contact form flow appropriate for a static deployment model.',
-    ],
-    team: { size: 1 },
+    period: {
+      start: '2026',
+      end: 'present',
+    },
+    team: {
+      size: 1,
+    },
     image: '/images/projects/portfolio.png',
     link: {
       href: 'https://github.com/VojtechKubac/homepage',
@@ -296,55 +181,30 @@ export const projects = [
   {
     id: 'master-thesis',
     source: 'github',
-    title: "Master's thesis (code)",
-    description:
-      'Public repository containing code and artifacts created during my master’s thesis work.',
-    longDescription:
-      'A public repository containing code and artifacts created during my master’s thesis ' +
-      'work. The on-site card stays intentionally high-level; the repository contains the ' +
-      'authoritative context and implementation details.',
     technologies: ['Python', 'FEniCS'],
-    period: { start: '2021', end: '2022' },
-    periodNote:
-      'Completed as part of master’s thesis work; the repository is kept for reference and reproducibility.',
-    achievements: [
-      'Published thesis code/artifacts in a reproducible form.',
-      'Documented usage sufficiently for reviewers and future reference.',
-      'Kept the on-site summary focused on public material.',
-    ],
-    team: { size: 1 },
+    period: {
+      start: '2021',
+      end: '2022',
+    },
+    team: {
+      size: 1,
+    },
     image: '/images/projects/vain.jpg',
     link: {
       href: 'https://github.com/VojtechKubac/MasterThesis',
       labelKey: 'projects.links.repository',
     },
   },
-
-  // --- Academic
   {
     id: 'biomembrane',
     source: 'academic',
-    title: 'Biomembrane remodeling (doctoral studies)',
-    description:
-      'Roughly one year in the computational biophysics / membrane modeling space at MFF UK ' +
-      '(Charles University); group lead by Christoph Allolio.',
-    longDescription:
-      'During my doctoral studies I worked within a research group focused on computational biophysics ' +
-      'and membrane modeling. The goal was to model lipid membranes using continuum mechanics equations. ' +
-      'I did literature research, conducted numerical molecular dynamics simulations and implemented ' +
-      'continuous mechanics solver in C++.',
     technologies: ['Research', 'Molecular modeling', 'GROMACS', 'C++'],
-    period: { start: '2019', end: '2020' },
-    periodNote:
-      'Research work overlapped with other commitments and evolved with the group’s direction.',
-    achievements: [
-      'Conducted molecular dynamics simulations (GROMACS).',
-      'Implemented a continuum mechanics solver in C++ to model lipid membranes.',
-      'Helped improve the group understanding of the membrane remodelling processes.',
-    ],
+    period: {
+      start: '2019',
+      end: '2020',
+    },
     team: {
       size: 6,
-      note: 'Collaborating/discussing with numerous people inside and outside the group.',
     },
     image: '/images/projects/lipids.webp',
     link: {
@@ -352,57 +212,29 @@ export const projects = [
       labelKey: 'projects.links.researchGroup',
     },
   },
-
-  // --- ententee (client: EverHealth / DrChrono ecosystem; repos private)
   {
     id: 'alf',
     source: 'ententee',
-    title: 'ALF — Medical faculty application',
-    description: 'Application for a medical faculty to manage attestations and trunk exams.',
-    period: { start: '2026', end: '2026' },
-    periodNote:
-      'Developed alongside other client initiatives; scope and priorities shifted with stakeholder feedback.',
-    longDescription:
-      'Client delivery in a healthcare software context: a web application supporting a ' +
-      'medical faculty workflow. The work involved typical full-stack product engineering ' +
-      'under real constraints (privacy, stakeholder feedback, and timelines).',
+    period: {
+      start: '2026',
+      end: '2026',
+    },
     technologies: ['Java', 'Spring Boot', 'React', 'TypeScript', 'PostgreSQL'],
-    achievements: [
-      'Delivered a production web application aligned with stakeholder-driven workflow requirements.',
-      'Worked within domain constraints (privacy, operational reliability, careful rollout).',
-      'Kept a professional public footprint by linking to product context rather than private code.',
-    ],
-    team: { size: 3, note: 'Small product team; responsible for the whole application.' },
+    team: {
+      size: 3,
+    },
     image: '/images/projects/uk.png',
-    // link: {
-    //   href: 'https://www.drchrono.com/',
-    //   labelKey: 'projects.links.clientProduct',
-    // },
   },
   {
     id: 'uav-thk',
     source: 'ententee',
-    title: 'THK drones / UAV',
-    description:
-      'Greenfield UAV stack for THK drones: perception, mission-driven autonomy, and GPS-denied navigation.',
     technologies: ['Python', 'ROS', 'Gazebo', 'C++'],
-    period: { start: '2026', end: 'present' },
-    periodNote:
-      'Started greenfield; we are implementing the full software solution for the drone platform.',
-    longDescription:
-      'This effort began as a greenfield project: the goal is a complete onboard and supporting ' +
-      'software solution for THK drones, from sensing and mission logic to execution in the field. ' +
-      'The work spans demanding autonomy problems—' +
-      'object detection and tracking, automated decision-making driven by mission goals, GPS-less ' +
-      'navigation, and other tasks that tie perception, planning, and control together.',
-    achievements: [
-      'Help build a greenfield software stack for UAV operations end to end (perception, autonomy, mission execution).',
-      'Contribute to object detection and tracking pipelines integrated with the wider autonomy system.',
-      'Work on mission-driven behavior and navigation, including GPS-denied scenarios and related complex tasks.',
-    ],
+    period: {
+      start: '2026',
+      end: 'present',
+    },
     team: {
       size: 6,
-      note: 'Cross-functional team delivering the full software solution from the ground up.',
     },
     image: '/images/projects/thk.png',
     link: {
@@ -413,20 +245,14 @@ export const projects = [
   {
     id: 'ententee-hub',
     source: 'ententee',
-    title: 'Ententee Hub',
-    description: 'Internal hub application for ententee workflows; repository is private.',
     technologies: ['Python', 'FastAPI', 'React', 'TypeScript', 'PostgreSQL'],
-    period: { start: '2026', end: '2026' },
-    periodNote: 'Developed alongside other client initiatives.',
-    longDescription:
-      'An internal hub application supporting ententee workflows. ' +
-      'The goal is to track the status and progress of the projects, build tools to help with hiring new employees and other operational tasks.',
-    achievements: [
-      'Built internal tooling to streamline operational workflows.',
-      'Iterated rapidly based on feedback from day-to-day users.',
-      'Kept external linking professional: product context only, no private code exposure.',
-    ],
-    team: { size: 5, note: 'Internal product with close feedback loops from users.' },
+    period: {
+      start: '2026',
+      end: '2026',
+    },
+    team: {
+      size: 5,
+    },
     image: '/images/projects/ententee.png',
     link: {
       href: 'https://ententee.com/',
@@ -436,24 +262,13 @@ export const projects = [
   {
     id: 'drchrono-app',
     source: 'ententee',
-    title: 'DrChrono app',
-    description: 'DrChrono app for the mobile devices.',
     technologies: ['Django', 'React', 'TypeScript', 'PostgreSQL', 'GraphQL'],
-    period: { start: '2024', end: '2025' },
-    periodNote: 'Serious uplift of web app.',
-    longDescription:
-      'Medical web app for American customers. We worked on large uplift of the app. ' +
-      'Both, the technical and visual design was improved. ' +
-      'On backend part we modernized and extended Django codebase and GraphQL API.' +
-      'The frontend was completely rewritten to React with TypeScript and modern UI/UX patterns.',
-    achievements: [
-      'Improved the technical architecture and code quality.',
-      'Modernized and extended the Django codebase and GraphQL API.',
-      'Completely rewritten the frontend to React with TypeScript and modern UI/UX patterns.',
-    ],
+    period: {
+      start: '2024',
+      end: '2025',
+    },
     team: {
       size: 15,
-      note: 'Large product team; The Czech team tightly collaborated with the American customer.',
     },
     image: '/images/projects/drchrono.png',
     link: {
@@ -464,20 +279,40 @@ export const projects = [
 ];
 
 /**
+ * @param {string} lang
  * @returns {{ source: ProjectSource, items: Project[] }[]}
  */
-export function getProjectsGroupedBySource() {
+export function getProjectsGroupedBySource(lang = 'en') {
   /** @type {Map<ProjectSource, Project[]>} */
   const map = new Map(PROJECT_SOURCE_ORDER.map((s) => [s, []]));
-  for (const p of projects) {
-    const bucket = map.get(p.source);
+
+  for (const project of projects) {
+    const bucket = map.get(project.source);
     if (bucket === undefined) {
-      throw new Error(`Unknown project source "${p.source}" (project id: ${p.id})`);
+      throw new Error(
+        'Unknown project source "' + project.source + '" (project id: ' + project.id + ')',
+      );
     }
-    bucket.push(p);
+
+    const copy = getProjectCopy(project.id, lang);
+    const mergedProject = {
+      ...project,
+      ...copy,
+      team: project.team
+        ? {
+            ...project.team,
+            ...(copy.team ?? {}),
+          }
+        : undefined,
+    };
+
+    bucket.push(mergedProject);
   }
-  return PROJECT_SOURCE_ORDER.filter((s) => (map.get(s)?.length ?? 0) > 0).map((source) => ({
-    source,
-    items: /** @type {Project[]} */ (map.get(source)),
-  }));
+
+  return PROJECT_SOURCE_ORDER.filter((source) => (map.get(source)?.length ?? 0) > 0).map(
+    (source) => ({
+      source,
+      items: /** @type {Project[]} */ (map.get(source)),
+    }),
+  );
 }

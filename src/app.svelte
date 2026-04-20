@@ -235,7 +235,7 @@
       </div>
     {:else if activeTab === 'projects'}
       <div id="tab-panel-projects" role="tabpanel" aria-labelledby="tab-projects">
-        <ProjectsSection {translate} />
+        <ProjectsSection {translate} lang={currentLang} />
       </div>
     {:else if activeTab === 'contact'}
       <div id="tab-panel-contact" role="tabpanel" aria-labelledby="tab-contact">
