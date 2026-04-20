@@ -287,15 +287,37 @@ Svůj čas aktuálně dělím mezi komerční CAE společnost a nezávislé klie
   },
 };
 
-export function getTranslation(lang, key) {
+const ENGLISH_LOCALE = 'en';
+const FALLBACK_TO_ENGLISH_LOCALES = new Set(['de', 'cs']);
+
+function resolveKeyPath(locale, key, translationTable) {
   const keys = key.split('.');
-  let value = translations[lang];
+  let value = translationTable[locale];
 
   for (const k of keys) {
     value = value?.[k];
   }
 
-  return value || key;
+  return value;
 }
 
-export const t = (lang) => (key) => getTranslation(lang, key);
+export function getTranslation(lang, key, translationTable = translations) {
+  const localizedValue = resolveKeyPath(lang, key, translationTable);
+  if (localizedValue !== undefined) {
+    return localizedValue;
+  }
+
+  if (FALLBACK_TO_ENGLISH_LOCALES.has(lang)) {
+    const englishValue = resolveKeyPath(ENGLISH_LOCALE, key, translationTable);
+    if (englishValue !== undefined) {
+      return englishValue;
+    }
+  }
+
+  return key;
+}
+
+export const t =
+  (lang, translationTable = translations) =>
+  (key) =>
+    getTranslation(lang, key, translationTable);
