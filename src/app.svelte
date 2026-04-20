@@ -115,7 +115,7 @@
 </script>
 
 <svelte:head>
-  <title>Personal Portfolio</title>
+  <title>Vojtěch Kubáč</title>
 </svelte:head>
 
 <div
@@ -130,7 +130,7 @@
         <div
           class="font-mono text-xl font-bold tracking-tight text-emerald-800 dark:text-emerald-400"
         >
-          Portfolio
+          Vojtěch Kubáč
         </div>
 
         <div class="flex items-center gap-3">
@@ -181,7 +181,7 @@
 
   <!-- Hero Section -->
   <div class="border-b border-stone-200 dark:border-stone-800">
-    <div class="mx-auto max-w-5xl px-4 py-24 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
       <HeroSection {translate} />
     </div>
   </div>

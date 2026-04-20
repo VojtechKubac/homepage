@@ -10,13 +10,16 @@ const translations = {
       contact: 'Contact',
     },
     hero: {
-      title: "Hi, I'm a Developer",
-      subtitle: 'Full-stack developer passionate about building modern web applications',
+      title: 'Software engineer — CFD simulation, scientific computing, full-stack web.',
+      subtitle: 'I build simulation tools and the web platforms that surround them.',
     },
     about: {
       title: 'About Me',
-      description:
-        "I'm a professional developer with a passion for creating elegant, efficient solutions to complex problems. I love learning new technologies and pushing the boundaries of what's possible.",
+      description: `I'm a software engineer working across two worlds: high-performance C++ simulation codes for engineering and science, and the full-stack web platforms that make those tools accessible.
+
+Most of my work sits at the intersection — writing solver integrations and CAE tooling, shipping desktop installers, and building the Django/FastAPI backends and Svelte/React UIs that put results in front of the people who need them.
+
+I currently split my time between a commercial CAE company and independent client work, which keeps product, research, and services in regular rotation.`,
     },
     experience: {
       title: 'Experience',
@@ -38,7 +41,6 @@ const translations = {
       simulation: 'Simulation & scientific computing',
       serverSide: 'Server-side & data',
       frontendUi: 'Frontend & UI',
-      robotics: 'Robotics & autonomy',
       build: 'Build, CI & packaging',
       aiAssisted: 'AI-assisted development',
     },
@@ -94,13 +96,16 @@ const translations = {
       contact: 'Kontakt',
     },
     hero: {
-      title: 'Hallo, ich bin Entwickler',
-      subtitle: 'Full-Stack-Entwickler mit Leidenschaft für moderne Webanwendungen',
+      title: 'Software-Ingenieur — CFD-Simulation, wissenschaftliches Rechnen, Full-Stack-Web.',
+      subtitle: 'Ich entwickle Simulationswerkzeuge und die Web-Plattformen, die sie umgeben.',
     },
     about: {
       title: 'Über mich',
-      description:
-        'Ich bin ein erfahrener Entwickler mit Leidenschaft für elegante und effiziente Lösungen komplexer Probleme. Ich liebe es, neue Technologien zu lernen und die Grenzen des Möglichen zu verschieben.',
+      description: `Ich bin Software-Ingenieur an der Schnittstelle zweier Welten: performante C++-Simulationscodes für Technik und Wissenschaft sowie die Full-Stack-Web-Plattformen, die diese Werkzeuge nutzbar machen.
+
+Mein Alltag besteht aus Solver-Integrationen und CAE-Tooling, Desktop-Installer-Pipelines und Django/FastAPI-Backends mit Svelte/React-Oberflächen, die Ergebnisse dorthin bringen, wo sie gebraucht werden.
+
+Derzeit teile ich meine Zeit zwischen einem kommerziellen CAE-Unternehmen und unabhängiger Kundenarbeit — Produkt, Forschung und Dienstleistung im ständigen Wechsel.`,
     },
     experience: {
       title: 'Erfahrung',
@@ -122,7 +127,6 @@ const translations = {
       simulation: 'Simulation & wissenschaftliches Rechnen',
       serverSide: 'Serverseitig & Daten',
       frontendUi: 'Frontend & UI',
-      robotics: 'Robotik & Autonomie',
       build: 'Build, CI & Packaging',
       aiAssisted: 'KI-gestützte Entwicklung',
     },
@@ -179,13 +183,16 @@ const translations = {
       contact: 'Kontakt',
     },
     hero: {
-      title: 'Ahoj, jsem vývojář',
-      subtitle: 'Full-stack vývojář se vášní pro moderní webové aplikace',
+      title: 'Softwarový inženýr — CFD simulace, vědecké výpočty, full-stack web.',
+      subtitle: 'Vyvíjím simulační nástroje a webové platformy, které je obklopují.',
     },
     about: {
       title: 'O mně',
-      description:
-        'Jsem zkušený vývojář s vášní pro elegantní a efektivní řešení složitých problémů. Rád se učím nové technologie a posouvám hranice toho, co je možné.',
+      description: `Jsem softwarový inženýr pohybující se mezi dvěma světy: výkonnými C++ simulačními kódy pro techniku a vědu a full-stack webovými platformami, které tyto nástroje zpřístupňují lidem.
+
+Většina mé práce leží v jejich průniku — integrace solverů a nástroje pro CAE, desktopové instalační pipelines a backendy v Django/FastAPI s rozhraními ve Svelte/React, které dostávají výsledky tam, kde jsou potřeba.
+
+Svůj čas aktuálně dělím mezi komerční CAE společnost a nezávislé klientské projekty, což udržuje produktovou, výzkumnou i servisní rovinu v pravidelném střídání.`,
     },
     experience: {
       title: 'Zkušenosti',
@@ -207,7 +214,6 @@ const translations = {
       simulation: 'Simulace a vědecké výpočty',
       serverSide: 'Server a data',
       frontendUi: 'Frontend a UI',
-      robotics: 'Robotika a autonomie',
       build: 'Build, CI a balíčkování',
       aiAssisted: 'Vývoj s podporou AI',
     },

@@ -17,6 +17,7 @@ export const education = [
     school: 'Technical University of Munich',
     location: 'Munich, Germany',
     period: '2018–2019',
+    focus: 'Machine learning, deep learning, high-performance computing.',
   },
   {
     degree: 'Bachelor of Science',

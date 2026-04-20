@@ -3,11 +3,13 @@
 </script>
 
 <section class="animate-fade-in-up">
-  <h1 class="mb-6 text-4xl font-bold leading-tight text-stone-900 dark:text-stone-50 sm:text-5xl">
+  <h1
+    class="mb-4 max-w-3xl text-2xl font-bold leading-tight text-stone-900 dark:text-stone-50 sm:text-3xl md:text-4xl"
+  >
     {translate('hero.title')}
   </h1>
   <p
-    class="mb-10 max-w-2xl text-lg font-light leading-relaxed text-stone-600 dark:text-stone-400 sm:text-xl"
+    class="mb-8 max-w-2xl text-base font-light leading-relaxed text-stone-600 dark:text-stone-400 sm:text-lg"
   >
     {translate('hero.subtitle')}
   </p>

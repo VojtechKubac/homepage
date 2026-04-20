@@ -8,10 +8,12 @@
     <h2 class="mb-8 font-mono text-2xl font-bold text-emerald-800 dark:text-emerald-400">
       {translate('about.title')}
     </h2>
-    <div class="reveal">
-      <p class="mb-4 text-base leading-relaxed text-stone-700 dark:text-stone-300">
-        {translate('about.description')}
-      </p>
+    <div class="reveal space-y-4">
+      {#each translate('about.description').split('\n\n') as paragraph, i (i)}
+        <p class="text-base leading-relaxed text-stone-700 dark:text-stone-300">
+          {paragraph}
+        </p>
+      {/each}
     </div>
   </div>
 
