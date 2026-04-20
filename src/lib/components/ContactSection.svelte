@@ -2,6 +2,8 @@
   import { socialLinks } from '$lib/data/social.js';
   export let translate;
 
+  const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID;
+
   let formData = {
     name: '',
     email: '',
@@ -13,10 +15,14 @@
 
   async function handleSubmit(e) {
     e.preventDefault();
+    if (!FORMSPREE_ID) {
+      submitStatus = 'error';
+      return;
+    }
     isSubmitting = true;
 
     try {
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
