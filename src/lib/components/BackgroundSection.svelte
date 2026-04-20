@@ -16,7 +16,8 @@
           <div class="border-l-2 border-emerald-600 pl-6 dark:border-emerald-700">
             <h3 class="text-lg font-bold text-stone-900 dark:text-stone-50">{exp.role}</h3>
             <p class="font-mono text-sm font-medium text-emerald-700 dark:text-emerald-500">
-              {exp.company}{#if exp.location} · {exp.location}{/if}
+              {exp.company}{#if exp.location}
+                · {exp.location}{/if}
             </p>
             <p class="mb-3 mt-1 font-mono text-xs text-stone-500 dark:text-stone-500">
               {exp.period}

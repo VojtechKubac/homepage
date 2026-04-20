@@ -9,7 +9,7 @@
       {translate('about.title')}
     </h2>
     <div class="reveal space-y-4">
-      {#each translate('about.description').split('\n\n') as paragraph (paragraph)}
+      {#each translate('about.description').split('\n\n') as paragraph, i (i)}
         <p class="text-base leading-relaxed text-stone-700 dark:text-stone-300">
           {paragraph}
         </p>
