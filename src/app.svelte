@@ -115,7 +115,7 @@
 </script>
 
 <svelte:head>
-  <title>Personal Portfolio</title>
+  <title>Vojtěch Kubáč</title>
 </svelte:head>
 
 <div
