@@ -231,7 +231,7 @@
       </div>
     {:else if activeTab === 'background'}
       <div id="tab-panel-background" role="tabpanel" aria-labelledby="tab-background">
-        <BackgroundSection {translate} />
+        <BackgroundSection {translate} lang={currentLang} />
       </div>
     {:else if activeTab === 'projects'}
       <div id="tab-panel-projects" role="tabpanel" aria-labelledby="tab-projects">

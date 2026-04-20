@@ -10,6 +10,7 @@ UI copy lives in the `translations` object in [`src/lib/i18n.js`](../src/lib/i18
 - `src/app.svelte` keeps `document.documentElement.lang` in sync with the selected locale and uses localized `<svelte:head>` metadata.
 - Project card long-form copy is stored separately in locale JSON files: [`src/locales/en/projects.json`](../src/locales/en/projects.json), [`src/locales/de/projects.json`](../src/locales/de/projects.json), [`src/locales/cs/projects.json`](../src/locales/cs/projects.json).
 - [`src/lib/data/projectLocales.js`](../src/lib/data/projectLocales.js) resolves project copy by `id` and applies field-level fallback to English for missing locales/fields.
+- Experience rows in the Background tab use [`src/locales/en/experience.json`](../src/locales/en/experience.json) (with [`de`](../src/locales/de/experience.json) / [`cs`](../src/locales/cs/experience.json) stubs), merged in [`src/lib/data/experience.js`](../src/lib/data/experience.js) via [`src/lib/data/experienceLocales.js`](../src/lib/data/experienceLocales.js) (`getExperienceCopy` shares the same locale normalization as projects).
 
 ## Adding a language
 

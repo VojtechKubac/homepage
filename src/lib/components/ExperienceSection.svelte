@@ -1,6 +1,11 @@
 <script>
-  import { experiences } from '$lib/data/experience.js';
+  import { getExperiencesForLocale } from '$lib/data/experience.js';
+
   export let translate;
+  export let lang = 'en';
+
+  let experienceRows;
+  $: experienceRows = getExperiencesForLocale(lang);
 </script>
 
 <section id="experience" class="px-4 py-20 sm:px-6 lg:px-8">
@@ -11,7 +16,7 @@
       </span>
     </h2>
     <div class="space-y-8">
-      {#each experiences as exp, i (i)}
+      {#each experienceRows as exp, i (exp.id)}
         <div class="animate-fade-in-up" style={`animation-delay: ${i * 100}ms`}>
           <div class="border-l-4 border-blue-600 py-2 pl-6">
             <h3 class="text-2xl font-bold text-slate-900 dark:text-white">{exp.role}</h3>
