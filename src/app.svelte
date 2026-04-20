@@ -112,10 +112,15 @@
     activeTab = tabId;
     localStorage.setItem('activeTab', tabId);
   }
+
+  $: if (typeof document !== 'undefined') {
+    document.documentElement.lang = currentLang;
+  }
 </script>
 
 <svelte:head>
-  <title>Vojtěch Kubáč</title>
+  <title>{translate('meta.title')}</title>
+  <meta name="description" content={translate('meta.description')} />
 </svelte:head>
 
 <div
@@ -130,7 +135,7 @@
         <div
           class="font-mono text-xl font-bold tracking-tight text-emerald-800 dark:text-emerald-400"
         >
-          Vojtěch Kubáč
+          {translate('app.brand')}
         </div>
 
         <div class="flex items-center gap-3">
@@ -158,7 +163,7 @@
           <button
             on:click={toggleDarkMode}
             class="rounded-lg bg-stone-200 p-2 text-stone-600 transition-colors hover:bg-stone-300 dark:bg-stone-800 dark:text-stone-400 dark:hover:bg-stone-700"
-            aria-label="Toggle dark mode"
+            aria-label={translate('app.darkModeAriaLabel')}
           >
             {#if isDark}
               <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
