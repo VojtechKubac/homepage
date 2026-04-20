@@ -4,8 +4,10 @@
   import { getProjectsGroupedBySource } from '$lib/data/projects.js';
 
   export let translate;
+  export let lang = 'en';
 
-  const grouped = getProjectsGroupedBySource();
+  let grouped;
+  $: grouped = getProjectsGroupedBySource(lang);
 
   /** @type {string | null} */
   let expandedId = null;

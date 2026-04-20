@@ -2,18 +2,18 @@
 
 ## Where it lives
 
-- **Data:** [`src/lib/data/projects.js`](../src/lib/data/projects.js) — see **Project object shape** below.
+- **Data (structure/metadata):** [`src/lib/data/projects.js`](../src/lib/data/projects.js) — see **Project object shape** below.
+- **Data (localized copy):** [`src/locales/en/projects.json`](../src/locales/en/projects.json), [`src/locales/de/projects.json`](../src/locales/de/projects.json), [`src/locales/cs/projects.json`](../src/locales/cs/projects.json)
+- **Merge helper:** [`src/lib/data/projectLocales.js`](../src/lib/data/projectLocales.js) — `getProjectCopy(id, lang)` with field-level English fallback.
 - **UI:** [`src/lib/components/ProjectsSection.svelte`](../src/lib/components/ProjectsSection.svelte) — groups by `source`, cards with optional image or gradient monogram.
 - **Copy:** [`src/lib/i18n.js`](../src/lib/i18n.js) — `projects.title`, `projects.demo`, `projects.sources.{cfdSupport|github|academic|ententee}`, `projects.links.{repository|cfdSupportSite|researchGroup|clientProduct}`.
 
-## Project object shape (`projects.js`)
+## Project object shape (`projects.js`, metadata only)
 
 | Field          | Required | Type                                 | Notes                                                                                                    |
 | -------------- | -------- | ------------------------------------ | -------------------------------------------------------------------------------------------------------- |
 | `id`           | yes      | `string`                             | Stable key for `{#each ... (id)}` and gradients.                                                         |
 | `source`       | yes      | `ProjectSource`                      | One of `cfdSupport`, `github`, `academic`, `ententee` (must appear in `PROJECT_SOURCE_ORDER`).           |
-| `title`        | yes      | `string`                             | Card heading.                                                                                            |
-| `description`  | yes      | `string`                             | Card body (keep NDA-safe).                                                                               |
 | `technologies` | yes      | `string[]`                           | May be empty; tags hidden when empty.                                                                    |
 | `link`         | no       | `{ href: string, labelKey: string }` | `labelKey` is a dotted i18n path under `projects.links.*`. Omit when there is no appropriate public URL. |
 | `demo`         | no       | `string` (URL)                       | Optional second button; label is always `projects.demo`.                                                 |
@@ -25,8 +25,6 @@ Example:
 {
   id: 'example',
   source: 'github',
-  title: 'Example',
-  description: 'Short public summary.',
   technologies: ['TypeScript'],
   link: { href: 'https://github.com/...', labelKey: 'projects.links.repository' }
 }
@@ -42,6 +40,25 @@ Example:
 | `ententee`   | Client delivery; repositories are often private — add a `link` only when a public URL is accurate (e.g. healthcare product context), otherwise omit `link`. |
 
 Order of groups is fixed in `PROJECT_SOURCE_ORDER` in `projects.js`.
+
+## Localized project copy shape (`src/locales/*/projects.json`)
+
+Locale files are keyed by project `id`, for example:
+
+```json
+{
+  "example": {
+    "title": "Example",
+    "description": "Short public summary.",
+    "longDescription": "Optional details shown in expanded panel.",
+    "periodNote": "Optional timeline note.",
+    "achievements": ["Optional bullet"],
+    "team": { "note": "Optional note appended after team size." }
+  }
+}
+```
+
+Missing locale entries or missing fields in `de`/`cs` fall back to `en`.
 
 ## Inclusion rules (KUA-32)
 
