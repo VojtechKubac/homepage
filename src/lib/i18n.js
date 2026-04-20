@@ -1,5 +1,14 @@
 const translations = {
   en: {
+    app: {
+      brand: 'Portfolio',
+      darkModeAriaLabel: 'Toggle dark mode',
+    },
+    meta: {
+      title: 'Vojtech Kubac | Portfolio',
+      description:
+        'Software engineer focused on CFD simulation, scientific computing, and full-stack web development.',
+    },
     nav: {
       about: 'About',
       background: 'Background',
@@ -86,6 +95,15 @@ I currently split my time between a commercial CAE company and independent clien
     },
   },
   de: {
+    app: {
+      brand: 'Portfolio',
+      darkModeAriaLabel: 'Dunkelmodus umschalten',
+    },
+    meta: {
+      title: 'Vojtech Kubac | Portfolio',
+      description:
+        'Software-Ingenieur mit Schwerpunkt auf CFD-Simulation, wissenschaftlichem Rechnen und Full-Stack-Webentwicklung.',
+    },
     nav: {
       about: 'Über mich',
       background: 'Werdegang',
@@ -173,6 +191,15 @@ Derzeit teile ich meine Zeit zwischen einem kommerziellen CAE-Unternehmen und un
     },
   },
   cs: {
+    app: {
+      brand: 'Portfolio',
+      darkModeAriaLabel: 'Přepnout tmavý režim',
+    },
+    meta: {
+      title: 'Vojtech Kubac | Portfolio',
+      description:
+        'Softwarový inženýr se zaměřením na CFD simulace, vědecké výpočty a full-stack webový vývoj.',
+    },
     nav: {
       about: 'O mně',
       background: 'Kariéra',

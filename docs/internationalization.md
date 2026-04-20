@@ -5,6 +5,8 @@ Copy lives in the `translations` object in [`src/lib/i18n.js`](../src/lib/i18n.j
 - `getTranslation(lang, key)` walks dot paths (e.g. `contact.title`).
 - `t(lang)` returns `translate`, passed into section components as a prop.
 - Active locale: writable `language` in [`src/lib/store.js`](../src/lib/store.js), synced with `localStorage` in [`src/app.svelte`](../src/app.svelte).
+- App shell copy is localized via `app.*` (navigation brand, chrome aria labels) and `meta.*` (document title + description).
+- `src/app.svelte` keeps `document.documentElement.lang` in sync with the selected locale and uses localized `<svelte:head>` metadata.
 
 ## Adding a language
 
