@@ -289,6 +289,7 @@ Svůj čas aktuálně dělím mezi komerční CAE společnost a nezávislé klie
 
 const ENGLISH_LOCALE = 'en';
 const FALLBACK_TO_ENGLISH_LOCALES = new Set(['de', 'cs']);
+const translatorCacheByTable = new WeakMap();
 
 function resolveKeyPath(locale, key, translationTable) {
   const keys = key.split('.');
@@ -317,7 +318,18 @@ export function getTranslation(lang, key, translationTable = translations) {
   return key;
 }
 
-export const t =
-  (lang, translationTable = translations) =>
-  (key) =>
-    getTranslation(lang, key, translationTable);
+export const t = (lang, translationTable = translations) => {
+  let translatorCacheByLang = translatorCacheByTable.get(translationTable);
+  if (!translatorCacheByLang) {
+    translatorCacheByLang = new Map();
+    translatorCacheByTable.set(translationTable, translatorCacheByLang);
+  }
+
+  let translator = translatorCacheByLang.get(lang);
+  if (!translator) {
+    translator = (key) => getTranslation(lang, key, translationTable);
+    translatorCacheByLang.set(lang, translator);
+  }
+
+  return translator;
+};

@@ -82,4 +82,22 @@ describe('t', () => {
 
     expect(t('de', fixture)('nav.contact')).toBe('Contact');
   });
+
+  it('returns stable translator references for the same inputs', () => {
+    const fixture = {
+      en: {
+        nav: {
+          contact: 'Contact',
+        },
+      },
+      de: {
+        nav: {},
+      },
+    };
+
+    expect(t('de')).toBe(t('de'));
+    expect(t('de', fixture)).toBe(t('de', fixture));
+    expect(t('de')).not.toBe(t('cs'));
+    expect(t('de')).not.toBe(t('de', fixture));
+  });
 });
