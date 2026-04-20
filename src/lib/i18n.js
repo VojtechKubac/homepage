@@ -6,7 +6,8 @@ const translations = {
     },
     meta: {
       title: 'Vojtech Kubac | Portfolio',
-      description: 'Software engineer focused on CFD simulation, scientific computing, and full-stack web development.',
+      description:
+        'Software engineer focused on CFD simulation, scientific computing, and full-stack web development.',
     },
     nav: {
       about: 'About',
