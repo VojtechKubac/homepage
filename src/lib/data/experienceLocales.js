@@ -1,8 +1,7 @@
 import experienceEn from '../../locales/en/experience.json';
 import experienceDe from '../../locales/de/experience.json';
 import experienceCs from '../../locales/cs/experience.json';
-import { ENGLISH_LOCALE } from '../i18n.js';
-import { normalizeProjectLocale } from './projectLocales.js';
+import { ENGLISH_LOCALE, FALLBACK_TO_ENGLISH_LOCALES } from '../i18n.js';
 
 /** @type {Record<string, Record<string, unknown>>} */
 const experienceLocales = {
@@ -10,6 +9,20 @@ const experienceLocales = {
   de: experienceDe,
   cs: experienceCs,
 };
+
+/**
+ * @param {unknown} lang
+ * @returns {string}
+ */
+function normalizeExperienceLocale(lang) {
+  if (typeof lang !== 'string' || lang.length === 0) {
+    return ENGLISH_LOCALE;
+  }
+  if (lang === ENGLISH_LOCALE || FALLBACK_TO_ENGLISH_LOCALES.has(lang)) {
+    return lang;
+  }
+  return ENGLISH_LOCALE;
+}
 
 /**
  * @param {Record<string, unknown> | undefined} localized
@@ -35,6 +48,7 @@ function mergeExperienceCopy(localized, english) {
  *
  * @param {string} id
  * @param {string} lang
+ * @param {Record<string, Record<string, unknown>>} [localeTable]
  * @returns {{
  *   role?: string,
  *   company?: string,
@@ -44,10 +58,10 @@ function mergeExperienceCopy(localized, english) {
  *   highlights?: string[]
  * }}
  */
-export function getExperienceCopy(id, lang) {
-  const safeLang = normalizeProjectLocale(lang);
-  const localized = experienceLocales[safeLang]?.[id];
-  const english = experienceLocales[ENGLISH_LOCALE]?.[id];
+export function getExperienceCopy(id, lang, localeTable = experienceLocales) {
+  const safeLang = normalizeExperienceLocale(lang);
+  const localized = localeTable[safeLang]?.[id];
+  const english = localeTable[ENGLISH_LOCALE]?.[id];
 
   if (localized !== undefined) {
     return mergeExperienceCopy(localized, english);
