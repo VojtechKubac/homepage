@@ -1,1 +1,190 @@
-{}
+{
+  "tfea": {
+    "title": "TFEA — Finite-Elemente-Analyse (TCAE)",
+    "description": "Struktur- und thermische FEA in TCAE: CalculiX-Integration, CFD-zu-FEA-Lasten (FSI-Mapping), Modalanalyse und ParaView-basierte Workflow-Oberfläche.",
+    "longDescription": "Ich entwickle und pflege das FEA-Modul in TCAE mit Fokus auf einen pragmatischen Workflow: Import/Vorbereitung, Vernetzung, Solver-Setup, Postprocessing und Reporting. Die Arbeit entwickelt sich gemeinsam mit anderen Plattformmodulen (CFD, Vernetzung, Optimierung) weiter; das Design priorisiert Interoperabilität und robuste Fehlerfälle statt „perfekter“ Einmal-Skripte.",
+    "periodNote": "Parallel zu anderen TCAE-Modulen (Vernetzung/CFD/Optimierung) entwickelt; Funktionen werden schrittweise ausgeliefert.",
+    "achievements": [
+      "CalculiX-Läufe in einen ParaView-zentrierten Desktop-Workflow integriert (Setup → Solve → Postprocessing).",
+      "CFD-zu-FEA-Lastmapping für FSI-ähnliche Pipelines ohne individuelle Benutzer-Skripte umgesetzt.",
+      "Modalanalyse und Werkzeuge zur Modellvorbereitung und -inspektion ergänzt."
+    ],
+    "team": {
+      "note": "Übergreifendes CAE-Team; enge Kopplung mit Plattform- und Visualisierungsteilen."
+    }
+  },
+  "tcaa": {
+    "title": "TCAA — Numerische Aeroakustik (TCAE)",
+    "description": "Fernfeldlärm aus CFD-Oberflächen über FW-H / Farassat 1A, Signalverarbeitung (SPL, Oktaven), Richtcharakteristik und optional WAV-Export.",
+    "longDescription": "Dieses Modul wandelt CFD-Oberflächendaten in nutzbare aeroakustische Ergebnisse um: Fernfelddruck, SPL-Spektren und Oktavbänder. Es richtet sich an Ingenieur:innen im CFD-Workflow — Ziel sind konsistente Ergebnisse mit möglichst wenig „akademischem Aufwand“. Es wird aktiv iteriert, sobald reale Fälle Randbedingungen sichtbar machen.",
+    "periodNote": "Entwickelt parallel zu CFD und Postprocessing; Validierung fallweise anhand von Kundenbeispielen.",
+    "achievements": [
+      "FW-H-/Farassat-1A-Pipelines für Fernfeldaeroakustik aus CFD-Oberflächen implementiert.",
+      "Ausgaben der Signalverarbeitung (SPL, Oktavbänder) und Richtungsvisualisierungen ergänzt.",
+      "Optionalen WAV-Export für schnelle qualitative Bewertung und Abstimmung mit Stakeholdern ermöglicht."
+    ],
+    "team": {
+      "note": "Übergreifendes CAE-Team; enge Kopplung mit dem TCFD-Modul."
+    }
+  },
+  "tbase": {
+    "title": "TBASE — Simulationsdatenbank (TCAE)",
+    "description": "SQLite-basierte parametrische Design-Datenbank: Archiv von Simulationen mit Ergebnissen, Geometrien und Berichten, Statistik über Designräume, Grundlagen für Surrogat-Modellierung.",
+    "longDescription": "TBASE ist das „Gedächtnis“ der Plattform: Es archiviert Simulationen, Parameter, Geometrien und Ergebnisse inklusive Berichten. Nutzer:innen können Simulationen durchsuchen und Statistiken über Designräume auswerten. Die Ergebnisse sind zu 100 % reproduzierbar — dasselbe Simulationsprojekt kann aus der Datenbank wiederhergestellt und erneut ausgeführt werden. Das Datenbankschema ist flexibel gehalten, um neue Solver und Workflows zu unterstützen. Laufende Arbeit an Surrogat-Modellen zielt darauf ab, Ausgänge für noch nicht simulierte Parameterkombinationen vorherzusagen; Surrogat-Modelle liefern Vertrauensmaße und können die Optimierung steuern sowie neue Punkte im Designraum vorschlagen.",
+    "periodNote": "Evolviert mit neuen Modulen (FEA/Akustik/Optimierung), sobald reichere Metadaten und Artefakt-Handling nötig sind.",
+    "achievements": [
+      "SQLite-basierten Speicher für Simulationen, Parametersätze sowie Geometrie- und Ergebnis-Artefakte aufgebaut.",
+      "IPC-Integration ergänzt, um ParaView-Sessions direkt aus gespeicherten Simulationen anzustoßen.",
+      "Grundlagen für Statistik und Surrogat-Modellierung über parametrische Designräume gelegt."
+    ],
+    "team": {
+      "note": "Einzelarbeit."
+    }
+  },
+  "tmesh-fea": {
+    "title": "TMESH — FEA-Vernetzung (TCAE)",
+    "description": "Volumenvernetzung für struktur- und thermische Analysen aus STL/STEP über NetGen und Gmsh, mit Qualitätskontrolle und mehrteiligen Baugruppen.",
+    "longDescription": "TMESH liefert robuste, simulationsreife Volumennetze aus praxisnahen CAD-Eingaben. Die Arbeit verbindet Geometriehandhabung, Vernetzungs-Backends und UX: Nutzer:innen brauchen sichere Defaults, vorhersehbare Ergebnisse und klare Diagnose bei „schwieriger“ Geometrie. Das Modul wird aktiv weiterentwickelt, sobald neue Geometrietypen und Baugruppen dazukommen.",
+    "periodNote": "Parallel zu anderen TCAE-Modulen (Vernetzung/CFD/Optimierung) entwickelt; Funktionen werden schrittweise ausgeliefert.",
+    "achievements": [
+      "NetGen- und Gmsh-Vernetzungs-Backends für STL/STEP-Quellen integriert.",
+      "Netzqualitätskontrolle und Diagnose für typische Fehlerfälle ergänzt.",
+      "Mehrteilige Baugruppen mit praxisnaher UX für Auswahl und Inspektion unterstützt."
+    ],
+    "team": {
+      "note": "Einzelarbeit."
+    }
+  },
+  "tmesh-tcfd-topt": {
+    "title": "TMESH, TCFD, TOPT",
+    "description": "Laufende Entwicklung an Vernetzung, OpenFOAM-basiertem CFD-Setup/-Solve und Optimierung, integriert in die Gesamtplattform.",
+    "longDescription": "Ich trage quer über die TCAE-Plattform bei. Schwerpunkte sind Vernetzung, CFD-Orchestrierung um OpenFOAM, neue Solver-Codepfade für OpenFOAM sowie Optimierungs-Workflows. Die Arbeit entwickelt sich fortlaufend mit neuen Features und Verbesserungen. Wir arbeiten mit Kund:innen zusammen, um Bedarfe zu verstehen und die Plattform entsprechend auszubauen.",
+    "periodNote": "Steht für kontinuierliche Querschnittsbeiträge statt für ein festes Feature-Set.",
+    "achievements": [
+      "Ergonomie von CFD-Setup/-Solve rund um OpenFOAM im Desktop-Workflow verbessert.",
+      "Optimierungs-Workflows (DoE/DIRECT/EGO) mit Plattform-Datenmanagement erweitert.",
+      "Neuen Code für OpenFOAM-Solver geschrieben und die OpenFOAM-Codebasis um Features erweitert.",
+      "Inkrementelle Verbesserungen bei Bedienbarkeit und Stabilität über Vernetzung und Postprocessing ausgeliefert."
+    ],
+    "team": {
+      "note": "Enge Zusammenarbeit im gesamten CAE-Team; Arbeit überschreitet oft Modulgrenzen."
+    }
+  },
+  "devops-tcae": {
+    "title": "TCAE DevOps",
+    "description": "Steuerung von Entwicklungs- und Release-Prozessen: Erstellung von Linux-/Windows-Installern, GitLab CI für Backend und ParaView-Plugins sowie automatisierte Tests (CTest, headless Qt).",
+    "longDescription": "Ich betreue Teile der Build-/Release-Pipeline, damit die Desktop-Plattform lieferbar bleibt. Dazu gehören CI-Pipelines, Konzeption und Orchestrierung automatisierter Tests sowie die automatisierte Erstellung von Linux-/Windows-Installern.",
+    "periodNote": "Kontinuierliche Wartung parallel zur Feature-Entwicklung; CI/Packaging ändern sich mit ParaView/Qt und Toolchain.",
+    "achievements": [
+      "CI-Pipelines für Backend-Komponenten und ParaView-Plugins mit Fokus auf schnelles Feedback eingerichtet.",
+      "Automatisierte Tests (CTest + headless Qt wo sinnvoll) konzipiert und orchestriert, um Regressionen zu verhindern.",
+      "Linux-/Windows-Packaging-Workflows für Desktop-Verteilung aufgesetzt; Installer-Builds sind automatisiert und getestet."
+    ],
+    "team": {
+      "note": "Einzelarbeit auf bestehenden Grundlagen."
+    }
+  },
+  "ibkr-trading-bot": {
+    "title": "IBKR Trading-Bot",
+    "description": "Automatisierung und Werkzeuge rund um Interactive Brokers (algorithmische / operative Workflows; Details im Repository).",
+    "longDescription": "Ein persönliches Automatisierungsprojekt rund um Interactive Brokers, um manuelle operative Arbeit zu reduzieren: Datenabzüge, Gerüst für Strategieausführung und Schutzmechanismen. Es wird bei Bedarf weiterentwickelt; das Repository ist die Quelle für aktuellen Umfang und Verhalten.",
+    "periodNote": "Gelegentlich gepflegt; erweitert, wenn neue Automatisierungsbedarfe entstehen.",
+    "achievements": [
+      "Modulares Automatisierungs-Setup für Interactive-Brokers-Workflows aufgebaut.",
+      "Fokus auf operative Sicherheit: reproduzierbare Läufe, Logging und sichtbare Fehler.",
+      "Umfang praxisnah und wartbar gehalten statt „eines riesigen Bots“."
+    ]
+  },
+  "homepage-site": {
+    "title": "Diese Portfolio-Website",
+    "description": "Ein-Seiten-Portfolio: Svelte 4, Vite 5, Tailwind, i18n (EN / DE / CS), Integration eines Kontaktformulars.",
+    "longDescription": "Diese Site ist ein kleines, aber bewusstes Frontend-Projekt: ein schnelles Ein-Pager-Portfolio mit klarem Content-Modell, Internationalisierung und leichtem Kontakt-Flow. Sie wird weiter verfeinert, während sich Texte und Präsentation entwickeln — Ziel bleiben Einfachheit, Wartbarkeit und angenehmes Lesen.",
+    "periodNote": "In kleinen PRs iteriert, sobald sich Content und UI ändern; langfristig pflegeleicht gedacht.",
+    "achievements": [
+      "Svelte- + Vite- + Tailwind-Ein-Seiten-Struktur mit klarer Trennung von Komponenten und Daten ausgeliefert.",
+      "i18n für EN/DE/CS ohne schwere Frameworks ergänzt.",
+      "Kontaktformular-Flow passend für statisches Deployment angebunden."
+    ]
+  },
+  "master-thesis": {
+    "title": "Masterarbeit (Code)",
+    "description": "Öffentliches Repository mit Code und Artefakten aus meiner Masterarbeit.",
+    "longDescription": "Ein öffentliches Repository mit Code und Artefakten aus meiner Masterarbeit. Die Karte auf der Website bleibt bewusst auf hoher Ebene; im Repository liegen Kontext und Implementierungsdetails.",
+    "periodNote": "Im Rahmen der Masterarbeit abgeschlossen; Repository dient Referenz und Reproduzierbarkeit.",
+    "achievements": [
+      "Thesis-Code/-Artefakte in reproduzierbarer Form veröffentlicht.",
+      "Nutzung so dokumentiert, dass Gutachter:innen und spätere Nachnutzung genug Kontext haben.",
+      "Die Zusammenfassung auf der Site auf öffentliches Material fokussiert gelassen."
+    ]
+  },
+  "biomembrane": {
+    "title": "Biomembran-Remodellierung (Promotion)",
+    "description": "Etwa ein Jahr im Bereich computergestützter Biophysik / Membranmodellierung an der MFF UK (Karls-Universität); Gruppe von Christoph Allolio geleitet.",
+    "longDescription": "Während meiner Promotion arbeitete ich in einer Forschungsgruppe zu computergestützter Biophysik und Membranmodellierung. Ziel war die Modellierung von Lipidmembranen mit kontinuumsmechanischen Gleichungen. Ich betrieb Literaturrecherche, numerische Molekulardynamik-Simulationen und implementierte einen kontinuumsmechanischen Solver in C++.",
+    "periodNote": "Forschungsarbeit parallel zu anderen Verpflichtungen; inhaltlich mit der Ausrichtung der Gruppe gewachsen.",
+    "achievements": [
+      "Molekulardynamik-Simulationen mit GROMACS durchgeführt.",
+      "Kontinuumsmechanischen Solver in C++ zur Modellierung von Lipidmembranen implementiert.",
+      "Zum besseren Verständnis von Membran-Remodellierungsprozessen in der Gruppe beigetragen."
+    ],
+    "team": {
+      "note": "Austausch und Diskussion mit zahlreichen Personen innerhalb und außerhalb der Gruppe."
+    }
+  },
+  "alf": {
+    "title": "ALF — Anwendung für die Medizinische Fakultät",
+    "description": "Anwendung für eine Medizinische Fakultät zur Verwaltung von Attesten und Staatsexamina (Prüfungen in der ärztlichen Ausbildung).",
+    "longDescription": "Kundenlieferung im Gesundheits-Software-Kontext: eine Webanwendung für Workflows einer Medizinischen Fakultät. Typische Full-Stack-Produktentwicklung unter realen Randbedingungen (Datenschutz, Stakeholder-Feedback, Zeitpläne).",
+    "periodNote": "Parallel zu anderen Kundenprojekten entwickelt; Umfang und Prioritäten änderten sich mit Stakeholder-Feedback.",
+    "achievements": [
+      "Produktive Webanwendung im Einklang mit den von Stakeholdern getriebenen Workflow-Anforderungen ausgeliefert.",
+      "Innerhalb domänenspezifischer Vorgaben gearbeitet (Datenschutz, operative Zuverlässigkeit, behutsamer Rollout).",
+      "Öffentliche Darstellung professionell gehalten: Verweis auf Produktkontext statt privaten Code."
+    ],
+    "team": {
+      "note": "Kleines Produktteam; Verantwortung für die gesamte Anwendung."
+    }
+  },
+  "uav-thk": {
+    "title": "THK-Drohnen / UAV",
+    "description": "Greenfield-UAV-Stack für THK-Drohnen: Perzeption, missionsgesteuerte Autonomie und Navigation ohne GPS.",
+    "longDescription": "Dieses Vorhaben startete als Greenfield-Projekt: Ziel ist eine vollständige Onboard- und Begleit-Softwarelösung für THK-Drohnen — von Sensorik und Missionslogik bis zum Einsatz im Feld. Die Arbeit umfasst anspruchsvolle Autonomie-Themen: Objekterkennung und -tracking, automatisierte Entscheidungen aus Missionszielen, GPS-lose Navigation und weitere Aufgaben, die Wahrnehmung, Planung und Regelung verbinden.",
+    "periodNote": "Greenfield gestartet; wir implementieren die vollständige Softwarelösung für die Drohnenplattform.",
+    "achievements": [
+      "Beim Aufbau eines Greenfield-Software-Stacks für UAV-Betrieb End-to-End mitgewirkt (Perzeption, Autonomie, Missionsausführung).",
+      "Zu Objekterkennungs- und Tracking-Pipelines beigetragen, integriert in das Gesamtsystem der Autonomie.",
+      "An missionsgesteuertem Verhalten und Navigation gearbeitet, einschließlich Szenarien ohne GPS und weiteren komplexen Aufgaben."
+    ],
+    "team": {
+      "note": "Übergreifendes Team, das die vollständige Softwarelösung von Grund auf liefert."
+    }
+  },
+  "ententee-hub": {
+    "title": "Ententee Hub",
+    "description": "Interne Hub-Anwendung für ententee-Workflows; Repository ist privat.",
+    "longDescription": "Eine interne Hub-Anwendung für ententee-Workflows. Ziel ist es, Projektstatus und -fortschritt zu verfolgen, Werkzeuge für die Einstellung neuer Mitarbeitender und weitere operative Aufgaben bereitzustellen.",
+    "periodNote": "Parallel zu anderen Kundeninitiativen entwickelt.",
+    "achievements": [
+      "Interne Werkzeuge gebaut, um operative Abläufe zu verschlanken.",
+      "Schnell iteriert auf Basis von Feedback der täglichen Nutzer:innen.",
+      "Externe Verlinkung professionell gehalten: nur Produktkontext, kein privater Code."
+    ],
+    "team": {
+      "note": "Internes Produkt mit engen Feedback-Schleifen von Nutzer:innen."
+    }
+  },
+  "drchrono-app": {
+    "title": "DrChrono-App",
+    "description": "DrChrono Medizin-Web-App für US-Kund:innen.",
+    "longDescription": "Medizin-Web-App für US-amerikanische Kund:innen. Wir haben ein großes Upgrade der App umgesetzt — sowohl technisch als auch im visuellen Design. Im Backend modernisierten und erweiterten wir die Django-Codebasis und die GraphQL-API. Das Frontend wurde vollständig in React mit TypeScript und modernen UI/UX-Mustern neu geschrieben.",
+    "periodNote": "Umfassendes Upgrade der Web-App.",
+    "achievements": [
+      "Technische Architektur und Codequalität verbessert.",
+      "Django-Codebasis und GraphQL-API modernisiert und erweitert.",
+      "Frontend in React mit TypeScript und modernen UI/UX-Mustern neu implementiert."
+    ],
+    "team": {
+      "note": "Großes Produktteam; das tschechische Team arbeitete eng mit dem US-amerikanischen Kunden zusammen."
+    }
+  }
+}

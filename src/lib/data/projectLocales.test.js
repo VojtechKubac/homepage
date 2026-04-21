@@ -25,9 +25,10 @@ describe('getProjectCopy', () => {
     expect(copy.team?.note).toContain('Cross-functional CAE team');
   });
 
-  it('falls back to English when locale copy is missing', () => {
+  it('returns German project copy for German locale', () => {
     const copy = getProjectCopy('tfea', 'de');
-    expect(copy.title).toBe('TFEA — Finite element analysis (TCAE)');
+    expect(copy.title).toBe('TFEA — Finite-Elemente-Analyse (TCAE)');
+    expect(copy.description).toContain('Struktur- und thermische FEA');
     expect(copy.achievements?.length).toBeGreaterThan(0);
   });
 
