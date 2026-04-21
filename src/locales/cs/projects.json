@@ -1,1 +1,190 @@
-{}
+{
+  "tfea": {
+    "title": "TFEA — Metoda konečných prvků (TCAE)",
+    "description": "Strukturální a termální FEA v TCAE: integrace CalculiX, mapování zatížení CFD→FEA (FSI), modální analýza a workflow UI postavené na ParaView.",
+    "longDescription": "Vyvíjím a udržuji FEA modul v TCAE se zaměřením na praktický workflow: import/příprava, síťování, nastavení solveru, postprocessing a reporting. Modul se průběžně vyvíjí spolu s ostatními částmi platformy (CFD, síťování, optimalizace), proto návrh upřednostňuje interoperabilitu a robustní chování při chybách před jednorázovými „perfektními“ skripty.",
+    "periodNote": "Vyvíjeno paralelně s dalšími moduly TCAE (síťování/CFD/optimalizace); funkce dodáváme postupně.",
+    "achievements": [
+      "Integroval jsem běhy CalculiX do desktopového workflow založeného na ParaView (nastavení → výpočet → postprocessing).",
+      "Implementoval jsem mapování zatížení z CFD do FEA pro pipeline typu FSI bez nutnosti vlastních skriptů uživatele.",
+      "Doplnil jsem modální analýzu a nástroje pro přípravu a kontrolu modelu."
+    ],
+    "team": {
+      "note": "Cross-funkční CAE tým; silná návaznost na platformní a vizualizační část."
+    }
+  },
+  "tcaa": {
+    "title": "TCAA — Výpočetní aeroakustika (TCAE)",
+    "description": "Výpočet hluku ve vzdáleném poli z CFD povrchů pomocí FW-H / Farassat 1A, zpracování signálu (SPL, oktávy), směrovost a volitelný export WAV.",
+    "longDescription": "Tento modul převádí CFD povrchová data na použitelné aeroakustické výstupy: tlak ve vzdáleném poli, spektra SPL a oktávová pásma. Je navržený pro inženýry, kteří už pracují v CFD workflow — cílem jsou konzistentní výsledky s minimem „akademické režie“. Aktivně ho iterujeme podle reálných případů a hraničních stavů.",
+    "periodNote": "Vyvíjeno spolu s CFD a postprocessing nástroji; validace probíhá případ od případu podle zákaznických úloh.",
+    "achievements": [
+      "Implementoval jsem pipeline FW-H / Farassat 1A pro akustiku vzdáleného pole z CFD povrchů.",
+      "Přidal jsem výstupy zpracování signálu (SPL, oktávová pásma) a vizualizace směrovosti.",
+      "Zavedl jsem volitelný export WAV pro rychlé kvalitativní posouzení a komunikaci se stakeholdery."
+    ],
+    "team": {
+      "note": "Cross-funkční CAE tým; úzká návaznost na modul TCFD."
+    }
+  },
+  "tbase": {
+    "title": "TBASE — Databáze simulací (TCAE)",
+    "description": "Databáze parametrických návrhů nad SQLite: archiv simulací včetně výsledků, geometrií a reportů, statistika nad návrhovým prostorem a základ pro surrogate modely.",
+    "longDescription": "TBASE je „paměť“ platformy: archivuje simulace, parametry, geometrie, výsledky i reporty. Uživatelům umožňuje simulace procházet a analyzovat statistiku napříč návrhovým prostorem. Výsledky jsou 100% reprodukovatelné — stejný simulační projekt lze z databáze obnovit a znovu spustit. Schéma databáze je navržené flexibilně, aby podporovalo nové solvery a workflow přidávané do platformy. Průběžně rozvíjíme i surrogate modelování pro predikci nevyhodnocených kombinací parametrů, včetně metrik důvěry a výběru nových bodů pro vyhodnocení.",
+    "periodNote": "Vyvíjí se s tím, jak nové moduly (FEA/akustika/optimalizace) vyžadují bohatší metadata a práci s artefakty.",
+    "achievements": [
+      "Postavil jsem úložiště nad SQLite pro simulace, parametry a artefakty geometrií/výsledků.",
+      "Doplnil jsem IPC integraci pro spouštění ParaView session přímo z uložených simulací.",
+      "Připravil jsem základy pro statistiku a surrogate modelování v parametrických návrhových prostorech."
+    ],
+    "team": {
+      "note": "Samostatná práce."
+    }
+  },
+  "tmesh-fea": {
+    "title": "TMESH — Síťování pro FEA (TCAE)",
+    "description": "Objemové síťování pro strukturální/termální analýzy z STL/STEP přes NetGen a Gmsh, včetně kontroly kvality a vícekomponentních sestav.",
+    "longDescription": "TMESH se zaměřuje na spolehlivou přípravu objemových sítí připravených pro simulace z praktických CAD vstupů. Jde o kombinaci práce s geometrií, síťovacími backendy a UX: uživatelé potřebují bezpečné výchozí hodnoty, předvídatelné výsledky a srozumitelnou diagnostiku při problematické geometrii. Modul je aktivně vyvíjen s příchodem nových typů geometrií a sestav.",
+    "periodNote": "Vyvíjeno paralelně s dalšími moduly TCAE (síťování/CFD/optimalizace); funkce dodáváme postupně.",
+    "achievements": [
+      "Integroval jsem síťovací backendy NetGen a Gmsh pro vstupy STL/STEP.",
+      "Přidal jsem kontrolu kvality sítě a diagnostiku běžných chybových stavů.",
+      "Podpořil jsem vícekomponentní sestavy s praktickým UX pro výběr a kontrolu."
+    ],
+    "team": {
+      "note": "Samostatná práce."
+    }
+  },
+  "tmesh-tcfd-topt": {
+    "title": "TMESH, TCFD, TOPT",
+    "description": "Průběžný vývoj síťování, OpenFOAM-based nastavení/výpočtu CFD a optimalizace integrované do celé platformy.",
+    "longDescription": "V rámci platformy TCAE přispívám napříč moduly. Hlavní oblasti jsou síťování, orchestrace CFD nad OpenFOAM, vývoj nového kódu pro OpenFOAM solvery a optimalizační workflow. Práce se průběžně vyvíjí podle nových požadavků a postupných vylepšení. Aktivně spolupracujeme se zákazníky, abychom platformu ladili podle reálných potřeb.",
+    "periodNote": "Zastřešuje kontinuální přínos napříč moduly, nejde o jednu fixní sadu funkcí.",
+    "achievements": [
+      "Zlepšil jsem ergonomii nastavení a běhu CFD nad OpenFOAM v desktopovém workflow.",
+      "Rozšířil jsem optimalizační workflow (DoE/DIRECT/EGO) integrované s datovou vrstvou platformy.",
+      "Vyvíjel jsem nový kód pro OpenFOAM solvery a rozšiřoval OpenFOAM codebase o nové funkce.",
+      "Dodával jsem průběžná zlepšení použitelnosti a stability napříč síťováním a postprocessingem."
+    ],
+    "team": {
+      "note": "Úzká spolupráce v celém CAE týmu; práce často přesahuje hranice jednotlivých modulů."
+    }
+  },
+  "devops-tcae": {
+    "title": "TCAE DevOps",
+    "description": "Řízení vývoje a release procesu: tvorba Linux/Windows instalátorů, GitLab CI pro backend a ParaView pluginy a automatizované testy (CTest, headless Qt).",
+    "longDescription": "Udržuji části build/release pipeline tak, aby desktopová platforma zůstala dlouhodobě vydavatelná. To zahrnuje nastavení CI pipeline, návrh a orchestraci automatizovaných testů i řízení automatické tvorby Linux/Windows instalátorů.",
+    "periodNote": "Průběžná údržba paralelně s vývojem funkcí; CI a packaging se mění s ParaView/Qt a toolchainem.",
+    "achievements": [
+      "Nastavil jsem CI pipeline pro backendové komponenty a ParaView pluginy se zaměřením na rychlou zpětnou vazbu.",
+      "Navrhl jsem a orchestroval automatizované testy (CTest + headless Qt) pro prevenci regresí.",
+      "Zavedl jsem Linux/Windows packaging workflow vhodný pro distribuci desktopové aplikace, včetně automatizace a testování instalátorů."
+    ],
+    "team": {
+      "note": "Samostatná práce navazující na existující řešení."
+    }
+  },
+  "ibkr-trading-bot": {
+    "title": "IBKR trading bot",
+    "description": "Automatizace a nástroje kolem Interactive Brokers (algoritmické/provozní workflow; detaily v repozitáři).",
+    "longDescription": "Osobní automatizační projekt nad Interactive Brokers, jehož cílem je omezit manuální provozní práci: sběr dat, kostra pro spouštění strategií a bezpečnostní guardrails. Projekt průběžně rozvíjím podle aktuálních potřeb a repozitář je zdroj pravdy pro aktuální rozsah i chování.",
+    "periodNote": "Udržováno průběžně; rozšiřováno podle nových automatizačních potřeb.",
+    "achievements": [
+      "Postavil jsem modulární automatizační řešení pro workflow kolem Interactive Brokers.",
+      "Zaměřil jsem se na provozní bezpečnost: opakovatelné běhy, logování a viditelnost chyb.",
+      "Udržel jsem praktický a dlouhodobě udržitelný rozsah místo „jednoho obřího bota“."
+    ]
+  },
+  "homepage-site": {
+    "title": "Tento portfolio web",
+    "description": "Jednostránkové portfolio: Svelte 4, Vite 5, Tailwind, i18n (EN / DE / CS), integrace kontaktního formuláře.",
+    "longDescription": "Tento web je malý, ale promyšlený front-end projekt: rychlé jednostránkové portfolio s čistým content modelem, internacionalizací a lehkým kontaktním flow. Průběžně ho ladím podle vývoje textů i prezentace — cílem je jednoduchost, snadná údržba a příjemné používání.",
+    "periodNote": "Iterováno v menších PR podle vývoje obsahu a UI; navržené pro dlouhodobou snadnou údržbu.",
+    "achievements": [
+      "Dodal jsem jednostránkovou strukturu Svelte + Vite + Tailwind s jasným oddělením komponent a dat.",
+      "Přidal jsem i18n pro EN/DE/CS bez nasazení těžkých frameworků.",
+      "Integroval jsem kontaktovací flow vhodné pro statický způsob nasazení."
+    ]
+  },
+  "master-thesis": {
+    "title": "Diplomová práce (kód)",
+    "description": "Veřejný repozitář s kódem a artefakty vytvořenými během práce na diplomové práci.",
+    "longDescription": "Veřejný repozitář obsahující kód a artefakty vzniklé během mé diplomové práce. Karta na webu zůstává záměrně stručná; autoritativní kontext i implementační detaily jsou v repozitáři.",
+    "periodNote": "Dokončeno v rámci diplomové práce; repozitář ponechán pro reference a reprodukovatelnost.",
+    "achievements": [
+      "Publikoval jsem kód a artefakty diplomové práce v reprodukovatelné podobě.",
+      "Zdokumentoval jsem použití tak, aby bylo použitelné pro oponenty i budoucí reference.",
+      "Udržel jsem shrnutí na webu zaměřené na veřejně dostupné informace."
+    ]
+  },
+  "biomembrane": {
+    "title": "Remodelace biomembrán (doktorské studium)",
+    "description": "Přibližně rok v oblasti výpočetní biofyziky/modelování membrán na MFF UK (Univerzita Karlova); skupina vedená Christophem Alloliem.",
+    "longDescription": "Během doktorského studia jsem působil ve výzkumné skupině zaměřené na výpočetní biofyziku a modelování membrán. Cílem bylo modelovat lipidové membrány pomocí rovnic kontinua. Dělal jsem literární rešerše, numerické molekulárně-dynamické simulace a implementoval solver kontinua v C++.",
+    "periodNote": "Výzkum probíhal paralelně s dalšími aktivitami a vyvíjel se podle směru skupiny.",
+    "achievements": [
+      "Prováděl jsem molekulárně-dynamické simulace (GROMACS).",
+      "Implementoval jsem C++ solver kontinuální mechaniky pro modelování lipidových membrán.",
+      "Přispěl jsem k lepšímu porozumění procesům remodelace membrán ve skupině."
+    ],
+    "team": {
+      "note": "Spolupráce a konzultace s řadou lidí uvnitř i mimo skupinu."
+    }
+  },
+  "alf": {
+    "title": "ALF — Aplikace pro lékařskou fakultu",
+    "description": "Aplikace pro lékařskou fakultu určená ke správě atestací a kmenových zkoušek.",
+    "longDescription": "Klientská dodávka v kontextu zdravotnického softwaru: webová aplikace podporující workflow lékařské fakulty. Šlo o standardní full-stack produktový vývoj pod reálnými omezeními (soukromí, zpětná vazba stakeholderů, časové termíny).",
+    "periodNote": "Vyvíjeno paralelně s dalšími klientskými iniciativami; rozsah i priority se měnily podle zpětné vazby.",
+    "achievements": [
+      "Dodal jsem produkční webovou aplikaci podle workflow požadavků stakeholderů.",
+      "Pracoval jsem v rámci doménových omezení (soukromí, provozní spolehlivost, opatrný rollout).",
+      "Udržel jsem veřejnou prezentaci profesionální: odkaz na produktový kontext místo privátního kódu."
+    ],
+    "team": {
+      "note": "Malý produktový tým; zodpovědnost za celou aplikaci."
+    }
+  },
+  "uav-thk": {
+    "title": "THK drony / UAV",
+    "description": "Greenfield UAV stack pro drony THK: percepce, misí řízená autonomie a navigace bez GPS.",
+    "longDescription": "Tato práce začala jako greenfield projekt: cílem je kompletní onboard i podpůrné softwarové řešení pro drony THK — od senzoriky a logiky mise až po nasazení v terénu. Pokrývá náročné autonomní úlohy: detekci a tracking objektů, automatizované rozhodování podle cílů mise, GPS-less navigaci i další oblasti propojující percepci, plánování a řízení.",
+    "periodNote": "Začátek greenfield; implementujeme kompletní softwarové řešení pro dronovou platformu.",
+    "achievements": [
+      "Pomáhám budovat greenfield software stack pro UAV end-to-end (percepce, autonomie, plnění mise).",
+      "Přispívám k pipeline pro detekci a tracking objektů integrovaným s širším autonomním systémem.",
+      "Pracuji na chování řízeném misí a navigaci včetně GPS-denied scénářů a souvisejících komplexních úloh."
+    ],
+    "team": {
+      "note": "Cross-funkční tým dodávající kompletní softwarové řešení od základů."
+    }
+  },
+  "ententee-hub": {
+    "title": "Ententee Hub",
+    "description": "Interní hub aplikace pro workflow ve společnosti ententee; repozitář je privátní.",
+    "longDescription": "Interní hub aplikace podporující workflow v ententee. Cílem je sledovat stav a průběh projektů, vytvářet nástroje pro nábor nových zaměstnanců a řešit další provozní úkoly.",
+    "periodNote": "Vyvíjeno paralelně s dalšími klientskými iniciativami.",
+    "achievements": [
+      "Vytvořil jsem interní nástroje pro zefektivnění provozních workflow.",
+      "Iteroval jsem rychle podle zpětné vazby od každodenních uživatelů.",
+      "Udržel jsem externí odkazování profesionální: produktový kontext bez vystavení privátního kódu."
+    ],
+    "team": {
+      "note": "Interní produkt s těsnou zpětnou vazbou od uživatelů."
+    }
+  },
+  "drchrono-app": {
+    "title": "DrChrono app",
+    "description": "DrChrono zdravotnická webová aplikace pro zákazníky v USA.",
+    "longDescription": "Zdravotnická webová aplikace pro americké zákazníky. Pracovali jsme na výrazném upliftu celé aplikace — technicky i vizuálně. Na backendu jsme modernizovali a rozšířili Django codebase a GraphQL API. Frontend jsme kompletně přepsali do Reactu s TypeScriptem a moderními UI/UX postupy.",
+    "periodNote": "Výrazný uplift webové aplikace.",
+    "achievements": [
+      "Zlepšil jsem technickou architekturu a kvalitu kódu.",
+      "Modernizoval jsem a rozšířil Django codebase i GraphQL API.",
+      "Přepsal jsem frontend do Reactu s TypeScriptem a moderními UI/UX postupy."
+    ],
+    "team": {
+      "note": "Velký produktový tým; český tým úzce spolupracoval s americkým zákazníkem."
+    }
+  }
+}
