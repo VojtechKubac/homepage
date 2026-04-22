@@ -28,7 +28,7 @@ const translations = {
 
 Most of my work sits at the intersection — writing solver integrations and CAE tooling, shipping desktop installers, and building the Django/FastAPI backends and Svelte/React UIs that put results in front of the people who need them.
 
-I currently split my time between a commercial CAE company and independent client work, which keeps product, research, and services in regular rotation.`,
+I collaborate in parallel with multiple teams across commercial CAE and healthcare software, while continuing independent portfolio projects. This keeps product, research, and service work in regular rotation without exposing contract details.`,
     },
     experience: {
       title: 'Experience',
@@ -123,7 +123,7 @@ I currently split my time between a commercial CAE company and independent clien
 
 Mein Alltag besteht aus Solver-Integrationen und CAE-Tooling, Desktop-Installer-Pipelines und Django/FastAPI-Backends mit Svelte/React-Oberflächen, die Ergebnisse dorthin bringen, wo sie gebraucht werden.
 
-Derzeit teile ich meine Zeit zwischen einem kommerziellen CAE-Unternehmen und unabhängiger Kundenarbeit — Produkt, Forschung und Dienstleistung im ständigen Wechsel.`,
+Ich arbeite parallel mit mehreren Teams in kommerzieller CAE-Software und Healthcare-Webprodukten zusammen und entwickle daneben eigene Portfolio-Projekte weiter. So bleiben Produkt-, Forschungs- und Servicearbeit im ständigen Wechsel, ohne Vertragsdetails offenzulegen.`,
     },
     experience: {
       title: 'Erfahrung',
@@ -219,7 +219,7 @@ Derzeit teile ich meine Zeit zwischen einem kommerziellen CAE-Unternehmen und un
 
 Většina mé práce leží v jejich průniku — integrace solverů a nástroje pro CAE, desktopové instalační pipelines a backendy v Django/FastAPI s rozhraními ve Svelte/React, které dostávají výsledky tam, kde jsou potřeba.
 
-Svůj čas aktuálně dělím mezi komerční CAE společnost a nezávislé klientské projekty, což udržuje produktovou, výzkumnou i servisní rovinu v pravidelném střídání.`,
+Paralelně spolupracuji s více týmy napříč komerčním CAE a healthcare softwarem a současně rozvíjím vlastní portfolio projekty. Díky tomu se přirozeně střídá produktová, výzkumná i servisní rovina bez zveřejňování smluvních detailů.`,
     },
     experience: {
       title: 'Zkušenosti',

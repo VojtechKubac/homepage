@@ -3,7 +3,7 @@
     "role": "Software engineer",
     "company": "Ententee",
     "period": "2024 — present",
-    "description": "Full-stack product delivery across healthcare and robotics engagements, developed alongside my role at CFD Support.",
+    "description": "Full-stack product delivery across healthcare and robotics engagements, run in parallel with my CFD Support collaboration.",
     "highlights": [
       "THK UAV — greenfield drone stack: perception, mission autonomy, GPS-denied navigation.",
       "DrChrono (2024–2025) — uplift of a US medical web app: Django/GraphQL backend, full React/TypeScript frontend rewrite.",
