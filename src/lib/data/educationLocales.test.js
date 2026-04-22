@@ -53,6 +53,35 @@ describe('getEducationCopy', () => {
     expect(copy.focus).toBe('Machine learning and HPC.');
   });
 
+  it('falls back to English when localized fields are blank strings', () => {
+    const fixture = {
+      en: {
+        'msc-charles-university': {
+          degree: 'Master of Science',
+          field: 'Mathematical Modeling in Physics and Technology',
+          thesis: {
+            title: 'English thesis title',
+          },
+        },
+      },
+      de: {
+        'msc-charles-university': {
+          degree: '   ',
+          field: '',
+          thesis: {
+            title: ' ',
+          },
+        },
+      },
+      cs: {},
+    };
+
+    const copy = getEducationCopy('msc-charles-university', 'de', fixture);
+    expect(copy.degree).toBe('Master of Science');
+    expect(copy.field).toBe('Mathematical Modeling in Physics and Technology');
+    expect(copy.thesis?.title).toBe('English thesis title');
+  });
+
   it('returns an empty object for unknown ids', () => {
     expect(getEducationCopy('unknown-id', 'en')).toEqual({});
   });

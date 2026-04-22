@@ -1,9 +1,9 @@
 {
   "msc-charles-university": {
-    "degree": "Magisterske studium",
-    "field": "Matematicke modelovani ve fyzice a technice",
+    "degree": "Magisterské studium",
+    "field": "Matematické modelování ve fyzice a technice",
     "school": "Univerzita Karlova",
-    "location": "Praha, Ceska republika",
+    "location": "Praha, Česká republika",
     "period": "2017-2020",
     "thesis": {
       "title": "Comparison of possible formulations of fluid-structure interactions with application in biomechanics",
@@ -13,16 +13,16 @@
   "erasmus-tum": {
     "degree": "Erasmus pobyt",
     "field": "Fakulta matematiky",
-    "school": "Technicka univerzita v Mnichove",
-    "location": "Mnichov, Nemecko",
+    "school": "Technická univerzita v Mnichově",
+    "location": "Mnichov, Německo",
     "period": "2018-2019",
     "focus": "Machine learning, deep learning a high-performance computing."
   },
   "bsc-charles-university": {
-    "degree": "Bakalarske studium",
-    "field": "Obecna matematika",
+    "degree": "Bakalářské studium",
+    "field": "Obecná matematika",
     "school": "Univerzita Karlova",
-    "location": "Praha, Ceska republika",
+    "location": "Praha, Česká republika",
     "period": "2014-2017"
   }
 }

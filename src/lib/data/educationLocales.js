@@ -25,6 +25,26 @@ function normalizeEducationLocale(lang) {
 }
 
 /**
+ * @param {unknown} value
+ * @returns {boolean}
+ */
+function hasEducationValue(value) {
+  if (typeof value === 'string') {
+    return value.trim().length > 0;
+  }
+  return value !== undefined;
+}
+
+/**
+ * @param {unknown} localizedValue
+ * @param {unknown} englishValue
+ * @returns {unknown}
+ */
+function educationValue(localizedValue, englishValue) {
+  return hasEducationValue(localizedValue) ? localizedValue : englishValue;
+}
+
+/**
  * @param {Record<string, unknown> | undefined} localized
  * @param {Record<string, unknown> | undefined} english
  * @returns {Record<string, unknown>}
@@ -33,16 +53,16 @@ function mergeEducationCopy(localized, english) {
   const copy = {};
 
   for (const key of ['degree', 'field', 'school', 'location', 'period', 'focus']) {
-    const value = localized?.[key] ?? english?.[key];
-    if (value !== undefined) copy[key] = value;
+    const value = educationValue(localized?.[key], english?.[key]);
+    if (hasEducationValue(value)) copy[key] = value;
   }
 
-  const thesisTitle = localized?.thesis?.title ?? english?.thesis?.title;
-  const thesisSupervisor = localized?.thesis?.supervisor ?? english?.thesis?.supervisor;
-  if (thesisTitle !== undefined || thesisSupervisor !== undefined) {
+  const thesisTitle = educationValue(localized?.thesis?.title, english?.thesis?.title);
+  const thesisSupervisor = educationValue(localized?.thesis?.supervisor, english?.thesis?.supervisor);
+  if (hasEducationValue(thesisTitle) || hasEducationValue(thesisSupervisor)) {
     copy.thesis = {};
-    if (thesisTitle !== undefined) copy.thesis.title = thesisTitle;
-    if (thesisSupervisor !== undefined) copy.thesis.supervisor = thesisSupervisor;
+    if (hasEducationValue(thesisTitle)) copy.thesis.title = thesisTitle;
+    if (hasEducationValue(thesisSupervisor)) copy.thesis.supervisor = thesisSupervisor;
   }
 
   return copy;

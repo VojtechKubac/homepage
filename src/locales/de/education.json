@@ -2,7 +2,7 @@
   "msc-charles-university": {
     "degree": "Master of Science",
     "field": "Mathematische Modellierung in Physik und Technik",
-    "school": "Charles University",
+    "school": "Univerzita Karlova",
     "location": "Prag, Tschechische Republik",
     "period": "2017-2020",
     "thesis": {
@@ -12,16 +12,16 @@
   },
   "erasmus-tum": {
     "degree": "Erasmus-Austausch",
-    "field": "Fakultat fur Mathematik",
-    "school": "Technical University of Munich",
-    "location": "Munchen, Deutschland",
+    "field": "Fakultät für Mathematik",
+    "school": "Technische Universität München",
+    "location": "München, Deutschland",
     "period": "2018-2019",
     "focus": "Maschinelles Lernen, Deep Learning und High-Performance-Computing."
   },
   "bsc-charles-university": {
     "degree": "Bachelor of Science",
     "field": "Allgemeine Mathematik",
-    "school": "Charles University",
+    "school": "Univerzita Karlova",
     "location": "Prag, Tschechische Republik",
     "period": "2014-2017"
   }

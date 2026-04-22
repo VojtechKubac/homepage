@@ -19,7 +19,7 @@ Single-page **Svelte 4** + **Vite 5** + **Tailwind CSS 3** portfolio. Details ar
 
 ## Conventions (short)
 
-Components: [`src/lib/components/`](src/lib/components/). Content data: [`src/lib/data/`](src/lib/data/). Global styles: [`src/styles.css`](src/styles.css). UI shell: [`index.html`](index.html) → [`src/main.js`](src/main.js) → [`src/app.svelte`](src/app.svelte).
+Components: [`src/lib/components/`](src/lib/components/). Content data loaders/models: [`src/lib/data/`](src/lib/data/). Localized content JSON lives under [`src/locales/`](src/locales/) and is imported by data-layer helpers (for example `projectLocales.js`, `experienceLocales.js`, `educationLocales.js`). Global styles: [`src/styles.css`](src/styles.css). UI shell: [`index.html`](index.html) → [`src/main.js`](src/main.js) → [`src/app.svelte`](src/app.svelte).
 
 ## Avoid without explicit direction
 
