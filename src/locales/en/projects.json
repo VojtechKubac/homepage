@@ -36,10 +36,7 @@
       "Built a SQLite-backed store for simulations, parameter sets, and geometry/result artifacts.",
       "Built IPC integration to drive ParaView sessions directly from stored simulations.",
       "Laid groundwork for statistics and surrogate modeling over parametric design spaces."
-    ],
-    "team": {
-      "note": "Solo effort."
-    }
+    ]
   },
   "tmesh-fea": {
     "title": "TMESH — FEA meshing (TCAE)",
@@ -50,10 +47,7 @@
       "Integrated NetGen and Gmsh meshing backends for STL/STEP sources.",
       "Added mesh quality controls and diagnostics for common failure modes.",
       "Supported multi-component assemblies with practical UX for selection and inspection."
-    ],
-    "team": {
-      "note": "Solo effort."
-    }
+    ]
   },
   "tmesh-tcfd-topt": {
     "title": "TMESH, TCFD, TOPT",
@@ -79,10 +73,7 @@
       "Set up CI pipelines for backend components and ParaView plugins with a focus on fast feedback.",
       "Designed and orchestrated automated tests (CTest + headless Qt where appropriate) to prevent regressions.",
       "Set up Linux/Windows packaging workflows suitable for desktop distribution. The Linux/Windows installers packaging is automated and tested to ensure it works on user machines."
-    ],
-    "team": {
-      "note": "Solo effort building on previous work."
-    }
+    ]
   },
   "ibkr-trading-bot": {
     "title": "IBKR trading bot",
