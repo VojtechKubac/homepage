@@ -58,7 +58,10 @@ function mergeEducationCopy(localized, english) {
   }
 
   const thesisTitle = educationValue(localized?.thesis?.title, english?.thesis?.title);
-  const thesisSupervisor = educationValue(localized?.thesis?.supervisor, english?.thesis?.supervisor);
+  const thesisSupervisor = educationValue(
+    localized?.thesis?.supervisor,
+    english?.thesis?.supervisor,
+  );
   if (hasEducationValue(thesisTitle) || hasEducationValue(thesisSupervisor)) {
     copy.thesis = {};
     if (hasEducationValue(thesisTitle)) copy.thesis.title = thesisTitle;
