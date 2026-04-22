@@ -1,12 +1,14 @@
 <script>
   import { getExperiencesForLocale } from '$lib/data/experience.js';
-  import { education } from '$lib/data/education.js';
+  import { getEducationForLocale } from '$lib/data/education.js';
 
   export let translate;
   export let lang = 'en';
 
   let experienceRows;
+  let educationRows;
   $: experienceRows = getExperiencesForLocale(lang);
+  $: educationRows = getEducationForLocale(lang);
 </script>
 
 <section id="background">
@@ -60,7 +62,7 @@
       {translate('education.title')}
     </h2>
     <div class="reveal-stagger space-y-10">
-      {#each education as edu, i (i)}
+      {#each educationRows as edu, i (edu.id)}
         <div class="reveal" style={`--stagger-index: ${i}`}>
           <div class="border-l-2 border-stone-300 pl-6 dark:border-stone-700">
             <h3 class="text-lg font-bold text-stone-900 dark:text-stone-50">{edu.degree}</h3>
