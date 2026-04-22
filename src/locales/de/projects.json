@@ -36,10 +36,7 @@
       "SQLite-basierten Speicher für Simulationen, Parametersätze sowie Geometrie- und Ergebnis-Artefakte aufgebaut.",
       "IPC-Integration ergänzt, um ParaView-Sessions direkt aus gespeicherten Simulationen anzustoßen.",
       "Grundlagen für Statistik und Surrogat-Modellierung über parametrische Designräume gelegt."
-    ],
-    "team": {
-      "note": "Einzelarbeit."
-    }
+    ]
   },
   "tmesh-fea": {
     "title": "TMESH — FEA-Vernetzung (TCAE)",
@@ -50,10 +47,7 @@
       "NetGen- und Gmsh-Vernetzungs-Backends für STL/STEP-Quellen integriert.",
       "Netzqualitätskontrolle und Diagnose für typische Fehlerfälle ergänzt.",
       "Mehrteilige Baugruppen mit praxisnaher UX für Auswahl und Inspektion unterstützt."
-    ],
-    "team": {
-      "note": "Einzelarbeit."
-    }
+    ]
   },
   "tmesh-tcfd-topt": {
     "title": "TMESH, TCFD, TOPT",
@@ -79,10 +73,7 @@
       "CI-Pipelines für Backend-Komponenten und ParaView-Plugins mit Fokus auf schnelles Feedback eingerichtet.",
       "Automatisierte Tests (CTest + headless Qt wo sinnvoll) konzipiert und orchestriert, um Regressionen zu verhindern.",
       "Linux-/Windows-Packaging-Workflows für Desktop-Verteilung aufgesetzt; Installer-Builds sind automatisiert und getestet."
-    ],
-    "team": {
-      "note": "Einzelarbeit auf bestehenden Grundlagen."
-    }
+    ]
   },
   "ibkr-trading-bot": {
     "title": "IBKR Trading-Bot",

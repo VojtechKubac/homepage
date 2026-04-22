@@ -36,10 +36,7 @@
       "Postavil jsem úložiště nad SQLite pro simulace, parametry a artefakty geometrií/výsledků.",
       "Doplnil jsem IPC integraci pro spouštění ParaView session přímo z uložených simulací.",
       "Připravil jsem základy pro statistiku a surrogate modelování v parametrických návrhových prostorech."
-    ],
-    "team": {
-      "note": "Samostatná práce."
-    }
+    ]
   },
   "tmesh-fea": {
     "title": "TMESH — Síťování pro FEA (TCAE)",
@@ -50,10 +47,7 @@
       "Integroval jsem síťovací backendy NetGen a Gmsh pro vstupy STL/STEP.",
       "Přidal jsem kontrolu kvality sítě a diagnostiku běžných chybových stavů.",
       "Podpořil jsem vícekomponentní sestavy s praktickým UX pro výběr a kontrolu."
-    ],
-    "team": {
-      "note": "Samostatná práce."
-    }
+    ]
   },
   "tmesh-tcfd-topt": {
     "title": "TMESH, TCFD, TOPT",
@@ -79,10 +73,7 @@
       "Nastavil jsem CI pipeline pro backendové komponenty a ParaView pluginy se zaměřením na rychlou zpětnou vazbu.",
       "Navrhl jsem a orchestroval automatizované testy (CTest + headless Qt) pro prevenci regresí.",
       "Zavedl jsem Linux/Windows packaging workflow vhodný pro distribuci desktopové aplikace, včetně automatizace a testování instalátorů."
-    ],
-    "team": {
-      "note": "Samostatná práce navazující na existující řešení."
-    }
+    ]
   },
   "ibkr-trading-bot": {
     "title": "IBKR trading bot",
