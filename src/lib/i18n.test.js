@@ -60,8 +60,10 @@ describe('t', () => {
   it('keeps projects i18n keys aligned across en, de, and cs', () => {
     expect(t('de')('projects.links.repository')).toBe('Repository ansehen');
     expect(t('de')('projects.sources.github')).toBe('GitHub & persönlich');
+    expect(t('de')('projects.details.teamSolo')).toBe('Einzelprojekt.');
     expect(t('cs')('projects.links.repository')).toBe('Zobrazit repozitář');
     expect(t('cs')('projects.sources.github')).toBe('GitHub a osobní');
+    expect(t('cs')('projects.details.teamSolo')).toBe('Samostatný projekt.');
   });
 
   it('returns German copy for de', () => {

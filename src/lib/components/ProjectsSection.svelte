@@ -88,6 +88,25 @@
     const hue2 = (hue + 40) % 360;
     return `linear-gradient(135deg, hsl(${hue}, 40%, 35%) 0%, hsl(${hue2}, 35%, 28%) 100%)`;
   }
+
+  /**
+   * @param {string | undefined} note
+   * @returns {boolean}
+   */
+  function isGenericSoloNote(note) {
+    if (!note) return false;
+    const normalized = note.trim().toLowerCase();
+    return (
+      normalized === 'solo effort.' ||
+      normalized === 'solo effort' ||
+      normalized === 'einzelarbeit.' ||
+      normalized === 'einzelarbeit' ||
+      normalized === 'samostatna prace.' ||
+      normalized === 'samostatna prace' ||
+      normalized === 'samostatná práce.' ||
+      normalized === 'samostatná práce'
+    );
+  }
 </script>
 
 <section id="projects">
@@ -218,9 +237,17 @@
                 {#if active.periodNote || active.team}
                   <p class="mb-4 text-sm leading-relaxed text-stone-700 dark:text-stone-300">
                     {#if active.team}
-                      {translate('projects.details.teamPrefix')}{active.team.size}
-                      {active.team.note ? ` ${active.team.note}` : ''}
-                      {translate('projects.details.teamSuffix')}
+                      {#if active.team.size === 1}
+                        {#if active.team.note && !isGenericSoloNote(active.team.note)}
+                          {active.team.note}
+                        {:else}
+                          {translate('projects.details.teamSolo')}
+                        {/if}
+                      {:else}
+                        {translate('projects.details.teamPrefix')}{active.team.size}
+                        {active.team.note ? ` ${active.team.note}` : ''}
+                        {translate('projects.details.teamSuffix')}
+                      {/if}
                     {/if}
                     {#if active.periodNote}
                       {active.team ? ' ' : ''}

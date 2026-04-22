@@ -63,6 +63,7 @@ I collaborate in parallel with multiple teams across commercial CAE and healthca
         achievements: 'Highlights',
         teamPrefix: 'Worked with a team of ~',
         teamSuffix: ' developers',
+        teamSolo: 'Solo project.',
       },
       sources: {
         cfdSupport: 'CFD SUPPORT — TCAE (commercial CAE)',
@@ -158,6 +159,7 @@ Ich arbeite parallel mit mehreren Teams in kommerzieller CAE-Software und Health
         achievements: 'Erfolge',
         teamPrefix: 'Mit einem Team von ca. ',
         teamSuffix: ' Entwicklern',
+        teamSolo: 'Einzelprojekt.',
       },
       sources: {
         cfdSupport: 'CFD SUPPORT — TCAE (kommerzielle CAE-Software)',
@@ -254,6 +256,7 @@ Paralelně spolupracuji s více týmy napříč komerčním CAE a healthcare sof
         achievements: 'Úspěchy',
         teamPrefix: 'Na projektu pracoval tým o velikosti cca ',
         teamSuffix: ' vývojářů',
+        teamSolo: 'Samostatný projekt.',
       },
       sources: {
         cfdSupport: 'CFD SUPPORT — TCAE (komerční CAE)',
