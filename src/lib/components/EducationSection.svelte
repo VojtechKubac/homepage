@@ -1,6 +1,11 @@
 <script>
-  import { education } from '$lib/data/education.js';
+  import { getEducationForLocale } from '$lib/data/education.js';
+
   export let translate;
+  export let lang = 'en';
+
+  let educationRows;
+  $: educationRows = getEducationForLocale(lang);
 </script>
 
 <section id="education" class="px-4 py-20 sm:px-6 lg:px-8">
@@ -11,7 +16,7 @@
       </span>
     </h2>
     <div class="space-y-8">
-      {#each education as edu, i (i)}
+      {#each educationRows as edu, i (edu.id)}
         <div class="animate-fade-in-up" style="animation-delay: {i * 100}ms">
           <div class="border-l-4 border-purple-600 py-2 pl-6">
             <h3 class="text-2xl font-bold text-slate-900 dark:text-white">{edu.degree}</h3>

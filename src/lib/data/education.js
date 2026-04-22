@@ -1,29 +1,40 @@
+import { getEducationCopy } from './educationLocales.js';
+
+/**
+ * Education rows for the Background tab. Copy is merged from locale JSON by `id`.
+ *
+ * @typedef {{
+ *   id: string
+ * }} EducationBase
+ * @typedef {{
+ *   degree?: string,
+ *   field?: string,
+ *   school?: string,
+ *   location?: string,
+ *   period?: string,
+ *   focus?: string,
+ *   thesis?: {
+ *     title?: string,
+ *     supervisor?: string
+ *   }
+ * }} EducationCopy
+ * @typedef {EducationBase & EducationCopy} Education
+ */
+
+/** @type {EducationBase[]} */
 export const education = [
-  {
-    degree: 'Master of Science',
-    field: 'Mathematical Modeling in Physics and Technology',
-    school: 'Charles University',
-    location: 'Prague, Czech Republic',
-    period: '2017–2020',
-    thesis: {
-      title:
-        'Comparison of possible formulations of fluid-structure interactions with application in biomechanics',
-      supervisor: 'RNDr. Jaroslav Hron, Ph.D.',
-    },
-  },
-  {
-    degree: 'Erasmus Exchange',
-    field: 'Faculty of Mathematics',
-    school: 'Technical University of Munich',
-    location: 'Munich, Germany',
-    period: '2018–2019',
-    focus: 'Machine learning, deep learning, high-performance computing.',
-  },
-  {
-    degree: 'Bachelor of Science',
-    field: 'General Mathematics',
-    school: 'Charles University',
-    location: 'Prague, Czech Republic',
-    period: '2014–2017',
-  },
+  { id: 'msc-charles-university' },
+  { id: 'erasmus-tum' },
+  { id: 'bsc-charles-university' },
 ];
+
+/**
+ * @param {string} lang
+ * @returns {Education[]}
+ */
+export function getEducationForLocale(lang = 'en') {
+  return education.map((row) => ({
+    ...row,
+    ...getEducationCopy(row.id, lang),
+  }));
+}

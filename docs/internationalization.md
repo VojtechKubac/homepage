@@ -11,6 +11,8 @@ UI copy lives in the `translations` object in [`src/lib/i18n.js`](../src/lib/i18
 - Project card long-form copy is stored separately in locale JSON files: [`src/locales/en/projects.json`](../src/locales/en/projects.json), [`src/locales/de/projects.json`](../src/locales/de/projects.json), [`src/locales/cs/projects.json`](../src/locales/cs/projects.json).
 - [`src/lib/data/projectLocales.js`](../src/lib/data/projectLocales.js) resolves project copy by `id` and applies field-level fallback to English for missing locales/fields.
 - Experience rows in the Background tab use [`src/locales/en/experience.json`](../src/locales/en/experience.json) (with [`de`](../src/locales/de/experience.json) / [`cs`](../src/locales/cs/experience.json) stubs), merged in [`src/lib/data/experience.js`](../src/lib/data/experience.js) via [`src/lib/data/experienceLocales.js`](../src/lib/data/experienceLocales.js) (`getExperienceCopy` shares the same locale normalization as projects).
+- Education rows in the Background tab use [`src/locales/en/education.json`](../src/locales/en/education.json), [`src/locales/de/education.json`](../src/locales/de/education.json), and [`src/locales/cs/education.json`](../src/locales/cs/education.json), merged in [`src/lib/data/education.js`](../src/lib/data/education.js) via [`src/lib/data/educationLocales.js`](../src/lib/data/educationLocales.js) with field-level fallback to English.
+- Education translation policy: `degree`, `field`, `focus`, `location`, and `period` are locale-specific; institution names and thesis metadata can stay in their original language when that reads more naturally.
 
 ## Adding a language
 

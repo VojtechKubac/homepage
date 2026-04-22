@@ -1,0 +1,28 @@
+{
+  "msc-charles-university": {
+    "degree": "Master of Science",
+    "field": "Mathematische Modellierung in Physik und Technik",
+    "school": "Charles University",
+    "location": "Prag, Tschechische Republik",
+    "period": "2017-2020",
+    "thesis": {
+      "title": "Comparison of possible formulations of fluid-structure interactions with application in biomechanics",
+      "supervisor": "RNDr. Jaroslav Hron, Ph.D."
+    }
+  },
+  "erasmus-tum": {
+    "degree": "Erasmus-Austausch",
+    "field": "Fakultat fur Mathematik",
+    "school": "Technical University of Munich",
+    "location": "Munchen, Deutschland",
+    "period": "2018-2019",
+    "focus": "Maschinelles Lernen, Deep Learning und High-Performance-Computing."
+  },
+  "bsc-charles-university": {
+    "degree": "Bachelor of Science",
+    "field": "Allgemeine Mathematik",
+    "school": "Charles University",
+    "location": "Prag, Tschechische Republik",
+    "period": "2014-2017"
+  }
+}
