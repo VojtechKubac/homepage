@@ -1,1 +1,40 @@
-{}
+{
+  "ententee": {
+    "role": "Softwareentwickler",
+    "company": "Ententee",
+    "period": "2024 — heute",
+    "description": "Full-Stack-Produktentwicklung in Healthcare- und Robotikprojekten, parallel zu meiner Zusammenarbeit mit CFD Support.",
+    "highlights": [
+      "DrChrono — Modernisierung einer US-amerikanischen medizinischen Web-App: Django/GraphQL-Backend, vollständige Neuentwicklung des Frontends in React/TypeScript.",
+      "ALF — Anwendung für eine medizinische Fakultät zur Verwaltung von Facharzt- und Basisprüfungen (Spring Boot, React/TS, PostgreSQL).",
+      "Ententee Hub — interne Werkzeuge für Projektverfolgung, Recruiting und Betrieb (FastAPI, React/TS, PostgreSQL).",
+      "THK UAV — Greenfield-Drohnen-Stack: Perzeption, Missionsautonomie, GPS-unabhängige Navigation."
+    ]
+  },
+  "cfd-support": {
+    "role": "C++-Softwareentwickler",
+    "company": "CFD Support s.r.o.",
+    "location": "Prag",
+    "period": "2019 — heute",
+    "description": "Verantwortung für mehrere Module von TCAE — einer plattformübergreifenden CAE-Desktop-Anwendung auf Basis von ParaView/VTK und OpenFOAM.",
+    "highlights": [
+      "TFEA — FEA-Modul: CalculiX-Integration, Lastübertragung von CFD zu FEA (FSI), Modalanalyse, ParaView-basierte UI.",
+      "TCAA — Aeroakustik: FW–H / Farassat 1A im Fernfeld, SPL/Oktaven, optionaler WAV-Export.",
+      "TBASE — SQLite-Simulationsdatenbank: reproduzierbares Archiv, ParaView-IPC, Grundlage für Surrogatmodellierung.",
+      "TMESH — FEA-Volumenvernetzung aus STL/STEP mit NetGen und Gmsh.",
+      "TCFD / TOPT — OpenFOAM-Orchestrierung, eigener Solver-Code, Optimierungsworkflows.",
+      "TCAE DevOps — GitLab CI, CTest mit headless Qt, automatisierte Installer-Pipelines für Linux/Windows."
+    ]
+  },
+  "charles-mff-research": {
+    "role": "Forschung (Promotionsstudium)",
+    "company": "Karls-Universität, MFF UK",
+    "location": "Prag",
+    "period": "2019 — 2020",
+    "description": "Computergestützte Biophysik und Membranmodellierung in der Gruppe von Christoph Allolio: Kontinuumsmodellierung von Lipidmembranen.",
+    "highlights": [
+      "Durchführung molekulardynamischer Simulationen von Lipidmembranen (GROMACS).",
+      "Implementierung eines C++-Solvers für Kontinuumsmechanik zur Membranremodellierung."
+    ]
+  }
+}

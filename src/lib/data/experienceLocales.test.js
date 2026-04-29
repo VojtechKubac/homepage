@@ -13,7 +13,20 @@ describe('getExperienceCopy', () => {
   });
 
   it('falls back to English when locale file has no entry', () => {
-    const copy = getExperienceCopy('cfd-support', 'de');
+    const fixture = {
+      en: {
+        'cfd-support': {
+          role: 'C++ software engineer',
+          company: 'CFD Support s.r.o.',
+          period: '2019 — present',
+          description: 'English default description',
+        },
+      },
+      de: {},
+      cs: {},
+    };
+
+    const copy = getExperienceCopy('cfd-support', 'de', fixture);
     expect(copy.role).toBe('C++ software engineer');
     expect(copy.company).toContain('CFD Support');
   });

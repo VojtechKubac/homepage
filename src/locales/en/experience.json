@@ -5,10 +5,10 @@
     "period": "2024 — present",
     "description": "Full-stack product delivery across healthcare and robotics engagements, run in parallel with my CFD Support collaboration.",
     "highlights": [
-      "THK UAV — greenfield drone stack: perception, mission autonomy, GPS-denied navigation.",
-      "DrChrono (2024–2025) — uplift of a US medical web app: Django/GraphQL backend, full React/TypeScript frontend rewrite.",
+      "DrChrono — uplift of a US medical web app: Django/GraphQL backend, full React/TypeScript frontend rewrite.",
       "ALF — application for a medical faculty managing attestations and trunk exams (Spring Boot, React/TS, PostgreSQL).",
-      "Ententee Hub — internal tooling for project tracking, hiring, and ops (FastAPI, React/TS, PostgreSQL)."
+      "Ententee Hub — internal tooling for project tracking, hiring, and ops (FastAPI, React/TS, PostgreSQL).",
+      "THK UAV — greenfield drone stack: perception, mission autonomy, GPS-denied navigation."
     ]
   },
   "cfd-support": {
@@ -21,8 +21,8 @@
       "TFEA — FEA module: CalculiX integration, CFD-to-FEA load mapping (FSI), modal analysis, ParaView-based UI.",
       "TCAA — aeroacoustics: FW–H / Farassat 1A far-field, SPL/octaves, optional WAV export.",
       "TBASE — SQLite simulation database: reproducible archive, ParaView IPC, surrogate-modelling groundwork.",
-      "TMESH — FEA volume meshing from STL/STEP via NetGen and Gmsh, with assembly support.",
-      "TCFD / TOPT — OpenFOAM orchestration, custom solver code, optimization workflows (DoE/DIRECT/EGO).",
+      "TMESH — FEA volume meshing from STL/STEP via NetGen and Gmsh.",
+      "TCFD / TOPT — OpenFOAM orchestration, custom solver code, optimization workflows.",
       "TCAE DevOps — GitLab CI, CTest with headless Qt, automated Linux/Windows installer pipelines."
     ]
   },
