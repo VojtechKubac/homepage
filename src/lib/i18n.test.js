@@ -20,7 +20,7 @@ describe('getTranslation', () => {
 
   it('returns nested English strings for dotted keys', () => {
     expect(getTranslation('en', 'hero.title')).toBe(
-      'Software engineer — CFD simulation, scientific computing, full-stack web.',
+      'Software engineer building tools for complex problems.',
     );
     expect(getTranslation('en', 'nav.about')).toBe('About');
     expect(getTranslation('en', 'contact.send')).toBe('Send Message');

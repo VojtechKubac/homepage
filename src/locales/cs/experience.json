@@ -1,1 +1,40 @@
-{}
+{
+  "ententee": {
+    "role": "Softwarový inženýr",
+    "company": "Ententee",
+    "period": "2024 — současnost",
+    "description": "Full-stack vývoj produktů na projektech ve zdravotnictví a robotice, souběžně se spoluprací s CFD Support.",
+    "highlights": [
+      "DrChrono — modernizace americké medicínské webové aplikace: backend Django/GraphQL, kompletní přepis frontendu do Reactu/TypeScriptu.",
+      "ALF — aplikace pro lékařskou fakultu pro správu atestací a kmenových zkoušek (Spring Boot, React/TS, PostgreSQL).",
+      "Ententee Hub — interní nástroje pro sledování projektů, nábor a provoz (FastAPI, React/TS, PostgreSQL).",
+      "THK UAV — vývoj dronového stacku od nuly: percepce, autonomie misí, navigace bez GPS."
+    ]
+  },
+  "cfd-support": {
+    "role": "C++ softwarový inženýr",
+    "company": "CFD Support s.r.o.",
+    "location": "Praha",
+    "period": "2019 — současnost",
+    "description": "Vývoj a zodpovědnost za několik modulů TCAE — multiplatformní desktopové CAE aplikace postavené na ParaView/VTK a OpenFOAM.",
+    "highlights": [
+      "TFEA — FEA modul: integrace CalculiX, mapování zatížení z CFD do FEA (FSI), modální analýza, UI nad ParaView.",
+      "TCAA — aeroakustika: FW–H / Farassat 1A vzdálené pole, SPL/oktávy, volitelný export do WAV.",
+      "TBASE — SQLite databáze simulací: reprodukovatelný archiv, IPC s ParaView, základ pro náhradní modelování.",
+      "TMESH — objemové FEA síťování z STL/STEP pomocí NetGen a Gmsh.",
+      "TCFD / TOPT — orchestrace OpenFOAM, vlastní kód solverů, optimalizační workflow.",
+      "TCAE DevOps — GitLab CI, CTest s headless Qt, automatizované pipeline pro Linux/Windows instalátory."
+    ]
+  },
+  "charles-mff-research": {
+    "role": "Výzkum (doktorské studium)",
+    "company": "Univerzita Karlova, MFF UK",
+    "location": "Praha",
+    "period": "2019 — 2020",
+    "description": "Výpočetní biofyzika a modelování membrán ve skupině Christopha Allolia: kontinuální modelování lipidových membrán.",
+    "highlights": [
+      "Prováděl jsem simulace molekulární dynamiky lipidových membrán (GROMACS).",
+      "Implementoval jsem C++ solver kontinuální mechaniky pro remodelaci membrán."
+    ]
+  }
+}

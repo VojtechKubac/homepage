@@ -34,10 +34,10 @@ import { getProjectCopy } from './projectLocales.js';
 
 /** Display order for source group headings in the Projects section */
 export const PROJECT_SOURCE_ORDER = /** @type {const} */ ([
+  'ententee',
   'cfdSupport',
   'github',
   'academic',
-  'ententee',
 ]);
 
 /** @type {ProjectBase[]} */
@@ -213,6 +213,23 @@ export const projects = [
     },
   },
   {
+    id: 'drchrono-app',
+    source: 'ententee',
+    technologies: ['Django', 'React', 'TypeScript', 'PostgreSQL', 'GraphQL'],
+    period: {
+      start: '2024',
+      end: '2025',
+    },
+    team: {
+      size: 15,
+    },
+    image: '/images/projects/drchrono.png',
+    link: {
+      href: 'https://www.drchrono.com/',
+      labelKey: 'projects.links.drChronoSite',
+    },
+  },
+  {
     id: 'alf',
     source: 'ententee',
     period: {
@@ -257,23 +274,6 @@ export const projects = [
     link: {
       href: 'https://ententee.com/',
       labelKey: 'projects.links.ententeeSite',
-    },
-  },
-  {
-    id: 'drchrono-app',
-    source: 'ententee',
-    technologies: ['Django', 'React', 'TypeScript', 'PostgreSQL', 'GraphQL'],
-    period: {
-      start: '2024',
-      end: '2025',
-    },
-    team: {
-      size: 15,
-    },
-    image: '/images/projects/drchrono.png',
-    link: {
-      href: 'https://www.drchrono.com/',
-      labelKey: 'projects.links.drChronoSite',
     },
   },
 ];

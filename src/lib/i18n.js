@@ -1,11 +1,11 @@
 const translations = {
   en: {
     app: {
-      brand: 'Portfolio',
+      brand: 'Vojtěch Kubáč',
       darkModeAriaLabel: 'Toggle dark mode',
     },
     meta: {
-      title: 'Vojtech Kubac | Portfolio',
+      title: 'Vojtěch Kubáč | Portfolio',
       description:
         'Software engineer focused on CFD simulation, scientific computing, and full-stack web development.',
     },
@@ -19,16 +19,22 @@ const translations = {
       contact: 'Contact',
     },
     hero: {
-      title: 'Software engineer — CFD simulation, scientific computing, full-stack web.',
-      subtitle: 'I build simulation tools and the web platforms that surround them.',
+      title: 'Software engineer building tools for complex problems.',
+      subtitle:
+        'I work across scientific computing, backend systems, and web interfaces to turn technical ideas into useful software.',
     },
     about: {
       title: 'About Me',
-      description: `I'm a software engineer working across two worlds: high-performance C++ simulation codes for engineering and science, and the full-stack web platforms that make those tools accessible.
-
-Most of my work sits at the intersection — writing solver integrations and CAE tooling, shipping desktop installers, and building the Django/FastAPI backends and Svelte/React UIs that put results in front of the people who need them.
-
-I collaborate in parallel with multiple teams across commercial CAE and healthcare software, while continuing independent portfolio projects. This keeps product, research, and service work in regular rotation without exposing contract details.`,
+      description:
+        "I'm a software engineer who enjoys solving complex problems. As a mathematician by training, I approach " +
+        'problems from multiple perspectives and seek creative and elegant solutions even in unusual situations. ' +
+        '\n\n' +
+        'My work has covered the development of modular computational software, web applications for healthcare and ' +
+        'education. I have also worked on scientific projects or the development of autonomous robots. I am open to ' +
+        'collaboration on interesting tasks in areas where I can apply my experience and skills.' +
+        '\n\n' +
+        'I love learning and discovering new things, so I am looking for positions with a broad scope requiring ' +
+        'an understanding of the product and thinking in the context.',
     },
     experience: {
       title: 'Experience',
@@ -97,13 +103,14 @@ I collaborate in parallel with multiple teams across commercial CAE and healthca
   },
   de: {
     app: {
-      brand: 'Portfolio',
+      brand: 'Vojtěch Kubáč',
       darkModeAriaLabel: 'Dunkelmodus umschalten',
     },
     meta: {
-      title: 'Vojtech Kubac | Portfolio',
+      title: 'Vojtěch Kubáč | Portfolio',
       description:
-        'Software-Ingenieur mit Schwerpunkt auf CFD-Simulation, wissenschaftlichem Rechnen und Full-Stack-Webentwicklung.',
+        'Software-Ingenieur mit Schwerpunkt auf CFD-Simulation, wissenschaftlichem Rechnen und ' +
+        'Full-Stack-Webentwicklung.',
     },
     nav: {
       about: 'Über mich',
@@ -115,16 +122,25 @@ I collaborate in parallel with multiple teams across commercial CAE and healthca
       contact: 'Kontakt',
     },
     hero: {
-      title: 'Software-Ingenieur — CFD-Simulation, wissenschaftliches Rechnen, Full-Stack-Web.',
-      subtitle: 'Ich entwickle Simulationswerkzeuge und die Web-Plattformen, die sie umgeben.',
+      title: 'Software-Ingenieur für Werkzeuge, die komplexe Probleme lösen.',
+      subtitle:
+        'Ich arbeite an wissenschaftlichem Rechnen, Backendsystemen und Web-Oberflächen, um technische Ideen in ' +
+        'nützliche Software zu verwandeln.',
     },
     about: {
       title: 'Über mich',
-      description: `Ich bin Software-Ingenieur an der Schnittstelle zweier Welten: performante C++-Simulationscodes für Technik und Wissenschaft sowie die Full-Stack-Web-Plattformen, die diese Werkzeuge nutzbar machen.
-
-Mein Alltag besteht aus Solver-Integrationen und CAE-Tooling, Desktop-Installer-Pipelines und Django/FastAPI-Backends mit Svelte/React-Oberflächen, die Ergebnisse dorthin bringen, wo sie gebraucht werden.
-
-Ich arbeite parallel mit mehreren Teams in kommerzieller CAE-Software und Healthcare-Webprodukten zusammen und entwickle daneben eigene Portfolio-Projekte weiter. So bleiben Produkt-, Forschungs- und Servicearbeit im ständigen Wechsel, ohne Vertragsdetails offenzulegen.`,
+      description:
+        'Ich bin Software-Ingenieur und löse gerne komplexe Probleme. Durch meine mathematische Ausbildung ' +
+        'betrachte ich Probleme aus mehreren Perspektiven und suche kreative und elegante Lösungen, auch in ' +
+        'ungewöhnlichen Situationen.' +
+        '\n\n' +
+        'Meine bisherige Arbeit umfasst die Entwicklung modularer Berechnungssoftware und Webanwendungen für ' +
+        'Gesundheitswesen und Bildung. Außerdem habe ich an wissenschaftlichen Projekten und an der Entwicklung ' +
+        'autonomer Roboter gearbeitet. Ich bin offen für die Zusammenarbeit an interessanten Aufgaben in Bereichen, ' +
+        'in denen ich meine Erfahrung und Fähigkeiten einbringen kann.' +
+        '\n\n' +
+        'Ich lerne gerne und entdecke gerne Neues. Deshalb suche ich Positionen mit breitem Aufgabenbereich, ' +
+        'die Produktverständnis und Denken in Zusammenhängen erfordern.',
     },
     experience: {
       title: 'Erfahrung',
@@ -194,11 +210,11 @@ Ich arbeite parallel mit mehreren Teams in kommerzieller CAE-Software und Health
   },
   cs: {
     app: {
-      brand: 'Portfolio',
+      brand: 'Vojtěch Kubáč',
       darkModeAriaLabel: 'Přepnout tmavý režim',
     },
     meta: {
-      title: 'Vojtech Kubac | Portfolio',
+      title: 'Vojtěch Kubáč | Portfolio',
       description:
         'Softwarový inženýr se zaměřením na CFD simulace, vědecké výpočty a full-stack webový vývoj.',
     },
@@ -212,16 +228,23 @@ Ich arbeite parallel mit mehreren Teams in kommerzieller CAE-Software und Health
       contact: 'Kontakt',
     },
     hero: {
-      title: 'Softwarový inženýr — CFD simulace, vědecké výpočty, full-stack web.',
-      subtitle: 'Vyvíjím simulační nástroje a webové platformy, které je obklopují.',
+      title: 'Softwarový inženýr vyvíjející nástroje pro složité problémy.',
+      subtitle:
+        'Pracuji napříč vědeckými výpočty, backendovými systémy a webovými rozhraními. ' +
+        'Proměňuji technické nápady v užitečný software.',
     },
     about: {
       title: 'O mně',
-      description: `Jsem softwarový inženýr pohybující se mezi dvěma světy: výkonnými C++ simulačními kódy pro techniku a vědu a full-stack webovými platformami, které tyto nástroje zpřístupňují lidem.
-
-Většina mé práce leží v jejich průniku — integrace solverů a nástroje pro CAE, desktopové instalační pipelines a backendy v Django/FastAPI s rozhraními ve Svelte/React, které dostávají výsledky tam, kde jsou potřeba.
-
-Paralelně spolupracuji s více týmy napříč komerčním CAE a healthcare softwarem a současně rozvíjím vlastní portfolio projekty. Díky tomu se přirozeně střídá produktová, výzkumná i servisní rovina bez zveřejňování smluvních detailů.`,
+      description:
+        'Jsem softwarový inženýr, který rád řeší komplexní problémy. Jako vystudovaný matematik se snažím na problémy nahlédnout z více ' +
+        'úhlů a hledat tak kreativní a elegantní řešení i v neobvyklých situacích. ' +
+        '\n\n' +
+        'Má dosavadní práce zahrnuje vývoj modulárního výpočetního softwaru, webových aplikací pro zdravotnictví a vzdělávání. ' +
+        'Pracoval jsem také na vědeckých projektech nebo vývoji autonomních strojů. Jsem otevřen spolupráci na zajímavých úlohách ' +
+        'v oblastech, kde můžu uplatnit své zkušenosti a dovednosti. ' +
+        '\n\n' +
+        'Rád se učím a dozvídám něco nového, proto vyhledávám pozice s širokým záběrem vyžadující porozumění produktu a přemýšlení ' +
+        'v souvislostech. ',
     },
     experience: {
       title: 'Zkušenosti',
@@ -259,10 +282,10 @@ Paralelně spolupracuji s více týmy napříč komerčním CAE a healthcare sof
         teamSolo: 'Jediný vývojář.',
       },
       sources: {
-        cfdSupport: 'CFD SUPPORT — TCAE (komerční CAE)',
+        cfdSupport: 'CFD Support',
         github: 'GitHub a osobní',
         academic: 'Výzkum',
-        ententee: 'ententee (klientské práce)',
+        ententee: 'ententee',
       },
       links: {
         repository: 'Zobrazit repozitář',

@@ -56,7 +56,7 @@ export const experiences = [
   },
   {
     id: 'charles-mff-research',
-    technologies: ['C++', 'GROMACS', 'FEniCS', 'Python'],
+    technologies: ['C++', 'GROMACS', 'Python'],
   },
 ];
 
