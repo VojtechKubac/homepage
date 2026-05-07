@@ -46,62 +46,67 @@
 }
 
 \name{Vojtěch}{Kubáč}
-\title{C++ engineer · CFD, FEA, applied ML}
-\address{Bratranců Veverkových 646}{53002, Pardubice}{Czech Republic}
+\title{SW engineer · C++, web full-stack, applied ML}
+% \address{Rokycanova 2152}{53002, Pardubice}{Czech Republic}
+\address{Pardubice}{Czech Republic}{}
 \phone[mobile]{(+420)~737~059~153}
 \email{vojta.kubac@gmail.com}
-% Keep hidden until the real URL is available to avoid publishing a dead link.
-% \homepage{vojtakubac.example.com}
+\homepage{vojtechkubac.eu}
 \social[linkedin][www.linkedin.com/in/vojtech-kubac/]{Vojtěch Kubáč}
 \social[github][github.com/VojtechKubac/]{VojtechKubac}
 \photo[76pt][1pt]{photo}
 
 \begin{document}
 \makecvtitle
-\vspace*{-12mm}
+\vspace*{-8mm}
 
 \section{Experience}
 \cventry{2024--today}{Software engineer}{Ententee}{}{}{%
-  Full-stack product delivery across healthcare and robotics engagements, developed alongside my role at CFD Support. Stack spans Python, Java / Spring Boot, Django, React / TypeScript, PostgreSQL, with ROS / Gazebo and C++ on the UAV side.
+  Full-stack product delivery across healthcare and robotics engagements,
+  developed alongside my role at CFD Support. Stack spans Python (Django, FastAPI),
+  Java / Spring Boot, React / TypeScript, PostgreSQL, with ROS / Gazebo
+  and C\texttt{++} on the UAV side.
   \begin{itemize}%
-    \item \textbf{THK UAV} — greenfield stack: perception, mission autonomy, GPS-denied nav.
-    \item \textbf{DrChrono} (2024--25) — US medical app uplift: Django/GraphQL, React/TS.
-    \item \textbf{ALF} — medical-faculty app for attestations (Spring Boot, React/TS, PG).
-    \item \textbf{Ententee Hub} — internal ops and hiring tooling (FastAPI, React/TS, PG).
+    \item \textbf{DrChrono ·} US medical app uplift: Django/GraphQL, React/TS.
+    \item \textbf{ALF ·} medical-faculty app for attestations: Spring Boot, React/TS, PostgreSQL.
+    \item \textbf{Ententee Hub ·} internal ops and hiring tooling: FastAPI, React/TS, PostgreSQL.
+    \item \textbf{THK UAV ·} greenfield stack: perception, mission autonomy, GPS-denied navigation.
   \end{itemize}}
-\cventry{2019--today}{C++ software engineer}{CFD Support s.r.o.}{Prague}{}{%
-  Own multiple modules of TCAE, a cross-platform CAE desktop application built around ParaView/VTK and OpenFOAM. Core stack: C++23, CMake, Qt, GitLab CI.
+\cventry{2019--today}{Software engineer}{CFD Support}{}{}{%
+  Develop and maintain multiple modules of TCAE, a fluid dynamics simulation application
+  deployable on desktop machines or computational clusters. Built around
+  ParaView/VTK and OpenFOAM. Core stack: C\texttt{++}23, Python, CMake, Qt, GitLab CI.
   \begin{itemize}%
-    \item \textbf{TFEA} — FEA module: CalculiX, CFD-to-FEA mapping (FSI), modal, ParaView UI.
-    \item \textbf{TCAA} — aeroacoustics: FW--H / Farassat 1A far-field, SPL/octaves, WAV.
-    \item \textbf{TBASE} — SQLite simulation DB: reproducible archive, ParaView IPC, surrogates.
-    \item \textbf{TMESH} — FEA volume meshing from STL/STEP (NetGen, Gmsh); assemblies.
-    \item \textbf{TCFD / TOPT} — OpenFOAM orchestration and solver code; DoE/DIRECT/EGO.
-    \item \textbf{TCAE DevOps} — GitLab CI, CTest + headless Qt, Linux/Windows installers.
+    \item \textbf{TCFD ·} Computational Fluid Dynamics module: OpenFOAM, ParaView UI.
+    \item \textbf{TFEA ·} FEA (solid mechanics) module: CalculiX, CFD coupling, ParaView UI.
+    \item \textbf{TCAA ·} aeroacoustics: FW--H / Farassat 1A far-field, SPL/octaves.
+    \item \textbf{TBASE ·} SQLite simulation DB: reproducible archive, ParaView IPC, surrogate modelling.
+    \item \textbf{TMESH ·} meshing module from STL/STEP (NetGen, Gmsh).
+    \item \textbf{TCAE DevOps ·} GitLab CI, CTest, headless Qt, Linux/Windows installers.
   \end{itemize}}
-\cventry{2019--2020}{Research (doctoral studies)}{Charles University (MFF UK)}{Prague}{Computational biophysics / membrane modelling}{%
+\cventry{2019--2020}{PhD researcher}{Charles University (MFF UK)}{}{}{%
   Research in the group of Christoph Allolio on continuum modelling of lipid membranes.
   \begin{itemize}%
     \item Ran molecular dynamics simulations (GROMACS) of lipid membranes.
-    \item Implemented a continuum mechanics solver in C++ for membrane remodelling.
+    \item Worked on implementation of a continuum mechanics solver in C\texttt{++} for membrane remodelling.
   \end{itemize}}
 
 \section{Education}
-\cventry{2017--2020}{Master}{Charles University}{Prague}{Mathematical Modeling in Physics and Technology}{%
-  Thesis: \emph{Comparison of possible formulations of fluid-structure interactions with application in biomechanics}, supervised by RNDr.~Jaroslav~Hron, Ph.D.}
-\cventry{2018--2019}{Erasmus}{Technical University Munich}{Germany}{Faculty of Mathematics}{Machine learning, deep learning, high-performance computing.}
-\cventry{2014--2017}{Bachelor}{Charles University}{Prague}{General Mathematics}{}
+\cventry{2017--2020}{Master's}{Charles University}{Prague}{Mathematical Modeling in Physics and Technology}{%
+  Thesis: \emph{Comparison of possible formulations of
+  fluid-structure interactions with application in biomechanics},
+  supervised by RNDr.~Jaroslav~Hron, Ph.D.}
+\cventry{2018--2019}{Erasmus}{Technical University of Munich}{Germany}{Faculty of Mathematics}{Machine learning, deep learning, high-performance computing.}
+\cventry{2014--2017}{Bachelor's}{Charles University}{Prague}{General Mathematics}{}
 
-\section{Computer skills}
-\cvitem{Languages}{C++ (C++23), Python, TypeScript, Java, Bash}
-\cvitem{Scientific}{OpenFOAM, CalculiX, NetGen, Gmsh, ParaView, VTK, FEniCS, GROMACS}
+\section{Skills}
+\cvitem{Programming}{C\texttt{++} (C\texttt{++}23), Python, TypeScript, Java, Bash}
 \cvitem{Platform}{Qt, CMake, CTest, SQLite, GitLab CI, NSIS, Linux, Git}
+\cvitem{AI / ML}{RAG / LLM integration; surrogate modelling over parametric design spaces}
+\cvitem{Scientific}{OpenFOAM, CalculiX, NetGen, Gmsh, ParaView, VTK, FEniCS, GROMACS}
 \cvitem{Web BE}{Django, Spring Boot, FastAPI, GraphQL, PostgreSQL}
 \cvitem{Web FE}{React, Svelte, Tailwind CSS, Vite}
 \cvitem{Robotics}{ROS, Gazebo}
-\cvitem{AI / ML}{RAG / LLM integration; surrogate modelling over parametric design spaces}
-
-\section{Languages}
-\cvitem{}{Czech (native), English (C1), German (B1)}
+\cvitem{Spoken}{Czech (native), English (C1), German (B1)}
 
 \end{document}
