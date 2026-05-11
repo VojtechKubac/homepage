@@ -1,230 +1,57 @@
 # Personal Homepage
 
-A modern, responsive personal portfolio website built with Svelte, Tailwind CSS, and Vite. Features multilingual support (English, German, Czech), dark mode, smooth animations, and a containerized setup with Docker.
+Svelte 4 + Vite 5 + Tailwind CSS 3 portfolio. Three languages (EN / DE / CS), dark mode, Docker support.
 
-## Features
+## Quick start
 
-- **Modern Design**: Clean, colorful, and creative design with Tailwind CSS
-- **Multilingual Support**: English, German, and Czech translations
-- **Dark Mode**: Automatic theme detection with persistent user preference
-- **Responsive Layout**: Works seamlessly on all device sizes
-- **Contact Form**: Integrated with Formspree for email submissions
-- **Smooth Animations**: Fade-in and slide animations for visual appeal
-- **Resume Download**: Easy one-click resume download
-- **Social Links**: Quick access to social profiles and contact options
-- **Docker Support**: Fully containerized for easy deployment
-
-## Project Structure
-
-Plain **Vite + Svelte** (not SvelteKit). HTML shell is root [`index.html`](index.html).
-
-```text
-├── index.html                  # HTML shell (Vite entry)
-├── src/
-│   ├── app.svelte              # Root Svelte UI (tabs, hero, sections)
-│   ├── main.js                 # Mounts app.svelte (Vite JS entry)
-│   ├── styles.css              # Global styles and animations
-│   ├── lib/
-│   │   ├── components/         # Section components
-│   │   ├── data/               # Content data files
-│   │   ├── i18n.js             # Translations
-│   │   └── store.js            # Svelte stores
-├── public/                     # Static assets (e.g. resume.pdf)
-├── Dockerfile
-├── docker-compose.yml
-└── tailwind.config.js
+```bash
+npm install
+npm run dev       # http://localhost:5173
+npm run build     # output → dist/
+npm run preview
+npm test
 ```
 
-## Getting Started
+Docker: `docker-compose up --build` → `http://localhost:3000`
 
-### Prerequisites
+## Project layout
 
-- Node.js 20+ and npm (matches [`Dockerfile`](Dockerfile))
-- Docker and Docker Compose (for containerized development)
-
-### Local Development
-
-1. **Install dependencies**:
-
-   ```bash
-   npm install
-   ```
-
-2. **Start development server**:
-
-   ```bash
-   npm run dev
-   ```
-
-   The app will be available at `http://localhost:5173`
-
-3. **Build for production**:
-
-   ```bash
-   npm run build
-   ```
-
-4. **Preview production build**:
-   ```bash
-   npm run preview
-   ```
-
-### Docker Setup
-
-1. **Build and run with Docker Compose**:
-
-   ```bash
-   docker-compose up --build
-   ```
-
-   The app will be available at `http://localhost:3000`
-
-2. **Build Docker image**:
-
-   ```bash
-   docker build -t personal-homepage .
-   ```
-
-3. **Run container**:
-   ```bash
-   docker run -p 3000:3000 personal-homepage
-   ```
+```
+src/
+  app.svelte              # root UI (tabs, hero, sections)
+  main.js                 # Vite entry
+  styles.css              # global styles
+  lib/
+    components/           # section components
+    data/                 # content loaders (experience, projects, skills, …)
+  locales/{en,de,cs}/     # translated content JSON
+public/
+  resume.pdf              # served for the CV download link
+cv/
+  main.tex                # LaTeX source → see docs/cv.md
+docs/                     # per-topic documentation
+```
 
 ## Customization
 
-### Content Management
+- **Content / copy** — edit files in `src/lib/data/` and `src/locales/`
+- **Skills, social links** — `src/lib/data/skills.js`, `src/lib/data/social.js`
+- **Contact form** — Formspree; set `FORMSPREE_ID` in `src/lib/components/ContactSection.svelte`
+- **CV / resume** — see [`docs/cv.md`](docs/cv.md)
+- **Colors / theme** — emerald + warm stone palette in `tailwind.config.js` and `src/styles.css`
 
-All content is managed through data files in `src/lib/data/`:
+## Docs
 
-- `experience.js` - Work experience entries
-- `education.js` - Education history
-- `skills.js` - Skills and proficiency levels
-- `projects.js` - Project portfolio
-- `social.js` - Social media links
-
-### Translations
-
-Translations are in `src/lib/i18n.js`. Add new languages by extending the translations object:
-
-```javascript
-const translations = {
-  en: {
-    /* English translations */
-  },
-  de: {
-    /* German translations */
-  },
-  cs: {
-    /* Czech translations */
-  },
-  fr: {
-    /* Add French here */
-  },
-};
-```
-
-### Resume Download
-
-1. Place your resume PDF file in the `public/` directory
-2. Name it `resume.pdf`
-3. The download link in the contact section will work automatically
-
-### Contact Form
-
-The contact form uses Formspree for email submissions:
-
-1. Sign up at [formspree.io](https://formspree.io)
-2. Create a new form and get your form ID
-3. Replace `YOUR_FORM_ID` in `src/lib/components/ContactSection.svelte` with your actual form ID
-
-### Styling
-
-- **Tailwind CSS**: Utility-first CSS framework
-- **Dark Mode**: Configured with `darkMode: 'class'` in `tailwind.config.js`
-- **Custom Colors**: Extend theme in `tailwind.config.js`
-- **Animations**: Custom animations defined in `src/styles.css`
-
-## Deployment
-
-### Free Hosting Options
-
-1. **Netlify** (recommended for serverless):
-   - Connect your GitHub repository
-   - Set build command: `npm run build`
-   - Set publish directory: `dist`
-
-2. **Vercel**:
-   - Import project from GitHub
-   - Auto-detected build settings
-   - One-click deployment
-
-3. **GitHub Pages**:
-   - Build with `npm run build` and deploy the `dist/` output (e.g. [`peaceiris/actions-gh-pages`](https://github.com/peaceiris/actions-gh-pages) or `actions/upload-pages-artifact`)
-
-4. **Any Docker-compatible platform**:
-   - Use the provided Dockerfile
-   - Deploy to cloud services like Railway, Render, or Heroku
-
-## Development Commands
-
-```bash
-npm run dev          # Start dev server
-npm run build        # Build for production
-npm run preview      # Preview production build
-npm run check        # Run type checking
-npm run check:watch  # Watch mode type checking
-```
-
-## Color Scheme
-
-The site uses a modern color palette:
-
-- Primary: Blue (`#2563eb`)
-- Secondary: Purple (`#9333ea`)
-- Accent: Amber (`#f59e0b`)
-
-Customize these in `tailwind.config.js` and `src/styles.css`.
-
-## Browser Support
-
-- Chrome/Edge: Latest 2 versions
-- Firefox: Latest 2 versions
-- Safari: Latest 2 versions
-- Mobile browsers: iOS Safari 12+, Chrome Android
-
-## Performance
-
-- Optimized build size (~40KB gzipped)
-- Lazy loading for images
-- Smooth animations with CSS transforms
-- Fast cold start with Vite
-
-## Future Enhancements
-
-Consider these additions:
-
-- Blog section with markdown support
-- Portfolio image gallery with lightbox
-- Analytics integration
-- SEO optimization
-- PDF resume generation
-- CMS integration for easy content updates
+| Topic                     | File                                                           |
+| ------------------------- | -------------------------------------------------------------- |
+| Architecture, tabs, stack | [`docs/architecture.md`](docs/architecture.md)                 |
+| Internationalization      | [`docs/internationalization.md`](docs/internationalization.md) |
+| Contact form              | [`docs/contact-form.md`](docs/contact-form.md)                 |
+| CV / resume PDF           | [`docs/cv.md`](docs/cv.md)                                     |
+| Docker                    | [`docs/docker.md`](docs/docker.md)                             |
+| Linear (issue tracking)   | [`docs/linear.md`](docs/linear.md)                             |
+| Projects tab              | [`docs/projects.md`](docs/projects.md)                         |
 
 ## License
 
-MIT - Feel free to use this template for your portfolio
-
-## Support
-
-For issues or questions:
-
-1. Check the existing code comments
-2. Review the official documentation:
-   - [Svelte](https://svelte.dev/)
-   - [Tailwind CSS](https://tailwindcss.com/)
-   - [Vite](https://vitejs.dev/)
-3. Open an issue in the repository
-
----
-
-**Ready to customize?** Start by editing the data files in `src/lib/data/` and translations in `src/lib/i18n.js`. Good luck!
+MIT
