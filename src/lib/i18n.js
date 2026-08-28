@@ -83,7 +83,6 @@ const translations = {
         researchGroup: 'Research group',
         drChronoSite: 'DrChrono',
         ententeeSite: 'ententee',
-        thkSite: 'THK',
       },
     },
     contact: {
@@ -189,7 +188,6 @@ const translations = {
         researchGroup: 'Forschungsgruppe',
         drChronoSite: 'DrChrono',
         ententeeSite: 'ententee',
-        thkSite: 'THK',
       },
     },
     contact: {
@@ -293,7 +291,6 @@ const translations = {
         researchGroup: 'Výzkumná skupina',
         drChronoSite: 'DrChrono',
         ententeeSite: 'ententee',
-        thkSite: 'THK',
       },
     },
     contact: {

@@ -136,18 +136,19 @@
       "note": "Small product team; responsible for the whole application."
     }
   },
-  "uav-thk": {
-    "title": "THK drones / UAV",
-    "description": "Greenfield UAV stack for THK drones: perception, mission-driven autonomy, and GPS-denied navigation.",
-    "longDescription": "This effort began as a greenfield project: the goal is a complete onboard and supporting software solution for THK drones, from sensing and mission logic to execution in the field. The work spans demanding autonomy problems—object detection and tracking, automated decision-making driven by mission goals, GPS-less navigation, and other tasks that tie perception, planning, and control together.",
-    "periodNote": "Started greenfield; we are implementing the full software solution for the drone platform.",
+  "ai-research": {
+    "title": "Applied AI research projects",
+    "description": "A set of applied-AI proof-of-concept projects in ententee's AI Lab, spanning edge-oriented computer vision for precision agriculture and large-scale multi-agent simulation.",
+    "longDescription": "Applied-research work delivered as a series of focused PoCs. Several address edge-oriented crop analytics for winter wheat and maize from UAV multispectral imagery: a shared, cheap, deterministic NDVI/NDRE vegetation-index gate discards healthy crop so heavier models only ever run on flagged regions — the approach behind one project on weed/crop segmentation and another on regression of agronomic traits such as leaf area index, biomass, and nitrogen uptake. A separate strand is a top-down 3D Unity simulation in which a large robot swarm — a fleet of autonomous mobile robots — moves through a fulfillment warehouse with zero collisions — a deterministic, seed-reproducible sim built from order generation, nearest-idle task allocation, A* global routing, and ORCA/RVO2 local collision avoidance, with dynamic-obstacle re-routing and a polished camera-driven demo.",
+    "periodNote": "Delivered as a run of standalone PoCs, each scoped around a concrete goal and its own success criteria.",
     "achievements": [
-      "Help build a greenfield software stack for UAV operations end to end (perception, autonomy, mission execution).",
-      "Contribute to object detection and tracking pipelines integrated with the wider autonomy system.",
-      "Work on mission-driven behavior and navigation, including GPS-denied scenarios and related complex tasks."
+      "Precision-agriculture vision: a shared, deterministic NDVI/NDRE vegetation-index gate that cheaply discards healthy crop, feeding lightweight models that run only on flagged regions — reused across a weed/crop segmentation project and an agronomic-trait regression project on UAV multispectral imagery.",
+      "Model efficiency for the edge: knowledge distillation, quantization, and an accuracy-vs-cost reporting harness (FLOPs, parameters, ONNX Runtime latency) to keep inference within an on-drone budget.",
+      "Warehouse robot-swarm simulation: a deterministic, seed-reproducible Unity sim where a large fleet of autonomous mobile robots moves through a fulfillment warehouse collision-free — A* global routing, ORCA/RVO2 local avoidance, dynamic-obstacle re-routing, congestion-aware path costs, and an independent collision verifier.",
+      "Presentation and delivery: Unity URP rendering with GPU instancing, a Cinemachine camera rig and scripted demo sequence, a live KPI HUD and traffic heatmap, plus one-command reproduction harnesses, CLI tooling, and CI determinism tests."
     ],
     "team": {
-      "note": "Cross-functional team delivering the full software solution from the ground up."
+      "note": "Solo applied-research work across the projects, with occasional help on the simulation."
     }
   },
   "ententee-hub": {

@@ -8,7 +8,7 @@
       "DrChrono — Modernisierung einer US-amerikanischen medizinischen Web-App: Django/GraphQL-Backend, vollständige Neuentwicklung des Frontends in React/TypeScript.",
       "ALF — Anwendung für eine medizinische Fakultät zur Verwaltung von Facharzt- und Basisprüfungen (Spring Boot, React/TS, PostgreSQL).",
       "Ententee Hub — interne Werkzeuge für Projektverfolgung, Recruiting und Betrieb (FastAPI, React/TS, PostgreSQL).",
-      "THK UAV — Greenfield-Drohnen-Stack: Perzeption, Missionsautonomie, GPS-unabhängige Navigation."
+      "AI Lab — mehrere angewandte KI-PoCs: edge-orientierte Bestandsanalyse auf multispektralen UAV-Aufnahmen (NDVI/NDRE-Gating, Segmentierung, Regression agronomischer Kenngrößen; Python/scikit-learn) und eine Simulation eines Lager-Roboterschwarms (A*-Routing, ORCA/RVO2-Vermeidung; Unity/C#)."
     ]
   },
   "cfd-support": {

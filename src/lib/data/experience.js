@@ -32,9 +32,9 @@ export const experiences = [
       'TypeScript',
       'PostgreSQL',
       'GraphQL',
-      'ROS',
-      'Gazebo',
-      'C++',
+      'scikit-learn',
+      'Unity',
+      'C#',
     ],
   },
   {

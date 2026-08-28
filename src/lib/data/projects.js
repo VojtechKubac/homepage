@@ -243,21 +243,19 @@ export const projects = [
     image: '/images/projects/uk.png',
   },
   {
-    id: 'uav-thk',
+    id: 'ai-research',
     source: 'ententee',
-    technologies: ['Python', 'ROS', 'Gazebo', 'C++'],
+    technologies: ['Python', 'scikit-learn', 'Unity', 'C#', 'ORCA / RVO2', 'ONNX Runtime'],
     period: {
       start: '2026',
       end: 'present',
     },
     team: {
-      size: 6,
+      size: 1,
     },
-    image: '/images/projects/thk.png',
-    link: {
-      href: 'https://www.thk.com/',
-      labelKey: 'projects.links.thkSite',
-    },
+    // Photo: Magda Ehlers via Pexels (Pexels License, no attribution required),
+    // pexels.com/photo/34182315 — cropped/resized to the card ratio.
+    image: '/images/projects/ai-research.jpg',
   },
   {
     id: 'ententee-hub',
