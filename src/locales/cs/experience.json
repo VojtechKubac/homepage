@@ -8,7 +8,7 @@
       "DrChrono — modernizace americké medicínské webové aplikace: backend Django/GraphQL, kompletní přepis frontendu do Reactu/TypeScriptu.",
       "ALF — aplikace pro lékařskou fakultu pro správu atestací a kmenových zkoušek (Spring Boot, React/TS, PostgreSQL).",
       "Ententee Hub — interní nástroje pro sledování projektů, nábor a provoz (FastAPI, React/TS, PostgreSQL).",
-      "THK UAV — vývoj dronového stacku od nuly: percepce, autonomie misí, navigace bez GPS."
+      "AI Lab — několik PoC aplikované AI: edge-orientovaná analýza porostu z multispektrálních UAV snímků (NDVI/NDRE gating, segmentace, regrese agronomických veličin; Python/scikit-learn) a simulace skladového roje robotů (A* routing, vyhýbání ORCA/RVO2; Unity/C#)."
     ]
   },
   "cfd-support": {

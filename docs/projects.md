@@ -6,7 +6,7 @@
 - **Data (localized copy):** [`src/locales/en/projects.json`](../src/locales/en/projects.json), [`src/locales/de/projects.json`](../src/locales/de/projects.json), [`src/locales/cs/projects.json`](../src/locales/cs/projects.json)
 - **Merge helper:** [`src/lib/data/projectLocales.js`](../src/lib/data/projectLocales.js) — `getProjectCopy(id, lang)` with field-level English fallback.
 - **UI:** [`src/lib/components/ProjectsSection.svelte`](../src/lib/components/ProjectsSection.svelte) — groups by `source`, cards with optional image or gradient monogram.
-- **Copy:** [`src/lib/i18n.js`](../src/lib/i18n.js) — `projects.title`, `projects.demo`, `projects.sources.{cfdSupport|github|academic|ententee}`, `projects.links.{repository|cfdSupportSite|researchGroup|clientProduct}`.
+- **Copy:** [`src/lib/i18n.js`](../src/lib/i18n.js) — `projects.title`, `projects.demo`, `projects.sources.{cfdSupport|github|academic|ententee}`, `projects.links.{repository|cfdSupportSite|researchGroup|drChronoSite|ententeeSite}`.
 
 ## Project object shape (`projects.js`, metadata only)
 

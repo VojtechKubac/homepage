@@ -136,18 +136,19 @@
       "note": "Malý produktový tým; zodpovědnost za celou aplikaci."
     }
   },
-  "uav-thk": {
-    "title": "THK drony / UAV",
-    "description": "Greenfield UAV stack pro drony THK: percepce, misí řízená autonomie a navigace bez GPS.",
-    "longDescription": "Tato práce začala jako greenfield projekt: cílem je kompletní onboard i podpůrné softwarové řešení pro drony THK — od senzoriky a logiky mise až po nasazení v terénu. Pokrývá náročné autonomní úlohy: detekci a tracking objektů, automatizované rozhodování podle cílů mise, GPS-less navigaci i další oblasti propojující percepci, plánování a řízení.",
-    "periodNote": "Začátek greenfield; implementujeme kompletní softwarové řešení pro dronovou platformu.",
+  "ai-research": {
+    "title": "Výzkumné projekty aplikované AI",
+    "description": "Několik proof-of-concept projektů aplikované AI v AI Labu společnosti ententee — od edge-orientované počítačové vize pro precizní zemědělství po rozsáhlou multiagentní simulaci.",
+    "longDescription": "Aplikovaný výzkum dodaný jako série cílených PoC. Několik z nich se věnuje edge-orientované analýze porostu ozimé pšenice a kukuřice z multispektrálních UAV snímků: sdílená, levná a deterministická brána na bázi vegetačních indexů NDVI/NDRE vyřadí zdravý porost, takže náročnější modely běží jen na označených oblastech — tento přístup stojí za jedním projektem na segmentaci plevel/plodina a dalším na regresi agronomických veličin, jako je index listové plochy, biomasa a příjem dusíku. Samostatnou linií je 3D simulace z ptačí perspektivy v Unity, kde velký roj robotů — flotila autonomních mobilních robotů — projíždí skladem bez kolizí — deterministická, seed-reprodukovatelná simulace složená z generování objednávek, přiřazování úloh nejbližšímu volnému robotu, globálního A* routingu a lokální kolizní vyhýbačky ORCA/RVO2, s přesměrováním kolem dynamických překážek a vyladěným kamerovým demem.",
+    "periodNote": "Dodáno jako řada samostatných PoC, každý zaměřený na konkrétní cíl a vlastní kritéria úspěchu.",
     "achievements": [
-      "Pomáhám budovat greenfield software stack pro UAV end-to-end (percepce, autonomie, plnění mise).",
-      "Přispívám k pipeline pro detekci a tracking objektů integrovaným s širším autonomním systémem.",
-      "Pracuji na chování řízeném misí a navigaci včetně GPS-denied scénářů a souvisejících komplexních úloh."
+      "Počítačová vize pro precizní zemědělství: sdílená deterministická brána na vegetačních indexech NDVI/NDRE, která levně vyřadí zdravý porost a nechá lehké modely běžet jen na označených oblastech — využitá v projektu na segmentaci plevel/plodina i v projektu na regresi agronomických veličin z multispektrálních UAV snímků.",
+      "Efektivita modelů pro edge: knowledge distillation, kvantizace a reportovací harness pro poměr přesnost/náklady (FLOPs, parametry, latence ONNX Runtime), aby inference zůstala v rámci on-drone rozpočtu.",
+      "Simulace skladového roje robotů: deterministická, seed-reprodukovatelná simulace v Unity, kde velká flotila autonomních mobilních robotů projíždí skladem bez kolizí — globální A* routing, lokální vyhýbání ORCA/RVO2, přesměrování kolem dynamických překážek, cenění cest podle zahlcení a nezávislý kolizní verifikátor.",
+      "Prezentace a dodávka: Unity URP rendering s GPU instancingem, kamerový rig Cinemachine se skriptovanou demo sekvencí, živé KPI HUD a heatmapa provozu, k tomu reprodukční harnessy na jeden příkaz, CLI nástroje a CI testy determinismu."
     ],
     "team": {
-      "note": "Cross-funkční tým dodávající kompletní softwarové řešení od základů."
+      "note": "Samostatná výzkumná práce napříč projekty, s občasnou výpomocí na simulaci."
     }
   },
   "ententee-hub": {

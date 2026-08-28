@@ -136,18 +136,19 @@
       "note": "Kleines Produktteam; Verantwortung für die gesamte Anwendung."
     }
   },
-  "uav-thk": {
-    "title": "THK-Drohnen / UAV",
-    "description": "Greenfield-UAV-Stack für THK-Drohnen: Perzeption, missionsgesteuerte Autonomie und Navigation ohne GPS.",
-    "longDescription": "Dieses Vorhaben startete als Greenfield-Projekt: Ziel ist eine vollständige Onboard- und Begleit-Softwarelösung für THK-Drohnen — von Sensorik und Missionslogik bis zum Einsatz im Feld. Die Arbeit umfasst anspruchsvolle Autonomie-Themen: Objekterkennung und -tracking, automatisierte Entscheidungen aus Missionszielen, GPS-lose Navigation und weitere Aufgaben, die Wahrnehmung, Planung und Regelung verbinden.",
-    "periodNote": "Greenfield gestartet; wir implementieren die vollständige Softwarelösung für die Drohnenplattform.",
+  "ai-research": {
+    "title": "Angewandte KI-Forschungsprojekte",
+    "description": "Eine Reihe von Proof-of-Concept-Projekten für angewandte KI im AI Lab von ententee — von edge-orientierter Computer Vision für Precision Agriculture bis zu großskaliger Multi-Agenten-Simulation.",
+    "longDescription": "Angewandte Forschungsarbeit, ausgeliefert als Serie fokussierter PoCs. Mehrere davon betreffen edge-orientierte Bestandsanalyse von Winterweizen und Mais aus multispektralen UAV-Aufnahmen: ein gemeinsames, günstiges, deterministisches NDVI/NDRE-Vegetationsindex-Gate verwirft gesunden Bestand, sodass schwerere Modelle nur auf markierten Regionen laufen — der Ansatz hinter einem Projekt zur Unkraut/Kultur-Segmentierung und einem weiteren zur Regression agronomischer Kenngrößen wie Blattflächenindex, Biomasse und Stickstoffaufnahme. Ein eigener Strang ist eine 3D-Draufsicht-Simulation in Unity, in der ein großer Roboterschwarm — eine Flotte autonomer mobiler Roboter — kollisionsfrei durch ein Fulfillment-Lager fährt — eine deterministische, seed-reproduzierbare Simulation aus Auftragserzeugung, Nearest-Idle-Aufgabenzuteilung, globalem A*-Routing und lokaler ORCA/RVO2-Kollisionsvermeidung, mit Umleitung bei dynamischen Hindernissen und einer kamerageführten Demo.",
+    "periodNote": "Als Folge eigenständiger PoCs geliefert, jeder um ein konkretes Ziel und eigene Erfolgskriterien herum zugeschnitten.",
     "achievements": [
-      "Beim Aufbau eines Greenfield-Software-Stacks für UAV-Betrieb End-to-End mitgewirkt (Perzeption, Autonomie, Missionsausführung).",
-      "Zu Objekterkennungs- und Tracking-Pipelines beigetragen, integriert in das Gesamtsystem der Autonomie.",
-      "An missionsgesteuertem Verhalten und Navigation gearbeitet, einschließlich Szenarien ohne GPS und weiteren komplexen Aufgaben."
+      "Computer Vision für Precision Agriculture: ein gemeinsames, deterministisches NDVI/NDRE-Vegetationsindex-Gate, das gesunden Bestand günstig verwirft und leichtgewichtige Modelle nur auf markierten Regionen laufen lässt — wiederverwendet in einem Projekt zur Unkraut/Kultur-Segmentierung und einem zur Regression agronomischer Kenngrößen auf multispektralen UAV-Aufnahmen.",
+      "Modelleffizienz für die Edge: Knowledge Distillation, Quantisierung und ein Reporting-Harness für Genauigkeit vs. Kosten (FLOPs, Parameter, ONNX-Runtime-Latenz), um die Inferenz im On-Drone-Budget zu halten.",
+      "Lager-Roboterschwarm-Simulation: eine deterministische, seed-reproduzierbare Unity-Simulation, in der eine große Flotte autonomer mobiler Roboter kollisionsfrei durch ein Fulfillment-Lager fährt — globales A*-Routing, lokale ORCA/RVO2-Vermeidung, Umleitung bei dynamischen Hindernissen, staubewusste Pfadkosten und ein unabhängiger Kollisions-Verifizierer.",
+      "Präsentation und Auslieferung: Unity-URP-Rendering mit GPU-Instancing, ein Cinemachine-Kamera-Rig mit skriptgesteuerter Demo-Sequenz, ein Live-KPI-HUD und eine Verkehrs-Heatmap, dazu Reproduktions-Harnesses mit einem Befehl, CLI-Werkzeuge und CI-Determinismustests."
     ],
     "team": {
-      "note": "Übergreifendes Team, das die vollständige Softwarelösung von Grund auf liefert."
+      "note": "Alleinige Forschungsarbeit über die Projekte hinweg, mit gelegentlicher Unterstützung bei der Simulation."
     }
   },
   "ententee-hub": {
