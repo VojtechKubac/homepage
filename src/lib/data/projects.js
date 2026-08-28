@@ -245,14 +245,7 @@ export const projects = [
   {
     id: 'ai-research',
     source: 'ententee',
-    technologies: [
-      'Python',
-      'scikit-learn',
-      'Unity',
-      'C#',
-      'ORCA / RVO2',
-      'ONNX Runtime',
-    ],
+    technologies: ['Python', 'scikit-learn', 'Unity', 'C#', 'ORCA / RVO2', 'ONNX Runtime'],
     period: {
       start: '2026',
       end: 'present',
