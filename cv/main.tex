@@ -46,7 +46,7 @@
 }
 
 \name{Vojtěch}{Kubáč}
-\title{Full-stack engineer · web, applied AI, C++}
+\title{C\texttt{++} software engineer · scientific computing \& simulation}
 \address{Pardubice}{Czech Republic}{}
 \phone[mobile]{(+420)~737~059~153}
 \email{vojta.kubac@gmail.com}
@@ -57,55 +57,53 @@
 
 \begin{document}
 \makecvtitle
-\vspace*{-8mm}
+\vspace*{-14mm}
 
+\section{Profile}
+\cvitem{}{7 years building C\texttt{++} simulation software: numerical modules for structural mechanics,
+  fluid dynamics and acoustics in a commercial engineering application. Built robot- and drone-swarm
+  simulations. Delivered production web applications for healthcare clients. Mathematician by training;
+  fully remote for 5 years; daily work with AI coding agents.}
+
+\vspace*{-1.5mm}
 \section{Experience}
-\cventry{2024--today}{Software engineer}{Ententee}{}{}{%
-  Full-stack product delivery across healthcare engagements plus applied-AI
-  research, alongside my role at CFD Support. Stack spans Python (Django, FastAPI),
-  Java / Spring Boot, React / TypeScript, PostgreSQL, with scikit-learn and
-  Unity / C\texttt{\#}.
+\cventry{2019--today}{C\texttt{++} software engineer}{CFD Support}{}{}{%
+  Design and own core modules of TCAE, a cross-platform CAE application (desktop and HPC
+  clusters) built on OpenFOAM and ParaView/VTK. Modern C\texttt{++}23, CMake, Qt, Linux/Windows.
   \begin{itemize}%
-    \item \textbf{DrChrono ·} US medical app uplift: Django/GraphQL, React/TS.
-    \item \textbf{ALF ·} medical-faculty app for attestations: Spring Boot, React/TS, PostgreSQL.
-    \item \textbf{Ententee Hub ·} internal ops and hiring tooling: FastAPI, React/TS, PostgreSQL.
-    \item \textbf{AI Lab ·} crop-analytics CV and robot-swarm sim PoCs; scikit-learn, Unity.
+    \item \textbf{TFEA ·} FEA module: CalculiX deck generation,
+      FRD result parsing, octree-based consistent/conservative CFD$\to$FEA field mapping (FSI).
+    \item \textbf{TCAA ·} aeroacoustics: FW--H / Farassat~1A in custom OpenFOAM classes,
+      multithreaded observer evaluation, FFT/PSD, filtering, octave-band SPL.
+    \item \textbf{TBASE ·} simulation database and server process: SQLite with RAII transactions and
+      nested savepoints, binary mesh serialization, cross-platform named-pipe IPC, async workers.
+    \item \textbf{TMESH ·} FEA meshing: NetGen and Gmsh behind one interface; STEP via OpenCASCADE.
+    \item \textbf{TCFD / TOPT ·} OpenFOAM solver extensions; DIRECT and EGO optimization integration.
+    \item \textbf{Build \& CI ·} authored the GitLab CI pipeline and CTest unit-test suites (incl.\ headless Qt),
+      clang-format checks; NSIS/self-extracting installers; MinGW-w64 Windows cross-builds.
   \end{itemize}}
-\cventry{2019--today}{Software engineer}{CFD Support}{}{}{%
-  Develop and maintain multiple modules of TCAE, a fluid dynamics simulation application
-  deployable on desktop machines or computational clusters. Built around
-  ParaView/VTK and OpenFOAM. Core stack: C\texttt{++}23, Python, CMake, Qt, GitLab CI.
-  \begin{itemize}%
-    \item \textbf{TCFD ·} Computational Fluid Dynamics module: OpenFOAM, ParaView UI.
-    \item \textbf{TFEA ·} FEA (solid mechanics) module: CalculiX, CFD coupling, ParaView UI.
-    \item \textbf{TCAA ·} aeroacoustics: FW--H / Farassat 1A far-field, SPL/octaves.
-    \item \textbf{TBASE ·} SQLite simulation DB: reproducible archive, ParaView IPC, surrogate modelling.
-    \item \textbf{TMESH ·} meshing module from STL/STEP (NetGen, Gmsh).
-    \item \textbf{TCAE DevOps ·} GitLab CI, CTest, headless Qt, Linux/Windows installers.
-  \end{itemize}}
-\cventry{2019--2020}{PhD researcher}{Charles University (MFF UK)}{}{}{%
-  Research in the group of Christoph Allolio on continuum modelling of lipid membranes.
-  \begin{itemize}%
-    \item Ran molecular dynamics simulations (GROMACS) of lipid membranes.
-    \item Worked on implementation of a continuum mechanics solver in C\texttt{++} for membrane remodelling.
-  \end{itemize}}
+\cventry{2024--2026}{Software engineer}{Ententee}{}{}{%
+  Healthcare web apps (DrChrono, ALF; Django, Spring Boot, React/TS). Internal R\&D projects: warehouse
+  robot-swarm simulation (Unity/C\texttt{\#}), team-built drone-swarm early-warning simulation
+  (PX4, Gazebo, ROS~2), UAV crop-analytics vision, VRP route optimization.}
+\cventry{2019--2020}{PhD researcher}{Charles University (MFF UK)}{group of C.~Allolio}{}{%
+  C\texttt{++} continuum solver for lipid-membrane remodelling; molecular dynamics in GROMACS.}
 
 \section{Education}
 \cventry{2017--2020}{Master's}{Charles University}{Prague}{Mathematical Modeling in Physics and Technology}{%
-  Thesis: \emph{Comparison of possible formulations of
-  fluid-structure interactions with application in biomechanics},
-  supervised by RNDr.~Jaroslav~Hron, Ph.D.}
-\cventry{2018--2019}{Erasmus}{Technical University of Munich}{Germany}{Faculty of Mathematics}{Machine learning, deep learning, high-performance computing.}
+  Thesis: formulations of fluid--structure interaction in biomechanics (supervisor J.~Hron).}
+\cventry{2018--2019}{Erasmus}{Technical University of Munich}{Germany}{Mathematics (ML, HPC)}{}
 \cventry{2014--2017}{Bachelor's}{Charles University}{Prague}{General Mathematics}{}
 
 \section{Skills}
-\cvitem{Programming}{C\texttt{++} (C\texttt{++}23), Python, TypeScript, Java, C\texttt{\#}, Bash}
-\cvitem{Platform}{Qt, CMake, CTest, SQLite, GitLab CI, NSIS, Linux, Git}
-\cvitem{AI / ML}{RAG / LLM integration; AI-assisted development (Claude Code, Cursor, Copilot); multispectral-UAV computer vision; surrogate modelling over design spaces}
-\cvitem{Scientific}{OpenFOAM, CalculiX, NetGen, Gmsh, ParaView, VTK, FEniCS, GROMACS}
-\cvitem{Web BE}{Django, Spring Boot, FastAPI, GraphQL, PostgreSQL}
-\cvitem{Web FE}{React, Svelte, Tailwind CSS, Vite}
-\cvitem{Simulation}{Unity, ORCA/RVO2, A* pathfinding, multi-agent coordination}
+\cvitem{Languages}{C\texttt{++} (C\texttt{++}23), Python, C\texttt{\#}, Java, TypeScript, Bash}
+\cvitem{Build \& CI}{CMake, CTest, GCC / MinGW-w64, clang-format, GitLab CI, GitHub Actions, Docker}
+\cvitem{Methods}{FEM, FVM, fluid--structure interaction, aeroacoustics, optimization}
+\cvitem{Simulation}{OpenFOAM, CalculiX; NetGen, Gmsh, OpenCASCADE}
+\cvitem{GUI}{Qt, VTK, ParaView (plugin development)}
+\cvitem{Robotics}{ROS~2, PX4, Gazebo, Unity}
+\cvitem{Web \& data}{Django, Spring Boot, React; PostgreSQL, SQLite}
+\cvitem{AI}{Claude Code, Cursor and other agents (run in parallel, test- and review-gated); scikit-learn}
 \cvitem{Spoken}{Czech (native), English (C1), German (B1)}
 
 \end{document}
