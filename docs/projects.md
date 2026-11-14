@@ -32,14 +32,14 @@ Example:
 
 ## Sources (`source` field)
 
-| Value        | Meaning                                                                                                                                                     |
-| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `cfdSupport` | Work on TCAE with CFD SUPPORT; public pointer is the company/product site, not proprietary code.                                                            |
-| `github`     | Public (or listed) GitHub repositories and this site itself.                                                                                                |
-| `academic`   | University / research (e.g. doctoral work, group homepages).                                                                                                |
-| `ententee`   | Client delivery; repositories are often private — add a `link` only when a public URL is accurate (e.g. healthcare product context), otherwise omit `link`. |
+| Value        | Meaning                                                                                                                                                                              |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `cfdSupport` | Work on TCAE with CFD SUPPORT; public pointer is the company/product site, not proprietary code.                                                                                     |
+| `github`     | Public (or listed) GitHub repositories and this site itself.                                                                                                                         |
+| `academic`   | University / research (e.g. doctoral work, group homepages).                                                                                                                         |
+| `ententee`   | Client delivery and internal proofs of concept; repositories are private — add a `link` only when a public URL is accurate (e.g. healthcare product context), otherwise omit `link`. |
 
-Order of groups is fixed in `PROJECT_SOURCE_ORDER` in `projects.js`.
+Order of groups is fixed in `PROJECT_SOURCE_ORDER` in `projects.js` (currently `cfdSupport` first, then `ententee`, `github`, `academic`).
 
 ## Localized project copy shape (`src/locales/*/projects.json`)
 
@@ -65,8 +65,9 @@ Missing locale entries or missing fields in `de`/`cs` fall back to `en`.
 1. **NDA / confidentiality:** Do not name unreleased client specifics, internal URLs, or proprietary filenames in **on-site card copy**. Prefer role-level descriptions and public links only.
 2. **GitHub:** Only add repos you are willing to show; use the real `https://github.com/VojtechKubac/...` URL when the repo is public.
 3. **CFD SUPPORT:** Public cards stay high-level. Longer drafts for wording live under [`CFDSUPPORT-projects/`](../CFDSUPPORT-projects/) (author reference); treat that folder as **non-marketing** technical notes — scrub or avoid publishing internal codenames on the live cards.
-4. **ententee:** Use a public client/product link only when it matches the work (e.g. healthcare software context). Do not imply endorsement.
-5. **Images:** Optional `image` URL per project; if omitted, the UI uses a deterministic gradient + monogram (no external placeholder services).
+4. **ententee:** Use a public client/product link only when it matches the work (e.g. healthcare software context). Do not imply endorsement. Internal projects are described as "internal proof of concept" / "internal R&D projects" — not by internal team labels — and stay high-level (what the system does, the stack, the author's part), without implementation specifics the company may consider confidential.
+5. **Team credit:** Set `team.size` honestly; use the locale `team.note` to state the author's part on team projects (e.g. "main developer, with contributions from colleagues").
+6. **Images:** Optional `image` URL per project; if omitted, the UI uses a deterministic gradient + monogram (no external placeholder services). Store images under `public/images/projects/<id>.jpg` cropped to 1200 × 630. Third-party photos must allow reuse without a purchased licence (e.g. Pexels License); record the source in a comment next to `image` in `projects.js`. Screenshots that show map tiles need the provider's attribution (e.g. "© OpenStreetMap contributors") in the card copy.
 
 ## Long-form notes
 

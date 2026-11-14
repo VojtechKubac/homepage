@@ -2,13 +2,12 @@
   "ententee": {
     "role": "Software engineer",
     "company": "Ententee",
-    "period": "2024 — present",
+    "period": "2024 — 2026",
     "description": "Full-stack product delivery across healthcare and robotics engagements, run in parallel with my CFD Support collaboration.",
     "highlights": [
       "DrChrono — uplift of a US medical web app: Django/GraphQL backend, full React/TypeScript frontend rewrite.",
       "ALF — application for a medical faculty managing attestations and trunk exams (Spring Boot, React/TS, PostgreSQL).",
-      "Ententee Hub — internal tooling for project tracking, hiring, and ops (FastAPI, React/TS, PostgreSQL).",
-      "AI Lab — several applied-AI PoCs: edge-oriented crop-analytics vision on UAV multispectral imagery (NDVI/NDRE gating, segmentation, agronomic-trait regression; Python/scikit-learn) and a warehouse robot-swarm simulation (A* routing, ORCA/RVO2 avoidance; Unity/C#)."
+      "Internal R&D projects: edge-oriented crop-analytics vision on UAV multispectral imagery (Python/scikit-learn), a warehouse robot-swarm simulation (A*, ORCA/RVO2; Unity/C#), a human-in-the-loop route-optimization dispatch assistant (VRP with OSRM + VROOM; Django Ninja, SvelteKit), and a team-built decentralised drone-swarm early-warning simulation (PX4, Gazebo, ROS 2, Unity)."
     ]
   },
   "cfd-support": {
@@ -16,14 +15,14 @@
     "company": "CFD Support s.r.o.",
     "location": "Prague",
     "period": "2019 — present",
-    "description": "Owning multiple modules of TCAE — a cross-platform CAE desktop application built around ParaView/VTK and OpenFOAM.",
+    "description": "Designing and owning core C++23 modules of TCAE — a cross-platform CAE application (desktop and HPC clusters) built on OpenFOAM and ParaView/VTK.",
     "highlights": [
-      "TFEA — FEA module: CalculiX integration, CFD-to-FEA load mapping (FSI), modal analysis, ParaView-based UI.",
-      "TCAA — aeroacoustics: FW–H / Farassat 1A far-field, SPL/octaves, optional WAV export.",
-      "TBASE — SQLite simulation database: reproducible archive, ParaView IPC, surrogate-modelling groundwork.",
-      "TMESH — FEA volume meshing from STL/STEP via NetGen and Gmsh.",
-      "TCFD / TOPT — OpenFOAM orchestration, custom solver code, optimization workflows.",
-      "TCAE DevOps — GitLab CI, CTest with headless Qt, automated Linux/Windows installer pipelines."
+      "TFEA — finite element module: CalculiX input generation and result parsing, octree-based CFD-to-FEA field mapping for fluid–structure interaction.",
+      "TCAA — aeroacoustics: FW–H / Farassat 1A implemented as custom OpenFOAM classes, multithreaded observer evaluation, FFT-based spectra and octave-band SPL.",
+      "TBASE — simulation database and server process: SQLite with RAII transactions and nested savepoints, binary mesh serialization, cross-platform named-pipe IPC to the ParaView GUI.",
+      "TMESH — FEA meshing: NetGen and Gmsh behind one interface, mesh/CAD I/O (VOL, MSH, INP, STEP via OpenCASCADE).",
+      "TCFD / TOPT — OpenFOAM solver extensions and optimization workflows (DIRECT, EGO).",
+      "Build and CI — authored the GitLab CI pipeline and CTest unit-test suites (including headless Qt tests) with clang-format checks; Linux/Windows installers with MinGW-w64 cross-builds."
     ]
   },
   "charles-mff-research": {

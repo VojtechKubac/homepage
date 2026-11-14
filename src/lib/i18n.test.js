@@ -19,9 +19,7 @@ describe('getTranslation', () => {
   };
 
   it('returns nested English strings for dotted keys', () => {
-    expect(getTranslation('en', 'hero.title')).toBe(
-      'Software engineer building tools for complex problems.',
-    );
+    expect(getTranslation('en', 'hero.title')).toBe('I build software that has to be right.');
     expect(getTranslation('en', 'nav.about')).toBe('About');
     expect(getTranslation('en', 'contact.send')).toBe('Send Message');
   });

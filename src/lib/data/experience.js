@@ -21,23 +21,6 @@ import { getExperienceCopy } from './experienceLocales.js';
 /** @type {ExperienceBase[]} */
 export const experiences = [
   {
-    id: 'ententee',
-    technologies: [
-      'Python',
-      'Java',
-      'Spring Boot',
-      'Django',
-      'FastAPI',
-      'React',
-      'TypeScript',
-      'PostgreSQL',
-      'GraphQL',
-      'scikit-learn',
-      'Unity',
-      'C#',
-    ],
-  },
-  {
     id: 'cfd-support',
     technologies: [
       'C++23',
@@ -52,6 +35,25 @@ export const experiences = [
       'NSIS',
       'SQLite',
       'Python',
+    ],
+  },
+  {
+    id: 'ententee',
+    technologies: [
+      'Python',
+      'Java',
+      'Spring Boot',
+      'Django',
+      'FastAPI',
+      'React',
+      'TypeScript',
+      'PostgreSQL',
+      'GraphQL',
+      'scikit-learn',
+      'Unity',
+      'C#',
+      'ROS 2',
+      'PX4',
     ],
   },
   {
