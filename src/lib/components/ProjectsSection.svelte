@@ -221,9 +221,9 @@
                       {#if active.team.size === 1}
                         {translate('projects.details.teamSolo')}
                       {:else}
-                        {translate('projects.details.teamPrefix')}{active.team.size}
-                        {active.team.note ? ` ${active.team.note}` : ''}
-                        {translate('projects.details.teamSuffix')}
+                        {translate('projects.details.teamPrefix')}{active.team.size}{translate(
+                          'projects.details.teamSuffix',
+                        )}.{active.team.note ? ` ${active.team.note}` : ''}
                       {/if}
                     {/if}
                     {#if active.periodNote}
