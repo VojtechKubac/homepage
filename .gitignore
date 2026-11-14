@@ -7,3 +7,6 @@ node_modules
 .env
 .env.local
 .env.*.local
+
+# Per-application tailored CVs (local only)
+cv/applications/

@@ -41,3 +41,14 @@ cp main.pdf ../public/resume.pdf
 - Left sidebar: thin emerald stripe via `eso-pic`
 
 Edit content directly in `main.tex` — `\cventry` for experience/education, `\cvitem` for skills.
+
+Content order: **Profile** (a short `\cvitem{}{…}` summary) → **Experience** → **Education** → **Skills**. Conventions:
+
+- **One page.** After edits, run `pdflatex` twice (the second pass fixes the page-count footer) and check `pdfinfo main.pdf` reports `Pages: 1`. When something spills over, shorten text rather than shrinking fonts or margins.
+- **Bold only for bullet titles** (`\textbf{TFEA ·}`), not for phrases inside the text.
+- **Skills are grouped by area** (Languages, Build & CI, Methods, Simulation, GUI, Robotics, Web & data, AI), matching the skill groups on the site's About tab ([`src/lib/data/skills.js`](../src/lib/data/skills.js)).
+- **Profile** is the part to rewrite first when tailoring a copy for an application.
+
+## Tailored applications
+
+Per-job variants live in `cv/applications/<company>/` (gitignored, local only). Each folder holds its own `main.tex` (a copy of `cv/main.tex` reweighted for the role) plus `photo.jpg`; build it with `pdflatex main.tex` inside that folder.
