@@ -5,9 +5,9 @@
     "longDescription": "Ich entwickle und pflege das FEA-Modul in TCAE mit Fokus auf einen pragmatischen Workflow: Import/Vorbereitung, Vernetzung, Solver-Setup, Postprocessing und Reporting. Die Arbeit entwickelt sich gemeinsam mit anderen Plattformmodulen (CFD, Vernetzung, Optimierung) weiter; das Design priorisiert Interoperabilität und robuste Fehlerfälle statt „perfekter“ Einmal-Skripte.",
     "periodNote": "Parallel zu anderen TCAE-Modulen (Vernetzung/CFD/Optimierung) entwickelt; Funktionen werden schrittweise ausgeliefert.",
     "achievements": [
-      "CalculiX-Läufe in einen ParaView-zentrierten Desktop-Workflow integriert (Setup → Solve → Postprocessing).",
-      "CFD-zu-FEA-Lastmapping für FSI-ähnliche Pipelines ohne individuelle Benutzer-Skripte umgesetzt.",
-      "Modalanalyse und Werkzeuge zur Modellvorbereitung und -inspektion ergänzt."
+      "Erzeugt vollständige CalculiX-Eingabedateien aus der TCAE-Konfiguration und liest die Ergebnisse zur Visualisierung in ParaView zurück.",
+      "Octree-basierte Übertragung von CFD-Druck- und Temperaturfeldern auf nicht passende Strukturnetze, konsistent und konservativ, für Fluid-Struktur-Kopplung.",
+      "Statische, thermische und Modalanalyse mit Unterstützung für Turbomaschinen (rotierende Bezugssysteme, Sektorperiodizität, mehrere Drehzahllinien)."
     ],
     "team": {
       "note": "Übergreifendes CAE-Team; enge Kopplung mit Plattform- und Visualisierungsteilen."
@@ -19,9 +19,9 @@
     "longDescription": "Dieses Modul wandelt CFD-Oberflächendaten in nutzbare aeroakustische Ergebnisse um: Fernfelddruck, SPL-Spektren und Oktavbänder. Es richtet sich an Ingenieur:innen im CFD-Workflow — Ziel sind konsistente Ergebnisse mit möglichst wenig „akademischem Aufwand“. Es wird aktiv iteriert, sobald reale Fälle Randbedingungen sichtbar machen.",
     "periodNote": "Entwickelt parallel zu CFD und Postprocessing; Validierung fallweise anhand von Kundenbeispielen.",
     "achievements": [
-      "FW-H-/Farassat-1A-Pipelines für Fernfeldaeroakustik aus CFD-Oberflächen implementiert.",
-      "Ausgaben der Signalverarbeitung (SPL, Oktavbänder) und Richtungsvisualisierungen ergänzt.",
-      "Optionalen WAV-Export für schnelle qualitative Bewertung und Abstimmung mit Stakeholdern ermöglicht."
+      "FW–H / Farassat 1A im Fernfeld, implementiert als eigene OpenFOAM-Klassen.",
+      "Mehrthreadige Auswertung über Beobachterpunkte und Sonden, dazu eine Signalverarbeitungskette: Filterung, Fensterung, FFT-Spektren, SPL in Oktavbändern und Richtcharakteristiken.",
+      "Funktioniert sowohl gekoppelt an instationäre CFD-Läufe als auch eigenständig mit externen Oberflächendaten."
     ],
     "team": {
       "note": "Übergreifendes CAE-Team; enge Kopplung mit dem TCFD-Modul."
@@ -33,9 +33,9 @@
     "longDescription": "TBASE ist das „Gedächtnis“ der Plattform: Es archiviert Simulationen, Parameter, Geometrien und Ergebnisse inklusive Berichten. Nutzer:innen können Simulationen durchsuchen und Statistiken über Designräume auswerten. Die Ergebnisse sind zu 100 % reproduzierbar — dasselbe Simulationsprojekt kann aus der Datenbank wiederhergestellt und erneut ausgeführt werden. Das Datenbankschema ist flexibel gehalten, um neue Solver und Workflows zu unterstützen. Laufende Arbeit an Surrogat-Modellen zielt darauf ab, Ausgänge für noch nicht simulierte Parameterkombinationen vorherzusagen; Surrogat-Modelle liefern Vertrauensmaße und können die Optimierung steuern sowie neue Punkte im Designraum vorschlagen.",
     "periodNote": "Evolviert mit neuen Modulen (FEA/Akustik/Optimierung), sobald reichere Metadaten und Artefakt-Handling nötig sind.",
     "achievements": [
-      "SQLite-basierten Speicher für Simulationen, Parametersätze sowie Geometrie- und Ergebnis-Artefakte aufgebaut.",
-      "IPC-Integration ergänzt, um ParaView-Sessions direkt aus gespeicherten Simulationen anzustoßen.",
-      "Grundlagen für Statistik und Surrogat-Modellierung über parametrische Designräume gelegt."
+      "SQLite-Speicher für parametrische Designstudien mit RAII-Transaktionen und verschachtelten Savepoints für mehrstufige Operationen.",
+      "Ein separater Serverprozess kommuniziert über plattformübergreifende Named Pipes mit der ParaView-Oberfläche; asynchrone Worker halten die UI bei langen Importen bedienbar.",
+      "Binäre Serialisierung von Netzen und Ergebnissen sowie vollständige Rückführung eines gespeicherten Designpunkts in ein lauffähiges Projekt."
     ]
   },
   "tmesh-fea": {
@@ -44,9 +44,9 @@
     "longDescription": "TMESH liefert robuste, simulationsreife Volumennetze aus praxisnahen CAD-Eingaben. Die Arbeit verbindet Geometriehandhabung, Vernetzungs-Backends und UX: Nutzer:innen brauchen sichere Defaults, vorhersehbare Ergebnisse und klare Diagnose bei „schwieriger“ Geometrie. Das Modul wird aktiv weiterentwickelt, sobald neue Geometrietypen und Baugruppen dazukommen.",
     "periodNote": "Parallel zu anderen TCAE-Modulen (Vernetzung/CFD/Optimierung) entwickelt; Funktionen werden schrittweise ausgeliefert.",
     "achievements": [
-      "NetGen- und Gmsh-Vernetzungs-Backends für STL/STEP-Quellen integriert.",
-      "Netzqualitätskontrolle und Diagnose für typische Fehlerfälle ergänzt.",
-      "Mehrteilige Baugruppen mit praxisnaher UX für Auswahl und Inspektion unterstützt."
+      "NetGen und Gmsh hinter einer gemeinsamen Konfigurationsschnittstelle, mit Vernetzungseinstellungen je Komponente für Baugruppen.",
+      "Netz-Ein- und Ausgabe für VOL, MSH, INP und STEP (über OpenCASCADE), wobei Konnektivität und Komponentengrenzen bei Konvertierungen erhalten bleiben.",
+      "Robuster Umgang mit unsauberen CAD-Daten: inkonsistente Normalen, degenerierte Dreiecke, Lücken."
     ]
   },
   "tmesh-tcfd-topt": {
@@ -55,10 +55,9 @@
     "longDescription": "Ich trage quer über die TCAE-Plattform bei. Schwerpunkte sind Vernetzung, CFD-Orchestrierung um OpenFOAM, neue Solver-Codepfade für OpenFOAM sowie Optimierungs-Workflows. Die Arbeit entwickelt sich fortlaufend mit neuen Features und Verbesserungen. Wir arbeiten mit Kund:innen zusammen, um Bedarfe zu verstehen und die Plattform entsprechend auszubauen.",
     "periodNote": "Steht für kontinuierliche Querschnittsbeiträge statt für ein festes Feature-Set.",
     "achievements": [
-      "Ergonomie von CFD-Setup/-Solve rund um OpenFOAM im Desktop-Workflow verbessert.",
-      "Optimierungs-Workflows (DoE/DIRECT/EGO) mit Plattform-Datenmanagement erweitert.",
-      "Neuen Code für OpenFOAM-Solver geschrieben und die OpenFOAM-Codebasis um Features erweitert.",
-      "Inkrementelle Verbesserungen bei Bedienbarkeit und Stabilität über Vernetzung und Postprocessing ausgeliefert."
+      "Features und langfristige Pflege im größten Modul der Plattform, dem OpenFOAM-Setup und der Solver-Ausführung, inklusive Abwärtskompatibilität bei Änderungen des Konfigurationsformats.",
+      "Optimierungsworkflows: Design of Experiments, DIRECT und Dakota EGO, angebunden an TBASE zur Ergebnisspeicherung.",
+      "Die Verbindung zwischen Modulen: Export akustischer Daten für TCAA und Ergebniszugriff für TFEA."
     ],
     "team": {
       "note": "Enge Zusammenarbeit im gesamten CAE-Team; Arbeit überschreitet oft Modulgrenzen."
@@ -70,110 +69,126 @@
     "longDescription": "Ich betreue Teile der Build-/Release-Pipeline, damit die Desktop-Plattform lieferbar bleibt. Dazu gehören CI-Pipelines, Konzeption und Orchestrierung automatisierter Tests sowie die automatisierte Erstellung von Linux-/Windows-Installern.",
     "periodNote": "Kontinuierliche Wartung parallel zur Feature-Entwicklung; CI/Packaging ändern sich mit ParaView/Qt und Toolchain.",
     "achievements": [
-      "CI-Pipelines für Backend-Komponenten und ParaView-Plugins mit Fokus auf schnelles Feedback eingerichtet.",
-      "Automatisierte Tests (CTest + headless Qt wo sinnvoll) konzipiert und orchestriert, um Regressionen zu verhindern.",
-      "Linux-/Windows-Packaging-Workflows für Desktop-Verteilung aufgesetzt; Installer-Builds sind automatisiert und getestet."
-    ]
-  },
-  "ibkr-trading-bot": {
-    "title": "IBKR Trading-Bot",
-    "description": "Automatisierung und Werkzeuge rund um Interactive Brokers (algorithmische / operative Workflows; Details im Repository).",
-    "longDescription": "Ein persönliches Automatisierungsprojekt rund um Interactive Brokers, um manuelle operative Arbeit zu reduzieren: Datenabzüge, Gerüst für Strategieausführung und Schutzmechanismen. Es wird bei Bedarf weiterentwickelt; das Repository ist die Quelle für aktuellen Umfang und Verhalten.",
-    "periodNote": "Gelegentlich gepflegt; erweitert, wenn neue Automatisierungsbedarfe entstehen.",
-    "achievements": [
-      "Modulares Automatisierungs-Setup für Interactive-Brokers-Workflows aufgebaut.",
-      "Fokus auf operative Sicherheit: reproduzierbare Läufe, Logging und sichtbare Fehler.",
-      "Umfang praxisnah und wartbar gehalten statt „eines riesigen Bots“."
+      "Autor der GitLab-CI-Pipeline: clang-format-Prüfungen, getrennte Build- und Test-Stufen für das C++-Backend und die ParaView-Plugins, headless-Qt-Tests, Sparse Checkouts eines großen Monorepos.",
+      "CTest-Unit-Test-Suites über die Module hinweg.",
+      "Selbstextrahierender Linux-Installer und Windows-NSIS-Installer mit MinGW-w64-Cross-Builds."
     ]
   },
   "homepage-site": {
     "title": "Diese Portfolio-Website",
     "description": "Ein-Seiten-Portfolio: Svelte 4, Vite 5, Tailwind, i18n (EN / DE / CS), Integration eines Kontaktformulars.",
-    "longDescription": "Diese Site ist ein kleines, aber bewusstes Frontend-Projekt: ein schnelles Ein-Pager-Portfolio mit klarem Content-Modell, Internationalisierung und leichtem Kontakt-Flow. Sie wird weiter verfeinert, während sich Texte und Präsentation entwickeln — Ziel bleiben Einfachheit, Wartbarkeit und angenehmes Lesen.",
+    "longDescription": "Ein Ein-Seiten-Portfolio mit kleinem Content-Modell, drei Sprachen und einem Kontaktformular.",
     "periodNote": "In kleinen PRs iteriert, sobald sich Content und UI ändern; langfristig pflegeleicht gedacht.",
     "achievements": [
       "Svelte- + Vite- + Tailwind-Ein-Seiten-Struktur mit klarer Trennung von Komponenten und Daten ausgeliefert.",
       "i18n für EN/DE/CS ohne schwere Frameworks ergänzt.",
-      "Kontaktformular-Flow passend für statisches Deployment angebunden."
+      "Kontaktformular-Flow passend für statisches Deployment angebunden.",
+      "Mit KI-Coding-Agenten gebaut und gepflegt — mit Tests, Typprüfung und Review bei jeder Änderung."
     ]
   },
   "master-thesis": {
     "title": "Masterarbeit (Code)",
-    "description": "Öffentliches Repository mit Code und Artefakten aus meiner Masterarbeit.",
-    "longDescription": "Ein öffentliches Repository mit Code und Artefakten aus meiner Masterarbeit. Die Karte auf der Website bleibt bewusst auf hoher Ebene; im Repository liegen Kontext und Implementierungsdetails.",
-    "periodNote": "Im Rahmen der Masterarbeit abgeschlossen; Repository dient Referenz und Reproduzierbarkeit.",
+    "description": "FEniCS-Implementierung monolithischer Verfahren für Fluid-Struktur-Kopplung, validiert am Turek-&-Hron-Benchmark. Code zu meiner Masterarbeit.",
+    "longDescription": "Meine Masterarbeit verglich Formulierungen der Fluid-Struktur-Kopplung mit Anwendungen in der Biomechanik. Das Repository enthält monolithische FSI-Solver in FEniCS: Total- und Updated-ALE-Formulierungen (Arbitrary Lagrangian–Eulerian) sowie eine experimentelle vollständig Euler'sche Variante mit Cut-Cell-Integration. Die Codes sind auf den Turek-&-Hron-FSI-Benchmark ausgelegt und laufen auf nichtlinearen und Zeitschritt-Solvern auf Basis von PETSc, die aus dem Code meines Betreuers übernommen sind.",
+    "periodNote": "Masterarbeit an der MFF UK, verteidigt 2020.",
     "achievements": [
-      "Thesis-Code/-Artefakte in reproduzierbarer Form veröffentlicht.",
-      "Nutzung so dokumentiert, dass Gutachter:innen und spätere Nachnutzung genug Kontext haben.",
-      "Die Zusammenfassung auf der Site auf öffentliches Material fokussiert gelassen."
+      "Monolithische FSI-Solver in Total- und Updated-ALE-Formulierung, validiert am Turek-&-Hron-Benchmark.",
+      "Eine explorative vollständig Euler'sche Formulierung mit Cut-Cell-Integration."
     ]
   },
   "biomembrane": {
     "title": "Biomembran-Remodellierung (Promotion)",
-    "description": "Etwa ein Jahr im Bereich computergestützter Biophysik / Membranmodellierung an der MFF UK (Karls-Universität); Gruppe von Christoph Allolio geleitet.",
+    "description": "Etwa ein Jahr in rechnergestützter Biophysik und Membranmodellierung an der MFF UK (Karls-Universität), in der Gruppe von Christoph Allolio.",
     "longDescription": "Während meiner Promotion arbeitete ich in einer Forschungsgruppe zu computergestützter Biophysik und Membranmodellierung. Ziel war die Modellierung von Lipidmembranen mit kontinuumsmechanischen Gleichungen. Ich betrieb Literaturrecherche, numerische Molekulardynamik-Simulationen und implementierte einen kontinuumsmechanischen Solver in C++.",
     "periodNote": "Forschungsarbeit parallel zu anderen Verpflichtungen; inhaltlich mit der Ausrichtung der Gruppe gewachsen.",
     "achievements": [
-      "Molekulardynamik-Simulationen mit GROMACS durchgeführt.",
-      "Kontinuumsmechanischen Solver in C++ zur Modellierung von Lipidmembranen implementiert.",
-      "Zum besseren Verständnis von Membran-Remodellierungsprozessen in der Gruppe beigetragen."
+      "Einen Kontinuumsmechanik-Solver in C++ zur Modellierung von Lipidmembranen implementiert.",
+      "Molekulardynamik-Simulationen durchgeführt (GROMACS)."
     ],
     "team": {
-      "note": "Austausch und Diskussion mit zahlreichen Personen innerhalb und außerhalb der Gruppe."
+      "note": "Forschungsgruppe an der MFF UK."
     }
   },
   "alf": {
     "title": "ALF — Anwendung für die Medizinische Fakultät",
     "description": "Anwendung für eine Medizinische Fakultät zur Verwaltung von Attesten und Staatsexamina (Prüfungen in der ärztlichen Ausbildung).",
-    "longDescription": "Kundenlieferung im Gesundheits-Software-Kontext: eine Webanwendung für Workflows einer Medizinischen Fakultät. Typische Full-Stack-Produktentwicklung unter realen Randbedingungen (Datenschutz, Stakeholder-Feedback, Zeitpläne).",
+    "longDescription": "Eine Webanwendung für eine medizinische Fakultät, die Facharztprüfungen, Stammprüfungen und die zugehörigen Kurse verwaltet. Ich habe neue Funktionen umgesetzt und die bestehende Codebasis gepflegt: ein Abrechnungsmodul für Kurse und Prüfungen, eine Korrespondenzfunktion für Prüfungstermine, Validierung von Datenimporten und Korrekturen in älterer Registrierungslogik.",
     "periodNote": "Parallel zu anderen Kundenprojekten entwickelt; Umfang und Prioritäten änderten sich mit Stakeholder-Feedback.",
     "achievements": [
-      "Produktive Webanwendung im Einklang mit den von Stakeholdern getriebenen Workflow-Anforderungen ausgeliefert.",
-      "Innerhalb domänenspezifischer Vorgaben gearbeitet (Datenschutz, operative Zuverlässigkeit, behutsamer Rollout).",
-      "Öffentliche Darstellung professionell gehalten: Verweis auf Produktkontext statt privaten Code."
+      "Abrechnung für Kurse und Prüfungen: Berechnung von Zuschüssen, Vergütungen für Prüfungskommissionen und Kurspersonal, monatlich aufgeteilte Abrechnungen und XLS-Export (Spring Boot, React/TS).",
+      "Korrespondenz zu Prüfungsterminen: Dokumentvorlagen und ein E-Mail-Editor mit Vorschau und Versand.",
+      "Eine neue externe API integriert, Validierung für Datenimporte ergänzt sowie ältere Teile der Codebasis bereinigt und korrigiert."
     ],
     "team": {
-      "note": "Kleines Produktteam; Verantwortung für die gesamte Anwendung."
+      "note": "Kleines Produktteam."
     }
   },
-  "ai-research": {
-    "title": "Angewandte KI-Forschungsprojekte",
-    "description": "Eine Reihe von Proof-of-Concept-Projekten für angewandte KI im AI Lab von ententee — von edge-orientierter Computer Vision für Precision Agriculture bis zu großskaliger Multi-Agenten-Simulation.",
-    "longDescription": "Angewandte Forschungsarbeit, ausgeliefert als Serie fokussierter PoCs. Mehrere davon betreffen edge-orientierte Bestandsanalyse von Winterweizen und Mais aus multispektralen UAV-Aufnahmen: ein gemeinsames, günstiges, deterministisches NDVI/NDRE-Vegetationsindex-Gate verwirft gesunden Bestand, sodass schwerere Modelle nur auf markierten Regionen laufen — der Ansatz hinter einem Projekt zur Unkraut/Kultur-Segmentierung und einem weiteren zur Regression agronomischer Kenngrößen wie Blattflächenindex, Biomasse und Stickstoffaufnahme. Ein eigener Strang ist eine 3D-Draufsicht-Simulation in Unity, in der ein großer Roboterschwarm — eine Flotte autonomer mobiler Roboter — kollisionsfrei durch ein Fulfillment-Lager fährt — eine deterministische, seed-reproduzierbare Simulation aus Auftragserzeugung, Nearest-Idle-Aufgabenzuteilung, globalem A*-Routing und lokaler ORCA/RVO2-Kollisionsvermeidung, mit Umleitung bei dynamischen Hindernissen und einer kamerageführten Demo.",
-    "periodNote": "Als Folge eigenständiger PoCs geliefert, jeder um ein konkretes Ziel und eigene Erfolgskriterien herum zugeschnitten.",
+  "crop-analytics": {
+    "title": "Bestandsanalyse aus multispektralen UAV-Aufnahmen",
+    "description": "Edge-orientierte Computer Vision für Precision Agriculture: ein günstiges Vegetationsindex-Gate plus leichtgewichtige Modelle für Unkraut/Kultur-Segmentierung und die Regression agronomischer Kenngrößen bei Winterweizen und Mais. Ein interner Proof of Concept bei ententee.",
+    "longDescription": "Eine Reihe von PoCs zur Bestandsanalyse von Winterweizen und Mais aus multispektralen UAV-Aufnahmen, ausgelegt für die Ausführung auf der Drohne. Ein gemeinsames, deterministisches NDVI/NDRE-Vegetationsindex-Gate verwirft gesunden Bestand günstig, sodass schwerere Modelle nur auf markierten Regionen laufen. Darauf bauen zwei Stränge auf: Unkraut/Kultur-Segmentierung sowie die Regression agronomischer Kenngrößen wie Blattflächenindex, Biomasse und Stickstoffaufnahme, validiert mit Leave-Location-out-Kreuzvalidierung.",
+    "periodNote": "Interne Proofs of Concept, kein Kundenprojekt.",
     "achievements": [
-      "Computer Vision für Precision Agriculture: ein gemeinsames, deterministisches NDVI/NDRE-Vegetationsindex-Gate, das gesunden Bestand günstig verwirft und leichtgewichtige Modelle nur auf markierten Regionen laufen lässt — wiederverwendet in einem Projekt zur Unkraut/Kultur-Segmentierung und einem zur Regression agronomischer Kenngrößen auf multispektralen UAV-Aufnahmen.",
-      "Modelleffizienz für die Edge: Knowledge Distillation, Quantisierung und ein Reporting-Harness für Genauigkeit vs. Kosten (FLOPs, Parameter, ONNX-Runtime-Latenz), um die Inferenz im On-Drone-Budget zu halten.",
-      "Lager-Roboterschwarm-Simulation: eine deterministische, seed-reproduzierbare Unity-Simulation, in der eine große Flotte autonomer mobiler Roboter kollisionsfrei durch ein Fulfillment-Lager fährt — globales A*-Routing, lokale ORCA/RVO2-Vermeidung, Umleitung bei dynamischen Hindernissen, staubewusste Pfadkosten und ein unabhängiger Kollisions-Verifizierer.",
-      "Präsentation und Auslieferung: Unity-URP-Rendering mit GPU-Instancing, ein Cinemachine-Kamera-Rig mit skriptgesteuerter Demo-Sequenz, ein Live-KPI-HUD und eine Verkehrs-Heatmap, dazu Reproduktions-Harnesses mit einem Befehl, CLI-Werkzeuge und CI-Determinismustests."
+      "Gemeinsames, deterministisches NDVI/NDRE-Gate, das gesunden Bestand verwirft, bevor ein Modell läuft — wiederverwendet in den Projekten zur Segmentierung und zur Kenngrößen-Regression.",
+      "Regression agronomischer Kenngrößen (Blattflächenindex, Biomasse, Stickstoffaufnahme) mit Gradient Boosting und Leave-Location-out-Kreuzvalidierung.",
+      "Modelleffizienz für die Edge: Knowledge Distillation, Quantisierung und ein Reporting-Harness für Genauigkeit vs. Kosten (FLOPs, Parameter, ONNX-Runtime-Latenz), um die Inferenz im On-Drone-Budget zu halten."
     ],
     "team": {
-      "note": "Alleinige Forschungsarbeit über die Projekte hinweg, mit gelegentlicher Unterstützung bei der Simulation."
+      "note": "Alleinige angewandte Forschungsarbeit."
     }
   },
-  "ententee-hub": {
-    "title": "Ententee Hub",
-    "description": "Interne Hub-Anwendung für ententee-Workflows; Repository ist privat.",
-    "longDescription": "Eine interne Hub-Anwendung für ententee-Workflows. Ziel ist es, Projektstatus und -fortschritt zu verfolgen, Werkzeuge für die Einstellung neuer Mitarbeitender und weitere operative Aufgaben bereitzustellen.",
-    "periodNote": "Parallel zu anderen Kundeninitiativen entwickelt.",
+  "warehouse-swarm": {
+    "title": "Simulation eines Lager-Roboterschwarms",
+    "description": "3D-Draufsicht-Simulation in Unity, in der eine große Flotte autonomer mobiler Roboter kollisionsfrei durch ein Fulfillment-Lager fährt. Ein interner Proof of Concept bei ententee.",
+    "longDescription": "Eine deterministische, seed-reproduzierbare Simulation eines Roboterschwarms in einem Fulfillment-Lager: Auftragserzeugung, Nearest-Idle-Aufgabenzuteilung, globales A*-Routing und lokale ORCA/RVO2-Kollisionsvermeidung, mit Umleitung um dynamische Hindernisse und staubewussten Pfadkosten. Ein unabhängiger Verifizierer prüft, dass nie eine Kollision auftritt. Präsentiert wird das Ergebnis als kamerageführte Demo mit Live-KPIs.",
+    "periodNote": "Interner Proof of Concept, kein Kundenprojekt.",
     "achievements": [
-      "Interne Werkzeuge gebaut, um operative Abläufe zu verschlanken.",
-      "Schnell iteriert auf Basis von Feedback der täglichen Nutzer:innen.",
-      "Externe Verlinkung professionell gehalten: nur Produktkontext, kein privater Code."
+      "Kollisionsfreie Flottenbewegung: globales A*-Routing, lokale ORCA/RVO2-Vermeidung, Umleitung bei dynamischen Hindernissen, staubewusste Pfadkosten und ein unabhängiger Kollisions-Verifizierer.",
+      "Deterministischer, seed-reproduzierbarer Takt mit CI-Determinismustests, CLI-Werkzeugen und Reproduktion mit einem Befehl.",
+      "Präsentation: Unity-URP-Rendering mit GPU-Instancing, ein Cinemachine-Kamera-Rig mit skriptgesteuerter Demo-Sequenz, ein Live-KPI-HUD und eine Verkehrs-Heatmap."
     ],
     "team": {
-      "note": "Internes Produkt mit engen Feedback-Schleifen von Nutzer:innen."
+      "note": "Überwiegend allein, mit gelegentlicher Unterstützung eines Kollegen."
+    }
+  },
+  "dispatch-assistant": {
+    "title": "KI-Disponentenassistent (Tourenoptimierung)",
+    "description": "Tourenplanung für die Logistik, die aus der Historie lernt: Vergangene Touren verraten die ungeschriebenen Regeln des Depots, und ein VRP-Solver plant neue Abhol- und Liefertouren, die sie einhalten. Der Disponent prüft, bearbeitet und gibt frei. Ein interner Proof of Concept bei ententee.",
+    "longDescription": "Die tägliche Tourenplanung in Distributionsunternehmen macht oft noch eine einzelne Person mit Tabelle und ungeschriebenen Regeln. Dieser PoC nimmt die Aufträge, die Flotte und die Fahrerrestriktionen des Tages, löst sie als Vehicle Routing Problem mit Zeitfenstern (Kapazität, Depotzeiten, Pausen, Lenkzeiten) und zeigt das Ergebnis auf einer Karte und einer Tageszeitleiste. Vergangene Touren werden importiert und nach den weichen Randbedingungen durchsucht, die niemand aufschreibt — vor allem, welcher Fahrer welchen Kunden üblicherweise bedient und wer ihn vertritt —, damit die neuen Pläne wie Touren aussehen, die das Depot wirklich fahren würde. Der Disponent kann Stopps verschieben, Aufträge hinzufügen oder stornieren und im Tagesverlauf neu planen. Der Solver erledigt die Kombinatorik, das letzte Wort hat der Disponent. Als Hauptentwickler habe ich an allen Teilen gearbeitet: Planungsvertrag und Solver-Anbindung, Import- und Planungs-APIs sowie die Planungsoberfläche.",
+    "periodNote": "Interner Proof of Concept, kein Kundenprojekt. Kartenbild: Kartendaten © OpenStreetMap-Mitwirkende.",
+    "achievements": [
+      "Lernen aus der Historie: importierte vergangene Touren werden nach weichen Randbedingungen durchsucht — Stammfahrer und Vertretungen je Standort —, die der Solver dann berücksichtigt; Korrekturen des Disponenten werden als Signal für weiteres Lernen aufgezeichnet.",
+      "Engine-unabhängige Planungsschicht (ein Request/Result-Vertrag, Solver als Plugins); selbst gehostetes OSRM + VROOM als Standard, nach einem Benchmark gegen andere Open-Source- und kommerzielle Routing-Engines mit bis zu 50 Fahrzeugen / 600 Stopps.",
+      "Disponenten-Workflow: CSV/JSON-Import mit Geokodierung und Quarantäne für fehlerhafte Zeilen, gespeicherte Planversionen, Touränderungen per Drag-and-drop mit Undo, Neuplanung im Tagesverlauf und ein typisierter Grund für jeden nicht zugeteilten Auftrag.",
+      "Tschechische Betriebsdetails: Fahrergebiete aus Postleitzahlen und RÚIAN-Verwaltungsgrenzen, bevorzugte Zeitfenster, Adressbuch mit Standzeiten und bevorzugten Fahrern.",
+      "Full-Stack-Umsetzung: Django-Ninja-API, SvelteKit-SPA (Svelte 5, TypeScript, Leaflet), PostgreSQL, Docker Compose und CI mit Property-based Tests (Hypothesis) und Playwright-E2E."
+    ],
+    "team": {
+      "note": "Ich war der Hauptentwickler, mit Beiträgen von Kollegen."
+    }
+  },
+  "drone-swarm": {
+    "title": "Simulation eines Drohnenschwarms zur Frühwarnung",
+    "description": "Dezentraler Drohnenschwarm, der eine Basis bewacht: Die Drohnen verteilen sich selbstständig, erkennen eine anfliegende Drohne zuverlässig, verfolgen sie und beobachten weiter, auch wenn einige von ihnen ausfallen.",
+    "longDescription": "Ein simulierter Drohnenschwarm, der eine Basis bewacht. Es gibt keine zentrale Steuerung: Jede Drohne bestimmt ihre Position selbst, der Schwarm erkennt eine eindringende Drohne zuverlässig mit Bordkameras, verfolgt sie beim Anflug und organisiert sich neu, wenn Drohnen ausfallen. Das gesamte System läuft in einer Simulation auf Basis von PX4, Gazebo, ROS 2 und Unity.",
+    "periodNote": "Teamprojekt bei ententee (Oktober 2026); nur Simulation.",
+    "achievements": [
+      "Dezentrale Koordination: Die Drohnen teilen die Aufgaben untereinander auf und formieren sich nach Ausfällen neu.",
+      "Simulationsstack aus PX4-Autopiloten, Gazebo, ROS 2 und Kamera-Rendering in Unity."
+    ],
+    "team": {
+      "note": "Mein Anteil: Code für die Schwarmkoordination, die Unity-Seite (Szenarien, Operatoransicht, Wiedergabe aufgezeichneter Läufe) und das Verfolgungsverhalten nach einer Detektion."
     }
   },
   "drchrono-app": {
     "title": "DrChrono-App",
     "description": "DrChrono Medizin-Web-App für US-Kund:innen.",
     "longDescription": "Medizin-Web-App für US-amerikanische Kund:innen. Wir haben ein großes Upgrade der App umgesetzt — sowohl technisch als auch im visuellen Design. Im Backend modernisierten und erweiterten wir die Django-Codebasis und die GraphQL-API. Das Frontend wurde vollständig in React mit TypeScript und modernen UI/UX-Mustern neu geschrieben.",
-    "periodNote": "Umfassendes Upgrade der Web-App.",
+    "periodNote": "Umfassende Neugestaltung einer produktiven Anwendung, gemeinsam mit dem Team des US-Kunden umgesetzt.",
     "achievements": [
-      "Technische Architektur und Codequalität verbessert.",
-      "Django-Codebasis und GraphQL-API modernisiert und erweitert.",
-      "Frontend in React mit TypeScript und modernen UI/UX-Mustern neu implementiert."
+      "Versicherungen und Leistungsberechtigung: den Großteil der Teamarbeit an diesen Funktionen übernommen — komplette Neuentwicklung des Frontends in React/TypeScript sowie neue Backend-Funktionen und Anbindungen bei gleichbleibender Performance und Effizienz.",
+      "Demografisches Patientenprofil: vor dem Wechsel zu den Versicherungen am Patientenprofil gearbeitet.",
+      "Die Django-Codebasis und die GraphQL-API modernisiert und erweitert."
     ],
     "team": {
       "note": "Großes Produktteam; das tschechische Team arbeitete eng mit dem US-amerikanischen Kunden zusammen."

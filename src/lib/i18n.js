@@ -7,7 +7,7 @@ const translations = {
     meta: {
       title: 'Vojtěch Kubáč | Portfolio',
       description:
-        'Software engineer focused on CFD simulation, scientific computing, and full-stack web development.',
+        'C++ software engineer focused on scientific computing and engineering simulation (CFD, FEA, aeroacoustics).',
     },
     nav: {
       about: 'About',
@@ -19,22 +19,21 @@ const translations = {
       contact: 'Contact',
     },
     hero: {
-      title: 'Software engineer building tools for complex problems.',
+      title: 'I build software that has to be right.',
       subtitle:
-        'I work across scientific computing, backend systems, and web interfaces to turn technical ideas into useful software.',
+        'Numerical code for engineering simulations, production web apps for healthcare, ' +
+        'robot- and drone-swarm simulations.',
     },
     about: {
       title: 'About Me',
       description:
-        "I'm a software engineer who enjoys solving complex problems. As a mathematician by training, I approach " +
-        'problems from multiple perspectives and seek creative and elegant solutions even in unusual situations. ' +
+        "For 7 years I've developed numerical modules of TCAE, a commercial simulation application used for structural analysis, fluid dynamics, aeroacoustics and optimization, running on desktops and HPC clusters. The work covers the whole path from solver integration and numerical code to the database, GUI plugins and build and release tooling." +
         '\n\n' +
-        'My work has covered the development of modular computational software, web applications for healthcare and ' +
-        'education. I have also worked on scientific projects or the development of autonomous robots. I am open to ' +
-        'collaboration on interesting tasks in areas where I can apply my experience and skills.' +
+        "Beyond that, I've built robot- and drone-swarm simulations, route-optimization software and production web applications for healthcare clients." +
         '\n\n' +
-        'I love learning and discovering new things, so I am looking for positions with a broad scope requiring ' +
-        'an understanding of the product and thinking in the context.',
+        "AI agents write a good chunk of my code these days, usually several at once on separate branches. To keep quality up, I check their work as I go and don't ship anything I haven't tested and read." +
+        '\n\n' +
+        "Mathematician by training, I'm drawn to the lower layers: backend and systems engineering, performance-sensitive code (C++, Rust and the like).",
     },
     experience: {
       title: 'Experience',
@@ -53,11 +52,14 @@ const translations = {
     skills: {
       title: 'Skills',
       languages: 'Languages',
-      simulation: 'Simulation & scientific computing',
-      serverSide: 'Server-side & data',
-      frontendUi: 'Frontend & UI',
       build: 'Build, CI & packaging',
-      aiAssisted: 'AI-assisted development',
+      methods: 'Numerical methods',
+      simulation: 'Simulation & meshing',
+      gui: 'GUI & visualization',
+      databases: 'Databases',
+      robotics: 'Robotics & simulation',
+      web: 'Web',
+      aiAssisted: 'AI & ML',
     },
     projects: {
       title: 'Projects',
@@ -108,8 +110,8 @@ const translations = {
     meta: {
       title: 'Vojtěch Kubáč | Portfolio',
       description:
-        'Software-Ingenieur mit Schwerpunkt auf CFD-Simulation, wissenschaftlichem Rechnen und ' +
-        'Full-Stack-Webentwicklung.',
+        'C++-Softwareentwickler mit Schwerpunkt auf wissenschaftlichem Rechnen und technischer Simulation ' +
+        '(CFD, FEA, Aeroakustik).',
     },
     nav: {
       about: 'Über mich',
@@ -121,25 +123,21 @@ const translations = {
       contact: 'Kontakt',
     },
     hero: {
-      title: 'Software-Ingenieur für Werkzeuge, die komplexe Probleme lösen.',
+      title: 'Ich baue Software, die stimmen muss.',
       subtitle:
-        'Ich arbeite an wissenschaftlichem Rechnen, Backendsystemen und Web-Oberflächen, um technische Ideen in ' +
-        'nützliche Software zu verwandeln.',
+        'Numerischer Code für technische Simulationen, produktive Webanwendungen für das Gesundheitswesen, ' +
+        'Simulationen von Roboter- und Drohnenschwärmen.',
     },
     about: {
       title: 'Über mich',
       description:
-        'Ich bin Software-Ingenieur und löse gerne komplexe Probleme. Durch meine mathematische Ausbildung ' +
-        'betrachte ich Probleme aus mehreren Perspektiven und suche kreative und elegante Lösungen, auch in ' +
-        'ungewöhnlichen Situationen.' +
+        'Seit 7 Jahren entwickle ich numerische Module von TCAE, einer kommerziellen Simulationsanwendung für Strukturanalyse, Strömungsmechanik, Aeroakustik und Optimierung, die auf Desktops und HPC-Clustern läuft. Die Arbeit reicht von der Solver-Anbindung und numerischem Code bis zur Datenbank, zu GUI-Plugins und zu Build- und Release-Werkzeugen.' +
         '\n\n' +
-        'Meine bisherige Arbeit umfasst die Entwicklung modularer Berechnungssoftware und Webanwendungen für ' +
-        'Gesundheitswesen und Bildung. Außerdem habe ich an wissenschaftlichen Projekten und an der Entwicklung ' +
-        'autonomer Roboter gearbeitet. Ich bin offen für die Zusammenarbeit an interessanten Aufgaben in Bereichen, ' +
-        'in denen ich meine Erfahrung und Fähigkeiten einbringen kann.' +
+        'Darüber hinaus habe ich Simulationen von Roboter- und Drohnenschwärmen, Software zur Tourenoptimierung und produktive Webanwendungen für Kunden im Gesundheitswesen gebaut.' +
         '\n\n' +
-        'Ich lerne gerne und entdecke gerne Neues. Deshalb suche ich Positionen mit breitem Aufgabenbereich, ' +
-        'die Produktverständnis und Denken in Zusammenhängen erfordern.',
+        'KI-Agenten schreiben inzwischen einen guten Teil meines Codes, meist mehrere gleichzeitig auf getrennten Branches. Damit die Qualität stimmt, prüfe ich ihre Arbeit laufend und liefere nichts aus, was ich nicht getestet und gelesen habe.' +
+        '\n\n' +
+        'Als Mathematiker zieht es mich zu den unteren Schichten: Backend- und Systementwicklung, performancekritischer Code (C++, Rust und Ähnliches).',
     },
     experience: {
       title: 'Erfahrung',
@@ -158,11 +156,14 @@ const translations = {
     skills: {
       title: 'Fähigkeiten',
       languages: 'Sprachen',
-      simulation: 'Simulation & wissenschaftliches Rechnen',
-      serverSide: 'Serverseitig & Daten',
-      frontendUi: 'Frontend & UI',
       build: 'Build, CI & Paketierung',
-      aiAssisted: 'KI-gestützte Entwicklung',
+      methods: 'Numerische Methoden',
+      simulation: 'Simulation & Vernetzung',
+      gui: 'GUI & Visualisierung',
+      databases: 'Datenbanken',
+      robotics: 'Robotik & Simulation',
+      web: 'Web',
+      aiAssisted: 'KI & ML',
     },
     projects: {
       title: 'Projekte',
@@ -214,7 +215,7 @@ const translations = {
     meta: {
       title: 'Vojtěch Kubáč | Portfolio',
       description:
-        'Softwarový inženýr se zaměřením na CFD simulace, vědecké výpočty a full-stack webový vývoj.',
+        'C++ softwarový inženýr se zaměřením na vědecké výpočty a inženýrské simulace (CFD, FEA, aeroakustika).',
     },
     nav: {
       about: 'O mně',
@@ -226,23 +227,21 @@ const translations = {
       contact: 'Kontakt',
     },
     hero: {
-      title: 'Softwarový inženýr vyvíjející nástroje pro složité problémy.',
+      title: 'Stavím software, který musí fungovat správně.',
       subtitle:
-        'Pracuji napříč vědeckými výpočty, backendovými systémy a webovými rozhraními. ' +
-        'Proměňuji technické nápady v užitečný software.',
+        'Numerický kód pro inženýrské simulace, produkční webové aplikace pro zdravotnictví, ' +
+        'simulace rojů robotů a dronů.',
     },
     about: {
       title: 'O mně',
       description:
-        'Jsem softwarový inženýr, který rád řeší komplexní problémy. Jako vystudovaný matematik se snažím na problémy nahlédnout z více ' +
-        'úhlů a hledat tak kreativní a elegantní řešení i v neobvyklých situacích. ' +
+        'Už 7 let vyvíjím numerické moduly TCAE, komerční simulační aplikace pro pevnostní analýzu, proudění, aeroakustiku a optimalizaci, která běží na osobních počítačích i HPC clusterech. Práce pokrývá celou cestu od napojení solverů a numerického kódu po databázi, GUI pluginy a nástroje pro build a vydávání.' +
         '\n\n' +
-        'Má dosavadní práce zahrnuje vývoj modulárního výpočetního softwaru, webových aplikací pro zdravotnictví a vzdělávání. ' +
-        'Pracoval jsem také na vědeckých projektech nebo vývoji autonomních strojů. Jsem otevřen spolupráci na zajímavých úlohách ' +
-        'v oblastech, kde můžu uplatnit své zkušenosti a dovednosti. ' +
+        'Kromě toho jsem stavěl simulace rojů robotů a dronů, software pro optimalizaci tras a produkční webové aplikace pro klienty ve zdravotnictví.' +
         '\n\n' +
-        'Rád se učím a dozvídám něco nového, proto vyhledávám pozice s širokým záběrem vyžadující porozumění produktu a přemýšlení ' +
-        'v souvislostech. ',
+        'Velkou část mého kódu dnes píšou AI agenti, obvykle několik najednou v oddělených větvích. Aby kvalita nešla dolů, kontroluju jejich práci průběžně a nevydám nic, co jsem neotestoval a nepřečetl.' +
+        '\n\n' +
+        'Jako matematika mě to táhne k nižším vrstvám: backendu a systémovému vývoji, výkonově náročnému kódu (C++, Rust a podobně).',
     },
     experience: {
       title: 'Zkušenosti',
@@ -261,11 +260,14 @@ const translations = {
     skills: {
       title: 'Dovednosti',
       languages: 'Jazyky',
-      simulation: 'Simulace a vědecké výpočty',
-      serverSide: 'Server a data',
-      frontendUi: 'Frontend a UI',
       build: 'Build, CI a balíčkování',
-      aiAssisted: 'Vývoj s podporou AI',
+      methods: 'Numerické metody',
+      simulation: 'Simulace a síťování',
+      gui: 'GUI a vizualizace',
+      databases: 'Databáze',
+      robotics: 'Robotika a simulace',
+      web: 'Web',
+      aiAssisted: 'AI a ML',
     },
     projects: {
       title: 'Projekty',

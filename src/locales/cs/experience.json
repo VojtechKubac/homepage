@@ -2,13 +2,12 @@
   "ententee": {
     "role": "Softwarový inženýr",
     "company": "Ententee",
-    "period": "2024 — současnost",
+    "period": "2024 — 2026",
     "description": "Full-stack vývoj produktů na projektech ve zdravotnictví a robotice, souběžně se spoluprací s CFD Support.",
     "highlights": [
       "DrChrono — modernizace americké medicínské webové aplikace: backend Django/GraphQL, kompletní přepis frontendu do Reactu/TypeScriptu.",
       "ALF — aplikace pro lékařskou fakultu pro správu atestací a kmenových zkoušek (Spring Boot, React/TS, PostgreSQL).",
-      "Ententee Hub — interní nástroje pro sledování projektů, nábor a provoz (FastAPI, React/TS, PostgreSQL).",
-      "AI Lab — několik PoC aplikované AI: edge-orientovaná analýza porostu z multispektrálních UAV snímků (NDVI/NDRE gating, segmentace, regrese agronomických veličin; Python/scikit-learn) a simulace skladového roje robotů (A* routing, vyhýbání ORCA/RVO2; Unity/C#)."
+      "Interní R&D projekty: edge-orientovaná analýza porostu z multispektrálních UAV snímků (Python/scikit-learn), simulace skladového roje robotů (A*, ORCA/RVO2; Unity/C#), asistent dispečera pro optimalizaci tras s člověkem ve smyčce (VRP s OSRM + VROOM; Django Ninja, SvelteKit) a týmová simulace decentralizovaného roje dronů pro včasné varování (PX4, Gazebo, ROS 2, Unity)."
     ]
   },
   "cfd-support": {
@@ -16,14 +15,14 @@
     "company": "CFD Support s.r.o.",
     "location": "Praha",
     "period": "2019 — současnost",
-    "description": "Vývoj a zodpovědnost za několik modulů TCAE — multiplatformní desktopové CAE aplikace postavené na ParaView/VTK a OpenFOAM.",
+    "description": "Návrh a zodpovědnost za klíčové C++23 moduly TCAE — multiplatformní CAE aplikace (osobní počítače i HPC clustery) postavené na OpenFOAM a ParaView/VTK.",
     "highlights": [
-      "TFEA — FEA modul: integrace CalculiX, mapování zatížení z CFD do FEA (FSI), modální analýza, UI nad ParaView.",
-      "TCAA — aeroakustika: FW–H / Farassat 1A vzdálené pole, SPL/oktávy, volitelný export do WAV.",
-      "TBASE — SQLite databáze simulací: reprodukovatelný archiv, IPC s ParaView, základ pro náhradní modelování.",
-      "TMESH — objemové FEA síťování z STL/STEP pomocí NetGen a Gmsh.",
-      "TCFD / TOPT — orchestrace OpenFOAM, vlastní kód solverů, optimalizační workflow.",
-      "TCAE DevOps — GitLab CI, CTest s headless Qt, automatizované pipeline pro Linux/Windows instalátory."
+      "TFEA — modul pro metodu konečných prvků: generování vstupů pro CalculiX a zpracování výsledků, přenos polí z CFD na FEA síť pomocí octree pro interakci tekutiny a konstrukce.",
+      "TCAA — aeroakustika: FW–H / Farassat 1A jako vlastní třídy v OpenFOAM, vícevláknový výpočet v bodech pozorovatelů, spektra přes FFT a SPL v oktávových pásmech.",
+      "TBASE — databáze simulací a serverový proces: SQLite s RAII transakcemi a vnořenými savepointy, binární serializace sítí, multiplatformní IPC přes named pipes s GUI v ParaView.",
+      "TMESH — FEA síťování: NetGen a Gmsh za jedním rozhraním, čtení a zápis sítí a CAD (VOL, MSH, INP, STEP přes OpenCASCADE).",
+      "TCFD / TOPT — rozšíření OpenFOAM solverů a optimalizační workflow (DIRECT, EGO).",
+      "Build a CI — autor GitLab CI pipeline a sad unit testů v CTest (včetně headless Qt testů) s kontrolami clang-format; instalátory pro Linux/Windows s cross-buildy přes MinGW-w64."
     ]
   },
   "charles-mff-research": {

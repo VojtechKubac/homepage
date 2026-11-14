@@ -24,8 +24,29 @@ export const skillCategories = [
     items: [
       { name: 'C++', icon: devicon('cplusplus') },
       { name: 'Python', icon: devicon('python') },
-      { name: 'TypeScript', icon: devicon('typescript') },
+      { name: 'C#', icon: devicon('csharp') },
       { name: 'Java', icon: devicon('java') },
+      { name: 'TypeScript', icon: devicon('typescript') },
+    ],
+  },
+  {
+    key: 'build',
+    items: [
+      { name: 'CMake', icon: devicon('cmake') },
+      { name: 'GCC / MinGW-w64' },
+      { name: 'GitLab CI', icon: devicon('gitlab') },
+      { name: 'GitHub Actions', icon: devicon('githubactions') },
+      { name: 'Docker', icon: devicon('docker') },
+    ],
+  },
+  {
+    key: 'methods',
+    items: [
+      { name: 'FEM' },
+      { name: 'FVM' },
+      { name: 'Fluid–structure interaction' },
+      { name: 'Aeroacoustics' },
+      { name: 'Optimization' },
     ],
   },
   {
@@ -33,52 +54,47 @@ export const skillCategories = [
     items: [
       { name: 'OpenFOAM' },
       { name: 'CalculiX' },
-      { name: 'ParaView' },
-      { name: 'VTK' },
-      { name: 'Gmsh' },
       { name: 'NetGen' },
-      { name: 'FEniCS' },
-      { name: 'GROMACS' },
-      { name: 'ROS', icon: simpleIcon('ros') },
-      { name: 'Gazebo' },
+      { name: 'Gmsh' },
+      { name: 'OpenCASCADE' },
     ],
   },
   {
-    key: 'serverSide',
+    key: 'gui',
+    items: [{ name: 'Qt', icon: devicon('qt') }, { name: 'VTK' }, { name: 'ParaView' }],
+  },
+  {
+    key: 'databases',
+    items: [
+      { name: 'SQLite', icon: devicon('sqlite') },
+      { name: 'PostgreSQL', icon: devicon('postgresql') },
+    ],
+  },
+  {
+    key: 'robotics',
+    items: [
+      { name: 'ROS 2', icon: simpleIcon('ros') },
+      { name: 'PX4' },
+      { name: 'Gazebo' },
+      { name: 'Unity', icon: simpleIcon('unity') },
+    ],
+  },
+  {
+    key: 'web',
     items: [
       { name: 'Django', icon: devicon('django', 'plain') },
       { name: 'FastAPI', icon: devicon('fastapi') },
       { name: 'Spring Boot', icon: devicon('spring') },
-      { name: 'GraphQL', icon: devicon('graphql', 'plain') },
-      { name: 'PostgreSQL', icon: devicon('postgresql') },
-      { name: 'SQLite', icon: devicon('sqlite') },
-    ],
-  },
-  {
-    key: 'frontendUi',
-    items: [
-      { name: 'Svelte', icon: devicon('svelte') },
       { name: 'React', icon: devicon('react') },
-      { name: 'Tailwind CSS', icon: devicon('tailwindcss') },
-      { name: 'Qt', icon: devicon('qt') },
-    ],
-  },
-  {
-    key: 'build',
-    items: [
-      { name: 'CMake', icon: devicon('cmake') },
-      { name: 'CTest' },
-      { name: 'GitLab CI', icon: devicon('gitlab') },
-      { name: 'Docker', icon: devicon('docker') },
-      { name: 'NSIS' },
+      { name: 'Svelte', icon: devicon('svelte') },
     ],
   },
   {
     key: 'aiAssisted',
     items: [
+      { name: 'scikit-learn', icon: devicon('scikitlearn') },
       { name: 'Claude Code', icon: simpleIcon('anthropic') },
       { name: 'Cursor', icon: simpleIcon('cursor') },
-      { name: 'RAG / LLM integration' },
     ],
   },
 ];

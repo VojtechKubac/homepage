@@ -5,9 +5,9 @@
     "longDescription": "Vyvíjím a udržuji FEA modul v TCAE se zaměřením na praktický workflow: import/příprava, síťování, nastavení solveru, postprocessing a reporting. Modul se průběžně vyvíjí spolu s ostatními částmi platformy (CFD, síťování, optimalizace), proto návrh upřednostňuje interoperabilitu a robustní chování při chybách před jednorázovými „perfektními“ skripty.",
     "periodNote": "Vyvíjeno paralelně s dalšími moduly TCAE (síťování/CFD/optimalizace); funkce dodáváme postupně.",
     "achievements": [
-      "Integroval jsem běhy CalculiX do desktopového workflow založeného na ParaView (nastavení → výpočet → postprocessing).",
-      "Implementoval jsem mapování zatížení z CFD do FEA pro pipeline typu FSI bez nutnosti vlastních skriptů uživatele.",
-      "Doplnil jsem modální analýzu a nástroje pro přípravu a kontrolu modelu."
+      "Generuje kompletní vstupní soubory pro CalculiX z konfigurace TCAE a výsledky načítá zpět pro vizualizaci v ParaView.",
+      "Přenos tlakových a teplotních polí z CFD na nekompatibilní strukturní sítě pomocí octree, v konzistentní i konzervativní variantě, pro interakci tekutiny a konstrukce.",
+      "Statická, teplotní a modální analýza s podporou turbostrojů (rotující souřadné systémy, periodicita sektorů, více otáčkových charakteristik)."
     ],
     "team": {
       "note": "Cross-funkční CAE tým; silná návaznost na platformní a vizualizační část."
@@ -19,9 +19,9 @@
     "longDescription": "Tento modul převádí CFD povrchová data na použitelné aeroakustické výstupy: tlak ve vzdáleném poli, spektra SPL a oktávová pásma. Je navržený pro inženýry, kteří už pracují v CFD workflow — cílem jsou konzistentní výsledky s minimem „akademické režie“. Aktivně ho iterujeme podle reálných případů a hraničních stavů.",
     "periodNote": "Vyvíjeno spolu s CFD a postprocessing nástroji; validace probíhá případ od případu podle zákaznických úloh.",
     "achievements": [
-      "Implementoval jsem pipeline FW-H / Farassat 1A pro akustiku vzdáleného pole z CFD povrchů.",
-      "Přidal jsem výstupy zpracování signálu (SPL, oktávová pásma) a vizualizace směrovosti.",
-      "Zavedl jsem volitelný export WAV pro rychlé kvalitativní posouzení a komunikaci se stakeholdery."
+      "FW–H / Farassat 1A pro hluk ve vzdáleném poli, implementováno jako vlastní třídy v OpenFOAM.",
+      "Vícevláknový výpočet v bodech pozorovatelů a sondách a řetězec zpracování signálu: filtrace, okénkování, FFT spektra, SPL v oktávových pásmech a směrové charakteristiky.",
+      "Funguje napojené na nestacionární CFD výpočty i samostatně nad externími povrchovými daty."
     ],
     "team": {
       "note": "Cross-funkční CAE tým; úzká návaznost na modul TCFD."
@@ -33,9 +33,9 @@
     "longDescription": "TBASE je „paměť“ platformy: archivuje simulace, parametry, geometrie, výsledky i reporty. Uživatelům umožňuje simulace procházet a analyzovat statistiku napříč návrhovým prostorem. Výsledky jsou 100% reprodukovatelné — stejný simulační projekt lze z databáze obnovit a znovu spustit. Schéma databáze je navržené flexibilně, aby podporovalo nové solvery a workflow přidávané do platformy. Průběžně rozvíjíme i surrogate modelování pro predikci nevyhodnocených kombinací parametrů, včetně metrik důvěry a výběru nových bodů pro vyhodnocení.",
     "periodNote": "Vyvíjí se s tím, jak nové moduly (FEA/akustika/optimalizace) vyžadují bohatší metadata a práci s artefakty.",
     "achievements": [
-      "Postavil jsem úložiště nad SQLite pro simulace, parametry a artefakty geometrií/výsledků.",
-      "Doplnil jsem IPC integraci pro spouštění ParaView session přímo z uložených simulací.",
-      "Připravil jsem základy pro statistiku a surrogate modelování v parametrických návrhových prostorech."
+      "Úložiště v SQLite pro parametrické studie s RAII transakcemi a vnořenými savepointy pro vícekrokové operace.",
+      "Samostatný serverový proces komunikuje s GUI v ParaView přes multiplatformní named pipes; asynchronní workery drží UI responzivní i při dlouhých importech.",
+      "Binární serializace sítí a výsledků a úplný převod uloženého bodu návrhu zpět na spustitelný projekt."
     ]
   },
   "tmesh-fea": {
@@ -44,9 +44,9 @@
     "longDescription": "TMESH se zaměřuje na spolehlivou přípravu objemových sítí připravených pro simulace z praktických CAD vstupů. Jde o kombinaci práce s geometrií, síťovacími backendy a UX: uživatelé potřebují bezpečné výchozí hodnoty, předvídatelné výsledky a srozumitelnou diagnostiku při problematické geometrii. Modul je aktivně vyvíjen s příchodem nových typů geometrií a sestav.",
     "periodNote": "Vyvíjeno paralelně s dalšími moduly TCAE (síťování/CFD/optimalizace); funkce dodáváme postupně.",
     "achievements": [
-      "Integroval jsem síťovací backendy NetGen a Gmsh pro vstupy STL/STEP.",
-      "Přidal jsem kontrolu kvality sítě a diagnostiku běžných chybových stavů.",
-      "Podpořil jsem vícekomponentní sestavy s praktickým UX pro výběr a kontrolu."
+      "NetGen a Gmsh za jedním konfiguračním rozhraním, s nastavením síťování pro každou komponentu sestavy.",
+      "Čtení a zápis sítí ve formátech VOL, MSH, INP a STEP (přes OpenCASCADE) se zachováním konektivity a hranic komponent při převodech.",
+      "Robustní zpracování nekvalitních CAD dat: nekonzistentní normály, degenerované trojúhelníky, mezery."
     ]
   },
   "tmesh-tcfd-topt": {
@@ -55,10 +55,9 @@
     "longDescription": "V rámci platformy TCAE přispívám napříč moduly. Hlavní oblasti jsou síťování, orchestrace CFD nad OpenFOAM, vývoj nového kódu pro OpenFOAM solvery a optimalizační workflow. Práce se průběžně vyvíjí podle nových požadavků a postupných vylepšení. Aktivně spolupracujeme se zákazníky, abychom platformu ladili podle reálných potřeb.",
     "periodNote": "Zastřešuje kontinuální přínos napříč moduly, nejde o jednu fixní sadu funkcí.",
     "achievements": [
-      "Zlepšil jsem ergonomii nastavení a běhu CFD nad OpenFOAM v desktopovém workflow.",
-      "Rozšířil jsem optimalizační workflow (DoE/DIRECT/EGO) integrované s datovou vrstvou platformy.",
-      "Vyvíjel jsem nový kód pro OpenFOAM solvery a rozšiřoval OpenFOAM codebase o nové funkce.",
-      "Dodával jsem průběžná zlepšení použitelnosti a stability napříč síťováním a postprocessingem."
+      "Nové funkce a dlouhodobá údržba největšího modulu platformy, nastavení OpenFOAM případů a spouštění solverů, včetně zpětné kompatibility při vývoji konfiguračního formátu.",
+      "Optimalizační workflow: plánování experimentů, DIRECT a Dakota EGO, napojené na TBASE pro ukládání výsledků.",
+      "Propojení modulů: export akustických dat pro TCAA a přístup k výsledkům pro TFEA."
     ],
     "team": {
       "note": "Úzká spolupráce v celém CAE týmu; práce často přesahuje hranice jednotlivých modulů."
@@ -67,113 +66,129 @@
   "devops-tcae": {
     "title": "TCAE DevOps",
     "description": "Řízení vývoje a release procesu: tvorba Linux/Windows instalátorů, GitLab CI pro backend a ParaView pluginy a automatizované testy (CTest, headless Qt).",
-    "longDescription": "Udržuji části build/release pipeline tak, aby desktopová platforma zůstala dlouhodobě vydavatelná. To zahrnuje nastavení CI pipeline, návrh a orchestraci automatizovaných testů i řízení automatické tvorby Linux/Windows instalátorů.",
+    "longDescription": "Starám se o části build/release pipeline, aby bylo možné aplikaci kdykoli sestavit, otestovat a vydat. To zahrnuje nastavení CI pipeline, návrh a orchestraci automatizovaných testů i řízení automatické tvorby Linux/Windows instalátorů.",
     "periodNote": "Průběžná údržba paralelně s vývojem funkcí; CI a packaging se mění s ParaView/Qt a toolchainem.",
     "achievements": [
-      "Nastavil jsem CI pipeline pro backendové komponenty a ParaView pluginy se zaměřením na rychlou zpětnou vazbu.",
-      "Navrhl jsem a orchestroval automatizované testy (CTest + headless Qt) pro prevenci regresí.",
-      "Zavedl jsem Linux/Windows packaging workflow vhodný pro distribuci desktopové aplikace, včetně automatizace a testování instalátorů."
-    ]
-  },
-  "ibkr-trading-bot": {
-    "title": "IBKR trading bot",
-    "description": "Automatizace a nástroje kolem Interactive Brokers (algoritmické/provozní workflow; detaily v repozitáři).",
-    "longDescription": "Osobní automatizační projekt nad Interactive Brokers, jehož cílem je omezit manuální provozní práci: sběr dat, kostra pro spouštění strategií a bezpečnostní guardrails. Projekt průběžně rozvíjím podle aktuálních potřeb a repozitář je zdroj pravdy pro aktuální rozsah i chování.",
-    "periodNote": "Udržováno průběžně; rozšiřováno podle nových automatizačních potřeb.",
-    "achievements": [
-      "Postavil jsem modulární automatizační řešení pro workflow kolem Interactive Brokers.",
-      "Zaměřil jsem se na provozní bezpečnost: opakovatelné běhy, logování a viditelnost chyb.",
-      "Udržel jsem praktický a dlouhodobě udržitelný rozsah místo „jednoho obřího bota“."
+      "Autor GitLab CI pipeline: kontroly clang-format, oddělené build a test fáze pro C++ backend a ParaView pluginy, headless Qt testy, sparse checkout velkého monorepa.",
+      "Sady unit testů v CTest napříč moduly.",
+      "Samorozbalovací instalátor pro Linux a NSIS instalátor pro Windows s cross-buildy přes MinGW-w64."
     ]
   },
   "homepage-site": {
     "title": "Tento portfolio web",
     "description": "Jednostránkové portfolio: Svelte 4, Vite 5, Tailwind, i18n (EN / DE / CS), integrace kontaktního formuláře.",
-    "longDescription": "Tento web je malý, ale promyšlený front-end projekt: rychlé jednostránkové portfolio s čistým content modelem, internacionalizací a lehkým kontaktním flow. Průběžně ho ladím podle vývoje textů i prezentace — cílem je jednoduchost, snadná údržba a příjemné používání.",
+    "longDescription": "Jednostránkové portfolio s malým obsahovým modelem, třemi jazyky a kontaktním formulářem.",
     "periodNote": "Iterováno v menších PR podle vývoje obsahu a UI; navržené pro dlouhodobou snadnou údržbu.",
     "achievements": [
       "Dodal jsem jednostránkovou strukturu Svelte + Vite + Tailwind s jasným oddělením komponent a dat.",
       "Přidal jsem i18n pro EN/DE/CS bez nasazení těžkých frameworků.",
-      "Integroval jsem kontaktovací flow vhodné pro statický způsob nasazení."
+      "Integroval jsem kontaktovací flow vhodné pro statický způsob nasazení.",
+      "Postaveno a udržováno s AI coding agenty — s testy, typovou kontrolou a review u každé změny."
     ]
   },
   "master-thesis": {
     "title": "Diplomová práce (kód)",
-    "description": "Veřejný repozitář s kódem a artefakty vytvořenými během práce na diplomové práci.",
-    "longDescription": "Veřejný repozitář obsahující kód a artefakty vzniklé během mé diplomové práce. Karta na webu zůstává záměrně stručná; autoritativní kontext i implementační detaily jsou v repozitáři.",
-    "periodNote": "Dokončeno v rámci diplomové práce; repozitář ponechán pro reference a reprodukovatelnost.",
+    "description": "Implementace monolitických metod pro interakci tekutiny a konstrukce ve FEniCS, ověřená na benchmarku Turek & Hron. Kód k mé diplomové práci.",
+    "longDescription": "Moje diplomová práce porovnávala formulace interakce tekutiny a konstrukce s aplikacemi v biomechanice. Repozitář obsahuje monolitické FSI solvery ve FEniCS: formulace Total a Updated ALE (Arbitrary Lagrangian–Eulerian) a experimentální plně eulerovskou variantu s cut-cell integrací. Kódy jsou nastavené na FSI benchmark Turek & Hron a běží na nelineárních a časových solverech postavených na PETSc, převzatých z kódu mého vedoucího.",
+    "periodNote": "Diplomová práce na MFF UK, obhájená v roce 2020.",
     "achievements": [
-      "Publikoval jsem kód a artefakty diplomové práce v reprodukovatelné podobě.",
-      "Zdokumentoval jsem použití tak, aby bylo použitelné pro oponenty i budoucí reference.",
-      "Udržel jsem shrnutí na webu zaměřené na veřejně dostupné informace."
+      "Monolitické FSI solvery ve formulacích Total a Updated ALE, ověřené na benchmarku Turek & Hron.",
+      "Experimentální plně eulerovská formulace s cut-cell integrací."
     ]
   },
   "biomembrane": {
     "title": "Remodelace biomembrán (doktorské studium)",
-    "description": "Přibližně rok v oblasti výpočetní biofyziky/modelování membrán na MFF UK (Univerzita Karlova); skupina vedená Christophem Alloliem.",
+    "description": "Zhruba rok v oblasti výpočetní biofyziky a modelování membrán na MFF UK (Univerzita Karlova), ve skupině Christopha Allolia.",
     "longDescription": "Během doktorského studia jsem působil ve výzkumné skupině zaměřené na výpočetní biofyziku a modelování membrán. Cílem bylo modelovat lipidové membrány pomocí rovnic kontinua. Dělal jsem literární rešerše, numerické molekulárně-dynamické simulace a implementoval solver kontinua v C++.",
     "periodNote": "Výzkum probíhal paralelně s dalšími aktivitami a vyvíjel se podle směru skupiny.",
     "achievements": [
-      "Prováděl jsem molekulárně-dynamické simulace (GROMACS).",
-      "Implementoval jsem C++ solver kontinuální mechaniky pro modelování lipidových membrán.",
-      "Přispěl jsem k lepšímu porozumění procesům remodelace membrán ve skupině."
+      "Implementace solveru mechaniky kontinua v C++ pro modelování lipidových membrán.",
+      "Simulace molekulární dynamiky (GROMACS)."
     ],
     "team": {
-      "note": "Spolupráce a konzultace s řadou lidí uvnitř i mimo skupinu."
+      "note": "Výzkumná skupina na MFF UK."
     }
   },
   "alf": {
     "title": "ALF — Aplikace pro lékařskou fakultu",
     "description": "Aplikace pro lékařskou fakultu určená ke správě atestací a kmenových zkoušek.",
-    "longDescription": "Klientská dodávka v kontextu zdravotnického softwaru: webová aplikace podporující workflow lékařské fakulty. Šlo o standardní full-stack produktový vývoj pod reálnými omezeními (soukromí, zpětná vazba stakeholderů, časové termíny).",
+    "longDescription": "Webová aplikace pro lékařskou fakultu, která spravuje atestace, kmenové zkoušky a související kurzy. Pracoval jsem na nových funkcích i údržbě stávajícího kódu: modul vyúčtování kurzů a zkoušek, korespondence k termínům zkoušek, validace importu dat a opravy ve starší logice registrací.",
     "periodNote": "Vyvíjeno paralelně s dalšími klientskými iniciativami; rozsah i priority se měnily podle zpětné vazby.",
     "achievements": [
-      "Dodal jsem produkční webovou aplikaci podle workflow požadavků stakeholderů.",
-      "Pracoval jsem v rámci doménových omezení (soukromí, provozní spolehlivost, opatrný rollout).",
-      "Udržel jsem veřejnou prezentaci profesionální: odkaz na produktový kontext místo privátního kódu."
+      "Vyúčtování kurzů a zkoušek: výpočet dotací, odměny pro zkušební komise a lektory, měsíční rozpočítání a export do XLS (Spring Boot, React/TS).",
+      "Korespondence k termínům zkoušek: šablony dokumentů a e-mailový editor s náhledem a odesíláním.",
+      "Integrace nového externího API, validace importu dat a pročištění a opravy starších částí kódu."
     ],
     "team": {
-      "note": "Malý produktový tým; zodpovědnost za celou aplikaci."
+      "note": "Malý produktový tým."
     }
   },
-  "ai-research": {
-    "title": "Výzkumné projekty aplikované AI",
-    "description": "Několik proof-of-concept projektů aplikované AI v AI Labu společnosti ententee — od edge-orientované počítačové vize pro precizní zemědělství po rozsáhlou multiagentní simulaci.",
-    "longDescription": "Aplikovaný výzkum dodaný jako série cílených PoC. Několik z nich se věnuje edge-orientované analýze porostu ozimé pšenice a kukuřice z multispektrálních UAV snímků: sdílená, levná a deterministická brána na bázi vegetačních indexů NDVI/NDRE vyřadí zdravý porost, takže náročnější modely běží jen na označených oblastech — tento přístup stojí za jedním projektem na segmentaci plevel/plodina a dalším na regresi agronomických veličin, jako je index listové plochy, biomasa a příjem dusíku. Samostatnou linií je 3D simulace z ptačí perspektivy v Unity, kde velký roj robotů — flotila autonomních mobilních robotů — projíždí skladem bez kolizí — deterministická, seed-reprodukovatelná simulace složená z generování objednávek, přiřazování úloh nejbližšímu volnému robotu, globálního A* routingu a lokální kolizní vyhýbačky ORCA/RVO2, s přesměrováním kolem dynamických překážek a vyladěným kamerovým demem.",
-    "periodNote": "Dodáno jako řada samostatných PoC, každý zaměřený na konkrétní cíl a vlastní kritéria úspěchu.",
+  "crop-analytics": {
+    "title": "Analýza porostu z multispektrálních UAV snímků",
+    "description": "Edge-orientovaná počítačová vize pro precizní zemědělství: levná brána na vegetačních indexech a lehké modely pro segmentaci plevel/plodina a regresi agronomických veličin u ozimé pšenice a kukuřice. Interní proof of concept v ententee.",
+    "longDescription": "Série PoC pro analýzu porostu ozimé pšenice a kukuřice z multispektrálních UAV snímků, navržená pro běh přímo na dronu. Sdílená deterministická brána na vegetačních indexech NDVI/NDRE levně vyřadí zdravý porost, takže náročnější modely běží jen na označených oblastech. Na ní stojí dvě linie: segmentace plevel/plodina a regrese agronomických veličin, jako je index listové plochy, biomasa a příjem dusíku, validovaná křížovou validací po lokalitách (leave-location-out).",
+    "periodNote": "Interní proof of concept, ne zakázka pro zákazníka.",
     "achievements": [
-      "Počítačová vize pro precizní zemědělství: sdílená deterministická brána na vegetačních indexech NDVI/NDRE, která levně vyřadí zdravý porost a nechá lehké modely běžet jen na označených oblastech — využitá v projektu na segmentaci plevel/plodina i v projektu na regresi agronomických veličin z multispektrálních UAV snímků.",
-      "Efektivita modelů pro edge: knowledge distillation, kvantizace a reportovací harness pro poměr přesnost/náklady (FLOPs, parametry, latence ONNX Runtime), aby inference zůstala v rámci on-drone rozpočtu.",
-      "Simulace skladového roje robotů: deterministická, seed-reprodukovatelná simulace v Unity, kde velká flotila autonomních mobilních robotů projíždí skladem bez kolizí — globální A* routing, lokální vyhýbání ORCA/RVO2, přesměrování kolem dynamických překážek, cenění cest podle zahlcení a nezávislý kolizní verifikátor.",
-      "Prezentace a dodávka: Unity URP rendering s GPU instancingem, kamerový rig Cinemachine se skriptovanou demo sekvencí, živé KPI HUD a heatmapa provozu, k tomu reprodukční harnessy na jeden příkaz, CLI nástroje a CI testy determinismu."
+      "Sdílená deterministická brána NDVI/NDRE, která vyřadí zdravý porost dřív, než se spustí jakýkoli model — využitá v projektu segmentace i v regresi agronomických veličin.",
+      "Regrese agronomických veličin (index listové plochy, biomasa, příjem dusíku) pomocí gradient boostingu s křížovou validací po lokalitách.",
+      "Efektivita modelů pro edge: knowledge distillation, kvantizace a reportovací harness pro poměr přesnost/náklady (FLOPs, parametry, latence ONNX Runtime), aby inference zůstala v rámci on-drone rozpočtu."
     ],
     "team": {
-      "note": "Samostatná výzkumná práce napříč projekty, s občasnou výpomocí na simulaci."
+      "note": "Samostatná práce v aplikovaném výzkumu."
     }
   },
-  "ententee-hub": {
-    "title": "Ententee Hub",
-    "description": "Interní hub aplikace pro workflow ve společnosti ententee; repozitář je privátní.",
-    "longDescription": "Interní hub aplikace podporující workflow v ententee. Cílem je sledovat stav a průběh projektů, vytvářet nástroje pro nábor nových zaměstnanců a řešit další provozní úkoly.",
-    "periodNote": "Vyvíjeno paralelně s dalšími klientskými iniciativami.",
+  "warehouse-swarm": {
+    "title": "Simulace skladového roje robotů",
+    "description": "3D simulace z ptačí perspektivy v Unity, kde velká flotila autonomních mobilních robotů projíždí fulfillment skladem bez jediné kolize. Interní proof of concept v ententee.",
+    "longDescription": "Deterministická, seed-reprodukovatelná simulace roje robotů ve fulfillment skladu: generování objednávek, přiřazování úloh nejbližšímu volnému robotu, globální A* routing a lokální kolizní vyhýbání ORCA/RVO2, s přesměrováním kolem dynamických překážek a cenou cest podle zahlcení. Nezávislý verifikátor hlídá, že nikdy nedojde ke kolizi. Výsledek je prezentován jako kamerové demo s živými KPI.",
+    "periodNote": "Interní proof of concept, ne zakázka pro zákazníka.",
     "achievements": [
-      "Vytvořil jsem interní nástroje pro zefektivnění provozních workflow.",
-      "Iteroval jsem rychle podle zpětné vazby od každodenních uživatelů.",
-      "Udržel jsem externí odkazování profesionální: produktový kontext bez vystavení privátního kódu."
+      "Pohyb flotily bez kolizí: globální A* routing, lokální vyhýbání ORCA/RVO2, přesměrování kolem dynamických překážek, cena cest podle zahlcení a nezávislý kolizní verifikátor.",
+      "Deterministický, seed-reprodukovatelný takt s CI testy determinismu, CLI nástroji a reprodukcí jedním příkazem.",
+      "Prezentace: Unity URP rendering s GPU instancingem, kamerový rig Cinemachine se skriptovanou demo sekvencí, živé KPI HUD a heatmapa provozu."
     ],
     "team": {
-      "note": "Interní produkt s těsnou zpětnou vazbou od uživatelů."
+      "note": "Převážně samostatně, s občasnou pomocí kolegy."
+    }
+  },
+  "dispatch-assistant": {
+    "title": "AI asistent dispečera (optimalizace tras)",
+    "description": "Plánování tras pro logistiku, které se učí z historie: z minulých tras vyčte nepsaná pravidla depa a VRP solver naplánuje nové svozové a rozvozové trasy, které je dodržují. Dispečer je zkontroluje, upraví a schválí. Interní proof of concept v ententee.",
+    "longDescription": "Denní plánování tras v distribučních firmách často pořád dělá jeden člověk s tabulkou a nepsanými pravidly. Tento PoC vezme objednávky, vozový park a omezení řidičů na daný den, vyřeší je jako úlohu okružních jízd s časovými okny (kapacita, provozní doba depa, přestávky, limity řízení) a výsledek ukáže na mapě a denní časové ose. Minulé trasy se importují a hledají se v nich měkká omezení, která nikdo nesepisuje — především který řidič obvykle obsluhuje kterého zákazníka a kdo ho zastupuje — aby nové plány vypadaly jako trasy, které by depo opravdu jezdilo. Dispečer může přesouvat zastávky, přidávat nebo rušit objednávky a přeplánovat během dne. Kombinatoriku řeší solver, poslední slovo má dispečer. Jako hlavní vývojář jsem pracoval na všech částech: plánovací kontrakt a napojení solverů, API pro import a plánování i plánovací UI.",
+    "periodNote": "Interní proof of concept, ne zakázka pro zákazníka. Obrázek karty: mapová data © přispěvatelé OpenStreetMap.",
+    "achievements": [
+      "Učení z historie: z importovaných minulých tras se vyčtou měkká omezení — stálý řidič a zástupci pro každé místo — která pak solver respektuje; opravy dispečera se zaznamenávají jako signál pro další učení.",
+      "Plánovací vrstva nezávislá na enginu (jeden kontrakt požadavek/výsledek, solvery jako pluginy); jako výchozí zvolen self-hosted OSRM + VROOM po benchmarku proti dalším open-source i komerčním routovacím enginům až do 50 vozidel / 600 zastávek.",
+      "Workflow dispečera: import CSV/JSON s geokódováním a karanténou pro chybné řádky, uložené verze plánu, úpravy tras přetažením s undo, přeplánování během dne a typovaný důvod u každé nepřiřazené objednávky.",
+      "České provozní detaily: oblasti řidičů podle PSČ a správních hranic RÚIAN, preferovaná časová okna, adresář míst s dobami zastávek a preferovanými řidiči.",
+      "Full-stack dodávka: Django Ninja API, SvelteKit SPA (Svelte 5, TypeScript, Leaflet), PostgreSQL, Docker Compose a CI s property-based testy (Hypothesis) a Playwright e2e."
+    ],
+    "team": {
+      "note": "Byl jsem hlavním vývojářem, s příspěvky kolegů."
+    }
+  },
+  "drone-swarm": {
+    "title": "Simulace roje dronů pro včasné varování",
+    "description": "Decentralizovaný roj dronů, který hlídá základnu: drony se samy rozmístí, spolehlivě detekují přilétající dron, sledují ho a hlídají dál, i když některé z nich vypadnou.",
+    "longDescription": "Simulovaný roj dronů hlídající základnu. Neexistuje centrální řízení: každý dron si sám určí svou pozici, roj palubními kamerami spolehlivě detekuje vetřelce, sleduje ho při přiblížení a při výpadku dronů se sám přeorganizuje. Celý systém běží v simulaci postavené na PX4, Gazebo, ROS 2 a Unity.",
+    "periodNote": "Týmový projekt v ententee (říjen 2026); pouze simulace.",
+    "achievements": [
+      "Decentralizovaná koordinace: drony si práci rozdělí mezi sebou a po ztrátách se přeskupí.",
+      "Simulační stack spojující autopiloty PX4, Gazebo, ROS 2 a kamerový rendering v Unity."
+    ],
+    "team": {
+      "note": "Moje část: kód pro koordinaci roje, strana Unity (scénáře, operátorský pohled, přehrávání zaznamenaných běhů) a sledování cíle po detekci."
     }
   },
   "drchrono-app": {
     "title": "DrChrono app",
     "description": "DrChrono zdravotnická webová aplikace pro zákazníky v USA.",
     "longDescription": "Zdravotnická webová aplikace pro americké zákazníky. Pracovali jsme na výrazném upliftu celé aplikace — technicky i vizuálně. Na backendu jsme modernizovali a rozšířili Django codebase a GraphQL API. Frontend jsme kompletně přepsali do Reactu s TypeScriptem a moderními UI/UX postupy.",
-    "periodNote": "Výrazný uplift webové aplikace.",
+    "periodNote": "Rozsáhlý redesign produkční aplikace, dodaný společně s týmem amerického zákazníka.",
     "achievements": [
-      "Zlepšil jsem technickou architekturu a kvalitu kódu.",
-      "Modernizoval jsem a rozšířil Django codebase i GraphQL API.",
-      "Přepsal jsem frontend do Reactu s TypeScriptem a moderními UI/UX postupy."
+      "Pojištění a nárokovost: většinu práce týmu na těchto funkcích jsem odvedl já — kompletní přepis frontendu v React/TypeScript a nové backendové funkce a napojení při zachování výkonu a efektivity.",
+      "Demografický profil pacienta: na profilu pacienta jsem pracoval před přechodem k pojištění.",
+      "Modernizace a rozšíření Django kódu a GraphQL API."
     ],
     "team": {
       "note": "Velký produktový tým; český tým úzce spolupracoval s americkým zákazníkem."
