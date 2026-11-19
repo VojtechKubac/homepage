@@ -27,6 +27,7 @@ src/
   locales/{en,de,cs}/     # translated content JSON
 public/
   resume.pdf              # served for the CV download link
+  cv/*.pdf                # unlisted focused CV variants (see docs/cv.md)
 cv/
   main.tex                # LaTeX source → see docs/cv.md
 docs/                     # per-topic documentation

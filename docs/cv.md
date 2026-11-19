@@ -52,3 +52,15 @@ Content order: **Profile** (a short `\cvitem{}{…}` summary) → **Experience**
 ## Tailored applications
 
 Per-job variants live in `cv/applications/<company>/` (gitignored, local only). Each folder holds its own `main.tex` (a copy of `cv/main.tex` reweighted for the role) plus `photo.jpg`; build it with `pdflatex main.tex` inside that folder.
+
+## Focused CV variants
+
+Besides the main CV, focused variants can be published as unlisted static files under `public/cv/`
+(served at `/cv/<name>.pdf`, not linked from the site). Their LaTeX sources are kept locally and are not
+committed; only the compiled PDF is.
+
+| File                         | Focus                                                           |
+| ---------------------------- | --------------------------------------------------------------- |
+| `public/cv/fullstack-ai.pdf` | Full-stack (TypeScript, React, GraphQL) with data & AI emphasis |
+
+Use neutral, role-type file names (not company names) so one link can be reused across applications.
