@@ -42,11 +42,13 @@ cp main.pdf ../public/resume.pdf
 
 Edit content directly in `main.tex` — `\cventry` for experience/education, `\cvitem` for skills.
 
+**What to write and why** (screening model, keyword rules, tailoring order): see `cv/GUIDELINES.md` (gitignored, local only; may be absent in a fresh clone).
+
 Content order: **Profile** (a short `\cvitem{}{…}` summary) → **Experience** → **Education** → **Skills**. Conventions:
 
 - **One page.** After edits, run `pdflatex` twice (the second pass fixes the page-count footer) and check `pdfinfo main.pdf` reports `Pages: 1`. When something spills over, shorten text rather than shrinking fonts or margins.
-- **Bold only for bullet titles** (`\textbf{TFEA ·}`), not for phrases inside the text.
-- **Skills are grouped by area** (Languages, Build & CI, Methods, Simulation, GUI, Robotics, Web & data, AI), matching the skill groups on the site's About tab ([`src/lib/data/skills.js`](../src/lib/data/skills.js)).
+- **Bold only for bullet titles**, written as plain descriptions (`\textbf{Finite element (FEA) module ·}`), not internal module codes. Never bold phrases inside the text.
+- **Skills are grouped by area** (Languages, Build & CI, Methods, Simulation, GUI, Robotics, Web & data, AI tools), matching the skill groups on the site's About tab ([`src/lib/data/skills.js`](../src/lib/data/skills.js)).
 - **Profile** is the part to rewrite first when tailoring a copy for an application.
 
 ## Tailored applications
