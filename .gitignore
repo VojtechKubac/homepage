@@ -10,3 +10,13 @@ node_modules
 
 # Per-application tailored CVs (local only)
 cv/applications/
+
+# Local CV variants (not committed)
+cv/backend/
+cv/fullstack/
+
+# Local AI-focused CV (not committed)
+cv/ai/
+
+# Local CV writing guidelines (not committed)
+cv/GUIDELINES.md

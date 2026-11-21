@@ -68,21 +68,21 @@
 \vspace*{-1.5mm}
 \section{Experience}
 \cventry{2019--today}{C\texttt{++} software engineer}{CFD Support}{}{}{%
-  Design and own core modules of TCAE, a cross-platform CAE application (desktop and HPC
-  clusters) built on OpenFOAM and ParaView/VTK. Modern C\texttt{++}23, CMake, Qt, Linux/Windows.
+  Own core modules of TCAE, a cross-platform CAE (computer-aided engineering) application for desktop
+  and HPC on OpenFOAM and VTK. Modern C\texttt{++}23, CMake, Qt, Linux/Windows.
   \begin{itemize}%
-    \item \textbf{TFEA ·} FEA module: CalculiX deck generation,
-      FRD result parsing, octree-based consistent/conservative CFD$\to$FEA field mapping (FSI).
-    \item \textbf{TCAA ·} aeroacoustics: FW--H / Farassat~1A in custom OpenFOAM classes,
-      multithreaded observer evaluation, FFT/PSD, filtering, octave-band SPL.
-    \item \textbf{TBASE ·} simulation database and server process: SQLite with RAII transactions and
-      nested savepoints, binary mesh serialization, cross-platform named-pipe IPC, async workers.
-    \item \textbf{TMESH ·} FEA meshing: NetGen and Gmsh behind one interface; STEP via OpenCASCADE.
-    \item \textbf{TCFD / TOPT ·} OpenFOAM solver extensions; DIRECT and EGO optimization integration.
+    \item \textbf{Finite element (FEA) module ·} CalculiX input generation, result parsing and automatic reporting,
+      octree-based CFD$\to$FEA field mapping for fluid--structure interaction (FSI).
+    \item \textbf{Aeroacoustics ·} noise prediction from CFD results in custom OpenFOAM classes, multithreaded
+      evaluation at observer points; signal processing (FFT, spectra, filtering, sound levels).
+    \item \textbf{Simulation database \& server ·} SQLite with RAII transactions and nested savepoints,
+      binary mesh serialization, cross-platform IPC (named pipes), concurrent async workers.
+    \item \textbf{Meshing ·} NetGen and Gmsh behind one interface; STEP CAD import via OpenCASCADE.
+    \item \textbf{CFD \& optimization ·} OpenFOAM solver extensions; DIRECT and EGO optimizer integration.
     \item \textbf{Build \& CI ·} authored the GitLab CI pipeline and CTest unit-test suites (incl.\ headless Qt),
       clang-format checks; NSIS/self-extracting installers; MinGW-w64 Windows cross-builds.
   \end{itemize}}
-\cventry{2024--2026}{Software engineer}{Ententee}{}{}{%
+\cventry{2024--2026}{Software engineer (in parallel)}{Ententee}{}{}{%
   Healthcare web apps (DrChrono, ALF; Django, Spring Boot, React/TS). Internal R\&D projects: warehouse
   robot-swarm simulation (Unity/C\texttt{\#}), team-built drone-swarm early-warning simulation
   (PX4, Gazebo, ROS~2), UAV crop-analytics vision, VRP route optimization.}
@@ -96,14 +96,14 @@
 \cventry{2014--2017}{Bachelor's}{Charles University}{Prague}{General Mathematics}{}
 
 \section{Skills}
-\cvitem{Languages}{C\texttt{++} (C\texttt{++}23), Python, C\texttt{\#}, Java, TypeScript, Bash}
+\cvitem{Languages}{C\texttt{++} (C\texttt{++}17/20/23), Python, C\texttt{\#}, Java, TypeScript, Bash}
 \cvitem{Build \& CI}{CMake, CTest, GCC / MinGW-w64, clang-format, GitLab CI, GitHub Actions, Docker}
-\cvitem{Methods}{FEM, FVM, fluid--structure interaction, aeroacoustics, optimization}
+\cvitem{Methods}{finite element (FEM), finite volume (FVM), CFD, FSI, aeroacoustics, optimization}
 \cvitem{Simulation}{OpenFOAM, CalculiX; NetGen, Gmsh, OpenCASCADE}
 \cvitem{GUI}{Qt, VTK, ParaView (plugin development)}
 \cvitem{Robotics}{ROS~2, PX4, Gazebo, Unity}
 \cvitem{Web \& data}{Django, Spring Boot, React; PostgreSQL, SQLite}
-\cvitem{AI}{Claude Code, Cursor and other agents (run in parallel, test- and review-gated); scikit-learn}
+\cvitem{AI tools}{AI-assisted development with Claude Code and Cursor, verified by tests and code review}
 \cvitem{Spoken}{Czech (native), English (C1), German (B1)}
 
 \end{document}
