@@ -61,8 +61,8 @@ Besides the main CV, focused variants can be published as unlisted static files 
 (served at `/cv/<name>.pdf`, not linked from the site). Their LaTeX sources are kept locally and are not
 committed; only the compiled PDF is.
 
-| File                         | Focus                                                           |
-| ---------------------------- | --------------------------------------------------------------- |
+| File                         | Focus                                                                                      |
+| ---------------------------- | ------------------------------------------------------------------------------------------ |
 | `public/cv/fullstack-ai.pdf` | Full-stack (TypeScript, React, GraphQL) with data & AI emphasis; source `cv/fullstack-ai/` |
 
 Use neutral, role-type file names (not company names) so one link can be reused across applications.
