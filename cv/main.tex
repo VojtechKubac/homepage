@@ -46,7 +46,7 @@
 }
 
 \name{Vojtěch}{Kubáč}
-\title{C\texttt{++} software engineer · scientific computing \& simulation}
+\title{C\texttt{++} software engineer · systems \& performance}
 \address{Pardubice}{Czech Republic}{}
 \phone[mobile]{(+420)~737~059~153}
 \email{vojta.kubac@gmail.com}
@@ -60,27 +60,27 @@
 \vspace*{-14mm}
 
 \section{Profile}
-\cvitem{}{7 years building C\texttt{++} simulation software: numerical modules for structural mechanics,
-  fluid dynamics and acoustics in a commercial engineering application. Built robot- and drone-swarm
-  simulations. Delivered production web applications for healthcare clients. Mathematician by training;
-  fully remote for 5 years; daily work with AI coding agents.}
+\cvitem{}{7 years of modern C\texttt{++} on a large cross-platform desktop and HPC application: a concurrent
+  server process and storage layer, inter-process communication, build and CI, and numerical modules.
+  Production web applications for healthcare clients; robot- and drone-swarm simulations (ROS~2, PX4).
+  Mathematician by training; fully remote for 5 years; daily AI-assisted development.}
 
 \vspace*{-1.5mm}
 \section{Experience}
 \cventry{2019--today}{C\texttt{++} software engineer}{CFD Support}{}{}{%
-  Own core modules of TCAE, a cross-platform CAE (computer-aided engineering) application for desktop
-  and HPC on OpenFOAM and VTK. Modern C\texttt{++}23, CMake, Qt, Linux/Windows.
+  Own core modules of TCAE, a cross-platform engineering application for desktop and HPC clusters,
+  built on OpenFOAM and VTK. Modern C\texttt{++}23, CMake, Qt, Linux/Windows.
   \begin{itemize}%
-    \item \textbf{Finite element (FEA) module ·} CalculiX input generation, result parsing and automatic reporting,
-      octree-based CFD$\to$FEA field mapping for fluid--structure interaction (FSI).
-    \item \textbf{Aeroacoustics ·} noise prediction from CFD results in custom OpenFOAM classes, multithreaded
-      evaluation at observer points; signal processing (FFT, spectra, filtering, sound levels).
-    \item \textbf{Simulation database \& server ·} SQLite with RAII transactions and nested savepoints,
-      binary mesh serialization, cross-platform IPC (named pipes), concurrent async workers.
-    \item \textbf{Meshing ·} NetGen and Gmsh behind one interface; STEP CAD import via OpenCASCADE.
-    \item \textbf{CFD \& optimization ·} OpenFOAM solver extensions; DIRECT and EGO optimizer integration.
-    \item \textbf{Build \& CI ·} authored the GitLab CI pipeline and CTest unit-test suites (incl.\ headless Qt),
-      clang-format checks; NSIS/self-extracting installers; MinGW-w64 Windows cross-builds.
+    \item \textbf{Server process \& storage layer ·} SQLite-backed simulation database, binary serialization
+      of large meshes, cross-platform IPC (named pipes), concurrent async workers.
+    \item \textbf{Build, CI \& release ·} CI pipeline with automated tests and code-style checks;
+      Windows cross-builds from Linux (MinGW-w64); installers.
+    \item \textbf{Performance \& geometry ·} octree-based spatial mapping of fields between meshes;
+      multithreaded acoustic evaluation with FFT and signal processing.
+    \item \textbf{Numerical modules, end to end ·} owned each from the numerics and code architecture
+      through Qt UI design to installers: finite element (FEA) pre- and post-processing with automatic
+      reporting, aeroacoustic noise prediction, OpenFOAM solver extensions, meshing (NetGen, Gmsh,
+      OpenCASCADE).
   \end{itemize}}
 \cventry{2024--2026}{Software engineer (in parallel)}{Ententee}{}{}{%
   Healthcare web apps (DrChrono, ALF; Django, Spring Boot, React/TS). Internal R\&D projects: warehouse
@@ -98,12 +98,11 @@
 \section{Skills}
 \cvitem{Languages}{C\texttt{++} (C\texttt{++}17/20/23), Python, C\texttt{\#}, Java, TypeScript, Bash}
 \cvitem{Build \& CI}{CMake, CTest, GCC / MinGW-w64, clang-format, GitLab CI, GitHub Actions, Docker}
-\cvitem{Methods}{finite element (FEM), finite volume (FVM), CFD, FSI, aeroacoustics, optimization}
-\cvitem{Simulation}{OpenFOAM, CalculiX; NetGen, Gmsh, OpenCASCADE}
 \cvitem{GUI}{Qt, VTK, ParaView (plugin development)}
-\cvitem{Robotics}{ROS~2, PX4, Gazebo, Unity}
 \cvitem{Web \& data}{Django, Spring Boot, React; PostgreSQL, SQLite}
-\cvitem{AI tools}{AI-assisted development with Claude Code and Cursor, verified by tests and code review}
+\cvitem{Robotics}{ROS~2, PX4, Gazebo, Unity}
+\cvitem{Simulation}{FEM, FVM, CFD, FSI; OpenFOAM, CalculiX, Gmsh, OpenCASCADE}
+\cvitem{AI tools}{multi-agent development (Claude Code, Cursor), feedback loops sized to the task's needs}
 \cvitem{Spoken}{Czech (native), English (C1), German (B1)}
 
 \end{document}
