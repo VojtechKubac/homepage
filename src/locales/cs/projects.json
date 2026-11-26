@@ -74,6 +74,17 @@
       "Samorozbalovací instalátor pro Linux a NSIS instalátor pro Windows s cross-buildy přes MinGW-w64."
     ]
   },
+  "sensor-fusion": {
+    "title": "Fúze senzorů v reálném čase v C++ a Rustu",
+    "description": "Stejná pipeline s Kalmanovým filtrem pro senzory s různou frekvencí v obou jazycích, pro srovnání latence, jitteru a nároků na zdroje. Živý prohlížeč v Rerunu ukazuje filtr při práci.",
+    "longDescription": "Projekt na učení a poctivé srovnání jazyků. Obě implementace pohání společný simulátor a formát záznamu, takže naměřené rozdíly pocházejí z jazyků, ne z testovacího nastavení. Každá funkce se dokončí jako smyčka: C++, pak Rust, pak srovnání a zpráva.",
+    "periodNote": "Vedlejší projekt, rozpracovaný.",
+    "achievements": [
+      "Společný simulátor v Pythonu a schéma záznamu, takže obě implementace dostávají stejný vstup.",
+      "Lineární Kalmanův filtr v C++ (Eigen) a Rustu (nalgebra), s testy.",
+      "Prohlížeč v Rerunu, který živě streamuje filtr z Rustu: trajektorie, chyba vůči skutečnosti s elipsami 2σ a grafy konzistence (NIS), dvě nastavení vedle sebe."
+    ]
+  },
   "homepage-site": {
     "title": "Tento portfolio web",
     "description": "Jednostránkové portfolio: Svelte 4, Vite 5, Tailwind, i18n (EN / DE / CS), integrace kontaktního formuláře.",

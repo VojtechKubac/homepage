@@ -74,6 +74,17 @@
       "Linux self-extracting installer and Windows NSIS installer, with MinGW-w64 cross-builds."
     ]
   },
+  "sensor-fusion": {
+    "title": "Real-time sensor fusion in C++ and Rust",
+    "description": "The same multi-rate Kalman-filter pipeline built in both languages, to compare latency, jitter and footprint. A live Rerun viewer shows the filter at work.",
+    "longDescription": "A learning project and an honest language comparison. One shared simulator and replay format drive both implementations, so measured differences come from the languages, not the test setup. Each feature is finished as a loop: C++, then Rust, then a comparison and a write-up.",
+    "periodNote": "Side project, in progress.",
+    "achievements": [
+      "Shared Python simulator and replay schema, so both ports see identical input.",
+      "Linear Kalman filter in C++ (Eigen) and Rust (nalgebra), with tests.",
+      "Rerun viewer streaming the Rust filter live: trajectory, error against ground truth with 2σ ellipses, and consistency plots (NIS), with two tunings side by side."
+    ]
+  },
   "homepage-site": {
     "title": "This portfolio site",
     "description": "Single-page portfolio: Svelte 4, Vite 5, Tailwind, i18n (EN / DE / CS), contact form integration.",
