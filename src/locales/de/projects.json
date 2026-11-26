@@ -74,6 +74,17 @@
       "Selbstextrahierender Linux-Installer und Windows-NSIS-Installer mit MinGW-w64-Cross-Builds."
     ]
   },
+  "sensor-fusion": {
+    "title": "Echtzeit-Sensorfusion in C++ und Rust",
+    "description": "Dieselbe Kalman-Filter-Pipeline für Sensoren mit unterschiedlichen Raten in beiden Sprachen, um Latenz, Jitter und Ressourcenbedarf zu vergleichen. Ein Live-Viewer in Rerun zeigt den Filter bei der Arbeit.",
+    "longDescription": "Ein Lernprojekt und ein ehrlicher Sprachvergleich. Ein gemeinsamer Simulator und ein gemeinsames Replay-Format treiben beide Implementierungen, sodass gemessene Unterschiede von den Sprachen kommen, nicht vom Testaufbau. Jedes Feature wird als Schleife abgeschlossen: C++, dann Rust, dann Vergleich und Bericht.",
+    "periodNote": "Nebenprojekt, in Arbeit.",
+    "achievements": [
+      "Gemeinsamer Python-Simulator und Replay-Schema, damit beide Implementierungen identische Eingaben bekommen.",
+      "Linearer Kalman-Filter in C++ (Eigen) und Rust (nalgebra), mit Tests.",
+      "Rerun-Viewer, der den Rust-Filter live streamt: Trajektorie, Fehler gegenüber der Ground Truth mit 2σ-Ellipsen und Konsistenz-Plots (NIS), zwei Abstimmungen nebeneinander."
+    ]
+  },
   "homepage-site": {
     "title": "Diese Portfolio-Website",
     "description": "Ein-Seiten-Portfolio: Svelte 4, Vite 5, Tailwind, i18n (EN / DE / CS), Integration eines Kontaktformulars.",

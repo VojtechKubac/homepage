@@ -145,6 +145,24 @@ export const projects = [
     },
   },
   {
+    id: 'sensor-fusion',
+    source: 'github',
+    technologies: ['Rust', 'C++23', 'Eigen', 'nalgebra', 'Rerun', 'Python'],
+    period: {
+      start: '2026',
+      end: 'present',
+    },
+    team: {
+      size: 1,
+    },
+    // Frame from a screen recording of the project's own Rerun viewer, cropped to the card ratio.
+    image: '/images/projects/sensor-fusion.jpg',
+    link: {
+      href: 'https://github.com/VojtechKubac/sensor-fusion-cpp-rust',
+      labelKey: 'projects.links.repository',
+    },
+  },
+  {
     id: 'homepage-site',
     source: 'github',
     technologies: ['Svelte 4', 'Vite', 'Tailwind CSS'],
